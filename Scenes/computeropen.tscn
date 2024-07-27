@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://tnq01kqmj8bn"]
+
+[ext_resource type="FontFile" uid="uid://debggn5x54r8m" path="res://Assets/ObliviousFont.ttf" id="1_usv7a"]
+[ext_resource type="Script" path="res://Scripts/CorrectButton.gd" id="2_rk2vr"]
+
+[node name="Computer" type="Node2D"]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -19.0
+offset_right = 1318.0
+offset_bottom = 677.0
+color = Color(0.109804, 0.109804, 0.109804, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 57.0
+offset_right = 1143.0
+offset_bottom = 653.0
+
+[node name="Polygon2D" type="Polygon2D" parent="ColorRect2"]
+position = Vector2(9, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(544, 27, 538, 35, 543, 44, 552, 50, 565, 49, 572, 33, 565, 24, 553, 21)
+
+[node name="Polygon2D2" type="Polygon2D" parent="ColorRect2"]
+position = Vector2(140, 7)
+scale = Vector2(0.764706, 0.793103)
+color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+polygon = PackedVector2Array(544, 27, 538, 35, 543, 44, 552, 50, 565, 49, 572, 33, 565, 24, 553, 21)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 304.0
+offset_top = 510.0
+offset_right = 853.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("1_usv7a")
+theme_override_font_sizes/font_size = 30
+text = "Report this message to HQ"
+script = ExtResource("2_rk2vr")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 56.0
+offset_top = 57.0
+offset_right = 1004.0
+offset_bottom = 538.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_usv7a")
+theme_override_font_sizes/font_size = 25
+text = "Message from Epsilon High Command:
+
+The time is now to take our place within the ranks of the great criminal gangs of America. We managed to steal the Mark-29 Bomb from the military base. You can thank our greatest gunman, codenamed \"Shadow\" for doing that.  
+
+This bomb will be used to blow up one of the properties of our greatest enemies, the Gray Claw Mercenaries. It is a high-value suburban home. The plan is to storm the place while no one is home, and plant the bomb on the  second floor. If the fed boys find out about our plan, kill them."
+autowrap_mode = 2
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

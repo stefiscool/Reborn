@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cqcye1csd01b6"]
+
+[ext_resource type="FontFile" uid="uid://debggn5x54r8m" path="res://Assets/ObliviousFont.ttf" id="1_m6y3o"]
+
+[resource]
+default_font = ExtResource("1_m6y3o")
+default_font_size = 30

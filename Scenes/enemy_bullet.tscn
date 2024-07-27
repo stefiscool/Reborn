@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://hqo0da138w0t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_71vuj"]
+radius = 5.09902
+
+[node name="EnemyBullet" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_71vuj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 3.0

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc6h2k3peoi15"]
+
+[ext_resource type="Script" path="res://Scripts/Magazine.gd" id="1_a50uc"]
+[ext_resource type="AudioStream" uid="uid://3r16fys4k201" path="res://Audio/load-gun-sound-effect-5-11003.mp3" id="2_uehco"]
+[ext_resource type="Texture2D" uid="uid://8oagr6daw6ud" path="res://Assets/Mag.png" id="3_i741j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6mve"]
+size = Vector2(5, 16)
+
+[node name="Magazine" type="Area2D"]
+script = ExtResource("1_a50uc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_h6mve")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_uehco")
+volume_db = 7.711
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Mag" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_i741j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

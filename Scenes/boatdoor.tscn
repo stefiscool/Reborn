@@ -1,0 +1,138 @@
+[gd_scene load_steps=17 format=3 uid="uid://g2ir42vk1nve"]
+
+[ext_resource type="Script" path="res://Scripts/Door.gd" id="1_tmtiv"]
+[ext_resource type="Texture2D" uid="uid://djtq62x5ql7y4" path="res://Assets/BoatDoor.png" id="2_btty3"]
+[ext_resource type="AudioStream" uid="uid://0vt74of3ruc6" path="res://Audio/wood-smash-1-170410.mp3" id="3_lmxht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lruje"]
+atlas = ExtResource("2_btty3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0x0w"]
+atlas = ExtResource("2_btty3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp5yf"]
+atlas = ExtResource("2_btty3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wcgn"]
+atlas = ExtResource("2_btty3")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qato5"]
+atlas = ExtResource("2_btty3")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6yxx"]
+atlas = ExtResource("2_btty3")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4bgr"]
+atlas = ExtResource("2_btty3")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdmbw"]
+atlas = ExtResource("2_btty3")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrwa1"]
+atlas = ExtResource("2_btty3")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35spn"]
+atlas = ExtResource("2_btty3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8kbn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lruje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0x0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp5yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wcgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qato5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6yxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4bgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdmbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrwa1")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 40.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35spn")
+}],
+"loop": true,
+"name": &"still",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eabqv"]
+size = Vector2(60, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr1kp"]
+size = Vector2(63, 3)
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_tmtiv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(49.3125, -39.375)
+scale = Vector2(1.85352, 1.60547)
+sprite_frames = SubResource("SpriteFrames_c8kbn")
+animation = &"still"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(44, 40)
+rotation = 3.14159
+scale = Vector2(1.85352, 1.60547)
+sprite_frames = SubResource("SpriteFrames_c8kbn")
+animation = &"fall"
+
+[node name="Frontdoor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frontdoor"]
+position = Vector2(46, 5)
+shape = SubResource("RectangleShape2D_eabqv")
+
+[node name="Backdoor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Backdoor"]
+position = Vector2(46, -3)
+shape = SubResource("RectangleShape2D_eabqv")
+
+[node name="Crash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lmxht")
+volume_db = 5.0
+pitch_scale = 1.01
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(46.5, 1.5)
+shape = SubResource("RectangleShape2D_qr1kp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Frontdoor" to="." method="_on_frontdoor_body_entered"]
+[connection signal="body_entered" from="Backdoor" to="." method="_on_backdoor_body_entered"]
