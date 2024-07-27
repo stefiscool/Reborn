@@ -6,6 +6,8 @@ var skill1 = "Grenade"
 var skill2 = "Super Slash"
 var skill3 = "Flame Charge"
 
+var meleeing = false
+
 var level = 1
 var health = 100
 var mags = 3
@@ -14,7 +16,7 @@ var rateoffire = 0.05
 var maxammo = 30
 var ammo = maxammo
 var damage = 70
-var weapon = "M4A1"
+var weapon = "SCAR"
 var shields = 100
 
 var secondrateoffire = 0.2
@@ -41,4 +43,4 @@ func _process(_delta):
 		shields = 0
 		
 	if flamecharged:
-		damage = damage * 2
+		damage = 140

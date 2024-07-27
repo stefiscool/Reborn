@@ -48,9 +48,16 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("secondary") and Global.secondary == false and reloading == false:
 		Global.secondary = true
 		switch.play()
+	if Input.is_action_pressed("melee"):
+		Global.meleeing = true
+		
+	if Input.is_action_just_released("melee"):
+		Global.meleeing = false
+		$Gun.visible = true
+		
 	
 	if Global.secondary == false:
-		if Input.is_action_pressed("fire") and can_fire and Global.ammo > 0 and reloading == false:
+		if Input.is_action_pressed("fire") and can_fire and Global.ammo > 0 and reloading == false and Global.meleeing == false:
 			var bullet_instance = bullet.instantiate()
 			gunfire.play()
 			bullet_instance.position = $BulletPoint.get_global_position()
@@ -70,7 +77,7 @@ func _physics_process(delta):
 			reloading = true
 			
 	if Global.secondary == true:	
-		if Input.is_action_just_pressed("fire") and can_fire and Global.secondammo > 0 and reloading == false:
+		if Input.is_action_just_pressed("fire") and can_fire and Global.secondammo > 0 and reloading == false and Global.meleeing == false:
 			var bullet_instance = bullet.instantiate()
 			secondgunfire.play()
 			bullet_instance.position = $BulletPoint.get_global_position()
@@ -113,28 +120,20 @@ func _physics_process(delta):
 		if Global.secondweapon == "Deagle":
 			gun.play("Deagle")
 		
-	if Global.secondary == false:
+	if Global.meleeing == false:
 		if Input.is_action_pressed("move_up"):
-			anim.play("walk")
+				anim.play("walk")
 		elif Input.is_action_pressed("move_down"):
-			anim.play("walk")
+				anim.play("walk")
 		elif Input.is_action_pressed("move_left"):
-			anim.play("walk")
+				anim.play("walk")
 		elif Input.is_action_pressed("move_right"):
-			anim.play("walk")
+				anim.play("walk")
 		else: 
-			anim.play("idle")
-	if Global.secondary == true:
-		if Input.is_action_pressed("move_up"):
-			anim.play("secondwalk")
-		elif Input.is_action_pressed("move_down"):
-			anim.play("secondwalk")
-		elif Input.is_action_pressed("move_left"):
-			anim.play("secondwalk")
-		elif Input.is_action_pressed("move_right"):
-			anim.play("secondwalk")
-		else: 
-			anim.play("secondidle")
+				anim.play("idle")
+	else:
+		anim.play("melee")
+		$Gun.visible = false
 			
 	var input = Input.get_vector("move_left","move_right","move_up","move_down")
 	player_movement(input, delta)
@@ -152,14 +151,17 @@ func _physics_process(delta):
 		$SkillCooldowns/SkillCooldown1.start()
 		
 	if Input.is_action_just_pressed("skill2") and can_skill2 and Global.skill2 == "Super Slash":
+		Global.meleeing = true
 		$"Skills/Super Slash".scale.x = 20
 		$"Skills/Super Slash".scale.y = 20
+		$Audio/SuperSlash.play()
 		$Skills/SkillTimer.start
 		can_skill2 = false
 		$SkillCooldowns/SkillCooldown2.start()
 		
 	if Input.is_action_just_pressed("skill3") and can_skill3 and Global.skill3 == "Flame Charge":
 		$Skills/FlameChargeParticles.visible = true
+		$Audio/FlameBuff.play()
 		$Skills/BuffTimer.start()
 		Global.flamecharged = true
 		can_skill3 = false
@@ -214,6 +216,8 @@ func _on_skill_cooldown_3_timeout():
 func _on_skill_timer_timeout():
 	$"Skills/Super Slash".scale.x = 1
 	$"Skills/Super Slash".scale.y = 1
+	Global.meleeing = false
+	$Gun.visible = true
 
 
 func _on_buff_timer_timeout():
