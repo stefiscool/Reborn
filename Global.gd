@@ -20,9 +20,10 @@ var damage = 70
 var weapon = "SCAR"
 var shields = 100
 
-var shieldcooldown = 1
+var shieldcooldown = 10
 var shieldregen = 1
 var damaged = false
+
 
 var secondrateoffire = 0.2
 var secondmaxammo = 9

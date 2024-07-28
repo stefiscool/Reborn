@@ -19,9 +19,11 @@ func _on_body_entered(body):
 		if Global.shields <= 0:
 			Global.health -= 15
 			Global.damaged = true
+
 		else:
 			Global.shields -= 15
 			Global.damaged = true
+
 		position.x = 0
 		can_fire = false
 		$Firerate.start()

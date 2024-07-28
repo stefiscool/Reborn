@@ -61,10 +61,19 @@ func _physics_process(delta):
 		
 	if Global.shields != 0:
 		$Audio/ShieldBreak.play()
+		
+	if Global.shields != 100:
+		$Audio/ShieldsFull.play()
 	
-
+	if Global.damaged == true:
+		$ShieldCool.start()
+		$ShieldCool/ShieldRegen.stop()
+		Global.damaged = false
 	
-	
+		
+		
+		
+		
 	if Global.secondary == false:
 		if Input.is_action_pressed("fire") and can_fire and Global.ammo > 0 and reloading == false and Global.meleeing == false:
 			var bullet_instance = bullet.instantiate()
@@ -243,3 +252,15 @@ func _on_buff_timer_timeout():
 
 
 
+
+func _on_shield_cool_timeout():
+	$ShieldCool/ShieldRegen.start()
+	if Global.shields < 100:
+		$Audio/ShieldCharge.play()
+
+
+func _on_shield_regen_timeout():
+	if Global.shields < 100 and Global.damaged == false:
+		Global.shields += Global.shieldregen
+		$ShieldCool/ShieldRegen.start()
+	

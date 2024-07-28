@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://cjypwkc5cje34"]
+[gd_scene load_steps=71 format=3 uid="uid://cjypwkc5cje34"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_cxcq2"]
 [ext_resource type="Script" path="res://Scripts/Super Slash.gd" id="2_ka7xj"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://dl2t46h8b0cpv" path="res://Audio/rage-15292.mp3" id="5_d0tc2"]
 [ext_resource type="AudioStream" uid="uid://de1umywgfeefo" path="res://Audio/click-button-140881.mp3" id="6_isrmr"]
 [ext_resource type="AudioStream" uid="uid://cfmnjhe3ostpl" path="res://Audio/industrial-metal-177290.mp3" id="7_a58cg"]
+[ext_resource type="AudioStream" uid="uid://dnqusbwr1u0j3" path="res://Audio/video-game-tank-metal-220562.mp3" id="9_opqhp"]
 [ext_resource type="AudioStream" uid="uid://dmjp78e4fxuhw" path="res://Audio/pistol-cock-6014.mp3" id="9_pk1p2"]
 [ext_resource type="AudioStream" uid="uid://c7p4o1cmllkvy" path="res://Audio/9mm-pistol-shot-6349.mp3" id="10_hgiin"]
 [ext_resource type="Texture2D" uid="uid://dbpf6nff6jq72" path="res://Assets/PrimaryWeapons.png" id="11_ot4ps"]
@@ -19,10 +20,13 @@
 [ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/flamecharge.mp3" id="16_jatk1"]
 [ext_resource type="AudioStream" uid="uid://ee1j8asctyjt" path="res://Audio/superslash.mp3" id="17_frtah"]
 [ext_resource type="Script" path="res://Labels/SkillCooldowns.gd" id="17_wt8rr"]
+[ext_resource type="AudioStream" uid="uid://bxvmq2xsqkoeq" path="res://Audio/estusflask.mp3" id="18_2p3kv"]
 [ext_resource type="AudioStream" uid="uid://clx5bs6rty6i0" path="res://Audio/swinging.mp3" id="18_6wr1e"]
-[ext_resource type="AudioStream" uid="uid://cowc0vpo1j2gc" path="res://Audio/drink.mp3" id="19_5vc1r"]
+[ext_resource type="AudioStream" uid="uid://cly8k8r5wpmdi" path="res://Audio/sci-fi-charge-up-37395.mp3" id="20_ayeyf"]
 [ext_resource type="AudioStream" uid="uid://c8ud4p0jljfdc" path="res://Audio/shieldbreak.mp3" id="20_rx6ps"]
 [ext_resource type="Script" path="res://Scenes/MeleeHitbox.gd" id="21_eey8p"]
+[ext_resource type="AudioStream" uid="uid://t86xb17lgkwa" path="res://Audio/shieldsfull.mp3" id="21_sglvs"]
+[ext_resource type="Script" path="res://Scripts/ShieldCool.gd" id="27_66i7v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5oxb"]
 radius = 6.0
@@ -359,7 +363,7 @@ animations = [{
 radius = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3pda"]
-size = Vector2(62.5, 8)
+size = Vector2(44.125, 8)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 3
@@ -436,8 +440,8 @@ stream = ExtResource("7_a58cg")
 volume_db = -11.277
 
 [node name="Music4" type="AudioStreamPlayer2D" parent="Audio"]
-stream = ExtResource("3_ls6jt")
-volume_db = -10.0
+stream = ExtResource("9_opqhp")
+volume_db = -15.0
 
 [node name="Gunfire" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("4_0mvi2")
@@ -480,11 +484,17 @@ stream = ExtResource("18_6wr1e")
 pitch_scale = 1.57
 
 [node name="Drink" type="AudioStreamPlayer2D" parent="Audio"]
-stream = ExtResource("19_5vc1r")
-volume_db = 5.0
+stream = ExtResource("18_2p3kv")
 
 [node name="ShieldBreak" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("20_rx6ps")
+
+[node name="ShieldCharge" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("20_ayeyf")
+
+[node name="ShieldsFull" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("21_sglvs")
+volume_db = -6.0
 
 [node name="Gun" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -536,10 +546,18 @@ wait_time = 30.0
 wait_time = 60.0
 
 [node name="MeleeHitbox" type="Area2D" parent="."]
+position = Vector2(12, 0)
 script = ExtResource("21_eey8p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHitbox"]
 shape = SubResource("RectangleShape2D_j3pda")
+
+[node name="ShieldCool" type="Timer" parent="."]
+wait_time = 5.0
+script = ExtResource("27_66i7v")
+
+[node name="ShieldRegen" type="Timer" parent="ShieldCool"]
+wait_time = 0.2
 
 [connection signal="body_entered" from="Skills/Super Slash" to="Skills/Super Slash" method="_on_body_entered"]
 [connection signal="timeout" from="Skills/SkillTimer" to="." method="_on_skill_timer_timeout"]
@@ -553,3 +571,5 @@ shape = SubResource("RectangleShape2D_j3pda")
 [connection signal="timeout" from="SkillCooldowns/SkillCooldown3" to="." method="_on_skill_cooldown_3_timeout"]
 [connection signal="timeout" from="SkillCooldowns/SkillCooldown4" to="." method="_on_skill_cooldown_3_timeout"]
 [connection signal="body_entered" from="MeleeHitbox" to="MeleeHitbox" method="_on_body_entered"]
+[connection signal="timeout" from="ShieldCool" to="." method="_on_shield_cool_timeout"]
+[connection signal="timeout" from="ShieldCool/ShieldRegen" to="." method="_on_shield_regen_timeout"]

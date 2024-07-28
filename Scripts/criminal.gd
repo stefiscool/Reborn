@@ -39,8 +39,7 @@ func _on_sight_body_entered(body):
 	if body.name == "Player" and deathplayed == false:	
 		vision = true
 		anim.play("run")
-	else:
-		vision = false
+
 
 
 func _on_attack_body_entered(body):
@@ -89,5 +88,5 @@ func _on_attack_area_entered(area):
 		$Cut.play()
 
 
-func _on_sight_2_body_exited(body):
+func _on_sight_2_body_exited(_body):
 	vision == false
