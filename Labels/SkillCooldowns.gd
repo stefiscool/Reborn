@@ -19,4 +19,8 @@ func _process(_delta):
 	else:
 		Global.skill3cool = 0
 		
+	if player.can_skill4 == false:
+		Global.skill4cool = int($SkillCooldown4.time_left)
+	else:
+		Global.skill4cool = 0
 		

@@ -17,7 +17,7 @@ offset_right = 411.0
 offset_bottom = 95.0
 
 [node name="Panel2" type="Panel" parent="."]
-offset_left = 870.0
+offset_left = 885.0
 offset_top = -53.0
 offset_right = 1628.0
 offset_bottom = 118.0
@@ -29,8 +29,8 @@ offset_right = 304.0
 offset_bottom = 647.0
 
 [node name="Panel4" type="Panel" parent="."]
-offset_left = 764.0
-offset_top = 533.0
+offset_left = 795.0
+offset_top = 507.0
 offset_right = 1487.0
 offset_bottom = 684.0
 
@@ -98,6 +98,11 @@ text = "
 "
 
 [node name="Skill3" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ggjao")
+theme_override_font_sizes/font_size = 30
+
+[node name="Skill4" type="Label" parent="VBoxContainer4"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ggjao")
 theme_override_font_sizes/font_size = 30

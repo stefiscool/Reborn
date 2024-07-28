@@ -5,6 +5,7 @@ var Class = "Noble"
 var skill1 = "Grenade"
 var skill2 = "Super Slash"
 var skill3 = "Flame Charge"
+var skill4 = "Estus Flask"
 
 var meleeing = false
 
@@ -29,6 +30,7 @@ var secondweapon = "M1911"
 var skill1cool = 0
 var skill2cool = 0
 var skill3cool = 0
+var skill4cool = 0
 
 var flamecharged = false
 

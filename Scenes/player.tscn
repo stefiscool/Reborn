@@ -519,6 +519,9 @@ wait_time = 15.0
 [node name="SkillCooldown3" type="Timer" parent="SkillCooldowns"]
 wait_time = 30.0
 
+[node name="SkillCooldown4" type="Timer" parent="SkillCooldowns"]
+wait_time = 60.0
+
 [node name="MeleeHitbox" type="Area2D" parent="."]
 script = ExtResource("21_eey8p")
 
@@ -535,4 +538,5 @@ shape = SubResource("RectangleShape2D_j3pda")
 [connection signal="timeout" from="SkillCooldowns/SkillCooldown1" to="." method="_on_skill_cooldown_1_timeout"]
 [connection signal="timeout" from="SkillCooldowns/SkillCooldown2" to="." method="_on_skill_cooldown_2_timeout"]
 [connection signal="timeout" from="SkillCooldowns/SkillCooldown3" to="." method="_on_skill_cooldown_3_timeout"]
+[connection signal="timeout" from="SkillCooldowns/SkillCooldown4" to="." method="_on_skill_cooldown_3_timeout"]
 [connection signal="body_entered" from="MeleeHitbox" to="MeleeHitbox" method="_on_body_entered"]

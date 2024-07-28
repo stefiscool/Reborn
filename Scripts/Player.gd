@@ -27,6 +27,7 @@ var reloading = false
 var can_skill1 = true
 var can_skill2 = true
 var can_skill3 = true
+var can_skill4 = true
 
 func player_movement(input, delta):
 	if input: velocity = velocity.move_toward(input * speed , delta * accel)
@@ -145,7 +146,7 @@ func _physics_process(delta):
 		
 		grenade_instance.position = $BulletPoint.get_global_position()
 		grenade_instance.rotation_degrees = rotation_degrees
-		grenade_instance.apply_impulse(Vector2(200, 0).rotated(global_rotation))
+		grenade_instance.apply_impulse(Vector2(140, 0).rotated(global_rotation))
 		get_tree().get_root().add_child(grenade_instance)
 		can_skill1 = false
 		$SkillCooldowns/SkillCooldown1.start()
@@ -166,6 +167,12 @@ func _physics_process(delta):
 		Global.flamecharged = true
 		can_skill3 = false
 		$SkillCooldowns/SkillCooldown3.start()
+		
+	if Input.is_action_pressed("skill4") and can_skill4 and Global.skill4 == "Estus Flask":
+		if Global.health < 100:
+			Global.health += 30
+			can_skill4 = false
+			$SkillCooldowns/SkillCooldown4.start()
 
 	
 func _on_firerate_timeout():
