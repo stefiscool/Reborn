@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://cjypwkc5cje34"]
+[gd_scene load_steps=67 format=3 uid="uid://cjypwkc5cje34"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_cxcq2"]
 [ext_resource type="Script" path="res://Scripts/Super Slash.gd" id="2_ka7xj"]
@@ -11,7 +11,6 @@
 [ext_resource type="AudioStream" uid="uid://dl2t46h8b0cpv" path="res://Audio/rage-15292.mp3" id="5_d0tc2"]
 [ext_resource type="AudioStream" uid="uid://de1umywgfeefo" path="res://Audio/click-button-140881.mp3" id="6_isrmr"]
 [ext_resource type="AudioStream" uid="uid://cfmnjhe3ostpl" path="res://Audio/industrial-metal-177290.mp3" id="7_a58cg"]
-[ext_resource type="AudioStream" uid="uid://dnqusbwr1u0j3" path="res://Audio/video-game-tank-metal-220562.mp3" id="8_y3m2f"]
 [ext_resource type="AudioStream" uid="uid://dmjp78e4fxuhw" path="res://Audio/pistol-cock-6014.mp3" id="9_pk1p2"]
 [ext_resource type="AudioStream" uid="uid://c7p4o1cmllkvy" path="res://Audio/9mm-pistol-shot-6349.mp3" id="10_hgiin"]
 [ext_resource type="Texture2D" uid="uid://dbpf6nff6jq72" path="res://Assets/PrimaryWeapons.png" id="11_ot4ps"]
@@ -20,6 +19,9 @@
 [ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/flamecharge.mp3" id="16_jatk1"]
 [ext_resource type="AudioStream" uid="uid://ee1j8asctyjt" path="res://Audio/superslash.mp3" id="17_frtah"]
 [ext_resource type="Script" path="res://Labels/SkillCooldowns.gd" id="17_wt8rr"]
+[ext_resource type="AudioStream" uid="uid://clx5bs6rty6i0" path="res://Audio/swinging.mp3" id="18_6wr1e"]
+[ext_resource type="AudioStream" uid="uid://cowc0vpo1j2gc" path="res://Audio/drink.mp3" id="19_5vc1r"]
+[ext_resource type="AudioStream" uid="uid://c8ud4p0jljfdc" path="res://Audio/shieldbreak.mp3" id="20_rx6ps"]
 [ext_resource type="Script" path="res://Scenes/MeleeHitbox.gd" id="21_eey8p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5oxb"]
@@ -434,8 +436,8 @@ stream = ExtResource("7_a58cg")
 volume_db = -11.277
 
 [node name="Music4" type="AudioStreamPlayer2D" parent="Audio"]
-stream = ExtResource("8_y3m2f")
-volume_db = -5.012
+stream = ExtResource("3_ls6jt")
+volume_db = -10.0
 
 [node name="Gunfire" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("4_0mvi2")
@@ -472,6 +474,17 @@ stream = ExtResource("16_jatk1")
 
 [node name="SuperSlash" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("17_frtah")
+
+[node name="Swinging" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("18_6wr1e")
+pitch_scale = 1.57
+
+[node name="Drink" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("19_5vc1r")
+volume_db = 5.0
+
+[node name="ShieldBreak" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("20_rx6ps")
 
 [node name="Gun" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

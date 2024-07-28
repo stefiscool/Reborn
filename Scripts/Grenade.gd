@@ -28,8 +28,8 @@ func _on_blast_radius_body_entered(body):
 
 func _physics_process(_delta):
 	if blown == true and scale.x < 35:
-		scale.x += 2
-		scale.y += 2
-	if scale.x >= 35:
+		scale.x += 1.5
+		scale.y += 1.5
+	if scale.x >= 30:
 		queue_free()
 		

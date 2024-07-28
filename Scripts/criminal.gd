@@ -17,7 +17,7 @@ signal dead2
 @onready var bloodtimer = $Attack/Blood/BloodTimer
 
 func _physics_process(_delta: float) -> void:
-	if dead == false:
+	if dead == false and vision == true:
 		var dir = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = dir * speed
 		move_and_slide()
@@ -44,12 +44,16 @@ func _on_sight_body_entered(body):
 
 
 func _on_attack_body_entered(body):
-	if body.name == "Player" and dead == false:	
-		if Global.shields <= 0:
-			Global.health -= 15
-		else:
-			Global.shields -= 15
-		hit.play()
+
+#Melee Attack
+	
+	#if body.name == "Player" and dead == false:	
+		#if Global.shields <= 0:
+			#Global.health -= 15
+		#else:
+			#Global.shields -= 15
+		#hit.play()
+		
 	if body.name == "Bullet" and dead == false:
 		blood.emitting = true
 		bloodtimer.start()
@@ -75,3 +79,15 @@ func _on_sight_body_exited(body):
 
 func _on_blood_timer_timeout():
 	blood.emitting = false
+
+
+func _on_attack_area_entered(area):
+	if area.name == "MeleeHitbox" and dead == false and Global.meleeing == true:
+		blood.emitting = true
+		bloodtimer.start()
+		hit3.play()
+		$Cut.play()
+
+
+func _on_sight_2_body_exited(body):
+	vision == false

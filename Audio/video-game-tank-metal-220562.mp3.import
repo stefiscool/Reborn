@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/video-game-tank-metal-220562.mp3-3227b75346f0
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

@@ -56,6 +56,14 @@ func _physics_process(delta):
 		Global.meleeing = false
 		$Gun.visible = true
 		
+	if Global.meleeing == false:
+		$Audio/Swinging.play()
+		
+	if Global.shields != 0:
+		$Audio/ShieldBreak.play()
+	
+
+	
 	
 	if Global.secondary == false:
 		if Input.is_action_pressed("fire") and can_fire and Global.ammo > 0 and reloading == false and Global.meleeing == false:
@@ -173,6 +181,7 @@ func _physics_process(delta):
 			Global.health += 30
 			can_skill4 = false
 			$SkillCooldowns/SkillCooldown4.start()
+			$Audio/Drink.play()
 
 	
 func _on_firerate_timeout():
@@ -230,3 +239,7 @@ func _on_skill_timer_timeout():
 func _on_buff_timer_timeout():
 	Global.flamecharged = false
 	$Skills/FlameChargeParticles.visible = false
+	
+
+
+

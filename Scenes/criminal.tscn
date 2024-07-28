@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cijp57po3nd0h"]
+[gd_scene load_steps=36 format=3 uid="uid://cijp57po3nd0h"]
 
 [ext_resource type="Script" path="res://Scripts/criminal.gd" id="1_18ar5"]
 [ext_resource type="Script" path="res://Scripts/enemyaim.gd" id="2_d0cpg"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/male_hurt7-48124.mp3" id="5_htufk"]
 [ext_resource type="Script" path="res://Scripts/VisionLine.gd" id="6_7wire"]
 [ext_resource type="Texture2D" uid="uid://dpdngv13g4jor" path="res://Assets/EnemyDeath.png" id="7_a8at2"]
+[ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/cut.mp3" id="9_kdmu1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y21y5"]
 size = Vector2(715.969, 375.125)
@@ -240,22 +241,22 @@ target_position = Vector2(109, -0.00010525)
 script = ExtResource("6_7wire")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RayCast2D/EnemyBullet"]
-position = Vector2(21, 4.99998)
+position = Vector2(9, 3.99999)
 scale = Vector2(1.00593, 1.00182)
 shape = SubResource("CircleShape2D_h8naw")
 
 [node name="ColorRect" type="ColorRect" parent="RayCast2D/EnemyBullet"]
-offset_left = 10.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 4.0
+offset_left = 9.0
+offset_top = 2.99999
+offset_right = 18.0
+offset_bottom = 3.99999
 color = Color(1, 1, 0, 1)
 
 [node name="Firerate" type="Timer" parent="RayCast2D/EnemyBullet"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RayCast2D"]
 texture_filter = 1
-position = Vector2(2, -2)
+position = Vector2(-2.38419e-06, -2)
 rotation = 1.5708
 scale = Vector2(0.646825, 0.674513)
 sprite_frames = SubResource("SpriteFrames_pxa6k")
@@ -287,13 +288,19 @@ color = Color(1, 0, 0, 1)
 [node name="BloodTimer" type="Timer" parent="Attack/Blood"]
 wait_time = 0.1
 
+[node name="Cut" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_kdmu1")
+volume_db = -5.754
+
 [connection signal="dead2" from="." to="RayCast2D" method="_on_criminal_dead_2"]
 [connection signal="dead2" from="." to="RayCast2D/EnemyBullet" method="_on_criminal_dead_2"]
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="Sight2" to="." method="_on_sight_2_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="RayCast2D/EnemyBullet" to="RayCast2D/EnemyBullet" method="_on_body_entered"]
+[connection signal="novision" from="RayCast2D/EnemyBullet/VisionLine" to="RayCast2D/EnemyBullet" method="_on_vision_line_novision"]
 [connection signal="vision" from="RayCast2D/EnemyBullet/VisionLine" to="RayCast2D/EnemyBullet" method="_on_vision_line_vision"]
 [connection signal="timeout" from="RayCast2D/EnemyBullet/Firerate" to="RayCast2D/EnemyBullet" method="_on_firerate_timeout"]
+[connection signal="area_entered" from="Attack" to="." method="_on_attack_area_entered"]
 [connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
 [connection signal="timeout" from="Attack/Blood/BloodTimer" to="." method="_on_blood_timer_timeout"]

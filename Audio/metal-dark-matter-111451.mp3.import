@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/metal-dark-matter-111451.mp3-9b1de7ff5ec485a1
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

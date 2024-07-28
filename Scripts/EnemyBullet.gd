@@ -18,8 +18,10 @@ func _on_body_entered(body):
 		hit.play()
 		if Global.shields <= 0:
 			Global.health -= 15
+			Global.damaged = true
 		else:
 			Global.shields -= 15
+			Global.damaged = true
 		position.x = 0
 		can_fire = false
 		$Firerate.start()
@@ -45,3 +47,7 @@ func _on_vision_line_vision():
 func _on_criminal_dead_2():
 	dead = true
 	queue_free()
+
+
+func _on_vision_line_novision():
+	vision = false
