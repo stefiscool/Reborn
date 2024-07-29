@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://debggn5x54r8m" path="res://Assets/ObliviousFont.ttf" id="1_ggjao"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="1_praoe"]
 [ext_resource type="Script" path="res://Scripts/HealthCounter.gd" id="2_m1mkf"]
-[ext_resource type="Script" path="res://Scripts/Weapon.gd" id="3_fsnwk"]
+[ext_resource type="Script" path="res://Labels/Weapon.gd" id="3_fsnwk"]
 [ext_resource type="Script" path="res://Labels/ShieldCounter.gd" id="3_lq1ft"]
 [ext_resource type="Script" path="res://Scripts/AmmoCounter.gd" id="4_fhveg"]
 [ext_resource type="Script" path="res://Labels/LevelCounter.gd" id="4_nnh0d"]

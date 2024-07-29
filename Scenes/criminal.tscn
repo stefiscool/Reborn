@@ -237,7 +237,7 @@ volume_db = 0.627
 pitch_scale = 0.8
 
 [node name="VisionLine" type="RayCast2D" parent="RayCast2D/EnemyBullet"]
-target_position = Vector2(109, -0.00010525)
+target_position = Vector2(164, -0.000158358)
 script = ExtResource("6_7wire")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RayCast2D/EnemyBullet"]

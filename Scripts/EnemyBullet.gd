@@ -10,7 +10,7 @@ func _process(delta):
 	if vision == true and can_fire == true and dead == false:
 		position.x += 1500 * delta
 		gunshot.play()
-		
+
 
 
 func _on_body_entered(body):

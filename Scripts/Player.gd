@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
 
-@onready var anim = get_node("AnimatedSprite2D")
 @onready var gun = get_node("Gun")
-var grenade = preload("res://Scenes/grenade.tscn")
+
 @onready var gunfire = $Audio/Gunfire
 @onready var secondgunfire = $Audio/SecondGunfire
 @onready var reload = $Audio/ReloadSFX
@@ -17,6 +16,9 @@ var grenade = preload("res://Scenes/grenade.tscn")
 @onready var music4 = $Audio/Music4
 
 var bullet = preload("res://Scenes/bullet.tscn")
+var grenade = preload("res://Scenes/grenade.tscn")
+var seedgrenade = preload("res://Scenes/seedgrenade.tscn")
+
 var bullet_speed = 2000
 var can_fire = true
 var speed = 220
@@ -130,6 +132,7 @@ func _physics_process(delta):
 			gun.play("P90")
 		if Global.weapon == "SCAR":
 			gun.play("SCAR")
+			
 	if Global.secondary == true:
 		if Global.secondweapon == "M1911":
 			gun.play("M1911")
@@ -137,60 +140,58 @@ func _physics_process(delta):
 			gun.play("Glock 18")
 		if Global.secondweapon == "Deagle":
 			gun.play("Deagle")
-		
-	if Global.meleeing == false:
-		if Input.is_action_pressed("move_up"):
-				anim.play("walk")
-		elif Input.is_action_pressed("move_down"):
-				anim.play("walk")
-		elif Input.is_action_pressed("move_left"):
-				anim.play("walk")
-		elif Input.is_action_pressed("move_right"):
-				anim.play("walk")
-		else: 
-				anim.play("idle")
-	else:
-		anim.play("melee")
-		$Gun.visible = false
 			
+
+
 	var input = Input.get_vector("move_left","move_right","move_up","move_down")
 	player_movement(input, delta)
 	
 	move_and_slide()
 		
-	if Input.is_action_just_pressed("skill1") and can_skill1 and Global.skill1 == "Grenade":
-		var grenade_instance = grenade.instantiate()
-		
-		grenade_instance.position = $BulletPoint.get_global_position()
-		grenade_instance.rotation_degrees = rotation_degrees
-		grenade_instance.apply_impulse(Vector2(140, 0).rotated(global_rotation))
-		get_tree().get_root().add_child(grenade_instance)
-		can_skill1 = false
-		$SkillCooldowns/SkillCooldown1.start()
-		
-	if Input.is_action_just_pressed("skill2") and can_skill2 and Global.skill2 == "Super Slash":
-		Global.meleeing = true
-		$"Skills/Super Slash".scale.x = 20
-		$"Skills/Super Slash".scale.y = 20
-		$Audio/SuperSlash.play()
-		$Skills/SkillTimer.start
-		can_skill2 = false
-		$SkillCooldowns/SkillCooldown2.start()
-		
-	if Input.is_action_just_pressed("skill3") and can_skill3 and Global.skill3 == "Flame Charge":
-		$Skills/FlameChargeParticles.visible = true
-		$Audio/FlameBuff.play()
-		$Skills/BuffTimer.start()
-		Global.flamecharged = true
-		can_skill3 = false
-		$SkillCooldowns/SkillCooldown3.start()
-		
-	if Input.is_action_pressed("skill4") and can_skill4 and Global.skill4 == "Estus Flask":
-		if Global.health < 100:
-			Global.health += 30
-			can_skill4 = false
-			$SkillCooldowns/SkillCooldown4.start()
-			$Audio/Drink.play()
+	if Global.Class == "Noble":
+		if Input.is_action_just_pressed("skill1") and can_skill1 and Global.skill1 == "Grenade":
+			var grenade_instance = grenade.instantiate()
+			
+			grenade_instance.position = $BulletPoint.get_global_position()
+			grenade_instance.rotation_degrees = rotation_degrees
+			grenade_instance.apply_impulse(Vector2(140, 0).rotated(global_rotation))
+			get_tree().get_root().add_child(grenade_instance)
+			can_skill1 = false
+			$SkillCooldowns/SkillCooldown1.start()
+			
+		if Input.is_action_just_pressed("skill2") and can_skill2 and Global.skill2 == "Super Slash":
+			Global.meleeing = true
+			$"Skills/Super Slash".scale.x = 20
+			$"Skills/Super Slash".scale.y = 20
+			$Audio/SuperSlash.play()
+			$Skills/SkillTimer.start
+			can_skill2 = false
+			$SkillCooldowns/SkillCooldown2.start()
+			
+		if Input.is_action_just_pressed("skill3") and can_skill3 and Global.skill3 == "Flame Charge":
+			$Skills/FlameChargeParticles.visible = true
+			$Audio/FlameBuff.play()
+			$Skills/BuffTimer.start()
+			Global.flamecharged = true
+			can_skill3 = false
+			$SkillCooldowns/SkillCooldown3.start()
+			
+		if Input.is_action_pressed("skill4") and can_skill4 and Global.skill4 == "Estus Flask":
+			if Global.health < 100:
+				Global.health += 30
+				can_skill4 = false
+				$SkillCooldowns/SkillCooldown4.start()
+				$Audio/Drink.play()
+	elif Global.Class == "Bastion":
+		if Input.is_action_just_pressed("skill1") and can_skill1 and Global.skill1 == "Seed Grenade":
+			var seedgrenade_instance = seedgrenade.instantiate()
+			
+			seedgrenade_instance.position = $BulletPoint.get_global_position()
+			seedgrenade_instance.rotation_degrees = rotation_degrees
+			seedgrenade_instance.apply_impulse(Vector2(140, 0).rotated(global_rotation))
+			get_tree().get_root().add_child(seedgrenade_instance)
+			can_skill1 = false
+			$SkillCooldowns/SkillCooldown1.start()
 
 	
 func _on_firerate_timeout():

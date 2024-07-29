@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 120 #speed can change
+var speed = 120 #speed can change
 var hp = 100
 var vision = false
 var dead = false
