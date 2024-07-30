@@ -9,8 +9,11 @@ var skill4 = "Estus Flask"
 
 var meleeing = false
 
+
+var defense = 1
 var level = 1
-var health = 100
+var maxhealth = 60
+var health = maxhealth
 var mags = 3
 var secondary = false
 var rateoffire = 0.05
@@ -18,7 +21,8 @@ var maxammo = 30
 var ammo = maxammo
 var damage = 70
 var weapon = "SCAR"
-var shields = 100
+var maxshields = 50
+var shields = maxshields
 
 var shieldcooldown = 10
 var shieldregen = 1
@@ -32,25 +36,32 @@ var secondmags = 2
 var seconddamage = 50
 var secondweapon = "M1911"
 
+
+
+
 var skill1cool = 0
 var skill2cool = 0
 var skill3cool = 0
 var skill4cool = 0
 
 var flamecharged = false
-
+var arkarmor = false
 
 
 func _process(_delta):
-	if health > 100:
-		health = 100
-	if shields > 100:
-		shields = 100
+	if health > maxhealth:
+		health = maxhealth
+	if shields > maxshields:
+		shields = maxshields
 	if shields < 0:
 		shields = 0
 		
 	if flamecharged:
 		damage = 140
+	if arkarmor:
+		defense = 3
+	else:
+		defense = 1
 		
 	if Class == "Noble":
 		skill1 = "Grenade"
@@ -61,7 +72,7 @@ func _process(_delta):
 		skill1 = "Seed Grenade"
 		skill2 = "Root Rupture"
 		skill3 = "Ark Armor"
-		skill4 = "Second Wind"
+		skill4 = "(<50HP)Second Wind"
 	elif Class == "Assassin":
 		skill1 = "Flashbang"
 		skill2 = "Electro Dash"

@@ -89,4 +89,4 @@ func _on_attack_area_entered(area):
 
 
 func _on_sight_2_body_exited(_body):
-	vision == false
+	vision = false

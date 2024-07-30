@@ -64,8 +64,9 @@ func _physics_process(delta):
 	if Global.shields != 0:
 		$Audio/ShieldBreak.play()
 		
-	if Global.shields != 100:
+	if Global.shields != Global.maxshields:
 		$Audio/ShieldsFull.play()
+		
 	
 	if Global.damaged == true:
 		$ShieldCool.start()
@@ -149,7 +150,7 @@ func _physics_process(delta):
 	move_and_slide()
 		
 	if Global.Class == "Noble":
-		if Input.is_action_just_pressed("skill1") and can_skill1 and Global.skill1 == "Grenade":
+		if Input.is_action_just_pressed("skill1") and can_skill1:
 			var grenade_instance = grenade.instantiate()
 			
 			grenade_instance.position = $BulletPoint.get_global_position()
@@ -159,16 +160,16 @@ func _physics_process(delta):
 			can_skill1 = false
 			$SkillCooldowns/SkillCooldown1.start()
 			
-		if Input.is_action_just_pressed("skill2") and can_skill2 and Global.skill2 == "Super Slash":
+		if Input.is_action_just_pressed("skill2") and can_skill2:
 			Global.meleeing = true
 			$"Skills/Super Slash".scale.x = 20
 			$"Skills/Super Slash".scale.y = 20
 			$Audio/SuperSlash.play()
-			$Skills/SkillTimer.start
+			$Skills/SkillTimer.start()
 			can_skill2 = false
 			$SkillCooldowns/SkillCooldown2.start()
 			
-		if Input.is_action_just_pressed("skill3") and can_skill3 and Global.skill3 == "Flame Charge":
+		if Input.is_action_just_pressed("skill3") and can_skill3:
 			$Skills/FlameChargeParticles.visible = true
 			$Audio/FlameBuff.play()
 			$Skills/BuffTimer.start()
@@ -176,14 +177,14 @@ func _physics_process(delta):
 			can_skill3 = false
 			$SkillCooldowns/SkillCooldown3.start()
 			
-		if Input.is_action_pressed("skill4") and can_skill4 and Global.skill4 == "Estus Flask":
-			if Global.health < 100:
+		if Input.is_action_pressed("skill4") and can_skill4:
+			if Global.health < Global.maxhealth:
 				Global.health += 30
 				can_skill4 = false
 				$SkillCooldowns/SkillCooldown4.start()
 				$Audio/Drink.play()
 	elif Global.Class == "Bastion":
-		if Input.is_action_just_pressed("skill1") and can_skill1 and Global.skill1 == "Seed Grenade":
+		if Input.is_action_just_pressed("skill1") and can_skill1:
 			var seedgrenade_instance = seedgrenade.instantiate()
 			
 			seedgrenade_instance.position = $BulletPoint.get_global_position()
@@ -192,6 +193,28 @@ func _physics_process(delta):
 			get_tree().get_root().add_child(seedgrenade_instance)
 			can_skill1 = false
 			$SkillCooldowns/SkillCooldown1.start()
+		if Input.is_action_just_pressed("skill2") and can_skill2:
+			Global.meleeing = true
+			$"Skills/Root Rupture".visible = true
+			$"Skills/Root Rupture".scale.x = 20
+			$"Skills/Root Rupture".scale.y = 10
+			$Audio/SuperSlash.play()
+			$Skills/SkillTimer.start()
+			can_skill2 = false
+			$SkillCooldowns/SkillCooldown2.start()
+		if Input.is_action_just_pressed("skill3") and can_skill3:
+			$"SkillCooldowns/Ark Armor".visible = true
+			$Audio/ShieldsFull.play()
+			$Skills/BuffTimer.start()
+			Global.arkarmor = true
+			can_skill3 = false
+			$SkillCooldowns/SkillCooldown3.start()
+		if Input.is_action_pressed("skill4") and can_skill4:
+			if Global.health < 50:
+				Global.health += 100
+				can_skill4 = false
+				$SkillCooldowns/SkillCooldown4.start()
+				$Audio/SuperSlash.play()
 
 	
 func _on_firerate_timeout():
@@ -242,12 +265,18 @@ func _on_skill_cooldown_3_timeout():
 func _on_skill_timer_timeout():
 	$"Skills/Super Slash".scale.x = 1
 	$"Skills/Super Slash".scale.y = 1
+	$"Skills/Root Rupture".scale.x = 1
+	$"Skills/Root Rupture".scale.y = 1
+	$"Skills/Root Rupture".visible = false
+	
 	Global.meleeing = false
 	$Gun.visible = true
 
 
 func _on_buff_timer_timeout():
 	Global.flamecharged = false
+	Global.arkarmor = false
+	$"SkillCooldowns/Ark Armor".visible = false
 	$Skills/FlameChargeParticles.visible = false
 	
 
@@ -256,12 +285,12 @@ func _on_buff_timer_timeout():
 
 func _on_shield_cool_timeout():
 	$ShieldCool/ShieldRegen.start()
-	if Global.shields < 100:
+	if Global.shields < Global.maxshields:
 		$Audio/ShieldCharge.play()
 
 
 func _on_shield_regen_timeout():
-	if Global.shields < 100 and Global.damaged == false:
+	if Global.shields < Global.maxshields and Global.damaged == false:
 		Global.shields += Global.shieldregen
 		$ShieldCool/ShieldRegen.start()
 	

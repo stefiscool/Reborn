@@ -22,8 +22,10 @@ func _on_blast_radius_body_entered(body):
 	if blown == true and body.is_in_group("Player"):
 		if Global.shields <= 0:
 			Global.health -= 50
+			Global.damaged = true
 		else:
 			Global.shields -= 50
+			Global.damaged = true
 		$BlastRadius.queue_free()
 
 func _physics_process(_delta):

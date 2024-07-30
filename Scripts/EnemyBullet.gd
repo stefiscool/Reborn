@@ -17,11 +17,11 @@ func _on_body_entered(body):
 	if body.is_in_group("Player") and dead == false:
 		hit.play()
 		if Global.shields <= 0:
-			Global.health -= 15
+			Global.health -= int(15/(Global.defense))
 			Global.damaged = true
 
 		else:
-			Global.shields -= 15
+			Global.shields -= int(15/(Global.defense))
 			Global.damaged = true
 
 		position.x = 0
