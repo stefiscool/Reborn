@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqabj2oydo1ec"]
+[gd_scene load_steps=9 format=3 uid="uid://cqabj2oydo1ec"]
 
 [ext_resource type="Texture2D" uid="uid://b2ywlpegudor4" path="res://Assets/OperationShadowFallTiles (1) (1) (3).png" id="1_421kv"]
 [ext_resource type="PackedScene" uid="uid://cjypwkc5cje34" path="res://Scenes/player.tscn" id="2_52umx"]
-[ext_resource type="PackedScene" uid="uid://cijp57po3nd0h" path="res://Scenes/criminal.tscn" id="5_p33se"]
+[ext_resource type="PackedScene" uid="uid://dr3xq1arkosus" path="res://Scenes/Enemies/lostone.tscn" id="2_kfn4h"]
+[ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/flamecharge.mp3" id="3_2iwn1"]
 [ext_resource type="PackedScene" uid="uid://b53o8d1lkvnyg" path="res://Scenes/ui.tscn" id="9_ns0im"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wqrvg"]
@@ -1901,91 +1902,117 @@ layer_0/tile_data = PackedInt32Array(-3014731, 196608, 9, -2949195, 196608, 9, -
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Criminal" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("5_p33se")]
-position = Vector2(-607, -682)
+[node name="LostOne" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_kfn4h")]
+position = Vector2(-17, -594)
 player = NodePath("../../Player")
 
-[node name="RayCast2D" parent="Enemies/Criminal" index="7" node_paths=PackedStringArray("player")]
+[node name="RayCast2D" parent="Enemies/LostOne" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../../Player")
 
-[node name="ColorRect" parent="Enemies/Criminal/RayCast2D/EnemyBullet" index="4"]
-metadata/_edit_use_anchors_ = true
+[node name="Gunshot" parent="Enemies/LostOne/RayCast2D/EnemyBullet" index="0"]
+pitch_scale = 2.62
 
-[node name="Criminal5" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("5_p33se")]
-position = Vector2(7, -610)
+[node name="Hit" parent="Enemies/LostOne/RayCast2D/EnemyBullet" index="1"]
+stream = ExtResource("3_2iwn1")
+pitch_scale = 0.54
+
+[node name="LostOne2" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_kfn4h")]
+position = Vector2(-625, -629)
 player = NodePath("../../Player")
 
-[node name="RayCast2D" parent="Enemies/Criminal5" index="7" node_paths=PackedStringArray("player")]
+[node name="RayCast2D" parent="Enemies/LostOne2" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../../Player")
 
-[node name="ColorRect" parent="Enemies/Criminal5/RayCast2D/EnemyBullet" index="4"]
-metadata/_edit_use_anchors_ = true
+[node name="Gunshot" parent="Enemies/LostOne2/RayCast2D/EnemyBullet" index="0"]
+pitch_scale = 2.62
 
-[node name="Criminal7" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("5_p33se")]
-position = Vector2(-711, -810)
+[node name="Hit" parent="Enemies/LostOne2/RayCast2D/EnemyBullet" index="1"]
+stream = ExtResource("3_2iwn1")
+pitch_scale = 0.54
+
+[node name="LostOne3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_kfn4h")]
+position = Vector2(-675, -96)
 player = NodePath("../../Player")
 
-[node name="RayCast2D" parent="Enemies/Criminal7" index="7" node_paths=PackedStringArray("player")]
+[node name="RayCast2D" parent="Enemies/LostOne3" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../../Player")
 
-[node name="ColorRect" parent="Enemies/Criminal7/RayCast2D/EnemyBullet" index="4"]
-metadata/_edit_use_anchors_ = true
+[node name="Gunshot" parent="Enemies/LostOne3/RayCast2D/EnemyBullet" index="0"]
+pitch_scale = 2.62
 
-[node name="Criminal8" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("5_p33se")]
-position = Vector2(589, -800)
+[node name="Hit" parent="Enemies/LostOne3/RayCast2D/EnemyBullet" index="1"]
+stream = ExtResource("3_2iwn1")
+pitch_scale = 0.54
+
+[node name="LostOne4" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_kfn4h")]
+position = Vector2(-707, -350)
 player = NodePath("../../Player")
 
-[node name="RayCast2D" parent="Enemies/Criminal8" index="7" node_paths=PackedStringArray("player")]
+[node name="RayCast2D" parent="Enemies/LostOne4" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../../Player")
 
-[node name="ColorRect" parent="Enemies/Criminal8/RayCast2D/EnemyBullet" index="4"]
-metadata/_edit_use_anchors_ = true
+[node name="Gunshot" parent="Enemies/LostOne4/RayCast2D/EnemyBullet" index="0"]
+pitch_scale = 2.62
 
-[node name="Criminal9" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("5_p33se")]
-position = Vector2(582, -649)
+[node name="Hit" parent="Enemies/LostOne4/RayCast2D/EnemyBullet" index="1"]
+stream = ExtResource("3_2iwn1")
+pitch_scale = 0.54
+
+[node name="LostOne5" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_kfn4h")]
+position = Vector2(-710, 387)
 player = NodePath("../../Player")
 
-[node name="RayCast2D" parent="Enemies/Criminal9" index="7" node_paths=PackedStringArray("player")]
+[node name="RayCast2D" parent="Enemies/LostOne5" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../../Player")
 
-[node name="ColorRect" parent="Enemies/Criminal9/RayCast2D/EnemyBullet" index="4"]
-metadata/_edit_use_anchors_ = true
+[node name="Gunshot" parent="Enemies/LostOne5/RayCast2D/EnemyBullet" index="0"]
+pitch_scale = 2.62
 
-[node name="Criminal2" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("5_p33se")]
-position = Vector2(-139, -710)
+[node name="Hit" parent="Enemies/LostOne5/RayCast2D/EnemyBullet" index="1"]
+stream = ExtResource("3_2iwn1")
+pitch_scale = 0.54
+
+[node name="LostOne6" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_kfn4h")]
+position = Vector2(-1052, 124)
 player = NodePath("../../Player")
 
-[node name="CollisionShape2D" parent="Enemies/Criminal2/Sight2" index="0"]
-position = Vector2(147, -141)
-
-[node name="RayCast2D" parent="Enemies/Criminal2" index="7" node_paths=PackedStringArray("player")]
+[node name="RayCast2D" parent="Enemies/LostOne6" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../../Player")
 
-[node name="ColorRect" parent="Enemies/Criminal2/RayCast2D/EnemyBullet" index="4"]
-metadata/_edit_use_anchors_ = true
+[node name="Gunshot" parent="Enemies/LostOne6/RayCast2D/EnemyBullet" index="0"]
+pitch_scale = 2.62
 
-[node name="Criminal3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("5_p33se")]
-position = Vector2(144, -710)
+[node name="Hit" parent="Enemies/LostOne6/RayCast2D/EnemyBullet" index="1"]
+stream = ExtResource("3_2iwn1")
+pitch_scale = 0.54
+
+[node name="LostOne7" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_kfn4h")]
+position = Vector2(242, -309)
 player = NodePath("../../Player")
 
-[node name="RayCast2D" parent="Enemies/Criminal3" index="7" node_paths=PackedStringArray("player")]
+[node name="RayCast2D" parent="Enemies/LostOne7" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../../Player")
 
-[node name="ColorRect" parent="Enemies/Criminal3/RayCast2D/EnemyBullet" index="4"]
-metadata/_edit_use_anchors_ = true
+[node name="Gunshot" parent="Enemies/LostOne7/RayCast2D/EnemyBullet" index="0"]
+pitch_scale = 2.62
 
-[node name="Criminal4" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("5_p33se")]
-position = Vector2(-421, -711)
+[node name="Hit" parent="Enemies/LostOne7/RayCast2D/EnemyBullet" index="1"]
+stream = ExtResource("3_2iwn1")
+pitch_scale = 0.54
+
+[node name="LostOne8" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_kfn4h")]
+position = Vector2(85, -578)
 player = NodePath("../../Player")
 
-[node name="CollisionShape2D" parent="Enemies/Criminal4/Sight2" index="0"]
-position = Vector2(1272, 205)
-
-[node name="RayCast2D" parent="Enemies/Criminal4" index="7" node_paths=PackedStringArray("player")]
+[node name="RayCast2D" parent="Enemies/LostOne8" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../../Player")
 
-[node name="ColorRect" parent="Enemies/Criminal4/RayCast2D/EnemyBullet" index="4"]
-metadata/_edit_use_anchors_ = true
+[node name="Gunshot" parent="Enemies/LostOne8/RayCast2D/EnemyBullet" index="0"]
+pitch_scale = 2.62
+
+[node name="Hit" parent="Enemies/LostOne8/RayCast2D/EnemyBullet" index="1"]
+stream = ExtResource("3_2iwn1")
+pitch_scale = 0.54
 
 [node name="Player" parent="." instance=ExtResource("2_52umx")]
 position = Vector2(19, 56)
@@ -1997,11 +2024,11 @@ zoom = Vector2(1.8, 1.8)
 
 [node name="UI" parent="." instance=ExtResource("9_ns0im")]
 
-[editable path="Enemies/Criminal"]
-[editable path="Enemies/Criminal5"]
-[editable path="Enemies/Criminal7"]
-[editable path="Enemies/Criminal8"]
-[editable path="Enemies/Criminal9"]
-[editable path="Enemies/Criminal2"]
-[editable path="Enemies/Criminal3"]
-[editable path="Enemies/Criminal4"]
+[editable path="Enemies/LostOne"]
+[editable path="Enemies/LostOne2"]
+[editable path="Enemies/LostOne3"]
+[editable path="Enemies/LostOne4"]
+[editable path="Enemies/LostOne5"]
+[editable path="Enemies/LostOne6"]
+[editable path="Enemies/LostOne7"]
+[editable path="Enemies/LostOne8"]

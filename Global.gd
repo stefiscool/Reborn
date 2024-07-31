@@ -12,7 +12,7 @@ var meleeing = false
 
 var defense = 1
 var level = 1
-var maxhealth = 60
+var maxhealth = 100
 var health = maxhealth
 var mags = 3
 var secondary = false
@@ -21,7 +21,7 @@ var maxammo = 30
 var ammo = maxammo
 var damage = 70
 var weapon = "SCAR"
-var maxshields = 50
+var maxshields = 100
 var shields = maxshields
 
 var shieldcooldown = 10
@@ -76,6 +76,6 @@ func _process(_delta):
 	elif Class == "Assassin":
 		skill1 = "Flashbang"
 		skill2 = "Electro Dash"
-		skill3 = "Chain Lightning"
-		skill4 = "Thousand Cuts"
+		skill3 = "Overcharge"
+		skill4 = "Thunderbolt"
 	

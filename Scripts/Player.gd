@@ -9,8 +9,7 @@ extends CharacterBody2D
 @onready var click = $Audio/Click
 @onready var switch = $Audio/WeaponSwitch
 @onready var hit = $Audio/Hit
-@onready var blood = $Hitbox/Blood
-@onready var bloodtimer = $Hitbox/Blood/BloodTimer
+
 
 
 @onready var music4 = $Audio/Music4
@@ -18,6 +17,7 @@ extends CharacterBody2D
 var bullet = preload("res://Scenes/bullet.tscn")
 var grenade = preload("res://Scenes/grenade.tscn")
 var seedgrenade = preload("res://Scenes/seedgrenade.tscn")
+var flashbang = preload("res://Scenes/flashbang.tscn")
 
 var bullet_speed = 2000
 var can_fire = true
@@ -25,6 +25,8 @@ var speed = 220
 var accel = 10500
 var fric = 10000
 var reloading = false
+var overcharged = false
+
 
 var can_skill1 = true
 var can_skill2 = true
@@ -73,7 +75,9 @@ func _physics_process(delta):
 		$ShieldCool/ShieldRegen.stop()
 		Global.damaged = false
 	
-		
+	if overcharged == true:
+		speed = 300
+		$Skills/ElectricParticles.visible = true
 		
 		
 		
@@ -215,6 +219,40 @@ func _physics_process(delta):
 				can_skill4 = false
 				$SkillCooldowns/SkillCooldown4.start()
 				$Audio/SuperSlash.play()
+	elif Global.Class == "Assassin":
+		if Input.is_action_just_pressed("skill1") and can_skill1:
+			var flashbang_instance = flashbang.instantiate()
+			
+			flashbang_instance.position = $BulletPoint.get_global_position()
+			flashbang_instance.rotation_degrees = rotation_degrees
+			flashbang_instance.apply_impulse(Vector2(140, 0).rotated(global_rotation))
+			get_tree().get_root().add_child(flashbang_instance)
+			can_skill1 = false
+			$SkillCooldowns/SkillCooldown1.start()
+		if Input.is_action_just_pressed("skill2") and can_skill2:
+			speed = 1000
+			$Audio/SuperSlash.play()
+			$Skills/SkillTimer.start()
+			$Skills/ElectricParticles.visible = true
+			can_skill2 = false
+			$SkillCooldowns/SkillCooldown2.start()
+			$Skills/ElectroDash.scale.x = 7
+			$Skills/ElectroDash.scale.y = 7
+			Global.meleeing = true
+		if Input.is_action_just_pressed("skill3") and can_skill3:
+			overcharged = true
+			$Skills/BuffTimer.start()
+			$Audio/Thunder.play()
+			can_skill3 = false
+			$SkillCooldowns/SkillCooldown3.start()
+		if Input.is_action_pressed("skill4") and can_skill4:
+			$"Skills/Lightning Bolt".visible = true
+			$"Skills/Lightning Bolt".scale.x = 60
+			$"Skills/Lightning Bolt".scale.y = 2
+			$Skills/SkillTimer.start()
+			$Audio/Thunder.play()
+			can_skill4 = false
+			$SkillCooldowns/SkillCooldown4.start()
 
 	
 func _on_firerate_timeout():
@@ -241,11 +279,8 @@ func _on_reload_timeout():
 func _on_hitbox_area_entered(area):
 	if area.name == "EnemyBullet":
 		hit.play()
-		blood.emitting = true
-		bloodtimer.start()
 		
-func _on_blood_timer_timeout():
-	blood.emitting = false
+		
 
 
 
@@ -267,7 +302,14 @@ func _on_skill_timer_timeout():
 	$"Skills/Super Slash".scale.y = 1
 	$"Skills/Root Rupture".scale.x = 1
 	$"Skills/Root Rupture".scale.y = 1
+	$"Skills/Lightning Bolt".scale.x = 1
+	$"Skills/Lightning Bolt".scale.y = 1
+	$Skills/ElectroDash.scale.x = 1
+	$Skills/ElectroDash.scale.y = 1
 	$"Skills/Root Rupture".visible = false
+	$Skills/ElectricParticles.visible = false
+	$"Skills/Lightning Bolt".visible = false
+	speed = 220
 	
 	Global.meleeing = false
 	$Gun.visible = true
@@ -278,7 +320,7 @@ func _on_buff_timer_timeout():
 	Global.arkarmor = false
 	$"SkillCooldowns/Ark Armor".visible = false
 	$Skills/FlameChargeParticles.visible = false
-	
+	overcharged = false
 
 
 

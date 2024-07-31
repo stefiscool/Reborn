@@ -8,7 +8,7 @@ var dead = false
 
 func _process(delta):
 	if vision == true and can_fire == true and dead == false:
-		position.x += 1500 * delta
+		position.x += 1000 * delta
 		gunshot.play()
 
 
@@ -53,3 +53,6 @@ func _on_criminal_dead_2():
 
 func _on_vision_line_novision():
 	vision = false
+
+
+

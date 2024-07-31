@@ -5,7 +5,7 @@ var dead = false
 
 
 func _process(_delta):
-	if dead == false:
+	if dead == false and $"..".vision == true:
 		look_at(player.global_position)
 
 

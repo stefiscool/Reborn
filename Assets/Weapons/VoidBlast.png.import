@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rvd16f6mmbxa"
-path="res://.godot/imported/CFO.png-119ddf1b4a873e45bbc4276fd2aed43d.ctex"
+uid="uid://dace2ycjiig5y"
+path="res://.godot/imported/VoidBlast.png-f388f56414c738a0328d9e1b1fa2bbd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CFO.png"
-dest_files=["res://.godot/imported/CFO.png-119ddf1b4a873e45bbc4276fd2aed43d.ctex"]
+source_file="res://Assets/Weapons/VoidBlast.png"
+dest_files=["res://.godot/imported/VoidBlast.png-f388f56414c738a0328d9e1b1fa2bbd1.ctex"]
 
 [params]
 

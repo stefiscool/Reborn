@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://e8pfa1axkahc"]
+
+[ext_resource type="Script" path="res://flashbang.gd" id="1_8lxyh"]
+[ext_resource type="AudioStream" uid="uid://ce1i10b8rqfpu" path="res://Audio/timebombbeep-93074-[AudioTrimmer.com].mp3" id="2_y0alm"]
+[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="3_vumlu"]
+[ext_resource type="Texture2D" uid="uid://dyiw1kh2hxbd4" path="res://Assets/Specials.png" id="4_xyu7f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hoa0u"]
+radius = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g7wci"]
+radius = 6.0
+
+[node name="Flashbang" type="RigidBody2D"]
+mass = 100.0
+gravity_scale = 0.0
+inertia = 500.0
+script = ExtResource("1_8lxyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hoa0u")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_y0alm")
+volume_db = -10.0
+pitch_scale = 1.99
+autoplay = true
+
+[node name="boom" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vumlu")
+volume_db = 1.0
+pitch_scale = 8.0
+
+[node name="BlastRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastRadius"]
+shape = SubResource("CircleShape2D_g7wci")
+
+[node name="Polygon2D" type="Polygon2D" parent="BlastRadius"]
+position = Vector2(-0.0937561, 0.748967)
+scale = Vector2(0.54241, 0.482069)
+color = Color(0.52549, 1, 0, 1)
+polygon = PackedVector2Array(-8, -11, -10.8889, -3.17647, -10.8889, 3.78049, -5.55556, 9.11464, 1.55555, 10.8927, 8.46913, 7.7811, 11.2346, 1.55793, 8.46913, -10.8884, 0, -14)
+
+[node name="Gre" type="Sprite2D" parent="."]
+scale = Vector2(0.28125, 0.28125)
+texture = ExtResource("4_xyu7f")
+hframes = 2
+vframes = 3
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="finished" from="boom" to="." method="_on_boom_finished"]
+[connection signal="body_entered" from="BlastRadius" to="." method="_on_blast_radius_body_entered"]
