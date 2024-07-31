@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=3 uid="uid://cjypwkc5cje34"]
+[gd_scene load_steps=137 format=3 uid="uid://cjypwkc5cje34"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_cxcq2"]
 [ext_resource type="Script" path="res://Scripts/Super Slash.gd" id="2_ka7xj"]
@@ -20,9 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://cgrj1fj60u3ou" path="res://Assets/AssasinMelee.png" id="7_av2hc"]
 [ext_resource type="AudioStream" uid="uid://dnqusbwr1u0j3" path="res://Audio/video-game-tank-metal-220562.mp3" id="9_opqhp"]
 [ext_resource type="AudioStream" uid="uid://dmjp78e4fxuhw" path="res://Audio/pistol-cock-6014.mp3" id="9_pk1p2"]
+[ext_resource type="Texture2D" uid="uid://bqupurb4jcxgy" path="res://Assets/Scholar.png" id="9_tn0f1"]
 [ext_resource type="AudioStream" uid="uid://c7p4o1cmllkvy" path="res://Audio/9mm-pistol-shot-6349.mp3" id="10_hgiin"]
-[ext_resource type="Texture2D" uid="uid://dbpf6nff6jq72" path="res://Assets/PrimaryWeapons.png" id="11_ot4ps"]
-[ext_resource type="Texture2D" uid="uid://c5dkfacjoqgsw" path="res://Assets/SecondaryWeapons.png" id="12_dkbwb"]
+[ext_resource type="Texture2D" uid="uid://dbpf6nff6jq72" path="res://Assets/Weapons/PrimaryWeapons.png" id="11_ot4ps"]
+[ext_resource type="Texture2D" uid="uid://c5dkfacjoqgsw" path="res://Assets/Weapons/SecondaryWeapons.png" id="12_dkbwb"]
 [ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/male_hurt7-48124.mp3" id="13_xeadr"]
 [ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/flamecharge.mp3" id="16_jatk1"]
 [ext_resource type="AudioStream" uid="uid://ee1j8asctyjt" path="res://Audio/superslash.mp3" id="17_frtah"]
@@ -54,6 +55,10 @@ region = Rect2(0, 79, 79, 79)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3uvy7"]
 atlas = ExtResource("4_jduqn")
+region = Rect2(0, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d64fg"]
+atlas = ExtResource("9_tn0f1")
 region = Rect2(0, 79, 79, 79)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mlrc6"]
@@ -312,6 +317,62 @@ region = Rect2(158, 0, 79, 79)
 atlas = ExtResource("4_jduqn")
 region = Rect2(237, 0, 79, 79)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a4g7"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(0, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o4ao"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(79, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywr0m"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(158, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuwp4"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(237, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq2n3"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(0, 158, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwdq2"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(79, 158, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fliw3"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(158, 158, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2suln"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(237, 158, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqlwm"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(0, 237, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50sgp"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(79, 237, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu5ri"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(0, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toduc"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(79, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc3hm"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(158, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcdgv"]
+atlas = ExtResource("9_tn0f1")
+region = Rect2(237, 0, 79, 79)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_lvhpo"]
 animations = [{
 "frames": [{
@@ -336,6 +397,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"idlebastion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d64fg")
+}],
+"loop": true,
+"name": &"idlescholar",
 "speed": 5.0
 }, {
 "frames": [{
@@ -414,6 +483,11 @@ animations = [{
 "frames": [],
 "loop": true,
 "name": &"meleebastion",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"meleescholar",
 "speed": 5.0
 }, {
 "frames": [{
@@ -565,6 +639,53 @@ animations = [{
 "loop": true,
 "name": &"walkbastion",
 "speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a4g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o4ao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywr0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuwp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq2n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwdq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fliw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2suln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqlwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50sgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu5ri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toduc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc3hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcdgv")
+}],
+"loop": true,
+"name": &"walkscholar",
+"speed": 18.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1tjd"]
@@ -710,12 +831,13 @@ polygon = PackedVector2Array(-8, -11, -10.8889, -3.17647, -10.8889, 3.78049, -5.
 script = ExtResource("3_i80x4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skills/ElectroDash"]
+visible = false
 shape = SubResource("CircleShape2D_j5oxb")
 
 [node name="Polygon2D" type="Polygon2D" parent="Skills/ElectroDash"]
-position = Vector2(-0.0624996, 0.499314)
-scale = Vector2(0.361607, 0.32138)
-color = Color(0.54902, 1, 0, 1)
+position = Vector2(-0.0468778, 0.374483)
+scale = Vector2(0.271205, 0.241035)
+color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-8, -11, -10.8889, -3.17647, -10.8889, 3.78049, -5.55556, 9.11464, 1.55555, 10.8927, 8.46913, 7.7811, 11.2346, 1.55793, 8.46913, -10.8884, 0, -14)
 
 [node name="Root Rupture" type="Area2D" parent="Skills"]
@@ -741,7 +863,7 @@ shape = SubResource("RectangleShape2D_r5hu0")
 [node name="Polygon2D" type="Polygon2D" parent="Skills/Lightning Bolt"]
 position = Vector2(0.102689, -0.823529)
 scale = Vector2(0.0171149, 0.882353)
-color = Color(0.533333, 1, 0, 1)
+color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-6, -2, -5, 5, 35, 2, 49, 10, 40, 2, 77, 0, 111, 5, 153, 3, 164, 9, 161, 2, 194, 1, 273, 6, 261, 3, 401, 6, 403, -5, 226, -2, 234, -7, 220, -2, 193, -4, 132, -1, 140, -5, 111, 1, 84, -3, 91, -6)
 
 [node name="SkillTimer" type="Timer" parent="Skills"]
@@ -776,8 +898,8 @@ position = Vector2(3, -1)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_lvhpo")
-animation = &"meleeassassin"
-frame_progress = 0.0392886
+animation = &"walkscholar"
+frame_progress = 0.442918
 script = ExtResource("6_ksm2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -938,7 +1060,7 @@ wait_time = 0.2
 [connection signal="timeout" from="SkillCooldowns/SkillCooldown1" to="." method="_on_skill_cooldown_1_timeout"]
 [connection signal="timeout" from="SkillCooldowns/SkillCooldown2" to="." method="_on_skill_cooldown_2_timeout"]
 [connection signal="timeout" from="SkillCooldowns/SkillCooldown3" to="." method="_on_skill_cooldown_3_timeout"]
-[connection signal="timeout" from="SkillCooldowns/SkillCooldown4" to="." method="_on_skill_cooldown_3_timeout"]
+[connection signal="timeout" from="SkillCooldowns/SkillCooldown4" to="." method="_on_skill_cooldown_4_timeout"]
 [connection signal="body_entered" from="MeleeHitbox" to="MeleeHitbox" method="_on_body_entered"]
 [connection signal="timeout" from="ShieldCool" to="." method="_on_shield_cool_timeout"]
 [connection signal="timeout" from="ShieldCool/ShieldRegen" to="." method="_on_shield_regen_timeout"]

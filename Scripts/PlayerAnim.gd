@@ -48,3 +48,18 @@ func _process(_delta):
 		else:
 			play("meleeassassin")
 			$"../Gun".visible = false
+	elif Global.Class == "Scholar":
+		if Global.meleeing == false:
+			if Input.is_action_pressed("move_up"):
+				play("walkscholar")
+			elif Input.is_action_pressed("move_down"):
+				play("walkscholar")
+			elif Input.is_action_pressed("move_left"):
+				play("walkscholar")
+			elif Input.is_action_pressed("move_right"):
+				play("walkscholar")
+			else: 
+				play("idlescholar")
+		else:
+			play("meleescholar")
+			$"../Gun".visible = false

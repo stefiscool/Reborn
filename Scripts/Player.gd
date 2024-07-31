@@ -181,7 +181,7 @@ func _physics_process(delta):
 			can_skill3 = false
 			$SkillCooldowns/SkillCooldown3.start()
 			
-		if Input.is_action_pressed("skill4") and can_skill4:
+		if Input.is_action_just_pressed("skill4") and can_skill4:
 			if Global.health < Global.maxhealth:
 				Global.health += 30
 				can_skill4 = false
@@ -213,7 +213,7 @@ func _physics_process(delta):
 			Global.arkarmor = true
 			can_skill3 = false
 			$SkillCooldowns/SkillCooldown3.start()
-		if Input.is_action_pressed("skill4") and can_skill4:
+		if Input.is_action_just_pressed("skill4") and can_skill4:
 			if Global.health < 50:
 				Global.health += 100
 				can_skill4 = false
@@ -245,7 +245,7 @@ func _physics_process(delta):
 			$Audio/Thunder.play()
 			can_skill3 = false
 			$SkillCooldowns/SkillCooldown3.start()
-		if Input.is_action_pressed("skill4") and can_skill4:
+		if Input.is_action_just_pressed("skill4") and can_skill4:
 			$"Skills/Lightning Bolt".visible = true
 			$"Skills/Lightning Bolt".scale.x = 60
 			$"Skills/Lightning Bolt".scale.y = 2
@@ -297,6 +297,9 @@ func _on_skill_cooldown_3_timeout():
 	can_skill3 = true
 
 
+func _on_skill_cooldown_4_timeout():
+	can_skill4 = true
+
 func _on_skill_timer_timeout():
 	$"Skills/Super Slash".scale.x = 1
 	$"Skills/Super Slash".scale.y = 1
@@ -336,3 +339,5 @@ func _on_shield_regen_timeout():
 		Global.shields += Global.shieldregen
 		$ShieldCool/ShieldRegen.start()
 	
+
+
