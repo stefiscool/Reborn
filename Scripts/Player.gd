@@ -18,6 +18,7 @@ var bullet = preload("res://Scenes/bullet.tscn")
 var grenade = preload("res://Scenes/grenade.tscn")
 var seedgrenade = preload("res://Scenes/seedgrenade.tscn")
 var flashbang = preload("res://Scenes/flashbang.tscn")
+var voidgrenade = preload("res://Scenes/voidgrenade.tscn")
 
 var bullet_speed = 2000
 var can_fire = true
@@ -253,6 +254,41 @@ func _physics_process(delta):
 			$Audio/Thunder.play()
 			can_skill4 = false
 			$SkillCooldowns/SkillCooldown4.start()
+	elif Global.Class == "Scholar":
+		if Input.is_action_just_pressed("skill1") and can_skill1:
+			var voidgrenade_instance = voidgrenade.instantiate()
+			voidgrenade_instance.position = $BulletPoint.get_global_position()
+			voidgrenade_instance.rotation_degrees = rotation_degrees
+			voidgrenade_instance.apply_impulse(Vector2(140, 0).rotated(global_rotation))
+			get_tree().get_root().add_child(voidgrenade_instance)
+			can_skill1 = false
+			$SkillCooldowns/SkillCooldown1.start()
+		if Input.is_action_just_pressed("skill2") and can_skill2:
+			$Audio/Warp.play()
+			$Skills/SkillTimer.start()
+			$"Skills/Force Push".scale.x = 30
+			$"Skills/Force Push".scale.y = 30
+			$CollisionShape2D.scale.x = 10
+			$CollisionShape2D.scale.y = 10
+			
+			Global.meleeing = true
+			can_skill2 = false
+			$SkillCooldowns/SkillCooldown2.start()
+		if Input.is_action_just_pressed("skill3") and can_skill3:
+			$Audio/Warp.play()
+			$Camera2D.zoom.x = 1
+			$Camera2D.zoom.y = 1
+			$Skills/BuffTimer.start()
+			can_skill3 = false
+			$SkillCooldowns/SkillCooldown3.start()
+		if Input.is_action_just_pressed("skill4") and can_skill4:
+			$Audio/Warp.play()
+			$Skills/SkillTimer.start()
+			$"Skills/Force Push".scale.x = 150
+			$"Skills/Force Push".scale.y = 150
+			can_skill4 = false
+			$SkillCooldowns/SkillCooldown4.start()
+		
 
 	
 func _on_firerate_timeout():
@@ -312,6 +348,10 @@ func _on_skill_timer_timeout():
 	$"Skills/Root Rupture".visible = false
 	$Skills/ElectricParticles.visible = false
 	$"Skills/Lightning Bolt".visible = false
+	$"Skills/Force Push".scale.x = 1
+	$"Skills/Force Push".scale.y = 1
+	$CollisionShape2D.scale.x = 1
+	$CollisionShape2D.scale.y = 1
 	speed = 220
 	
 	Global.meleeing = false
@@ -324,7 +364,8 @@ func _on_buff_timer_timeout():
 	$"SkillCooldowns/Ark Armor".visible = false
 	$Skills/FlameChargeParticles.visible = false
 	overcharged = false
-
+	$Camera2D.zoom.x = 1.8
+	$Camera2D.zoom.y = 1.8
 
 
 

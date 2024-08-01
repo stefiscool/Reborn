@@ -57,7 +57,8 @@ func _process(_delta):
 		shields = 0
 		
 	if flamecharged:
-		damage = 140
+		damage = 160
+		seconddamage = 140
 	if arkarmor:
 		defense = 3
 	else:
@@ -78,4 +79,8 @@ func _process(_delta):
 		skill2 = "Electro Dash"
 		skill3 = "Overcharge"
 		skill4 = "Thunderbolt"
-	
+	elif Class == "Scholar":
+		skill1 = "Void Grenade"
+		skill2 = "Warp Push"
+		skill3 = "Void Vision"
+		skill4 = "Black Hole"

@@ -74,6 +74,9 @@ func _on_sight_body_exited(body):
 func _on_attack_area_entered(area):
 	if area.name == "MeleeHitbox" and dead == false and Global.meleeing == true:
 		hit3.play()
-		$Cut.play()
+		if Global.Class == "Noble" or Global.Class == "Assassin":
+			$Cut.play()
+		else:
+			$Punch.play()
 
 

@@ -2017,9 +2017,6 @@ pitch_scale = 0.54
 [node name="Player" parent="." instance=ExtResource("2_52umx")]
 position = Vector2(19, 56)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.8, 1.8)
-
 [node name="FogOfWar" type="Node2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("9_ns0im")]

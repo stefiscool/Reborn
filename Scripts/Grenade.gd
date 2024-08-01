@@ -18,13 +18,13 @@ func _process(_delta):
 
 func _on_blast_radius_body_entered(body):
 	if blown == true and body.is_in_group("Enemy"):
-		body.hp -= 100
+		body.hp -= 120
 	if blown == true and body.is_in_group("Player"):
 		if Global.shields <= 0:
-			Global.health -= 50
+			Global.health -= 30
 			Global.damaged = true
 		else:
-			Global.shields -= 50
+			Global.shields -= 30
 			Global.damaged = true
 		$BlastRadius.queue_free()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dr3xq1arkosus"]
+[gd_scene load_steps=35 format=3 uid="uid://dr3xq1arkosus"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/lostone.gd" id="1_btu1y"]
 [ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/male_hurt7-48124.mp3" id="2_4plcv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cpy8lyp2f4cv4" path="res://Assets/Enemies/CaretakerLostOne.png" id="7_3sywu"]
 [ext_resource type="Texture2D" uid="uid://dace2ycjiig5y" path="res://Assets/Weapons/VoidBlast.png" id="7_7fjrh"]
 [ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/cut.mp3" id="9_oypw4"]
+[ext_resource type="AudioStream" uid="uid://chcxpvaououh5" path="res://Audio/punch.mp3" id="10_b8wsq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y21y5"]
 size = Vector2(715.969, 375.125)
@@ -228,9 +229,9 @@ shape = SubResource("CircleShape2D_h8naw")
 [node name="Firerate" type="Timer" parent="RayCast2D/EnemyBullet"]
 
 [node name="VoidBlast" type="Sprite2D" parent="RayCast2D/EnemyBullet"]
-position = Vector2(-5.99999, 6.00001)
+position = Vector2(-12.6438, 13.2479)
 rotation = 1.5708
-scale = Vector2(0.60546, 0.594424)
+scale = Vector2(1.52433, 1.3135)
 texture = ExtResource("7_7fjrh")
 
 [node name="Attack" type="Area2D" parent="."]
@@ -249,6 +250,11 @@ frame_progress = 0.60701
 [node name="Cut" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_oypw4")
 volume_db = -5.754
+
+[node name="Punch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_b8wsq")
+volume_db = 4.0
+pitch_scale = 1.5
 
 [connection signal="dead2" from="." to="RayCast2D" method="_on_criminal_dead_2"]
 [connection signal="dead2" from="." to="RayCast2D/EnemyBullet" method="_on_criminal_dead_2"]
