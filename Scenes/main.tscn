@@ -5,44 +5,41 @@
 [ext_resource type="Script" path="res://Scripts/PlayButton.gd" id="2_77j50"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="2_hln3e"]
 [ext_resource type="Texture2D" uid="uid://fuj7u8d60a80" path="res://Assets/Genesis_Disciplines.png" id="5_24i5k"]
+[ext_resource type="Script" path="res://Buttons/LoadGameButton.gd" id="5_mpped"]
 [ext_resource type="Script" path="res://Buttons/ClassButtons.gd" id="6_s5o7k"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_or5bj"]
 
 [node name="Main" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(0.000183105, 6.10352e-05)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(599, 326)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_or5bj")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
-position = Vector2(-0.000183105, -6.10352e-05)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D"]
+position = Vector2(-599, -326)
 stream = ExtResource("1_dacgf")
 volume_db = -16.29
 autoplay = true
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = -16.0
-offset_top = -19.0
-offset_right = 2437.0
-offset_bottom = 677.0
-color = Color(0, 0, 0, 1)
-
 [node name="PlayButton" type="Button" parent="."]
 offset_left = 461.0
-offset_top = 396.0
+offset_top = 297.0
 offset_right = 726.0
-offset_bottom = 497.0
+offset_bottom = 398.0
 theme = ExtResource("2_hln3e")
 theme_override_fonts/font = ExtResource("1_i7rb3")
 theme_override_font_sizes/font_size = 30
-text = "Play"
+text = "New Game"
 script = ExtResource("2_77j50")
+
+[node name="LoadGameButton" type="Button" parent="."]
+offset_left = 461.0
+offset_top = 420.0
+offset_right = 726.0
+offset_bottom = 521.0
+theme = ExtResource("2_hln3e")
+theme_override_fonts/font = ExtResource("1_i7rb3")
+theme_override_font_sizes/font_size = 30
+text = "Load Game"
+script = ExtResource("5_mpped")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 294.0
@@ -63,14 +60,24 @@ texture = ExtResource("5_24i5k")
 [node name="ClassButtons" type="Node2D" parent="GenesisDisciplines"]
 script = ExtResource("6_s5o7k")
 
-[node name="Button" type="Button" parent="GenesisDisciplines/ClassButtons"]
-offset_left = -1766.0
-offset_top = 869.0
-offset_right = -1008.0
-offset_bottom = 1086.0
+[node name="BackButton" type="Button" parent="GenesisDisciplines/ClassButtons"]
+offset_left = -2402.76
+offset_top = -1542.41
+offset_right = -1644.76
+offset_bottom = -1325.41
 theme = ExtResource("2_hln3e")
-text = "
-SELECT
+theme_override_font_sizes/font_size = 70
+text = "BACK TO MENU
+"
+
+[node name="Button1" type="Button" parent="GenesisDisciplines/ClassButtons"]
+offset_left = -1673.5
+offset_top = 868.964
+offset_right = -915.503
+offset_bottom = 1085.96
+theme = ExtResource("2_hln3e")
+theme_override_font_sizes/font_size = 70
+text = "SELECT
 "
 
 [node name="Button2" type="Button" parent="GenesisDisciplines/ClassButtons"]
@@ -79,28 +86,28 @@ offset_top = 868.966
 offset_right = -0.766602
 offset_bottom = 1085.97
 theme = ExtResource("2_hln3e")
-text = "
-SELECT
+theme_override_font_sizes/font_size = 70
+text = "SELECT
 "
 
 [node name="Button3" type="Button" parent="GenesisDisciplines/ClassButtons"]
-offset_left = 172.83
-offset_top = 868.966
-offset_right = 930.83
+offset_left = 101.169
+offset_top = 868.964
+offset_right = 859.169
 offset_bottom = 1085.97
 theme = ExtResource("2_hln3e")
-text = "
-SELECT
+theme_override_font_sizes/font_size = 70
+text = "SELECT
 "
 
 [node name="Button4" type="Button" parent="GenesisDisciplines/ClassButtons"]
-offset_left = 1100.21
-offset_top = 868.966
-offset_right = 1858.21
-offset_bottom = 1085.97
+offset_left = 973.751
+offset_top = 873.309
+offset_right = 1731.75
+offset_bottom = 1090.31
 theme = ExtResource("2_hln3e")
-text = "
-SELECT
+theme_override_font_sizes/font_size = 70
+text = "SELECT
 "
 
 [node name="Label2" type="Label" parent="."]
@@ -114,8 +121,13 @@ theme_override_font_sizes/font_size = 60
 text = "Choose your class
 "
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(598, 321)
+
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]
-[connection signal="pressed" from="GenesisDisciplines/ClassButtons/Button" to="GenesisDisciplines/ClassButtons" method="_on_button_pressed"]
+[connection signal="pressed" from="LoadGameButton" to="LoadGameButton" method="_on_pressed"]
+[connection signal="pressed" from="GenesisDisciplines/ClassButtons/BackButton" to="GenesisDisciplines/ClassButtons" method="_on_back_button_pressed"]
+[connection signal="pressed" from="GenesisDisciplines/ClassButtons/Button1" to="GenesisDisciplines/ClassButtons" method="_on_button_1_pressed"]
 [connection signal="pressed" from="GenesisDisciplines/ClassButtons/Button2" to="GenesisDisciplines/ClassButtons" method="_on_button_2_pressed"]
 [connection signal="pressed" from="GenesisDisciplines/ClassButtons/Button3" to="GenesisDisciplines/ClassButtons" method="_on_button_3_pressed"]
 [connection signal="pressed" from="GenesisDisciplines/ClassButtons/Button4" to="GenesisDisciplines/ClassButtons" method="_on_button_4_pressed"]

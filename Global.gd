@@ -1,6 +1,12 @@
 extends Node
 
 var Class = "Noble"
+var level = 1
+var xp = 0
+var xpneeded = 10
+var weapon = "SCAR"
+var secondweapon = "M1911"
+var armor = "Tactical Vest"
 
 var skill1 = "Grenade"
 var skill2 = "Super Slash"
@@ -9,9 +15,8 @@ var skill4 = "Estus Flask"
 
 var meleeing = false
 
-
 var defense = 1
-var level = 1
+var defaultdefense = 1
 var maxhealth = 100
 var health = maxhealth
 var mags = 3
@@ -20,10 +25,8 @@ var rateoffire = 0.05
 var maxammo = 30
 var ammo = maxammo
 var damage = 70
-var weapon = "SCAR"
 var maxshields = 100
 var shields = maxshields
-
 var shieldcooldown = 10
 var shieldregen = 1
 var damaged = false
@@ -34,9 +37,6 @@ var secondmaxammo = 9
 var secondammo = secondmaxammo
 var secondmags = 2
 var seconddamage = 50
-var secondweapon = "M1911"
-
-
 
 
 var skill1cool = 0
@@ -62,7 +62,7 @@ func _process(_delta):
 	if arkarmor:
 		defense = 3
 	else:
-		defense = 1
+		defense = defaultdefense
 		
 	if Class == "Noble":
 		skill1 = "Grenade"
@@ -84,3 +84,9 @@ func _process(_delta):
 		skill2 = "Warp Push"
 		skill3 = "Void Vision"
 		skill4 = "Black Hole"
+	
+	
+	if xp >= xpneeded:
+		level += 1
+		xp = 0
+		xpneeded += (level * 10)

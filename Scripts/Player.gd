@@ -40,8 +40,7 @@ func player_movement(input, delta):
 
 func _ready():
 	Global.ammo = Global.maxammo
-	if Global.level == 1:
-		music4.play()
+	
 	
 		
 func _physics_process(delta):

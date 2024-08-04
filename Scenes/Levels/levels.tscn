@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://oy8ql7l6r7ly"]
+
+[ext_resource type="Texture2D" uid="uid://3dhfgj6epynf" path="res://Assets/pixel-art-of-the-world-map-v0-yhg6z3q347h91.png" id="1_ig4bk"]
+[ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="2_1lslv"]
+[ext_resource type="Script" path="res://Buttons/Level Buttons.gd" id="3_mx3jq"]
+
+[node name="Levels" type="Node2D"]
+
+[node name="Pixel-art-of-the-world-map-v0-yhg6z3q347h91" type="Sprite2D" parent="."]
+position = Vector2(655.374, 362.75)
+scale = Vector2(2.44228, 2.26339)
+texture = ExtResource("1_ig4bk")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 394.0
+offset_top = 4.0
+offset_right = 732.0
+offset_bottom = 63.0
+
+[node name="Label" type="Label" parent="Panel"]
+offset_left = 17.0
+offset_top = 7.0
+offset_right = 319.0
+offset_bottom = 48.0
+theme = ExtResource("2_1lslv")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Select Level
+"
+
+[node name="Level Buttons" type="Node2D" parent="."]
+script = ExtResource("3_mx3jq")
+
+[node name="BackButton" type="Button" parent="Level Buttons"]
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 158.0
+offset_bottom = 65.0
+theme = ExtResource("2_1lslv")
+theme_override_font_sizes/font_size = 30
+text = "GO BACK
+"
+
+[node name="Button" type="Button" parent="Level Buttons"]
+offset_left = 490.0
+offset_top = 254.0
+offset_right = 573.0
+offset_bottom = 280.0
+theme = ExtResource("2_1lslv")
+theme_override_font_sizes/font_size = 15
+text = "Level 1"
+
+[node name="Button2" type="Button" parent="Level Buttons"]
+offset_left = 615.0
+offset_top = 284.0
+offset_right = 698.0
+offset_bottom = 310.0
+theme = ExtResource("2_1lslv")
+theme_override_font_sizes/font_size = 15
+text = "Level 2
+"
+
+[connection signal="pressed" from="Level Buttons/BackButton" to="Level Buttons" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Level Buttons/Button" to="Level Buttons" method="_on_button_pressed"]
+[connection signal="pressed" from="Level Buttons/Button2" to="Level Buttons" method="_on_button_2_pressed"]

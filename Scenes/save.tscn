@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://wcn8stds8vs6"]
+
+[ext_resource type="Script" path="res://Scripts/Save.gd" id="1_8e5t8"]
+[ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="2_um673"]
+
+[node name="Save" type="Node2D"]
+script = ExtResource("1_8e5t8")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 312.0
+offset_top = 167.0
+offset_right = 762.0
+offset_bottom = 297.0
+theme = ExtResource("2_um673")
+text = "Save Game"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 306.0
+offset_top = 332.0
+offset_right = 756.0
+offset_bottom = 462.0
+theme = ExtResource("2_um673")
+text = "Go Back
+"
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

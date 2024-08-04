@@ -58,6 +58,7 @@ func death():
 	if deathplayed == false:
 		$AnimatedSprite2D.play("death")
 		scale = Vector2(1.1, 1.1)
+		Global.xp += 5
 		deathplayed = true
 	
 
