@@ -15,20 +15,32 @@ run/main_scene="res://Scenes/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="SaveSystem"
 config/features=PackedStringArray("4.2", "Mobile")
+run/max_fps=1000
 config/icon="res://Assets/icon.svg"
 
 [autoload]
 
 Global="*res://Global.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [debug]
 
 canvas_items/debug_redraw_color=Color(0, 0, 0, 0.5)
 
+[dialogue_manager]
+
+general/states=["Global"]
+general/balloon_path="res://Dialouge/balloon.tscn"
+
 [display]
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
@@ -98,6 +110,19 @@ melee={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(299, 30),"global_position":Vector2(305, 92),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+talk={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialouge/dialouge1.dialogue")
+
+[layer_names]
+
+2d_physics/layer_5="Actionables"
 
 [rendering]
 

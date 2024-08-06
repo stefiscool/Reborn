@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var click = $Audio/Click
 @onready var switch = $Audio/WeaponSwitch
 @onready var hit = $Audio/Hit
+@onready var actionable_finder: Area2D = $ActionableFinder
 
 
 
@@ -41,7 +42,7 @@ func player_movement(input, delta):
 func _ready():
 	Global.ammo = Global.maxammo
 	
-	
+
 		
 func _physics_process(delta):
 	look_at(get_global_mouse_position())
@@ -60,6 +61,8 @@ func _physics_process(delta):
 		Global.meleeing = false
 		$Gun.visible = true
 		
+	
+	
 	if Global.meleeing == false:
 		$Audio/Swinging.play()
 		
@@ -68,7 +71,6 @@ func _physics_process(delta):
 		
 	if Global.shields != Global.maxshields:
 		$Audio/ShieldsFull.play()
-		
 	
 	if Global.damaged == true:
 		$ShieldCool.start()
@@ -82,7 +84,7 @@ func _physics_process(delta):
 		
 		
 	if Global.secondary == false:
-		if Input.is_action_pressed("fire") and can_fire and Global.ammo > 0 and reloading == false and Global.meleeing == false:
+		if Input.is_action_pressed("fire") and can_fire and Global.ammo > 0 and reloading == false and Global.meleeing == false and Global.indialogue == false:
 			var bullet_instance = bullet.instantiate()
 			gunfire.play()
 			bullet_instance.position = $BulletPoint.get_global_position()
@@ -102,7 +104,7 @@ func _physics_process(delta):
 			reloading = true
 			
 	if Global.secondary == true:	
-		if Input.is_action_just_pressed("fire") and can_fire and Global.secondammo > 0 and reloading == false and Global.meleeing == false:
+		if Input.is_action_just_pressed("fire") and can_fire and Global.secondammo > 0 and reloading == false and Global.meleeing == false and Global.indialogue == false:
 			var bullet_instance = bullet.instantiate()
 			secondgunfire.play()
 			bullet_instance.position = $BulletPoint.get_global_position()
@@ -146,7 +148,13 @@ func _physics_process(delta):
 		if Global.secondweapon == "Deagle":
 			gun.play("Deagle")
 			
-
+	if Input.is_action_just_pressed("talk"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			Global.indialogue = true
+			return
+	
 
 	var input = Input.get_vector("move_left","move_right","move_up","move_down")
 	player_movement(input, delta)

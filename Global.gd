@@ -4,7 +4,7 @@ var Class = "Noble"
 var level = 1
 var xp = 0
 var xpneeded = 10
-var weapon = "SCAR"
+var weapon = "P90"
 var secondweapon = "M1911"
 var armor = "Tactical Vest"
 
@@ -46,7 +46,7 @@ var skill4cool = 0
 
 var flamecharged = false
 var arkarmor = false
-
+var indialogue = false
 
 func _process(_delta):
 	if health > maxhealth:

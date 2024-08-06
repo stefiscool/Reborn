@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://blc306qjqamy7"]
+[gd_scene load_steps=19 format=3 uid="uid://blc306qjqamy7"]
 
 [ext_resource type="Texture2D" uid="uid://b2ywlpegudor4" path="res://Assets/OperationShadowFallTiles (1) (1) (3).png" id="1_khj5p"]
 [ext_resource type="Script" path="res://Buttons/HubAreas.gd" id="2_rkr5o"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cq7yjaj103lue" path="res://Scenes/computer_desk.tscn" id="5_u62lr"]
 [ext_resource type="PackedScene" uid="uid://bjq3ntdgcf0ss" path="res://Scenes/chair.tscn" id="6_dkwm0"]
 [ext_resource type="AudioStream" uid="uid://dg44c8c3sx474" path="res://Audio/dark-mystery-trailer-taking-our-time-131566.mp3" id="7_cue4p"]
+[ext_resource type="PackedScene" uid="uid://oeuqh0vja8cr" path="res://Scenes/actionable.tscn" id="9_gqeol"]
+[ext_resource type="Texture2D" uid="uid://5s4ycfjqo7e4" path="res://Assets/NPCs/civ1.png" id="9_lekdl"]
+[ext_resource type="Resource" uid="uid://28h10256xww5" path="res://Dialouge/dialouge1.dialogue" id="10_8ii6j"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wqrvg"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -1895,7 +1898,13 @@ sources/0 = SubResource("TileSetAtlasSource_ecod0")
 size = Vector2(102.5, 98.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1k2k8"]
-size = Vector2(72, 156)
+size = Vector2(100, 156)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ff3ww"]
+radius = 31.7765
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v1x4c"]
+radius = 35.6857
 
 [node name="Warehouse" type="Node2D"]
 
@@ -1927,7 +1936,7 @@ shape = SubResource("RectangleShape2D_t5yy0")
 [node name="SaveGame" type="Area2D" parent="HubAreas"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HubAreas/SaveGame"]
-position = Vector2(381, 9)
+position = Vector2(367, 9)
 shape = SubResource("RectangleShape2D_1k2k8")
 
 [node name="Label" type="Label" parent="HubAreas"]
@@ -1942,11 +1951,11 @@ autowrap_mode = 2
 [node name="Label2" type="Label" parent="HubAreas"]
 offset_left = -4.0
 offset_top = -188.0
-offset_right = 148.0
+offset_right = 197.0
 offset_bottom = -119.0
 theme = ExtResource("4_eq5ea")
 theme_override_font_sizes/font_size = 20
-text = "LEVEL SELECT"
+text = "MISSION SELECT"
 autowrap_mode = 2
 
 [node name="Props" type="Node2D" parent="."]
@@ -1956,7 +1965,7 @@ position = Vector2(393, 4)
 rotation = 3.12843
 
 [node name="Chair" parent="Props" instance=ExtResource("6_dkwm0")]
-position = Vector2(328, -5)
+position = Vector2(340, -13)
 rotation = 1.71151
 
 [node name="Player" parent="." instance=ExtResource("4_dmox2")]
@@ -1968,6 +1977,44 @@ volume_db = -15.0
 autoplay = true
 
 [node name="UI" parent="." instance=ExtResource("5_lmk2r")]
+
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="Civilian" type="Sprite2D" parent="NPCs"]
+position = Vector2(-35.4455, -74.352)
+rotation = 3.14159
+scale = Vector2(0.393094, 0.444911)
+texture = ExtResource("9_lekdl")
+hframes = 4
+vframes = 4
+frame = 6
+
+[node name="Actionable" parent="NPCs/Civilian" instance=ExtResource("9_gqeol")]
+position = Vector2(98.2489, -39.9953)
+rotation = -3.03471
+scale = Vector2(2.86764, 2.51375)
+skew = 0.0329704
+dialogue_resource = ExtResource("10_8ii6j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Civilian/Actionable"]
+position = Vector2(30, -26)
+shape = SubResource("CircleShape2D_ff3ww")
+
+[node name="Label" type="Label" parent="NPCs/Civilian"]
+offset_left = 48.8364
+offset_top = 60.1905
+offset_right = 145.836
+offset_bottom = 83.1905
+rotation = -3.13724
+theme = ExtResource("4_eq5ea")
+text = "(E) Talk
+"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/Civilian"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Civilian/StaticBody2D"]
+position = Vector2(1.41049, 14.9423)
+shape = SubResource("CircleShape2D_v1x4c")
 
 [connection signal="body_entered" from="HubAreas/LevelSelect" to="HubAreas" method="_on_level_select_body_entered"]
 [connection signal="body_entered" from="HubAreas/SaveGame" to="HubAreas" method="_on_save_game_body_entered"]
