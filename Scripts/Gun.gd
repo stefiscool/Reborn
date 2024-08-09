@@ -1,24 +1,25 @@
 extends AnimatedSprite2D
 
+var weapon_animations = {
+	"The Troubleshooter": "The Troubleshooter",
+	"AK-47": "AK-47",
+	"G36": "G36",
+	"FN FAL": "FN FAL",
+	"P90": "P90",
+	"SCAR": "SCAR"
+	
+}
+
+var secondary_animations = {
+	"M1911": "M1911",
+	"Glock 18": "Glock 18",
+	"Deagle": "Deagle"
+}
 
 func _process(_delta):
-	if Global.secondary == false:
-		if Global.weapon == "AK-47":
-			play("AK-47")
-		if Global.weapon == "G36":
-			play("G36")
-		if Global.weapon == "FN FAL":
-			play("FN FAL")
-		if Global.weapon == "P90":
-			play("P90")
-		if Global.weapon == "SCAR":
-			play("SCAR")
-			
-	if Global.secondary == true:
-		if Global.secondweapon == "M1911":
-			play("M1911")
-		if Global.secondweapon == "Glock 18":
-			play("Glock 18")
-		if Global.secondweapon == "Deagle":
-			play("Deagle")
-			
+	if not Global.secondary:
+		if Global.weapon in weapon_animations:
+			play(weapon_animations[Global.weapon])
+	else:
+		if Global.secondweapon in secondary_animations:
+			play(secondary_animations[Global.secondweapon])

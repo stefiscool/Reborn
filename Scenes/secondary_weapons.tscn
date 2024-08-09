@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://c0sa2ptht80n7"]
+[gd_scene load_steps=104 format=3 uid="uid://c0sa2ptht80n7"]
 
 [ext_resource type="Script" path="res://Scripts/secondaryweapons.gd" id="1_fjjxo"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="2_m0iwp"]
@@ -10,9 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cgrj1fj60u3ou" path="res://Assets/AssasinMelee.png" id="8_fs6f8"]
 [ext_resource type="Texture2D" uid="uid://b8wyv62pajw8v" path="res://Assets/ScholarMelee.png" id="9_0wp2n"]
 [ext_resource type="Script" path="res://Scripts/PlayerAnim.gd" id="10_du0d6"]
-[ext_resource type="Texture2D" uid="uid://dbpf6nff6jq72" path="res://Assets/Weapons/PrimaryWeapons.png" id="11_o5ntb"]
-[ext_resource type="Texture2D" uid="uid://c5dkfacjoqgsw" path="res://Assets/Weapons/SecondaryWeapons.png" id="12_i0o86"]
-[ext_resource type="Script" path="res://Scripts/Gun.gd" id="13_f50oo"]
+[ext_resource type="PackedScene" uid="uid://bs7xvi2jradfk" path="res://Scenes/gun.tscn" id="11_i6gv5"]
 [ext_resource type="Script" path="res://Buttons/InventoryButtons.gd" id="14_a3ive"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxxkj"]
@@ -714,117 +712,6 @@ animations = [{
 "speed": 18.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ft5eh"]
-atlas = ExtResource("11_o5ntb")
-region = Rect2(0, 0, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_egnwv"]
-atlas = ExtResource("12_i0o86")
-region = Rect2(0, 79, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tk8fn"]
-atlas = ExtResource("11_o5ntb")
-region = Rect2(79, 79, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vvlrd"]
-atlas = ExtResource("11_o5ntb")
-region = Rect2(79, 0, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fpld0"]
-atlas = ExtResource("12_i0o86")
-region = Rect2(79, 0, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ajh6"]
-atlas = ExtResource("12_i0o86")
-region = Rect2(0, 0, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wmbbu"]
-atlas = ExtResource("11_o5ntb")
-region = Rect2(79, 158, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f3jgf"]
-atlas = ExtResource("11_o5ntb")
-region = Rect2(0, 158, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yuajw"]
-atlas = ExtResource("11_o5ntb")
-region = Rect2(0, 79, 79, 79)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_678og"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ft5eh")
-}],
-"loop": true,
-"name": &"AK-47",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_egnwv")
-}],
-"loop": true,
-"name": &"Deagle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tk8fn")
-}],
-"loop": true,
-"name": &"FN FAL",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vvlrd")
-}],
-"loop": true,
-"name": &"G36",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fpld0")
-}],
-"loop": true,
-"name": &"Glock 18",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1ajh6")
-}],
-"loop": true,
-"name": &"M1911",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wmbbu")
-}],
-"loop": true,
-"name": &"M4A1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f3jgf")
-}],
-"loop": true,
-"name": &"P90",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yuajw")
-}],
-"loop": true,
-"name": &"SCAR",
-"speed": 5.0
-}]
-
 [node name="SecondaryWeapons" type="Node2D"]
 script = ExtResource("1_fjjxo")
 
@@ -876,10 +763,10 @@ theme_override_font_sizes/font_size = 40
 text = "Current Weapon: "
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 762.0
-offset_top = 409.0
-offset_right = 1157.0
-offset_bottom = 554.0
+offset_left = 760.0
+offset_top = 332.0
+offset_right = 1134.0
+offset_bottom = 477.0
 theme = ExtResource("2_m0iwp")
 theme_override_font_sizes/font_size = 20
 text = "Firerate:
@@ -887,6 +774,7 @@ Damage:
 Capacity:
 Bullet Velocity:
 Element:"
+autowrap_mode = 2
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -897,15 +785,10 @@ sprite_frames = SubResource("SpriteFrames_x7klm")
 animation = &"idle"
 script = ExtResource("10_du0d6")
 
-[node name="Gun" type="AnimatedSprite2D" parent="PlayerAnim"]
-texture_filter = 1
-position = Vector2(-0.561168, -5.67746)
-rotation = 0.0265958
-scale = Vector2(0.949515, 0.810025)
-skew = -0.00069654
-sprite_frames = SubResource("SpriteFrames_678og")
-animation = &"G36"
-script = ExtResource("13_f50oo")
+[node name="Gun" parent="PlayerAnim" instance=ExtResource("11_i6gv5")]
+position = Vector2(-0.79076, 0.361798)
+rotation = 0.00327003
+scale = Vector2(1.02391, 1.02138)
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 16.0

@@ -132,10 +132,10 @@ theme_override_font_sizes/font_size = 40
 text = "Current Armor:"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 762.0
-offset_top = 409.0
-offset_right = 1157.0
-offset_bottom = 554.0
+offset_left = 758.0
+offset_top = 330.0
+offset_right = 1153.0
+offset_bottom = 475.0
 theme = ExtResource("2_sph68")
 theme_override_font_sizes/font_size = 20
 text = "Firerate:
@@ -143,6 +143,7 @@ Damage:
 Capacity:
 Bullet Velocity:
 Element:"
+autowrap_mode = 2
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 16.0
@@ -154,8 +155,8 @@ text = "Go Back
 "
 
 [node name="ArmorSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(934, 234)
-scale = Vector2(7.75, 8.71875)
+position = Vector2(907.5, 205.25)
+scale = Vector2(6.09375, 6.92188)
 sprite_frames = SubResource("SpriteFrames_0qvc7")
 animation = &"Tactical Vest"
 script = ExtResource("4_h5ty0")

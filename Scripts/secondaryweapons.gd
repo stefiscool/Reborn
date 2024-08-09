@@ -2,8 +2,8 @@ extends Node2D
 func _ready():
 	Global.secondary = true
 func _process(_delta):
-	$Label.text = "Current Weapon: " + Global.secondweapon
-	$Label2.text = "Firerate: " + str((1 / Global.secondrateoffire) * 60) + " RPM" + "\nZoom: " + str(3.0 - Global.secondzoom) +"x" + "\nDamage: " + str(Global.seconddamage) +"\nCapacity: " + str(Global.secondmaxammo) +"\nBullet Velocity: " + str(Global.secondbulletvelocity) + " f/s" +"\nElement: " + str(Global.secondelement) 
+	$Label.text = "Equipped: " + Global.secondweapon
+	$Label2.text = "Firerate: " + str((1 / Global.secondrateoffire) * 60) + " RPM" + "\nZoom: " + str(3.0 - Global.secondzoom) +"x" + "\nDamage: " + str(Global.seconddamage) +"\nCapacity: " + str(Global.secondmaxammo) +"\nBullet Velocity: " + str(Global.secondbulletvelocity) + " f/s" +"\nElement: " + str(Global.secondelement)  +"\n\n" + Global.seconddescription  
 	
 	if "M1911" in Global.inventory:
 		$ScrollContainer/ColorRect/VBoxContainer/Button.visible = true

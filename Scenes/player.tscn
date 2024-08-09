@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://cjypwkc5cje34"]
+[gd_scene load_steps=135 format=3 uid="uid://cjypwkc5cje34"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_cxcq2"]
 [ext_resource type="Script" path="res://Scripts/Super Slash.gd" id="2_ka7xj"]
@@ -19,8 +19,6 @@
 [ext_resource type="AudioStream" uid="uid://dmjp78e4fxuhw" path="res://Audio/pistol-cock-6014.mp3" id="9_pk1p2"]
 [ext_resource type="Texture2D" uid="uid://bqupurb4jcxgy" path="res://Assets/Scholar.png" id="9_tn0f1"]
 [ext_resource type="AudioStream" uid="uid://c7p4o1cmllkvy" path="res://Audio/9mm-pistol-shot-6349.mp3" id="10_hgiin"]
-[ext_resource type="Texture2D" uid="uid://dbpf6nff6jq72" path="res://Assets/Weapons/PrimaryWeapons.png" id="11_ot4ps"]
-[ext_resource type="Texture2D" uid="uid://c5dkfacjoqgsw" path="res://Assets/Weapons/SecondaryWeapons.png" id="12_dkbwb"]
 [ext_resource type="Texture2D" uid="uid://b8wyv62pajw8v" path="res://Assets/ScholarMelee.png" id="12_vg5oh"]
 [ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/male_hurt7-48124.mp3" id="13_xeadr"]
 [ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/flamecharge.mp3" id="16_jatk1"]
@@ -35,8 +33,8 @@
 [ext_resource type="Script" path="res://Scripts/ShieldCool.gd" id="27_66i7v"]
 [ext_resource type="AudioStream" uid="uid://c0r65qh3hkj0p" path="res://Audio/thunder.mp3" id="29_c33vq"]
 [ext_resource type="Texture2D" uid="uid://dyiw1kh2hxbd4" path="res://Assets/Specials.png" id="31_ihyej"]
+[ext_resource type="PackedScene" uid="uid://bs7xvi2jradfk" path="res://Scenes/gun.tscn" id="31_wauq5"]
 [ext_resource type="Script" path="res://Scripts/Ark Armor.gd" id="32_f7rue"]
-[ext_resource type="Script" path="res://Scripts/Gun.gd" id="33_ytqo0"]
 [ext_resource type="AudioStream" uid="uid://drbw0yucqj0h7" path="res://Audio/warp.mp3" id="34_1pqxu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5oxb"]
@@ -750,117 +748,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1tjd"]
 radius = 11.0454
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ft5eh"]
-atlas = ExtResource("11_ot4ps")
-region = Rect2(0, 0, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_egnwv"]
-atlas = ExtResource("12_dkbwb")
-region = Rect2(0, 79, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tk8fn"]
-atlas = ExtResource("11_ot4ps")
-region = Rect2(79, 79, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vvlrd"]
-atlas = ExtResource("11_ot4ps")
-region = Rect2(79, 0, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fpld0"]
-atlas = ExtResource("12_dkbwb")
-region = Rect2(79, 0, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ajh6"]
-atlas = ExtResource("12_dkbwb")
-region = Rect2(0, 0, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wmbbu"]
-atlas = ExtResource("11_ot4ps")
-region = Rect2(79, 158, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f3jgf"]
-atlas = ExtResource("11_ot4ps")
-region = Rect2(0, 158, 79, 79)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yuajw"]
-atlas = ExtResource("11_ot4ps")
-region = Rect2(0, 79, 79, 79)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_w2ve2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ft5eh")
-}],
-"loop": true,
-"name": &"AK-47",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_egnwv")
-}],
-"loop": true,
-"name": &"Deagle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tk8fn")
-}],
-"loop": true,
-"name": &"FN FAL",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vvlrd")
-}],
-"loop": true,
-"name": &"G36",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fpld0")
-}],
-"loop": true,
-"name": &"Glock 18",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1ajh6")
-}],
-"loop": true,
-"name": &"M1911",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wmbbu")
-}],
-"loop": true,
-"name": &"M4A1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f3jgf")
-}],
-"loop": true,
-"name": &"P90",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yuajw")
-}],
-"loop": true,
-"name": &"SCAR",
-"speed": 5.0
-}]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ca2w"]
 radius = 12.0
 
@@ -1061,14 +948,7 @@ pitch_scale = 1.84
 stream = ExtResource("34_1pqxu")
 pitch_scale = 1.36
 
-[node name="Gun" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(2, -1)
-rotation = 1.5708
-scale = Vector2(0.7, 0.7)
-sprite_frames = SubResource("SpriteFrames_w2ve2")
-animation = &"G36"
-script = ExtResource("33_ytqo0")
+[node name="Gun" parent="." instance=ExtResource("31_wauq5")]
 
 [node name="Hitbox" type="Area2D" parent="."]
 

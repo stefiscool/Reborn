@@ -1,8 +1,8 @@
 extends Node2D
 
 func _process(_delta):
-	$Label.text = "Current Armor: " + Global.armor
-	$Label2.text = "Speed: " + str(Global.speed) + "\nDamage Taken: 1/" + str(Global.defaultdefense) + "\nHealth: " + str(Global.maxhealth) +"\nShields: " + str(Global.maxshields) +"\nShield Cooldown: " + str(Global.shieldcooldown) + " s" +"\nShield Regen: " + str(Global.shieldregen) + "/s" 
+	$Label.text = "Equipped: " + Global.armor
+	$Label2.text = "\nHealth: " + str(Global.maxhealth) +"\nShields: " + str(Global.maxshields) +"\nShield Cooldown: " + str(Global.shieldcooldown) + " s" +"\nShield Regen: " + str(Global.shieldregen) + "/s"  + "\nSpeed: " + str(Global.speed) + "\nDamage Taken: 1/" + str(Global.defaultdefense) + "\n\n" + Global.armordescription  
 	
 	if "Tactical Vest" in Global.inventory:
 		$ScrollContainer/ColorRect/VBoxContainer/Button.visible = true

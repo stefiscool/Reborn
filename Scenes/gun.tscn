@@ -1,0 +1,126 @@
+[gd_scene load_steps=15 format=3 uid="uid://bs7xvi2jradfk"]
+
+[ext_resource type="Texture2D" uid="uid://dbpf6nff6jq72" path="res://Assets/Weapons/PrimaryWeapons.png" id="1_7r0dy"]
+[ext_resource type="Texture2D" uid="uid://c5dkfacjoqgsw" path="res://Assets/Weapons/SecondaryWeapons.png" id="2_ebbl0"]
+[ext_resource type="Texture2D" uid="uid://dn2mdip5n4k0l" path="res://Assets/Weapons/PrimaryWeaponsUncommon.png" id="3_umcud"]
+[ext_resource type="Script" path="res://Scripts/Gun.gd" id="4_ppbis"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft5eh"]
+atlas = ExtResource("1_7r0dy")
+region = Rect2(0, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egnwv"]
+atlas = ExtResource("2_ebbl0")
+region = Rect2(0, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk8fn"]
+atlas = ExtResource("1_7r0dy")
+region = Rect2(79, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvlrd"]
+atlas = ExtResource("1_7r0dy")
+region = Rect2(79, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpld0"]
+atlas = ExtResource("2_ebbl0")
+region = Rect2(79, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ajh6"]
+atlas = ExtResource("2_ebbl0")
+region = Rect2(0, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3jgf"]
+atlas = ExtResource("1_7r0dy")
+region = Rect2(0, 158, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuajw"]
+atlas = ExtResource("1_7r0dy")
+region = Rect2(0, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5snpi"]
+atlas = ExtResource("3_umcud")
+region = Rect2(79, 158, 79, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2ve2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft5eh")
+}],
+"loop": true,
+"name": &"AK-47",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egnwv")
+}],
+"loop": true,
+"name": &"Deagle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk8fn")
+}],
+"loop": true,
+"name": &"FN FAL",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvlrd")
+}],
+"loop": true,
+"name": &"G36",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpld0")
+}],
+"loop": true,
+"name": &"Glock 18",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ajh6")
+}],
+"loop": true,
+"name": &"M1911",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3jgf")
+}],
+"loop": true,
+"name": &"P90",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuajw")
+}],
+"loop": true,
+"name": &"SCAR",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5snpi")
+}],
+"loop": true,
+"name": &"The Troubleshooter",
+"speed": 5.0
+}]
+
+[node name="Gun" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(2, -1)
+rotation = 1.5708
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_w2ve2")
+animation = &"FN FAL"
+script = ExtResource("4_ppbis")

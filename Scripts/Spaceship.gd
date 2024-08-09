@@ -13,4 +13,4 @@ func _on_body_entered(body):
 		Global.mags = 3
 		Global.secondmags = 2
 		
-		get_tree().change_scene_to_file("res://Scenes/Levels/hub.tscn")
+		get_tree().change_scene_to_file("res://Scenes/victory.tscn")

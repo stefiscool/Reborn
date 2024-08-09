@@ -36,6 +36,7 @@ var shieldregen = 1
 var damaged = false
 var speed = 220
 var zoom = 1.8
+var description = ""
 
 var secondrateoffire = 0.2
 var secondmaxammo = 9
@@ -45,6 +46,8 @@ var seconddamage = 50
 var secondbulletvelocity = 2000
 var secondelement = "Kinetic"
 var secondzoom = 2
+var seconddescription = ""
+var armordescription = ""
 
 var skill1cool = 0
 var skill2cool = 0

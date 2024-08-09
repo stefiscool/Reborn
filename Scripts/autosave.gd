@@ -1,5 +1,5 @@
 extends Node2D
-
+	
 func save():
 	var save_dict = {
 	"class" : Global.Class,
@@ -29,3 +29,12 @@ func _ready():
 		save_game()
 	else:
 		pass
+	Global.health = Global.maxhealth
+	Global.shields = Global.maxshields
+	Global.meleeing = false
+	Global.defense = Global.defaultdefense
+	Global.ammo = Global.maxammo
+	Global.secondammo = Global.secondmaxammo
+	Global.damaged = false
+	Global.mags = 3
+	Global.secondmags = 2

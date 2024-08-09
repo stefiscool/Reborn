@@ -1,9 +1,10 @@
 extends Node2D
 func _ready():
 	Global.secondary = false
+	Global.flamecharged = false
 func _process(_delta):
-	$Label.text = "Current Weapon: " + Global.weapon
-	$Label2.text = "Firerate: " + str((1 / Global.rateoffire) * 60) + " RPM" + "\nZoom: " + str(3.0 - Global.zoom) +"x" + "\nDamage: " + str(Global.damage) +"\nCapacity: " + str(Global.maxammo) +"\nBullet Velocity: " + str(Global.bulletvelocity) + " f/s" +"\nElement: " + str(Global.element) 
+	$Label.text = "Equipped: " + Global.weapon
+	$Label2.text = "Firerate: " + str(int((1 / Global.rateoffire) * 60)) + " RPM" + "\nZoom: " + str(3.0 - Global.zoom) +"x" + "\nDamage: " + str(Global.damage) +"\nCapacity: " + str(Global.maxammo) +"\nBullet Velocity: " + str(Global.bulletvelocity) + " f/s" +"\nElement: " + str(Global.element) +"\n\n" + Global.description 
 	
 	if "P90" in Global.inventory:
 		$ScrollContainer/ColorRect/VBoxContainer/Button.visible = true
@@ -15,6 +16,8 @@ func _process(_delta):
 		$ScrollContainer/ColorRect/VBoxContainer/Button4.visible = true
 	if "G36" in Global.inventory:
 		$ScrollContainer/ColorRect/VBoxContainer/Button5.visible = true
+	if "The Troubleshooter" in Global.inventory:
+		$ScrollContainer/ColorRect/VBoxContainer/Button6.visible = true
 
 
 
@@ -39,3 +42,6 @@ func _on_button_4_pressed():
 
 func _on_button_5_pressed():
 	Global.weapon = "G36"
+
+func _on_button_6_pressed():
+	Global.weapon = "The Troubleshooter"
