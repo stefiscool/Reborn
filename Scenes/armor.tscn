@@ -1,0 +1,201 @@
+[gd_scene load_steps=12 format=3 uid="uid://3m771uxc7igw"]
+
+[ext_resource type="Script" path="res://Scripts/armor.gd" id="1_i4tor"]
+[ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="2_sph68"]
+[ext_resource type="Texture2D" uid="uid://beeobipowlfts" path="res://Assets/Weapons/Armor.png" id="3_nwwi3"]
+[ext_resource type="Script" path="res://Labels/ArmorSprite.gd" id="4_h5ty0"]
+[ext_resource type="Script" path="res://Buttons/InventoryButtons.gd" id="5_ieix8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uri8"]
+atlas = ExtResource("3_nwwi3")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l7bk"]
+atlas = ExtResource("3_nwwi3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fik23"]
+atlas = ExtResource("3_nwwi3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfjct"]
+atlas = ExtResource("3_nwwi3")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ngql"]
+atlas = ExtResource("3_nwwi3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qvc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uri8")
+}],
+"loop": true,
+"name": &"Cyber Armor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l7bk")
+}],
+"loop": true,
+"name": &"Infantry Armor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fik23")
+}],
+"loop": true,
+"name": &"Mercenary Armor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfjct")
+}],
+"loop": true,
+"name": &"Navy Armor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ngql")
+}],
+"loop": true,
+"name": &"Tactical Vest",
+"speed": 5.0
+}]
+
+[node name="Armor" type="Node2D"]
+script = ExtResource("1_i4tor")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = 97.0
+offset_right = 751.0
+offset_bottom = 604.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer"]
+custom_minimum_size = Vector2(700, 2000)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/ColorRect"]
+layout_mode = 0
+offset_right = 700.0
+offset_bottom = 2000.0
+
+[node name="Button" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Tactical Vest"
+
+[node name="Button2" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Mercenary Armor"
+
+[node name="Button3" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Infantry Armor"
+
+[node name="Button4" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Navy Armor"
+
+[node name="Button5" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Cyber Armor"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 242.0
+offset_top = 19.0
+offset_right = 905.0
+offset_bottom = 70.0
+theme = ExtResource("2_sph68")
+theme_override_font_sizes/font_size = 40
+text = "Current Armor:"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 762.0
+offset_top = 409.0
+offset_right = 1157.0
+offset_bottom = 554.0
+theme = ExtResource("2_sph68")
+theme_override_font_sizes/font_size = 20
+text = "Firerate:
+Damage:
+Capacity:
+Bullet Velocity:
+Element:"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 13.0
+offset_right = 159.0
+offset_bottom = 67.0
+theme = ExtResource("2_sph68")
+text = "Go Back
+"
+
+[node name="ArmorSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(934, 234)
+scale = Vector2(7.75, 8.71875)
+sprite_frames = SubResource("SpriteFrames_0qvc7")
+animation = &"Tactical Vest"
+script = ExtResource("4_h5ty0")
+
+[node name="InventoryButtons" type="Node2D" parent="."]
+script = ExtResource("5_ieix8")
+
+[node name="PrimaryButton" type="Button" parent="InventoryButtons"]
+offset_left = 1016.0
+offset_top = 21.0
+offset_right = 1151.0
+offset_bottom = 59.0
+theme = ExtResource("2_sph68")
+text = "Primary
+"
+
+[node name="SecondaryButton" type="Button" parent="InventoryButtons"]
+offset_left = 1017.0
+offset_top = 53.0
+offset_right = 1151.0
+offset_bottom = 90.0
+theme = ExtResource("2_sph68")
+text = "Secondary
+"
+
+[node name="Armor Button" type="Button" parent="InventoryButtons"]
+offset_left = 1018.0
+offset_top = 86.0
+offset_right = 1153.0
+offset_bottom = 123.0
+theme = ExtResource("2_sph68")
+text = "Armor
+"
+
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="InventoryButtons/PrimaryButton" to="InventoryButtons" method="_on_primary_button_pressed"]
+[connection signal="pressed" from="InventoryButtons/SecondaryButton" to="InventoryButtons" method="_on_secondary_button_pressed"]
+[connection signal="pressed" from="InventoryButtons/Armor Button" to="InventoryButtons" method="_on_armor_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://cjypwkc5cje34"]
+[gd_scene load_steps=147 format=3 uid="uid://cjypwkc5cje34"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_cxcq2"]
 [ext_resource type="Script" path="res://Scripts/Super Slash.gd" id="2_ka7xj"]
@@ -36,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://c0r65qh3hkj0p" path="res://Audio/thunder.mp3" id="29_c33vq"]
 [ext_resource type="Texture2D" uid="uid://dyiw1kh2hxbd4" path="res://Assets/Specials.png" id="31_ihyej"]
 [ext_resource type="Script" path="res://Scripts/Ark Armor.gd" id="32_f7rue"]
+[ext_resource type="Script" path="res://Scripts/Gun.gd" id="33_ytqo0"]
 [ext_resource type="AudioStream" uid="uid://drbw0yucqj0h7" path="res://Audio/warp.mp3" id="34_1pqxu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5oxb"]
@@ -1067,6 +1068,7 @@ rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_w2ve2")
 animation = &"G36"
+script = ExtResource("33_ytqo0")
 
 [node name="Hitbox" type="Area2D" parent="."]
 

@@ -23,5 +23,31 @@ theme = ExtResource("2_um673")
 text = "Go Back
 "
 
+[node name="Button4" type="Button" parent="."]
+offset_left = 381.0
+offset_top = 544.0
+offset_right = 504.0
+offset_bottom = 600.0
+theme = ExtResource("2_um673")
+text = "On"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 513.0
+offset_top = 544.0
+offset_right = 636.0
+offset_bottom = 600.0
+theme = ExtResource("2_um673")
+text = "Off"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 424.0
+offset_top = 515.0
+offset_right = 608.0
+offset_bottom = 550.0
+theme = ExtResource("2_um673")
+text = "Autosave Off"
+
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]

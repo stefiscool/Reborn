@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
 
-@onready var gun = get_node("Gun")
-
 @onready var gunfire = $Audio/Gunfire
 @onready var secondgunfire = $Audio/SecondGunfire
 @onready var reload = $Audio/ReloadSFX
@@ -21,14 +19,19 @@ var seedgrenade = preload("res://Scenes/seedgrenade.tscn")
 var flashbang = preload("res://Scenes/flashbang.tscn")
 var voidgrenade = preload("res://Scenes/voidgrenade.tscn")
 
-var bullet_speed = 2000
+
 var can_fire = true
-var speed = 220
+var speed = Global.speed
+var zoom = Global.zoom
+var secondzoom = Global.secondzoom
 var accel = 10500
 var fric = 10000
 var reloading = false
 var overcharged = false
-
+var meleeing_playing = false
+var shields_full_played = false  
+var shields_broken_played = false  
+var voidvision = false
 
 var can_skill1 = true
 var can_skill2 = true
@@ -41,10 +44,42 @@ func player_movement(input, delta):
 
 func _ready():
 	Global.ammo = Global.maxammo
-	
+
 
 		
 func _physics_process(delta):
+	if Global.secondary == false and voidvision == false:
+		$Camera2D.zoom.x = Global.zoom
+		$Camera2D.zoom.y = Global.zoom
+	elif Global.secondary == true and voidvision == false:
+		$Camera2D.zoom.x = Global.secondzoom
+		$Camera2D.zoom.y = Global.secondzoom
+	else:
+		$Camera2D.zoom.x = 0.8
+		$Camera2D.zoom.y = 0.8
+	if Global.meleeing:
+		if not meleeing_playing:
+			$Audio/Swinging.play()
+			meleeing_playing = true
+	else:
+		if meleeing_playing:
+			$Audio/Swinging.stop()
+			meleeing_playing = false
+			
+	if Global.shields == 0:
+		if not shields_broken_played:
+			$Audio/ShieldBreak.play()
+			shields_broken_played = true
+	else:
+		shields_broken_played = false
+		
+	if Global.shields == Global.maxshields:
+		if not shields_full_played:
+			$Audio/ShieldsFull.play()
+			shields_full_played = true
+	else:
+		shields_full_played = false
+			
 	look_at(get_global_mouse_position())
 	
 	
@@ -56,6 +91,7 @@ func _physics_process(delta):
 		switch.play()
 	if Input.is_action_pressed("melee"):
 		Global.meleeing = true
+		$Gun.visible = false
 		
 	if Input.is_action_just_released("melee"):
 		Global.meleeing = false
@@ -63,14 +99,7 @@ func _physics_process(delta):
 		
 	
 	
-	if Global.meleeing == false:
-		$Audio/Swinging.play()
-		
-	if Global.shields != 0:
-		$Audio/ShieldBreak.play()
-		
-	if Global.shields != Global.maxshields:
-		$Audio/ShieldsFull.play()
+
 	
 	if Global.damaged == true:
 		$ShieldCool.start()
@@ -89,7 +118,7 @@ func _physics_process(delta):
 			gunfire.play()
 			bullet_instance.position = $BulletPoint.get_global_position()
 			bullet_instance.rotation_degrees = rotation_degrees
-			bullet_instance.apply_impulse(Vector2(bullet_speed, 0).rotated(global_rotation))
+			bullet_instance.apply_impulse(Vector2(Global.bulletvelocity, 0).rotated(global_rotation))
 			get_tree().get_root().add_child(bullet_instance)
 			Global.ammo -= 1
 			can_fire = false
@@ -109,7 +138,7 @@ func _physics_process(delta):
 			secondgunfire.play()
 			bullet_instance.position = $BulletPoint.get_global_position()
 			bullet_instance.rotation_degrees = rotation_degrees
-			bullet_instance.apply_impulse(Vector2(bullet_speed, 0).rotated(global_rotation))
+			bullet_instance.apply_impulse(Vector2(Global.secondbulletvelocity, 0).rotated(global_rotation))
 			get_tree().get_root().add_child(bullet_instance)
 			Global.secondammo -= 1
 			can_fire = false
@@ -126,28 +155,7 @@ func _physics_process(delta):
 	if Global.health <= 0:
 		get_tree().change_scene_to_file("res://Scenes/gameover.tscn")
 		
-	if Global.secondary == false:
-		if Global.weapon == "M4A1":
-			gun.play("M4A1")
-		if Global.weapon == "AK-47":
-			gun.play("AK-47")
-		if Global.weapon == "G36":
-			gun.play("G36")
-		if Global.weapon == "FN FAL":
-			gun.play("FN FAL")
-		if Global.weapon == "P90":
-			gun.play("P90")
-		if Global.weapon == "SCAR":
-			gun.play("SCAR")
-			
-	if Global.secondary == true:
-		if Global.secondweapon == "M1911":
-			gun.play("M1911")
-		if Global.secondweapon == "Glock 18":
-			gun.play("Glock 18")
-		if Global.secondweapon == "Deagle":
-			gun.play("Deagle")
-			
+
 	if Input.is_action_just_pressed("talk"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
@@ -283,8 +291,8 @@ func _physics_process(delta):
 			$SkillCooldowns/SkillCooldown2.start()
 		if Input.is_action_just_pressed("skill3") and can_skill3:
 			$Audio/Warp.play()
-			$Camera2D.zoom.x = 1
-			$Camera2D.zoom.y = 1
+			voidvision = true
+			
 			$Skills/BuffTimer.start()
 			can_skill3 = false
 			$SkillCooldowns/SkillCooldown3.start()
@@ -359,7 +367,7 @@ func _on_skill_timer_timeout():
 	$"Skills/Force Push".scale.y = 1
 	$CollisionShape2D.scale.x = 1
 	$CollisionShape2D.scale.y = 1
-	speed = 220
+	speed = Global.speed
 	
 	Global.meleeing = false
 	$Gun.visible = true
@@ -371,9 +379,7 @@ func _on_buff_timer_timeout():
 	$"SkillCooldowns/Ark Armor".visible = false
 	$Skills/FlameChargeParticles.visible = false
 	overcharged = false
-	$Camera2D.zoom.x = 1.8
-	$Camera2D.zoom.y = 1.8
-
+	voidvision = false
 
 
 func _on_shield_cool_timeout():

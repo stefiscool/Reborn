@@ -1,10 +1,12 @@
 extends Node
 
+var autosave = true
+var inventory = ["SCAR", "M1911", "Tactical Vest"]
 var Class = "Noble"
 var level = 1
 var xp = 0
 var xpneeded = 10
-var weapon = "P90"
+var weapon = "SCAR"
 var secondweapon = "M1911"
 var armor = "Tactical Vest"
 
@@ -25,19 +27,24 @@ var rateoffire = 0.05
 var maxammo = 30
 var ammo = maxammo
 var damage = 70
+var bulletvelocity = 2000
+var element = "Kinetic"
 var maxshields = 100
 var shields = maxshields
 var shieldcooldown = 10
 var shieldregen = 1
 var damaged = false
-
+var speed = 220
+var zoom = 1.8
 
 var secondrateoffire = 0.2
 var secondmaxammo = 9
 var secondammo = secondmaxammo
 var secondmags = 2
 var seconddamage = 50
-
+var secondbulletvelocity = 2000
+var secondelement = "Kinetic"
+var secondzoom = 2
 
 var skill1cool = 0
 var skill2cool = 0
@@ -48,6 +55,8 @@ var flamecharged = false
 var arkarmor = false
 var indialogue = false
 
+
+
 func _process(_delta):
 	if health > maxhealth:
 		health = maxhealth
@@ -56,11 +65,13 @@ func _process(_delta):
 	if shields < 0:
 		shields = 0
 		
-	if flamecharged:
-		damage = 160
-		seconddamage = 140
+	if flamecharged == true:
+		damage = (100 + (level * 10))
+		seconddamage = (100 + (level * 10))
+
+
 	if arkarmor:
-		defense = 3
+		defense = 4
 	else:
 		defense = defaultdefense
 		

@@ -1,6 +1,7 @@
 extends Node2D
 
-	
+func _process(delta):
+	$Label.text = "Autosave: " + str(Global.autosave)
 
 func save():
 	var save_dict = {
@@ -10,7 +11,9 @@ func save():
 	"secondweapon" : Global.secondweapon, 
 	"armor" : Global.armor,
 	"xp" : Global.xp,
-	"xpneeded" : Global.xpneeded
+	"xpneeded" : Global.xpneeded,
+	"inventory" : Global.inventory,
+	"autosave" : Global.autosave
 	}
 	return save_dict
 	
@@ -22,18 +25,7 @@ func save_game():
 	
 	save_game.store_line(json_string)
 
-func load_game():
-	if not FileAccess.file_exists("user://savegame.save"):
-		return
-	var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
-	
-	while save_game.get_position() < save_game.get_length():
-		var json_string = save_game.get_line()
-		var json = JSON.new()
-		var parse_result = json.parse(json_string)
-		var node_data = json.get_data()
-		
-		print(node_data)
+
 
 
 func _on_button_2_pressed():
@@ -42,3 +34,11 @@ func _on_button_2_pressed():
 
 func _on_button_3_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Levels/hub.tscn")
+
+
+func _on_button_4_pressed():
+	Global.autosave = true
+
+
+func _on_button_5_pressed():
+	Global.autosave = false
