@@ -9,6 +9,7 @@ func _on_body_entered(body):
 		$Timer.start()
 		Global.mags += 1
 		$Mag.visible = false
+		$Label.visible = true
 
 
 func _on_timer_timeout():

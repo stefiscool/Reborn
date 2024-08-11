@@ -175,7 +175,8 @@ animations = [{
 }]
 
 [node name="LostOne" type="CharacterBody2D" groups=["Enemy"]]
-collision_mask = 3
+collision_layer = 33
+collision_mask = 35
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_btu1y")

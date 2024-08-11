@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://cjypwkc5cje34"]
+[gd_scene load_steps=136 format=3 uid="uid://cjypwkc5cje34"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_cxcq2"]
 [ext_resource type="Script" path="res://Scripts/Super Slash.gd" id="2_ka7xj"]
@@ -45,6 +45,9 @@ size = Vector2(5, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nsq4d"]
 radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_brfxq"]
+radius = 3.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxxkj"]
 atlas = ExtResource("3_f3tif")
@@ -817,6 +820,13 @@ position = Vector2(-1, -0.4)
 scale = Vector2(0.2, 0.2)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-2, -5, -5, 2, -4, 7, 2, 12, 9, 11, 14, 6, 15, 0, 12, -5, 5, -8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Skills/Force Push"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skills/Force Push/StaticBody2D"]
+shape = SubResource("CircleShape2D_brfxq")
 
 [node name="Lightning Bolt" type="Area2D" parent="Skills"]
 visible = false

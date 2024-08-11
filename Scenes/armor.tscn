@@ -78,18 +78,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 51.0
 offset_top = 97.0
-offset_right = 751.0
+offset_right = 551.0
 offset_bottom = 604.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="ScrollContainer"]
-custom_minimum_size = Vector2(700, 2000)
+custom_minimum_size = Vector2(500, 2000)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/ColorRect"]
 layout_mode = 0
-offset_right = 700.0
+offset_right = 500.0
 offset_bottom = 2000.0
 
 [node name="Button" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
@@ -132,10 +132,10 @@ theme_override_font_sizes/font_size = 40
 text = "Current Armor:"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 758.0
-offset_top = 330.0
-offset_right = 1153.0
-offset_bottom = 475.0
+offset_left = 588.0
+offset_top = 314.0
+offset_right = 1108.0
+offset_bottom = 459.0
 theme = ExtResource("2_sph68")
 theme_override_font_sizes/font_size = 20
 text = "Firerate:
@@ -155,7 +155,7 @@ text = "Go Back
 "
 
 [node name="ArmorSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(907.5, 205.25)
+position = Vector2(792, 192)
 scale = Vector2(6.09375, 6.92188)
 sprite_frames = SubResource("SpriteFrames_0qvc7")
 animation = &"Tactical Vest"

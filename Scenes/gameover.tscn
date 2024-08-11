@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cl4unlx8n08mq"]
 
-[ext_resource type="AudioStream" uid="uid://dg44c8c3sx474" path="res://Audio/dark-mystery-trailer-taking-our-time-131566.mp3" id="1_on5bl"]
+[ext_resource type="AudioStream" uid="uid://dg44c8c3sx474" path="res://Audio/Music/dark-mystery-trailer-taking-our-time-131566.mp3" id="1_on5bl"]
 [ext_resource type="FontFile" uid="uid://debggn5x54r8m" path="res://Assets/ObliviousFont.ttf" id="2_tcr1v"]
 [ext_resource type="Script" path="res://Scripts/Fight!!!.gd" id="3_8rq5f"]
 [ext_resource type="Script" path="res://Scripts/EditLoadout.gd" id="4_csk82"]

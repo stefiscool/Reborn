@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cq7yjaj103lue" path="res://Scenes/computer_desk.tscn" id="5_u62lr"]
 [ext_resource type="PackedScene" uid="uid://cx6qlfjmehdji" path="res://Scenes/bookshelf.tscn" id="6_ajn24"]
 [ext_resource type="PackedScene" uid="uid://bjq3ntdgcf0ss" path="res://Scenes/chair.tscn" id="6_dkwm0"]
-[ext_resource type="AudioStream" uid="uid://dg44c8c3sx474" path="res://Audio/dark-mystery-trailer-taking-our-time-131566.mp3" id="7_cue4p"]
+[ext_resource type="AudioStream" uid="uid://dg44c8c3sx474" path="res://Audio/Music/dark-mystery-trailer-taking-our-time-131566.mp3" id="7_cue4p"]
 [ext_resource type="PackedScene" uid="uid://oeuqh0vja8cr" path="res://Scenes/actionable.tscn" id="9_gqeol"]
 [ext_resource type="Texture2D" uid="uid://5s4ycfjqo7e4" path="res://Assets/NPCs/civ1.png" id="9_lekdl"]
 [ext_resource type="Resource" uid="uid://28h10256xww5" path="res://Dialouge/dialouge1.dialogue" id="10_8ii6j"]

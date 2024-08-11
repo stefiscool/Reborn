@@ -43,13 +43,13 @@ text = "GO BACK
 "
 
 [node name="Button" type="Button" parent="Level Buttons"]
-offset_left = 490.0
-offset_top = 254.0
-offset_right = 573.0
-offset_bottom = 280.0
+offset_left = 716.0
+offset_top = 246.0
+offset_right = 873.0
+offset_bottom = 272.0
 theme = ExtResource("2_1lslv")
 theme_override_font_sizes/font_size = 15
-text = "Level 1"
+text = "Israel (Tutorial)"
 
 [node name="Button2" type="Button" parent="Level Buttons"]
 offset_left = 615.0

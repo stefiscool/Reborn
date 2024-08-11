@@ -27,6 +27,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func makepath() -> void:
+	if vision == true:
 		nav_agent.target_position = player.global_position
 
 

@@ -283,8 +283,8 @@ func _physics_process(delta):
 			$Skills/SkillTimer.start()
 			$"Skills/Force Push".scale.x = 30
 			$"Skills/Force Push".scale.y = 30
-			$CollisionShape2D.scale.x = 10
-			$CollisionShape2D.scale.y = 10
+			$"Skills/Force Push/StaticBody2D/CollisionShape2D".scale.x = 2
+			$"Skills/Force Push/StaticBody2D/CollisionShape2D".scale.y = 2
 			
 			Global.meleeing = true
 			can_skill2 = false
@@ -365,8 +365,8 @@ func _on_skill_timer_timeout():
 	$"Skills/Lightning Bolt".visible = false
 	$"Skills/Force Push".scale.x = 1
 	$"Skills/Force Push".scale.y = 1
-	$CollisionShape2D.scale.x = 1
-	$CollisionShape2D.scale.y = 1
+	$"Skills/Force Push/StaticBody2D/CollisionShape2D".scale.x = 1
+	$"Skills/Force Push/StaticBody2D/CollisionShape2D".scale.y = 1
 	speed = Global.speed
 	
 	Global.meleeing = false
