@@ -80,5 +80,3 @@ func _on_attack_area_entered(area):
 			$Cut.play()
 		else:
 			$Punch.play()
-
-

@@ -53,6 +53,3 @@ func _on_criminal_dead_2():
 
 func _on_vision_line_novision():
 	vision = false
-
-
-

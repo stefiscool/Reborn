@@ -79,5 +79,3 @@ func _on_attack_area_entered(area):
 	if area.name == "MeleeHitbox" and dead == false and Global.meleeing == true:
 		hit3.play()
 		$Cut.play()
-
-

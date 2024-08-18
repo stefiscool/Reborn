@@ -13,5 +13,3 @@ func _on_body_entered(body):
 			body.hp -= Global.seconddamage
 			body.vision = true
 			
-
-

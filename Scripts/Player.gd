@@ -393,5 +393,3 @@ func _on_shield_regen_timeout():
 		Global.shields += Global.shieldregen
 		$ShieldCool/ShieldRegen.start()
 	
-
-

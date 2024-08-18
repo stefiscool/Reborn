@@ -36,4 +36,3 @@ func _on_button_4_pressed():
 
 func _on_button_5_pressed():
 	Global.armor = "Cyber Armor"
-

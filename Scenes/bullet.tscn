@@ -7,8 +7,8 @@ radius = 5.0
 
 [node name="Bullet" type="RigidBody2D"]
 gravity_scale = 0.0
-max_contacts_reported = 1
 contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_lim53")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

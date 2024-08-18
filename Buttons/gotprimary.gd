@@ -33,4 +33,3 @@ func _on_button_2_pressed():
 func _on_button_3_pressed():
 	Global.weapon = Global.inventory[-1]  
 	get_tree().change_scene_to_file("res://Scenes/primary_weapons.tscn")
-
