@@ -13,12 +13,12 @@ func action() -> void:
 		balloon.start(dialogue_resource, dialogue_start)
 	
 
-#
-#func _on_body_entered(body):
-	#if body.name == "Player":
-		#Global.indialogue = true
-#
-#
-#func _on_body_exited(body):
-	#if body.name == "Player":
-		#Global.indialogue = false
+
+func _on_body_entered(body):
+	if body.name == "Player":
+		Global.nearperson = true
+
+
+func _on_body_exited(body):
+	if body.name == "Player":
+		Global.nearperson = false

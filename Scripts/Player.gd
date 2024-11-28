@@ -113,7 +113,7 @@ func _physics_process(delta):
 		
 		
 	if Global.secondary == false:
-		if Input.is_action_pressed("fire") and can_fire and Global.ammo > 0 and reloading == false and Global.meleeing == false and Global.indialogue == false:
+		if Input.is_action_pressed("fire") and can_fire and Global.ammo > 0 and reloading == false and Global.meleeing == false and Global.indialogue == false and Global.nearperson == false:
 			var bullet_instance = bullet.instantiate()
 			gunfire.play()
 			bullet_instance.position = $BulletPoint.get_global_position()

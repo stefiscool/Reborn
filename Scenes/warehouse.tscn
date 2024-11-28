@@ -12,12 +12,12 @@
 [ext_resource type="Script" path="res://Scripts/Fog.gd" id="7_ue5kh"]
 [ext_resource type="PackedScene" uid="uid://oeuqh0vja8cr" path="res://Scenes/actionable.tscn" id="8_ic0g5"]
 [ext_resource type="Script" path="res://Buttons/Phenix1.gd" id="8_q7l4s"]
-[ext_resource type="Resource" uid="uid://beghximo0aund" path="res://Phenix1.dialogue" id="9_n5wsh"]
+[ext_resource type="Resource" uid="uid://beghximo0aund" path="res://Dialouge/Phenix1.dialogue" id="9_n5wsh"]
 [ext_resource type="PackedScene" uid="uid://b53o8d1lkvnyg" path="res://Scenes/ui.tscn" id="9_ns0im"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="10_k72v6"]
 [ext_resource type="AudioStream" uid="uid://c0r65qh3hkj0p" path="res://Audio/thunder.mp3" id="12_m5gf3"]
-[ext_resource type="Resource" uid="uid://dn57xdegn1n8y" path="res://Phenix2.dialogue" id="13_edjdh"]
-[ext_resource type="Resource" uid="uid://d4c6p4033vslt" path="res://Phenix3.dialogue" id="16_pxwy2"]
+[ext_resource type="Resource" uid="uid://dn57xdegn1n8y" path="res://Dialouge/Phenix2.dialogue" id="13_edjdh"]
+[ext_resource type="Resource" uid="uid://d4c6p4033vslt" path="res://Dialouge/Phenix3.dialogue" id="16_pxwy2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wqrvg"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)

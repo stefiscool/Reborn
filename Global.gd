@@ -57,6 +57,7 @@ var skill4cool = 0
 var flamecharged = false
 var arkarmor = false
 var indialogue = false
+var nearperson = false
 
 var slide = 0
 
