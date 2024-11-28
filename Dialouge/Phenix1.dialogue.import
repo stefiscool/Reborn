@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://beghximo0aund"
+path="res://.godot/imported/Phenix1.dialogue-021e419a8e49a2597b2de7d2a6184f7d.tres"
+
+[deps]
+
+source_file="res://Dialouge/Phenix1.dialogue"
+dest_files=["res://.godot/imported/Phenix1.dialogue-021e419a8e49a2597b2de7d2a6184f7d.tres"]
+
+[params]
+
+defaults=true

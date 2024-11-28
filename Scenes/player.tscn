@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://cjypwkc5cje34"]
+[gd_scene load_steps=150 format=3 uid="uid://cjypwkc5cje34"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_cxcq2"]
 [ext_resource type="Script" path="res://Scripts/Super Slash.gd" id="2_ka7xj"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bqupurb4jcxgy" path="res://Assets/Scholar.png" id="9_tn0f1"]
 [ext_resource type="AudioStream" uid="uid://c7p4o1cmllkvy" path="res://Audio/9mm-pistol-shot-6349.mp3" id="10_hgiin"]
 [ext_resource type="Texture2D" uid="uid://b8wyv62pajw8v" path="res://Assets/ScholarMelee.png" id="12_vg5oh"]
+[ext_resource type="Texture2D" uid="uid://dh2upqn5vn2lh" path="res://Assets/Enemies/BastionMelee.png" id="13_s00jk"]
 [ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/male_hurt7-48124.mp3" id="13_xeadr"]
 [ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/flamecharge.mp3" id="16_jatk1"]
 [ext_resource type="AudioStream" uid="uid://ee1j8asctyjt" path="res://Audio/superslash.mp3" id="17_frtah"]
@@ -140,6 +141,58 @@ region = Rect2(0, 158, 79, 79)
 [sub_resource type="AtlasTexture" id="AtlasTexture_yvc6b"]
 atlas = ExtResource("7_av2hc")
 region = Rect2(79, 158, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sdm0"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(158, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqgqq"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(0, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk47g"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(79, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp27r"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(237, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvkyu"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(0, 158, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5478"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(79, 158, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrtop"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(79, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx2ph"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(237, 158, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wof3"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(158, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtl4o"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(158, 158, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k3vk"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(237, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owgmk"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(0, 237, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov2yf"]
+atlas = ExtResource("13_s00jk")
+region = Rect2(0, 79, 79, 79)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0i1o"]
 atlas = ExtResource("12_vg5oh")
@@ -516,10 +569,49 @@ animations = [{
 "name": &"meleeassassin",
 "speed": 30.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sdm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqgqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk47g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp27r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvkyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5478")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrtop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx2ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wof3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtl4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k3vk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owgmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov2yf")
+}],
 "loop": true,
 "name": &"meleebastion",
-"speed": 5.0
+"speed": 40.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -874,8 +966,8 @@ position = Vector2(3, -1)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_lvhpo")
-animation = &"idle"
-frame_progress = 0.0954243
+animation = &"meleebastion"
+frame_progress = 0.187674
 script = ExtResource("6_ksm2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

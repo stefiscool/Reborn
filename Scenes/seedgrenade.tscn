@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8efvgip0lv86"]
+[gd_scene load_steps=8 format=3 uid="uid://b8efvgip0lv86"]
 
 [ext_resource type="Script" path="res://Scripts/seedgrenade.gd" id="1_trur0"]
 [ext_resource type="AudioStream" uid="uid://ce1i10b8rqfpu" path="res://Audio/timebombbeep-93074-[AudioTrimmer.com].mp3" id="2_fv4vc"]
 [ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="3_wxuhd"]
 [ext_resource type="Texture2D" uid="uid://dyiw1kh2hxbd4" path="res://Assets/Specials.png" id="4_e8tam"]
+[ext_resource type="Texture2D" uid="uid://c173b73esb0dw" path="res://Assets/Effects/SeedGrenade.png" id="4_iqgn4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hoa0u"]
 radius = 5.0
@@ -33,14 +34,13 @@ pitch_scale = 8.0
 
 [node name="BlastRadius" type="Area2D" parent="."]
 
+[node name="SeedGrenade" type="Sprite2D" parent="BlastRadius"]
+position = Vector2(-5.96046e-08, -2.98023e-07)
+scale = Vector2(0.09375, 0.09375)
+texture = ExtResource("4_iqgn4")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlastRadius"]
 shape = SubResource("CircleShape2D_g7wci")
-
-[node name="Polygon2D" type="Polygon2D" parent="BlastRadius"]
-position = Vector2(-0.0937561, 0.748967)
-scale = Vector2(0.54241, 0.482069)
-color = Color(0.789348, 0.860084, 1, 1)
-polygon = PackedVector2Array(-8, -11, -10.8889, -3.17647, -10.8889, 3.78049, -5.55556, 9.11464, 1.55555, 10.8927, 8.46913, 7.7811, 11.2346, 1.55793, 8.46913, -10.8884, 0, -14)
 
 [node name="Gre" type="Sprite2D" parent="."]
 scale = Vector2(0.28125, 0.28125)
