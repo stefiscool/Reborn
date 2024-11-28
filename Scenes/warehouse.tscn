@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cqabj2oydo1ec"]
+[gd_scene load_steps=42 format=3 uid="uid://cqabj2oydo1ec"]
 
 [ext_resource type="Texture2D" uid="uid://b2ywlpegudor4" path="res://Assets/OperationShadowFallTiles (1) (1) (3).png" id="1_421kv"]
 [ext_resource type="PackedScene" uid="uid://d100l8flk2xi" path="res://Scenes/medkit.tscn" id="2_8nith"]
@@ -15,9 +15,12 @@
 [ext_resource type="Resource" uid="uid://beghximo0aund" path="res://Dialouge/Phenix1.dialogue" id="9_n5wsh"]
 [ext_resource type="PackedScene" uid="uid://b53o8d1lkvnyg" path="res://Scenes/ui.tscn" id="9_ns0im"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="10_k72v6"]
+[ext_resource type="Texture2D" uid="uid://cl1c0pvshqyls" path="res://Assets/Starfighter.png" id="12_6bmdo"]
 [ext_resource type="AudioStream" uid="uid://c0r65qh3hkj0p" path="res://Audio/thunder.mp3" id="12_m5gf3"]
+[ext_resource type="Texture2D" uid="uid://bp74f4nuvx3qj" path="res://Assets/NPCs/Phenix.png" id="12_xidua"]
 [ext_resource type="Resource" uid="uid://dn57xdegn1n8y" path="res://Dialouge/Phenix2.dialogue" id="13_edjdh"]
 [ext_resource type="Resource" uid="uid://d4c6p4033vslt" path="res://Dialouge/Phenix3.dialogue" id="16_pxwy2"]
+[ext_resource type="Texture2D" uid="uid://spo00g3wpoxp" path="res://Assets/Effects/HoverParticles.png" id="18_xudwm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wqrvg"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -758,7 +761,43 @@ sources/0 = SubResource("TileSetAtlasSource_ecod0")
 size = Vector2(14, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhep"]
-size = Vector2(108, 211)
+size = Vector2(103, 240.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtp5v"]
+atlas = ExtResource("18_xudwm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwb08"]
+atlas = ExtResource("18_xudwm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxcja"]
+atlas = ExtResource("18_xudwm")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn0bf"]
+atlas = ExtResource("18_xudwm")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjbvw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtp5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwb08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxcja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn0bf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xnfov"]
 radius = 31.7765
@@ -768,6 +807,42 @@ size = Vector2(76.3174, 67.4294)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_os74l"]
 size = Vector2(369, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4iy6"]
+atlas = ExtResource("18_xudwm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqk78"]
+atlas = ExtResource("18_xudwm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpew0"]
+atlas = ExtResource("18_xudwm")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15ou2"]
+atlas = ExtResource("18_xudwm")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0bv0j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4iy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqk78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpew0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15ou2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dlo5j"]
 size = Vector2(256.441, 482.395)
@@ -1090,16 +1165,24 @@ position = Vector2(825, -165)
 script = ExtResource("6_0ca5h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spaceship"]
-position = Vector2(2, 10)
+position = Vector2(4.5, -4.75)
 shape = SubResource("RectangleShape2D_jyhep")
 
-[node name="Polygon2D" type="Polygon2D" parent="Spaceship"]
-color = Color(0.448067, 0.448067, 0.448067, 1)
-polygon = PackedVector2Array(-6, -119, -41, 17, -115, 114, -3, 98, 94, 108, 21, 15)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Spaceship"]
+position = Vector2(-34, -5)
+rotation = 1.56942
+sprite_frames = SubResource("SpriteFrames_hjbvw")
+autoplay = "default"
 
-[node name="Polygon2D2" type="Polygon2D" parent="Spaceship/Polygon2D"]
-color = Color(0.217101, 0.217101, 0.217101, 1)
-polygon = PackedVector2Array(-8, -34, -21, 17, -7, 73, 7, 17)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Spaceship"]
+position = Vector2(38, -9)
+rotation = 1.56942
+sprite_frames = SubResource("SpriteFrames_hjbvw")
+autoplay = "default"
+
+[node name="Starfighter" type="Sprite2D" parent="Spaceship"]
+position = Vector2(4, -1)
+texture = ExtResource("12_6bmdo")
 
 [node name="NPCs" type="Node2D" parent="."]
 
@@ -1141,10 +1224,6 @@ position = Vector2(-3.12328e-05, 2.26796e-05)
 position = Vector2(3.43323e-05, -0.000312805)
 shape = SubResource("RectangleShape2D_3ve4v")
 
-[node name="Polygon2D" type="Polygon2D" parent="NPCs/Phenix1"]
-position = Vector2(1.52588e-05, -7.6939)
-polygon = PackedVector2Array(-30.5515, 33.3398, 55.5474, 7.69385, -36.106, -20.5171)
-
 [node name="Area2D" type="Area2D" parent="NPCs/Phenix1"]
 position = Vector2(-2877.38, 6380.8)
 rotation = -3.14159
@@ -1157,6 +1236,15 @@ shape = SubResource("RectangleShape2D_os74l")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="NPCs/Phenix1"]
 stream = ExtResource("12_m5gf3")
 pitch_scale = 2.87
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPCs/Phenix1"]
+rotation = 1.45168
+sprite_frames = SubResource("SpriteFrames_0bv0j")
+autoplay = "default"
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/Phenix1/AnimatedSprite2D"]
+scale = Vector2(1, 1)
+texture = ExtResource("12_xidua")
 
 [node name="Phenix2" type="Sprite2D" parent="NPCs"]
 visible = false
@@ -1197,10 +1285,6 @@ position = Vector2(-45.9832, -150.42)
 position = Vector2(48.4307, 150.419)
 shape = SubResource("RectangleShape2D_3ve4v")
 
-[node name="Polygon2D" type="Polygon2D" parent="NPCs/Phenix2"]
-position = Vector2(-2.44761, -4.89958)
-polygon = PackedVector2Array(-30.5515, 33.3398, 55.5474, 7.69385, -36.106, -20.5171)
-
 [node name="Area2D" type="Area2D" parent="NPCs/Phenix2"]
 position = Vector2(-2877.38, 6380.8)
 rotation = -3.14159
@@ -1214,6 +1298,15 @@ shape = SubResource("RectangleShape2D_dlo5j")
 position = Vector2(5.41543, -250.862)
 stream = ExtResource("12_m5gf3")
 pitch_scale = 2.87
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPCs/Phenix2"]
+rotation = 1.45168
+sprite_frames = SubResource("SpriteFrames_0bv0j")
+autoplay = "default"
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/Phenix2/AnimatedSprite2D"]
+scale = Vector2(1, 1)
+texture = ExtResource("12_xidua")
 
 [node name="Phenix3" type="Sprite2D" parent="NPCs"]
 visible = false
@@ -1254,10 +1347,6 @@ position = Vector2(-45.9832, -150.42)
 position = Vector2(48.4308, 147.97)
 shape = SubResource("RectangleShape2D_3ve4v")
 
-[node name="Polygon2D" type="Polygon2D" parent="NPCs/Phenix3"]
-position = Vector2(0, -7.34948)
-polygon = PackedVector2Array(-30.5515, 33.3398, 55.5474, 7.69385, -36.106, -20.5171)
-
 [node name="Area2D" type="Area2D" parent="NPCs/Phenix3"]
 position = Vector2(-2877.38, 6380.8)
 rotation = -3.14159
@@ -1271,6 +1360,15 @@ shape = SubResource("RectangleShape2D_jh3bw")
 position = Vector2(5.41543, -250.862)
 stream = ExtResource("12_m5gf3")
 pitch_scale = 2.87
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPCs/Phenix3"]
+rotation = 1.45168
+sprite_frames = SubResource("SpriteFrames_0bv0j")
+autoplay = "default"
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCs/Phenix3/AnimatedSprite2D"]
+scale = Vector2(1, 1)
+texture = ExtResource("12_xidua")
 
 [connection signal="body_entered" from="FogOfWar/Fog" to="FogOfWar/Fog" method="_on_body_entered"]
 [connection signal="body_entered" from="FogOfWar/Fog2" to="FogOfWar/Fog2" method="_on_body_entered"]

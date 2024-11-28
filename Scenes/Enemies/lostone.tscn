@@ -260,6 +260,7 @@ pitch_scale = 1.5
 [connection signal="dead2" from="." to="RayCast2D" method="_on_criminal_dead_2"]
 [connection signal="dead2" from="." to="RayCast2D/EnemyBullet" method="_on_criminal_dead_2"]
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="RayCast2D/EnemyBullet" to="RayCast2D/EnemyBullet" method="_on_body_entered"]
 [connection signal="novision" from="RayCast2D/EnemyBullet/VisionLine" to="RayCast2D/EnemyBullet" method="_on_vision_line_novision"]

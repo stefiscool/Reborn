@@ -21,6 +21,7 @@ func _physics_process(_delta: float) -> void:
 		velocity = dir * speed
 		move_and_slide()
 		
+		
 	if hp <= 0:
 		death()
 		
