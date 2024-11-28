@@ -11,7 +11,6 @@ extends CharacterBody2D
 
 
 
-@onready var music4 = $Audio/Music4
 
 var bullet = preload("res://Scenes/bullet.tscn")
 var grenade = preload("res://Scenes/grenade.tscn")
@@ -39,8 +38,9 @@ var can_skill3 = true
 var can_skill4 = true
 
 func player_movement(input, delta):
-	if input: velocity = velocity.move_toward(input * speed , delta * accel)
-	else: velocity = velocity.move_toward(Vector2(0,0), delta * fric)
+	if Global.indialogue == false:
+		if input: velocity = velocity.move_toward(input * speed , delta * accel)
+		else: velocity = velocity.move_toward(Vector2(0,0), delta * fric)
 
 func _ready():
 	Global.ammo = Global.maxammo

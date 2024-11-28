@@ -58,6 +58,8 @@ var flamecharged = false
 var arkarmor = false
 var indialogue = false
 
+var slide = 0
+
 
 
 func _process(_delta):
@@ -71,7 +73,7 @@ func _process(_delta):
 	if flamecharged == true:
 		damage = (100 + (level * 10))
 		seconddamage = (100 + (level * 10))
-
+	
 
 	if arkarmor:
 		defense = 4
