@@ -819,52 +819,6 @@ position = Vector2(-72, 711)
 position = Vector2(-841, 2234)
 rotation = 1.5708
 
-[node name="TutorialLabels" type="Node2D" parent="."]
-
-[node name="Label" type="Label" parent="TutorialLabels"]
-offset_left = -1202.0
-offset_top = 2563.0
-offset_right = -1019.0
-offset_bottom = 2597.0
-theme = ExtResource("10_k72v6")
-text = "WASD to move
-"
-
-[node name="Label2" type="Label" parent="TutorialLabels"]
-offset_left = -791.0
-offset_top = 2209.0
-offset_right = -608.0
-offset_bottom = 2254.0
-theme = ExtResource("10_k72v6")
-text = "LMB to shoot
-RMB to melee"
-
-[node name="Label3" type="Label" parent="TutorialLabels"]
-offset_left = -53.0
-offset_top = 2194.0
-offset_right = 130.0
-offset_bottom = 2239.0
-theme = ExtResource("10_k72v6")
-text = "R to reload
-(costs 1 mag)"
-
-[node name="Label4" type="Label" parent="TutorialLabels"]
-offset_left = -401.0
-offset_top = 1990.0
-offset_right = -60.0
-offset_bottom = 2035.0
-theme = ExtResource("10_k72v6")
-text = "2 to switch to secondary
-1 to switch to primary"
-
-[node name="Label5" type="Label" parent="TutorialLabels"]
-offset_left = 50.0
-offset_top = 654.0
-offset_right = 337.0
-offset_bottom = 699.0
-theme = ExtResource("10_k72v6")
-text = "Z,X,C,V to use abilities"
-
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="LostOne" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_kfn4h")]

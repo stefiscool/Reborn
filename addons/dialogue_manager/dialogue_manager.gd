@@ -92,6 +92,7 @@ func _ready() -> void:
 
 ## Step through lines and run any mutations until we either hit some dialogue or the end of the conversation
 func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_game_states: Array = [], mutation_behaviour: MutationBehaviour = MutationBehaviour.Wait) -> DialogueLine:
+	Global.slide += 1
 	# You have to provide a valid dialogue resource
 	if resource == null:
 		assert(false, DialogueConstants.translate(&"runtime.no_resource"))
@@ -340,6 +341,7 @@ func get_line(resource: DialogueResource, key: String, extra_game_states: Array)
 
 	# See if we just ended the conversation
 	if key in [DialogueConstants.ID_END, DialogueConstants.ID_NULL, null]:
+		Global.indialogue = false
 		if stack.size() > 0:
 			return await get_line(resource, "|".join(stack), extra_game_states)
 		else:

@@ -7,17 +7,18 @@ const Balloon = preload("res://Dialouge/balloon.tscn")
 
 
 func action() -> void:
-	var balloon: Node = Balloon.instantiate()
-	get_tree().current_scene.add_child(balloon)
-	balloon.start(dialogue_resource, dialogue_start)
+	if Global.indialogue == false:
+		var balloon: Node = Balloon.instantiate()
+		get_tree().current_scene.add_child(balloon)
+		balloon.start(dialogue_resource, dialogue_start)
 	
 
-
-func _on_body_entered(body):
-	if body.name == "Player":
-		Global.indialogue = true
-
-
-func _on_body_exited(body):
-	if body.name == "Player":
-		Global.indialogue = false
+#
+#func _on_body_entered(body):
+	#if body.name == "Player":
+		#Global.indialogue = true
+#
+#
+#func _on_body_exited(body):
+	#if body.name == "Player":
+		#Global.indialogue = false
