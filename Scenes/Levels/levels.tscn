@@ -51,16 +51,5 @@ theme = ExtResource("2_1lslv")
 theme_override_font_sizes/font_size = 15
 text = "Tutorial"
 
-[node name="Button2" type="Button" parent="Level Buttons"]
-offset_left = 615.0
-offset_top = 284.0
-offset_right = 698.0
-offset_bottom = 310.0
-theme = ExtResource("2_1lslv")
-theme_override_font_sizes/font_size = 15
-text = "Level 2
-"
-
 [connection signal="pressed" from="Level Buttons/BackButton" to="Level Buttons" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Level Buttons/Button" to="Level Buttons" method="_on_button_pressed"]
-[connection signal="pressed" from="Level Buttons/Button2" to="Level Buttons" method="_on_button_2_pressed"]

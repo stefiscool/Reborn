@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cqabj2oydo1ec"]
+[gd_scene load_steps=43 format=3 uid="uid://cqabj2oydo1ec"]
 
 [ext_resource type="Texture2D" uid="uid://b2ywlpegudor4" path="res://Assets/OperationShadowFallTiles (1) (1) (3).png" id="1_421kv"]
 [ext_resource type="PackedScene" uid="uid://d100l8flk2xi" path="res://Scenes/medkit.tscn" id="2_8nith"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bxlo6suf2ex5y" path="res://Scenes/Enemies/banditpistol.tscn" id="6_0elqm"]
 [ext_resource type="PackedScene" uid="uid://d3a1p4mffduua" path="res://Scenes/Enemies/bandit2pistol.tscn" id="6_dv7n6"]
 [ext_resource type="PackedScene" uid="uid://jnunkxn4orsw" path="res://Scenes/Enemies/banditAR.tscn" id="7_jhvsx"]
-[ext_resource type="Script" path="res://Scripts/Fog.gd" id="7_ue5kh"]
 [ext_resource type="PackedScene" uid="uid://oeuqh0vja8cr" path="res://Scenes/actionable.tscn" id="8_ic0g5"]
 [ext_resource type="Script" path="res://Buttons/Phenix1.gd" id="8_q7l4s"]
 [ext_resource type="PackedScene" uid="uid://df7jie7l233sm" path="res://Scenes/Enemies/bandit2SMG.tscn" id="9_lcagx"]
@@ -760,9 +759,6 @@ physics_layer_1/collision_mask = 2
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_ecod0")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tskg"]
-size = Vector2(14, 77)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhep"]
 size = Vector2(103, 240.5)
 
@@ -1103,64 +1099,6 @@ stream = ExtResource("5_wv2sw")
 volume_db = -15.0
 autoplay = true
 
-[node name="FogOfWar" type="Node2D" parent="."]
-
-[node name="Fog" type="Area2D" parent="FogOfWar"]
-script = ExtResource("7_ue5kh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FogOfWar/Fog"]
-position = Vector2(-440, 1787.5)
-shape = SubResource("RectangleShape2D_6tskg")
-
-[node name="ColorRect" type="ColorRect" parent="FogOfWar/Fog"]
-offset_left = -860.0
-offset_top = 1716.0
-offset_right = -439.0
-offset_bottom = 1851.0
-color = Color(0, 0, 0, 1)
-
-[node name="Fog2" type="Area2D" parent="FogOfWar"]
-script = ExtResource("7_ue5kh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FogOfWar/Fog2"]
-position = Vector2(-360, 1786)
-shape = SubResource("RectangleShape2D_6tskg")
-
-[node name="ColorRect" type="ColorRect" parent="FogOfWar/Fog2"]
-offset_left = -362.0
-offset_top = 1700.0
-offset_right = 172.0
-offset_bottom = 1851.0
-color = Color(0, 0, 0, 1)
-
-[node name="Fog3" type="Area2D" parent="FogOfWar"]
-script = ExtResource("7_ue5kh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FogOfWar/Fog3"]
-position = Vector2(-374, 855)
-shape = SubResource("RectangleShape2D_6tskg")
-
-[node name="ColorRect" type="ColorRect" parent="FogOfWar/Fog3"]
-offset_left = -376.0
-offset_top = 706.0
-offset_right = -81.0
-offset_bottom = 1211.0
-color = Color(0, 0, 0, 1)
-
-[node name="Fog4" type="Area2D" parent="FogOfWar"]
-script = ExtResource("7_ue5kh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FogOfWar/Fog4"]
-position = Vector2(-74, 1169)
-shape = SubResource("RectangleShape2D_6tskg")
-
-[node name="ColorRect" type="ColorRect" parent="FogOfWar/Fog4"]
-offset_left = -86.0
-offset_top = 707.0
-offset_right = 447.0
-offset_bottom = 1257.0
-color = Color(0, 0, 0, 1)
-
 [node name="UI" parent="." instance=ExtResource("9_ns0im")]
 
 [node name="Spaceship" type="Area2D" parent="."]
@@ -1370,10 +1308,6 @@ autoplay = "default"
 [node name="Sprite2D" type="Sprite2D" parent="NPCs/Phenix3/AnimatedSprite2D"]
 texture = ExtResource("12_xidua")
 
-[connection signal="body_entered" from="FogOfWar/Fog" to="FogOfWar/Fog" method="_on_body_entered"]
-[connection signal="body_entered" from="FogOfWar/Fog2" to="FogOfWar/Fog2" method="_on_body_entered"]
-[connection signal="body_entered" from="FogOfWar/Fog3" to="FogOfWar/Fog3" method="_on_body_entered"]
-[connection signal="body_entered" from="FogOfWar/Fog4" to="FogOfWar/Fog4" method="_on_body_entered"]
 [connection signal="body_entered" from="Spaceship" to="Spaceship" method="_on_body_entered"]
 [connection signal="body_entered" from="NPCs/Phenix1/Area2D" to="NPCs/Phenix1" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="NPCs/Phenix1/Area2D" to="NPCs/Phenix1" method="_on_area_2d_body_exited"]
