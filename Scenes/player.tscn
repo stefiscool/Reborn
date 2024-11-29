@@ -967,7 +967,7 @@ rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_lvhpo")
 animation = &"meleebastion"
-frame_progress = 0.187674
+frame_progress = 0.505652
 script = ExtResource("6_ksm2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
