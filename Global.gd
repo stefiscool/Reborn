@@ -58,6 +58,7 @@ var flamecharged = false
 var arkarmor = false
 var indialogue = false
 var nearperson = false
+var beattutorial = false
 
 var slide = 0
 

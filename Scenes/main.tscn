@@ -159,10 +159,10 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="Stats2/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_hln3e")
-text = "Attack: 6
+text = "Attack: 4
 Defense: 10
-Speed: 3
-Range: 5"
+Speed: 4
+Range: 6"
 
 [node name="Stats3" type="ColorRect" parent="."]
 offset_left = 1785.0
@@ -179,7 +179,7 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="Stats3/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_hln3e")
-text = "Attack: 7
+text = "Attack: 5
 Defense: 2
 Speed: 10
 Range: 7"
@@ -199,7 +199,7 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="Stats4/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_hln3e")
-text = "Attack: 6
+text = "Attack: 7
 Defense: 4
 Speed: 5
 Range:10"

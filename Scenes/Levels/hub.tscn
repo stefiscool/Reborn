@@ -902,6 +902,18 @@ autoplay = true
 
 [node name="UI" parent="." instance=ExtResource("5_lmk2r")]
 
+[node name="AutosavingLabel" type="Label" parent="UI"]
+offset_left = 411.0
+offset_top = 602.0
+offset_right = 573.0
+offset_bottom = 625.0
+theme = ExtResource("4_eq5ea")
+text = "Autosaving..."
+
+[node name="Timer" type="Timer" parent="UI/AutosavingLabel"]
+wait_time = 3.0
+autostart = true
+
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="Civilian" type="Sprite2D" parent="NPCs"]
@@ -947,3 +959,4 @@ position = Vector2(-387, 515)
 [connection signal="body_entered" from="HubAreas/LevelSelect" to="HubAreas" method="_on_level_select_body_entered"]
 [connection signal="body_entered" from="HubAreas/SaveGame" to="HubAreas" method="_on_save_game_body_entered"]
 [connection signal="body_entered" from="HubAreas/Weapon" to="HubAreas" method="_on_weapon_body_entered"]
+[connection signal="timeout" from="UI/AutosavingLabel/Timer" to="." method="_on_timer_timeout"]

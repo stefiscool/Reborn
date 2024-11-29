@@ -27,6 +27,7 @@ func save_game():
 func _ready():
 	if Global.autosave == true:
 		save_game()
+		$UI/AutosavingLabel.visible = true
 	else:
 		pass
 	Global.health = Global.maxhealth
@@ -38,3 +39,8 @@ func _ready():
 	Global.damaged = false
 	Global.mags = 3
 	Global.secondmags = 2
+
+
+
+func _on_timer_timeout():
+	$UI/AutosavingLabel.visible = false

@@ -24,6 +24,7 @@ func load_game():
 		Global.xpneeded = node_data["xpneeded"]
 		Global.inventory = node_data["inventory"]
 		Global.autosave = node_data["autosave"]
+		Global.beattutorial = node_data["beattutorial"]
 
 
 func _on_timer_timeout():
