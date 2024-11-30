@@ -62,6 +62,9 @@ var beattutorial = false
 
 var slide = 0
 
+var missionobjectives = 0
+var maxmissionobjectives = 1
+
 
 
 func _process(_delta):

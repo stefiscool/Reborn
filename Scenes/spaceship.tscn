@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://dvss3fpvkxuyj"]
+
+[ext_resource type="Script" path="res://Scripts/Spaceship.gd" id="1_kspc4"]
+[ext_resource type="Texture2D" uid="uid://spo00g3wpoxp" path="res://Assets/Effects/HoverParticles.png" id="2_jwfru"]
+[ext_resource type="Texture2D" uid="uid://cl1c0pvshqyls" path="res://Assets/Starfighter.png" id="3_ojc8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhep"]
+size = Vector2(103, 240.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtp5v"]
+atlas = ExtResource("2_jwfru")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwb08"]
+atlas = ExtResource("2_jwfru")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxcja"]
+atlas = ExtResource("2_jwfru")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn0bf"]
+atlas = ExtResource("2_jwfru")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjbvw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtp5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwb08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxcja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn0bf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Spaceship" type="Area2D"]
+position = Vector2(-5, 8)
+script = ExtResource("1_kspc4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.999878, -0.999992)
+rotation = 1.70165
+shape = SubResource("RectangleShape2D_jyhep")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(-38.5, -0.25)
+rotation = 1.56942
+sprite_frames = SubResource("SpriteFrames_hjbvw")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(33.5, -4.25)
+rotation = 1.56942
+sprite_frames = SubResource("SpriteFrames_hjbvw")
+autoplay = "default"
+
+[node name="Starfighter" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-0.5, 3.75)
+texture = ExtResource("3_ojc8e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CollisionShape2D"]
+position = Vector2(0.860979, -1.12181)
+rotation = -1.70165
+scale = Vector2(1, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionShape2D/StaticBody2D"]
+polygon = PackedVector2Array(-110, -75, -126, 43, -117, 50, -95, 48, -121, 105, -19, 38, 123, 14, -2, -41, -89, -140, -79, -73, -101, -82)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
