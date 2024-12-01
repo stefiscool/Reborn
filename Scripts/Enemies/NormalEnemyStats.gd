@@ -27,7 +27,7 @@ func _ready():
 	if melee == false:
 		$EnemyMelee.queue_free()
 func _physics_process(delta: float) -> void:
-	if dead == false and vision == true:
+	if dead == false and vision == true and $NavigationAgent2D.is_target_reachable():
 		var dir = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = dir * speed * delta
 		move_and_slide()
@@ -100,7 +100,7 @@ func _on_attack_area_entered(area):
 			$Punch.play()
 
 func _on_enemy_melee_body_entered(body):
-	if body.name == "Player" and dead == false and melee == true:	
+	if body.name == "Player" and dead == false and melee == true and vision == true:	
 		$RayCast2D/AnimatedSprite2D.play("meleeing")
 		$EnemyMelee/AudioStreamPlayer2D.play()
 		if Global.shields <= 0:

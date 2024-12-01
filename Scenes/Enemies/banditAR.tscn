@@ -1,10 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://jnunkxn4orsw"]
+[gd_scene load_steps=40 format=3 uid="uid://jnunkxn4orsw"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyStats.gd" id="1_7b0t4"]
 [ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/male_hurt7-48124.mp3" id="2_ay81h"]
 [ext_resource type="Script" path="res://Scripts/enemyaim.gd" id="3_gces5"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyBullet.gd" id="4_klamq"]
 [ext_resource type="AudioStream" uid="uid://c7p4o1cmllkvy" path="res://Audio/9mm-pistol-shot-6349.mp3" id="5_x1n32"]
+[ext_resource type="AudioStream" uid="uid://cwynqdypgmpoc" path="res://Audio/sword-clash-241729.mp3" id="6_8vbbw"]
 [ext_resource type="Script" path="res://Scripts/VisionLine.gd" id="6_jljxj"]
 [ext_resource type="Texture2D" uid="uid://spo00g3wpoxp" path="res://Assets/Effects/HoverParticles.png" id="7_qm62s"]
 [ext_resource type="Texture2D" uid="uid://bkmdry6efdpfh" path="res://Assets/Enemies/banditAR.png" id="8_kl2fd"]
@@ -248,6 +249,10 @@ pitch_scale = 1.67
 stream = ExtResource("2_ay81h")
 volume_db = 0.627
 pitch_scale = 0.8
+
+[node name="Deflect" type="AudioStreamPlayer2D" parent="RayCast2D/EnemyBullet"]
+stream = ExtResource("6_8vbbw")
+pitch_scale = 1.38
 
 [node name="VisionLine" type="RayCast2D" parent="RayCast2D/EnemyBullet"]
 target_position = Vector2(164, -0.000158358)

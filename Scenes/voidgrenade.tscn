@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm7f7lba2s1s2"]
+[gd_scene load_steps=8 format=3 uid="uid://dm7f7lba2s1s2"]
 
 [ext_resource type="Script" path="res://Scripts/voidgrenade.gd" id="1_2twll"]
 [ext_resource type="AudioStream" uid="uid://ce1i10b8rqfpu" path="res://Audio/timebombbeep-93074-[AudioTrimmer.com].mp3" id="2_083dt"]
 [ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="3_mosbh"]
 [ext_resource type="Texture2D" uid="uid://dyiw1kh2hxbd4" path="res://Assets/Specials.png" id="4_0wydk"]
+[ext_resource type="Texture2D" uid="uid://yk1d0k0r64i6" path="res://Assets/Effects/blackhole.png" id="4_ejoem"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hoa0u"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_68ll7"]
 radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g7wci"]
@@ -18,7 +19,7 @@ inertia = 500.0
 script = ExtResource("1_2twll")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_hoa0u")
+shape = SubResource("CircleShape2D_68ll7")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_083dt")
@@ -36,17 +37,13 @@ pitch_scale = 8.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlastRadius"]
 shape = SubResource("CircleShape2D_g7wci")
 
-[node name="Polygon2D" type="Polygon2D" parent="BlastRadius"]
-position = Vector2(-0.0937561, 0.748967)
-scale = Vector2(0.54241, 0.482069)
-color = Color(1, 0, 1, 1)
-polygon = PackedVector2Array(-8, -11, -10.8889, -3.17647, -10.8889, 3.78049, -5.55556, 9.11464, 1.55555, 10.8927, 8.46913, 7.7811, 11.2346, 1.55793, 8.46913, -10.8884, 0, -14)
-
-[node name="Polygon2D2" type="Polygon2D" parent="BlastRadius"]
-position = Vector2(-0.0781298, 0.624139)
-scale = Vector2(0.452008, 0.401724)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(-8, -11, -10.8889, -3.17647, -10.8889, 3.78049, -5.55556, 9.11464, 1.55555, 10.8927, 8.46913, 7.7811, 11.2346, 1.55793, 8.46913, -10.8884, 0, -14)
+[node name="Sprite2D" type="Sprite2D" parent="BlastRadius"]
+position = Vector2(7.45058e-07, 7.45058e-07)
+scale = Vector2(0.078125, 0.078125)
+texture = ExtResource("4_ejoem")
+hframes = 2
+vframes = 2
+frame = 3
 
 [node name="Gre" type="Sprite2D" parent="."]
 scale = Vector2(0.28125, 0.28125)
