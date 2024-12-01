@@ -7,7 +7,7 @@ func _on_body_entered(body):
 		zip.play()
 		picked = true
 		$Timer.start()
-		Global.health += 20
+		Global.health += 50
 		$Med.visible = false
 		$Label.visible = true
 

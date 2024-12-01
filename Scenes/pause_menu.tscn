@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://iqancc5aa0r7"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_30vxl"]
+[ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="1_s21qj"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_30vxl")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.0
+offset_top = -104.0
+offset_right = 183.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ResumeGame" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 40
+text = "Resume
+"
+
+[node name="Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 40
+text = "Go to Menu
+"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 40
+text = "Quit Game
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ResumeGame" to="." method="_on_resume_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

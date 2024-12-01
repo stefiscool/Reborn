@@ -14,7 +14,7 @@ func save():
 	"xpneeded" : Global.xpneeded,
 	"inventory" : Global.inventory,
 	"autosave" : Global.autosave, 
-	"beattutorial" : Global.beattutorial
+
 	}
 	return save_dict
 	

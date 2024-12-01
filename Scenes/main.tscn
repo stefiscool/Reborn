@@ -31,10 +31,21 @@ text = "New Game"
 script = ExtResource("2_77j50")
 
 [node name="LoadGameButton" type="Button" parent="."]
-offset_left = 461.0
-offset_top = 420.0
-offset_right = 726.0
-offset_bottom = 521.0
+offset_left = 462.0
+offset_top = 404.0
+offset_right = 727.0
+offset_bottom = 505.0
+theme = ExtResource("2_hln3e")
+theme_override_fonts/font = ExtResource("1_i7rb3")
+theme_override_font_sizes/font_size = 30
+text = "Load Game"
+script = ExtResource("5_mpped")
+
+[node name="LoadGameButton2" type="Button" parent="."]
+offset_left = 462.0
+offset_top = 404.0
+offset_right = 727.0
+offset_bottom = 505.0
 theme = ExtResource("2_hln3e")
 theme_override_fonts/font = ExtResource("1_i7rb3")
 theme_override_font_sizes/font_size = 30
@@ -188,7 +199,7 @@ Range: 7"
 offset_left = 1971.0
 offset_top = 479.0
 offset_right = 2207.0
-offset_bottom = 572.0
+offset_bottom = 575.0
 color = Color(0, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Stats4"]
@@ -206,6 +217,7 @@ Range:10"
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]
 [connection signal="pressed" from="LoadGameButton" to="LoadGameButton" method="_on_pressed"]
+[connection signal="pressed" from="LoadGameButton2" to="LoadGameButton2" method="_on_pressed"]
 [connection signal="pressed" from="GenesisDisciplines/ClassButtons/BackButton" to="GenesisDisciplines/ClassButtons" method="_on_back_button_pressed"]
 [connection signal="pressed" from="GenesisDisciplines/ClassButtons/Button1" to="GenesisDisciplines/ClassButtons" method="_on_button_1_pressed"]
 [connection signal="pressed" from="GenesisDisciplines/ClassButtons/Button2" to="GenesisDisciplines/ClassButtons" method="_on_button_2_pressed"]

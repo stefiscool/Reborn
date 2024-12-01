@@ -5,7 +5,7 @@ var inventory = ["SCAR", "M1911", "Tactical Vest"]
 var Class = "Noble"
 var level = 1
 var xp = 0
-var xpneeded = 10
+var xpneeded = 20
 var weapon = "SCAR"
 var secondweapon = "M1911"
 var armor = "Tactical Vest"
@@ -62,7 +62,11 @@ var beattutorial = false
 
 var slide = 0
 
-
+var missionobjectives = 0
+var maxmissionobjectives = 1
+var mission = 1
+var missiondesc = ""
+var missionname = ""
 
 func _process(_delta):
 	if health > maxhealth:
@@ -106,5 +110,5 @@ func _process(_delta):
 	
 	if xp >= xpneeded:
 		level += 1
-		xp = 0
-		xpneeded += (level * 10)
+		xp -= xpneeded
+		xpneeded = 20 * pow(level, 2)

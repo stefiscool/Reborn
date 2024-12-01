@@ -1,4 +1,4 @@
-[gd_scene load_steps=151 format=3 uid="uid://cjypwkc5cje34"]
+[gd_scene load_steps=152 format=3 uid="uid://cjypwkc5cje34"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_cxcq2"]
 [ext_resource type="Script" path="res://Scripts/Super Slash.gd" id="2_ka7xj"]
@@ -38,12 +38,13 @@
 [ext_resource type="PackedScene" uid="uid://bs7xvi2jradfk" path="res://Scenes/gun.tscn" id="31_wauq5"]
 [ext_resource type="Script" path="res://Scripts/Ark Armor.gd" id="32_f7rue"]
 [ext_resource type="AudioStream" uid="uid://drbw0yucqj0h7" path="res://Audio/warp.mp3" id="34_1pqxu"]
+[ext_resource type="PackedScene" uid="uid://iqancc5aa0r7" path="res://Scenes/pause_menu.tscn" id="39_2toct"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5oxb"]
 radius = 6.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5hu0"]
-size = Vector2(5, 8)
+size = Vector2(10.5, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nsq4d"]
 radius = 4.0
@@ -889,12 +890,12 @@ visible = false
 script = ExtResource("3_t5fwu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skills/Root Rupture"]
-position = Vector2(2, 0.5)
+position = Vector2(4.75, 0.5)
 shape = SubResource("RectangleShape2D_r5hu0")
 
 [node name="RootRupture" type="Sprite2D" parent="Skills/Root Rupture"]
-position = Vector2(9, 0.499998)
-scale = Vector2(0.171875, 0.179687)
+position = Vector2(4, 2.5)
+scale = Vector2(0.09375, 0.132813)
 texture = ExtResource("5_5l5dx")
 
 [node name="Force Push" type="Area2D" parent="Skills"]
@@ -1110,6 +1111,10 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_ca4x7")
+
+[node name="PauseMenu" parent="." instance=ExtResource("39_2toct")]
+process_mode = 3
+visible = false
 
 [connection signal="body_entered" from="Skills/Super Slash" to="Skills/Super Slash" method="_on_body_entered"]
 [connection signal="body_entered" from="Skills/ElectroDash" to="Skills/ElectroDash" method="_on_body_entered"]
