@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var gunshot = $Gunshot
 @onready var hit = $Hit
+@onready var deflect = $Deflect
 var vision = false
 var can_fire = true
 var dead = false
@@ -18,15 +19,16 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("Player") and dead == false:
-		hit.play()
-		if Global.shields <= 0:
-			Global.health -= int(damage/(Global.defense))
-			Global.damaged = true
-
+		if Global.deflecting == false:
+			hit.play()
+			if Global.shields <= 0:
+				Global.health -= int(damage/(Global.defense))
+				Global.damaged = true
+			else:
+				Global.shields -= int(damage/(Global.defense))
+				Global.damaged = true
 		else:
-			Global.shields -= int(damage/(Global.defense))
-			Global.damaged = true
-
+			deflect.play()
 		position.x = 0
 		can_fire = false
 		$Firerate.start()

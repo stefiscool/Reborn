@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://e8pfa1axkahc"]
+[gd_scene load_steps=13 format=3 uid="uid://e8pfa1axkahc"]
 
 [ext_resource type="Script" path="res://Scripts/flashbang.gd" id="1_7o5lu"]
 [ext_resource type="AudioStream" uid="uid://ce1i10b8rqfpu" path="res://Audio/timebombbeep-93074-[AudioTrimmer.com].mp3" id="2_y0alm"]
 [ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="3_vumlu"]
+[ext_resource type="Texture2D" uid="uid://34pie53x6e1a" path="res://Assets/Effects/electrodash.png" id="4_eb7vc"]
 [ext_resource type="Texture2D" uid="uid://dyiw1kh2hxbd4" path="res://Assets/Specials.png" id="4_xyu7f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hoa0u"]
@@ -10,6 +11,42 @@ radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g7wci"]
 radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yyx6"]
+atlas = ExtResource("4_eb7vc")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rui01"]
+atlas = ExtResource("4_eb7vc")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c7ht"]
+atlas = ExtResource("4_eb7vc")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hihwc"]
+atlas = ExtResource("4_eb7vc")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ih8fb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yyx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rui01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0c7ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hihwc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="Flashbang" type="RigidBody2D"]
 mass = 100.0
@@ -41,6 +78,13 @@ position = Vector2(-0.0937561, 0.748967)
 scale = Vector2(0.54241, 0.482069)
 color = Color(0.52549, 1, 0, 1)
 polygon = PackedVector2Array(-8, -11, -10.8889, -3.17647, -10.8889, 3.78049, -5.55556, 9.11464, 1.55555, 10.8927, 8.46913, 7.7811, 11.2346, 1.55793, 8.46913, -10.8884, 0, -14)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BlastRadius"]
+position = Vector2(3.27826e-07, 1)
+scale = Vector2(0.21875, 0.234375)
+sprite_frames = SubResource("SpriteFrames_ih8fb")
+autoplay = "default"
+frame_progress = 0.765053
 
 [node name="Gre" type="Sprite2D" parent="."]
 scale = Vector2(0.28125, 0.28125)

@@ -59,6 +59,7 @@ var arkarmor = false
 var indialogue = false
 var nearperson = false
 var beattutorial = false
+var deflecting = false
 
 var slide = 0
 
@@ -90,12 +91,12 @@ func _process(_delta):
 		skill1 = "Grenade"
 		skill2 = "Super Slash"
 		skill3 = "Flame Charge"
-		skill4 = "Estus Flask"
+		skill4 = "Thousand Cuts"
 	elif Class == "Bastion":
 		skill1 = "Seed Grenade"
 		skill2 = "Root Rupture"
 		skill3 = "Ark Armor"
-		skill4 = "(<50HP)Second Wind"
+		skill4 = "Second Wind"
 	elif Class == "Assassin":
 		skill1 = "Flashbang"
 		skill2 = "Electro Dash"

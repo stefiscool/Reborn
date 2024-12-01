@@ -22,6 +22,7 @@ func _ready():
 	Global.mags = 3
 	Global.secondmags = 2
 	Global.missionobjectives = 0 
+	Global.beattutorial = true
 	
 func _process(_delta):
 	$MissionLabel.text = Global.missionname

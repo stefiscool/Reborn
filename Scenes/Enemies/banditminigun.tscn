@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bhjwoph518ng"]
+[gd_scene load_steps=38 format=3 uid="uid://bhjwoph518ng"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyStats.gd" id="1_s3ao2"]
 [ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/male_hurt7-48124.mp3" id="2_vvud7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyBullet.gd" id="4_nlyjr"]
 [ext_resource type="AudioStream" uid="uid://bmr5owaxjbpe6" path="res://Audio/machine-gun-129928.mp3" id="5_1tdhi"]
 [ext_resource type="Script" path="res://Scripts/VisionLine.gd" id="6_yuo25"]
+[ext_resource type="AudioStream" uid="uid://cwynqdypgmpoc" path="res://Audio/sword-clash-241729.mp3" id="7_ba1fd"]
 [ext_resource type="Texture2D" uid="uid://spo00g3wpoxp" path="res://Assets/Effects/HoverParticles.png" id="7_lhb5e"]
 [ext_resource type="Texture2D" uid="uid://dpwuts1adfbto" path="res://Assets/Enemies/banditminigun.png" id="8_erbm5"]
 [ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/cut.mp3" id="9_kx8cm"]
@@ -258,6 +259,10 @@ offset_right = 25.0
 offset_bottom = 6.0
 color = Color(1, 1, 0, 1)
 
+[node name="Deflect" type="AudioStreamPlayer2D" parent="RayCast2D/EnemyBullet"]
+stream = ExtResource("7_ba1fd")
+pitch_scale = 1.38
+
 [node name="EnemyBullet2" type="Area2D" parent="RayCast2D"]
 script = ExtResource("4_nlyjr")
 damage = 5
@@ -291,6 +296,10 @@ offset_top = 5.0
 offset_right = 25.0
 offset_bottom = 6.0
 color = Color(1, 1, 0, 1)
+
+[node name="Deflect" type="AudioStreamPlayer2D" parent="RayCast2D/EnemyBullet2"]
+stream = ExtResource("7_ba1fd")
+pitch_scale = 1.38
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RayCast2D"]
 texture_filter = 1

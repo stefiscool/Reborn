@@ -113,12 +113,15 @@ func _physics_process(delta):
 		$ShieldCool/ShieldRegen.stop()
 		Global.damaged = false
 	
-	if overcharged == true:
+	if overcharged == true and speed != 1000:
 		speed = 300
 		$Skills/ElectricParticles.visible = true
 		
-		
-		
+	if Global.meleeing == true and Global.flamecharged == true:
+		Global.deflecting = true
+	else:
+		Global.deflecting = false
+
 	if Global.secondary == false:
 		if Input.is_action_pressed("fire") and can_fire and Global.ammo > 0 and reloading == false and Global.meleeing == false and Global.indialogue == false and Global.nearperson == false and paused == false:
 			var bullet_instance = bullet.instantiate()
@@ -193,6 +196,7 @@ func _physics_process(delta):
 			$"Skills/Super Slash".scale.y = 20
 			$Audio/SuperSlash.play()
 			$Skills/SkillTimer.start()
+			$"Skills/Super Slash/AnimatedSprite2D".play("default")
 			can_skill2 = false
 			$SkillCooldowns/SkillCooldown2.start()
 			
@@ -205,11 +209,14 @@ func _physics_process(delta):
 			$SkillCooldowns/SkillCooldown3.start()
 			
 		if Input.is_action_just_pressed("skill4") and can_skill4:
-			if Global.health < Global.maxhealth:
-				Global.health += 30
-				can_skill4 = false
-				$SkillCooldowns/SkillCooldown4.start()
-				$Audio/Drink.play()
+			Global.meleeing = true
+			$"Skills/Thousand Cuts".scale.x = 40
+			$"Skills/Thousand Cuts".scale.y = 40
+			$Audio/SuperSlash.play()
+			$"Skills/Thousand Cuts/AnimatedSprite2D".play("default")
+			$Skills/SkillTimer.start()
+			can_skill4 = false
+			$SkillCooldowns/SkillCooldown4.start()
 	elif Global.Class == "Bastion" and paused == false:
 		if Input.is_action_just_pressed("skill1") and can_skill1:
 			var seedgrenade_instance = seedgrenade.instantiate()
@@ -237,11 +244,11 @@ func _physics_process(delta):
 			can_skill3 = false
 			$SkillCooldowns/SkillCooldown3.start()
 		if Input.is_action_just_pressed("skill4") and can_skill4:
-			if Global.health < 50:
-				Global.health += 100
-				can_skill4 = false
-				$SkillCooldowns/SkillCooldown4.start()
-				$Audio/SuperSlash.play()
+			Global.health = Global.maxhealth
+			Global.shields = Global.maxshields
+			can_skill4 = false
+			$SkillCooldowns/SkillCooldown4.start()
+			$Audio/SuperSlash.play()
 	elif Global.Class == "Assassin" and paused == false:
 		if Input.is_action_just_pressed("skill1") and can_skill1:
 			var flashbang_instance = flashbang.instantiate()
@@ -257,6 +264,7 @@ func _physics_process(delta):
 			$Audio/SuperSlash.play()
 			$Skills/SkillTimer.start()
 			$Skills/ElectricParticles.visible = true
+			$Skills/ElectroDash/AnimatedSprite2D.play("default")
 			can_skill2 = false
 			$SkillCooldowns/SkillCooldown2.start()
 			$Skills/ElectroDash.scale.x = 7
@@ -288,6 +296,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("skill2") and can_skill2:
 			$Audio/Warp.play()
 			$Skills/SkillTimer.start()
+			$"Skills/Force Push/AnimatedSprite2D".play("default")
 			$"Skills/Force Push".scale.x = 30
 			$"Skills/Force Push".scale.y = 30
 			$"Skills/Force Push/StaticBody2D/CollisionShape2D".scale.x = 2
@@ -306,6 +315,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("skill4") and can_skill4:
 			$Audio/Warp.play()
 			$Skills/SkillTimer.start()
+			$"Skills/Force Push/AnimatedSprite2D".play("default")
 			$"Skills/Force Push".scale.x = 150
 			$"Skills/Force Push".scale.y = 150
 			can_skill4 = false
@@ -368,6 +378,8 @@ func _on_skill_cooldown_4_timeout():
 func _on_skill_timer_timeout():
 	$"Skills/Super Slash".scale.x = 1
 	$"Skills/Super Slash".scale.y = 1
+	$"Skills/Thousand Cuts".scale.x = 1
+	$"Skills/Thousand Cuts".scale.y = 1
 	$"Skills/Root Rupture".scale.x = 1
 	$"Skills/Root Rupture".scale.y = 1
 	$"Skills/Lightning Bolt".scale.x = 1
