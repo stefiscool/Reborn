@@ -14,5 +14,6 @@ func _on_body_entered(body):
 		Global.secondmags = 2
 		Global.beattutorial = true
 		Global.missionobjectives = 0
+		Global.mission = 0
 		
 		get_tree().change_scene_to_file("res://Scenes/victory.tscn")

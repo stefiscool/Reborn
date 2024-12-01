@@ -8,10 +8,11 @@ extends CharacterBody2D
 @onready var switch = $Audio/WeaponSwitch
 @onready var hit = $Audio/Hit
 @onready var actionable_finder: Area2D = $ActionableFinder
+@onready var pause_menu = $PauseMenu
 
 
 
-
+var paused = false
 var bullet = preload("res://Scenes/bullet.tscn")
 var grenade = preload("res://Scenes/grenade.tscn")
 var seedgrenade = preload("res://Scenes/seedgrenade.tscn")
@@ -44,10 +45,16 @@ func player_movement(input, delta):
 
 func _ready():
 	Global.ammo = Global.maxammo
-
-
+	
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
+	if paused == false:
+		Engine.time_scale = 1
 		
 func _physics_process(delta):
+	
+		
 	if Global.secondary == false and voidvision == false:
 		$Camera2D.zoom.x = Global.zoom
 		$Camera2D.zoom.y = Global.zoom
@@ -89,7 +96,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("secondary") and Global.secondary == false and reloading == false:
 		Global.secondary = true
 		switch.play()
-	if Input.is_action_pressed("melee"):
+	if Input.is_action_pressed("melee") and paused == false:
 		Global.meleeing = true
 		$Gun.visible = false
 		
@@ -113,7 +120,7 @@ func _physics_process(delta):
 		
 		
 	if Global.secondary == false:
-		if Input.is_action_pressed("fire") and can_fire and Global.ammo > 0 and reloading == false and Global.meleeing == false and Global.indialogue == false and Global.nearperson == false:
+		if Input.is_action_pressed("fire") and can_fire and Global.ammo > 0 and reloading == false and Global.meleeing == false and Global.indialogue == false and Global.nearperson == false and paused == false:
 			var bullet_instance = bullet.instantiate()
 			gunfire.play()
 			bullet_instance.position = $BulletPoint.get_global_position()
@@ -133,7 +140,7 @@ func _physics_process(delta):
 			reloading = true
 			
 	if Global.secondary == true:	
-		if Input.is_action_just_pressed("fire") and can_fire and Global.secondammo > 0 and reloading == false and Global.meleeing == false and Global.indialogue == false:
+		if Input.is_action_just_pressed("fire") and can_fire and Global.secondammo > 0 and reloading == false and Global.meleeing == false and Global.indialogue == false and Global.nearperson == false and paused == false:
 			var bullet_instance = bullet.instantiate()
 			secondgunfire.play()
 			bullet_instance.position = $BulletPoint.get_global_position()
@@ -169,7 +176,7 @@ func _physics_process(delta):
 	
 	move_and_slide()
 		
-	if Global.Class == "Noble":
+	if Global.Class == "Noble" and paused == false:
 		if Input.is_action_just_pressed("skill1") and can_skill1:
 			var grenade_instance = grenade.instantiate()
 			
@@ -203,7 +210,7 @@ func _physics_process(delta):
 				can_skill4 = false
 				$SkillCooldowns/SkillCooldown4.start()
 				$Audio/Drink.play()
-	elif Global.Class == "Bastion":
+	elif Global.Class == "Bastion" and paused == false:
 		if Input.is_action_just_pressed("skill1") and can_skill1:
 			var seedgrenade_instance = seedgrenade.instantiate()
 			
@@ -235,7 +242,7 @@ func _physics_process(delta):
 				can_skill4 = false
 				$SkillCooldowns/SkillCooldown4.start()
 				$Audio/SuperSlash.play()
-	elif Global.Class == "Assassin":
+	elif Global.Class == "Assassin" and paused == false:
 		if Input.is_action_just_pressed("skill1") and can_skill1:
 			var flashbang_instance = flashbang.instantiate()
 			
@@ -269,7 +276,7 @@ func _physics_process(delta):
 			$Audio/Thunder.play()
 			can_skill4 = false
 			$SkillCooldowns/SkillCooldown4.start()
-	elif Global.Class == "Scholar":
+	elif Global.Class == "Scholar" and paused == false:
 		if Input.is_action_just_pressed("skill1") and can_skill1:
 			var voidgrenade_instance = voidgrenade.instantiate()
 			voidgrenade_instance.position = $BulletPoint.get_global_position()
@@ -304,7 +311,14 @@ func _physics_process(delta):
 			can_skill4 = false
 			$SkillCooldowns/SkillCooldown4.start()
 		
-
+func pauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+	paused= !paused
 	
 func _on_firerate_timeout():
 	can_fire = true

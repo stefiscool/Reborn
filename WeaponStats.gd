@@ -14,7 +14,7 @@ func _process(_delta):
 		var second_weapons = {
 			"M1911": {"rateoffire": 0.2, "damage": 50, "maxammo": 9, "bulletvelocity": 1750, "element": "Kinetic", "zoom": 2.0, "description": "A classic, high-caliber pistol with significant stopping power. Effective as a reliable backup weapon."},
 			"Glock 18": {"rateoffire": 0.1, "damage": 33, "maxammo": 17, "bulletvelocity": 1700, "element": "Kinetic", "zoom": 2.0, "description": "A cool pistol with a high rate of fire. Ideal for quick, close-quarters engagements."},
-			"Deagle": {"rateoffire": 0.3, "damage": 70, "maxammo": 7, "bulletvelocity": 1600, "element": "Kinetic", "zoom": 2.0, "description": "A high-caliber pistol with exceptional damage. Perfect for taking down enemies with a few well-placed shots."}
+			"Deagle": {"rateoffire": 0.3, "damage": 90, "maxammo": 7, "bulletvelocity": 1600, "element": "Kinetic", "zoom": 2.0, "description": "A high-caliber pistol with exceptional damage. Perfect for taking down enemies with a few well-placed shots."}
 		}
 
 		var armors = {

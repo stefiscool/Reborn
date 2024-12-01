@@ -48,6 +48,7 @@ func _process(_delta):
 		else:
 			play("meleeassassin")
 			$"../Gun".visible = false
+			
 	elif Global.Class == "Scholar":
 		if Global.meleeing == false:
 			if Input.is_action_pressed("move_up"):

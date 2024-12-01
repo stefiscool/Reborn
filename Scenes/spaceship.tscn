@@ -50,6 +50,7 @@ script = ExtResource("1_kspc4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.999878, -0.999992)
 rotation = 1.70165
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jyhep")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
@@ -71,7 +72,6 @@ texture = ExtResource("3_ojc8e")
 [node name="StaticBody2D" type="StaticBody2D" parent="CollisionShape2D"]
 position = Vector2(0.860979, -1.12181)
 rotation = -1.70165
-scale = Vector2(1, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionShape2D/StaticBody2D"]
 polygon = PackedVector2Array(-110, -75, -126, 43, -117, 50, -95, 48, -121, 105, -19, 38, 123, 14, -2, -41, -89, -140, -79, -73, -101, -82)

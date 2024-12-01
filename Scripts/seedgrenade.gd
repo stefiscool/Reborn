@@ -18,7 +18,7 @@ func _process(_delta):
 func _on_blast_radius_body_entered(body):
 	if blown == true and body.is_in_group("Enemy"):
 		body.hp -= 10
-		body.speed -= 50
+		body.speed -= 5000
 
 func _physics_process(_delta):
 	if blown == true and scale.x < 35:
