@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://clh5t3dp121pv"]
+
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_5fww2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5o3i"]
+radius = 5.0
+
+[node name="Photon" type="RigidBody2D"]
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_5fww2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c5o3i")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-3, 0)
+color = Color(0.8, 0.0509804, 0, 1)
+polygon = PackedVector2Array(3, -5, -25, 0, 3, 5, 6, 4, 7, 3, 8, 0, 7, -3, 6, -4)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

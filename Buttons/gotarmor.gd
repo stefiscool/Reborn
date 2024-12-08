@@ -9,7 +9,16 @@ func _ready():
 		"Mercenary Armor",
 		"Infantry Armor",
 		"Navy Armor",
-		"Cyber Armor"
+		"Cyber Armor",
+		"Bandit Light Armor",
+		"Bandit Medium Armor",
+		"Bandit Heavy Armor",
+		"Shock Robe",
+		"Void Robe",
+		"Marine Armor",
+		"Arctic Soldier Armor",
+		"Reborn Squire Armor",
+		"Reborn Knight Armor"
 	]
 	var random_index = randi() % items.size()
 	random_item = items[random_index]

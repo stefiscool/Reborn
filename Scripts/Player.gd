@@ -14,6 +14,7 @@ extends CharacterBody2D
 
 var paused = false
 var bullet = preload("res://Scenes/bullet.tscn")
+var secondbullet = preload("res://Scenes/bullet.tscn")
 var grenade = preload("res://Scenes/grenade.tscn")
 var seedgrenade = preload("res://Scenes/seedgrenade.tscn")
 var flashbang = preload("res://Scenes/flashbang.tscn")
@@ -46,6 +47,64 @@ func player_movement(input, delta):
 func _ready():
 	Global.ammo = Global.maxammo
 	
+	if Global.element == "Laser":
+		gunfire = $Audio/Gunshots/Laser
+		bullet = preload("res://Scenes/laser.tscn")
+	elif Global.element == "Kinetic(AT)":
+		gunfire = $Audio/Gunshots/AT
+		bullet = preload("res://Scenes/bullet.tscn")
+	elif Global.element == "Kinetic(MG)":
+		gunfire = $Audio/Gunshots/MG
+		bullet = preload("res://Scenes/bullet.tscn")
+	elif Global.element == "Kinetic":
+		gunfire = $Audio/Gunfire
+		bullet = preload("res://Scenes/bullet.tscn")
+	elif Global.element == "Kinetic(Sh)":
+		gunfire = $Audio/Gunshots/Shotgun
+	elif Global.element == "Kinetic(SeSh)":
+		gunfire = $Audio/Gunshots/SemAutoShot
+	elif Global.element == "Kinetic(Su)":
+		gunfire = $Audio/Gunshots/Silenced
+		bullet = preload("res://Scenes/bullet.tscn")
+	elif Global.element == "Kinetic(Sn)":
+		gunfire = $Audio/Gunshots/Sniper
+		bullet = preload("res://Scenes/bullet.tscn")
+	elif Global.element == "Shock":
+		gunfire = $Audio/Gunshots/Shock
+		bullet = preload("res://Scenes/shock.tscn")
+	elif Global.element == "Photon":
+		gunfire = $Audio/Gunshots/Photon
+		bullet = preload("res://Scenes/photon.tscn")
+	elif Global.element == "Void":
+		gunfire = $Audio/Gunshots/Void
+	elif Global.element == "Explosive":
+		gunfire = $Audio/Gunshots/RPG
+	
+	if Global.secondelement == "Laser":
+		secondgunfire = $Audio/Gunshots/Laser
+	elif Global.secondelement == "Kinetic(AT)":
+		secondgunfire = $Audio/Gunshots/AT
+	elif Global.secondelement == "Kinetic":
+		secondgunfire = $Audio/SecondGunfire
+	elif Global.secondelement == "Kinetic(Sh)":
+		secondgunfire = $Audio/Gunshots/Shotgun
+	elif Global.secondelement == "Kinetic(SeSh)":
+		secondgunfire = $Audio/Gunshots/SemAutoShot
+	elif Global.secondelement == "Kinetic(Su)":
+		secondgunfire = $Audio/Gunshots/Silenced
+	elif Global.secondelement == "Kinetic(Sn)":
+		secondgunfire = $Audio/Gunshots/Sniper
+	elif Global.secondelement == "Shock":
+		secondgunfire = $Audio/Gunshots/Shock
+		secondbullet = preload("res://Scenes/shock.tscn")
+	elif Global.secondelement == "Photon":
+		secondgunfire = $Audio/Gunshots/Photon
+		secondbullet = preload("res://Scenes/photon.tscn")
+	elif Global.secondelement == "Void":
+		secondgunfire = $Audio/Gunshots/Void
+	elif Global.secondelement == "Explosive":
+		secondgunfire = $Audio/Gunshots/RPG
+		
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
@@ -54,7 +113,8 @@ func _process(delta):
 		
 func _physics_process(delta):
 	
-		
+	
+	
 	if Global.secondary == false and voidvision == false:
 		$Camera2D.zoom.x = Global.zoom
 		$Camera2D.zoom.y = Global.zoom
@@ -144,7 +204,7 @@ func _physics_process(delta):
 			
 	if Global.secondary == true:	
 		if Input.is_action_just_pressed("fire") and can_fire and Global.secondammo > 0 and reloading == false and Global.meleeing == false and Global.indialogue == false and Global.nearperson == false and paused == false:
-			var bullet_instance = bullet.instantiate()
+			var bullet_instance = secondbullet.instantiate()
 			secondgunfire.play()
 			bullet_instance.position = $BulletPoint.get_global_position()
 			bullet_instance.rotation_degrees = rotation_degrees

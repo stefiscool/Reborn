@@ -1,10 +1,27 @@
-[gd_scene load_steps=12 format=3 uid="uid://3m771uxc7igw"]
+[gd_scene load_steps=22 format=3 uid="uid://3m771uxc7igw"]
 
 [ext_resource type="Script" path="res://Scripts/armor.gd" id="1_i4tor"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="2_sph68"]
+[ext_resource type="Texture2D" uid="uid://kxt4ier8wwcg" path="res://Assets/Weapons/Armor (1).png" id="3_ikgla"]
 [ext_resource type="Texture2D" uid="uid://beeobipowlfts" path="res://Assets/Weapons/Armor.png" id="3_nwwi3"]
 [ext_resource type="Script" path="res://Labels/ArmorSprite.gd" id="4_h5ty0"]
 [ext_resource type="Script" path="res://Buttons/InventoryButtons.gd" id="5_ieix8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yxoi"]
+atlas = ExtResource("3_ikgla")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5748d"]
+atlas = ExtResource("3_ikgla")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d61q6"]
+atlas = ExtResource("3_ikgla")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq4kr"]
+atlas = ExtResource("3_ikgla")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8uri8"]
 atlas = ExtResource("3_nwwi3")
@@ -14,20 +31,72 @@ region = Rect2(32, 64, 32, 32)
 atlas = ExtResource("3_nwwi3")
 region = Rect2(32, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oe8l"]
+atlas = ExtResource("3_nwwi3")
+region = Rect2(0, 64, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fik23"]
 atlas = ExtResource("3_nwwi3")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yfjct"]
-atlas = ExtResource("3_nwwi3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3rfv"]
+atlas = ExtResource("3_ikgla")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fexvx"]
+atlas = ExtResource("3_ikgla")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlmht"]
+atlas = ExtResource("3_ikgla")
 region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uwis"]
+atlas = ExtResource("3_ikgla")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ngql"]
 atlas = ExtResource("3_nwwi3")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvbgx"]
+atlas = ExtResource("3_ikgla")
+region = Rect2(64, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qvc7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yxoi")
+}],
+"loop": true,
+"name": &"Arctic Soldier Armor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5748d")
+}],
+"loop": true,
+"name": &"Bandit Heavy Armor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d61q6")
+}],
+"loop": true,
+"name": &"Bandit Light Armor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq4kr")
+}],
+"loop": true,
+"name": &"Bandit Medium Armor",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8uri8")
@@ -46,6 +115,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_0oe8l")
+}],
+"loop": true,
+"name": &"Marine Armor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fik23")
 }],
 "loop": true,
@@ -54,10 +131,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yfjct")
+"texture": SubResource("AtlasTexture_c3rfv")
 }],
 "loop": true,
 "name": &"Navy Armor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fexvx")
+}],
+"loop": true,
+"name": &"Reborn Knight Armor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlmht")
+}],
+"loop": true,
+"name": &"Reborn Squire Armor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uwis")
+}],
+"loop": true,
+"name": &"Shock Robe",
 "speed": 5.0
 }, {
 "frames": [{
@@ -66,6 +167,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Tactical Vest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvbgx")
+}],
+"loop": true,
+"name": &"Void Robe",
 "speed": 5.0
 }]
 
@@ -122,6 +231,60 @@ layout_mode = 2
 theme = ExtResource("2_sph68")
 text = "Cyber Armor"
 
+[node name="Button6" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Bandit Light Armor"
+
+[node name="Button7" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Bandit Medium Armor"
+
+[node name="Button8" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Bandit Heavy Armor"
+
+[node name="Button9" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Shock Robe"
+
+[node name="Button10" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Void Robe"
+
+[node name="Button11" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Marine Armor"
+
+[node name="Button12" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Artic Soldier Armor"
+
+[node name="Button13" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Reborn Squire Armor"
+
+[node name="Button14" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_sph68")
+text = "Reborn Knight Armor"
+
 [node name="Label" type="Label" parent="."]
 offset_left = 242.0
 offset_top = 19.0
@@ -158,7 +321,7 @@ text = "Go Back
 position = Vector2(792, 192)
 scale = Vector2(6.09375, 6.92188)
 sprite_frames = SubResource("SpriteFrames_0qvc7")
-animation = &"Tactical Vest"
+animation = &"Marine Armor"
 script = ExtResource("4_h5ty0")
 
 [node name="InventoryButtons" type="Node2D" parent="."]
@@ -196,6 +359,15 @@ text = "Armor
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button12" to="." method="_on_button_12_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button13" to="." method="_on_button_13_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button14" to="." method="_on_button_14_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="InventoryButtons/PrimaryButton" to="InventoryButtons" method="_on_primary_button_pressed"]
 [connection signal="pressed" from="InventoryButtons/SecondaryButton" to="InventoryButtons" method="_on_secondary_button_pressed"]

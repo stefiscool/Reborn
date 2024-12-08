@@ -1,4 +1,4 @@
-[gd_scene load_steps=185 format=3 uid="uid://cjypwkc5cje34"]
+[gd_scene load_steps=195 format=3 uid="uid://cjypwkc5cje34"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_cxcq2"]
 [ext_resource type="Script" path="res://Scripts/Super Slash.gd" id="2_ka7xj"]
@@ -42,7 +42,17 @@
 [ext_resource type="PackedScene" uid="uid://bs7xvi2jradfk" path="res://Scenes/gun.tscn" id="31_wauq5"]
 [ext_resource type="Script" path="res://Scripts/Ark Armor.gd" id="32_f7rue"]
 [ext_resource type="AudioStream" uid="uid://drbw0yucqj0h7" path="res://Audio/warp.mp3" id="34_1pqxu"]
+[ext_resource type="AudioStream" uid="uid://cy36mh2qcehf2" path="res://Audio/laser-gun-81720 (1).mp3" id="37_51ocl"]
+[ext_resource type="AudioStream" uid="uid://cg8emai4bcp24" path="res://Audio/Gunfire/ATsniper-rifle-5989.mp3" id="38_wuea5"]
 [ext_resource type="PackedScene" uid="uid://iqancc5aa0r7" path="res://Scenes/pause_menu.tscn" id="39_2toct"]
+[ext_resource type="AudioStream" uid="uid://deadlq64k5oko" path="res://Audio/Gunfire/cannon-shot-14799.mp3" id="39_vmoh4"]
+[ext_resource type="AudioStream" uid="uid://di4v5pulqw3b7" path="res://Audio/Gunfire/doom-shotgun-2017-80549.mp3" id="40_bu5we"]
+[ext_resource type="AudioStream" uid="uid://8xeex6wi005q" path="res://Audio/Gunfire/electric-impact-37128.mp3" id="41_6xi1r"]
+[ext_resource type="AudioStream" uid="uid://bmdg5g5cmvafr" path="res://Audio/Gunfire/photonsci-fi-cannon-firing-whoosh-after-fire-low-pitch-slight-reverb-204400.mp3" id="42_kp0av"]
+[ext_resource type="AudioStream" uid="uid://dt5md681sy5nn" path="res://Audio/Gunfire/semautoshotgun-firing-3-14483.mp3" id="43_tlygf"]
+[ext_resource type="AudioStream" uid="uid://d01v7fxvu2i8q" path="res://Audio/Gunfire/silenced-gunshot-81063.mp3" id="44_ldwe6"]
+[ext_resource type="AudioStream" uid="uid://dbc2ppco03fh2" path="res://Audio/Gunfire/sniper-rifle-firing-shot-1-39789 (1).mp3" id="45_x5j1l"]
+[ext_resource type="AudioStream" uid="uid://cp1mslqrk5d7v" path="res://Audio/Gunfire/voidexplosion-36210.mp3" id="46_nwjo5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5oxb"]
 radius = 6.0
@@ -1271,7 +1281,47 @@ pitch_scale = 1.84
 stream = ExtResource("34_1pqxu")
 pitch_scale = 1.36
 
+[node name="Gunshots" type="Node2D" parent="Audio"]
+
+[node name="Laser" type="AudioStreamPlayer2D" parent="Audio/Gunshots"]
+stream = ExtResource("37_51ocl")
+
+[node name="AT" type="AudioStreamPlayer2D" parent="Audio/Gunshots"]
+stream = ExtResource("38_wuea5")
+
+[node name="MG" type="AudioStreamPlayer2D" parent="Audio/Gunshots"]
+stream = ExtResource("4_0mvi2")
+volume_db = -4.953
+pitch_scale = 0.61
+
+[node name="RPG" type="AudioStreamPlayer2D" parent="Audio/Gunshots"]
+stream = ExtResource("39_vmoh4")
+
+[node name="Shotgun" type="AudioStreamPlayer2D" parent="Audio/Gunshots"]
+stream = ExtResource("40_bu5we")
+
+[node name="Shock" type="AudioStreamPlayer2D" parent="Audio/Gunshots"]
+stream = ExtResource("41_6xi1r")
+
+[node name="Photon" type="AudioStreamPlayer2D" parent="Audio/Gunshots"]
+stream = ExtResource("42_kp0av")
+volume_db = 10.731
+pitch_scale = 1.69
+
+[node name="SemAutoShot" type="AudioStreamPlayer2D" parent="Audio/Gunshots"]
+stream = ExtResource("43_tlygf")
+
+[node name="Silenced" type="AudioStreamPlayer2D" parent="Audio/Gunshots"]
+stream = ExtResource("44_ldwe6")
+
+[node name="Sniper" type="AudioStreamPlayer2D" parent="Audio/Gunshots"]
+stream = ExtResource("45_x5j1l")
+
+[node name="Void" type="AudioStreamPlayer2D" parent="Audio/Gunshots"]
+stream = ExtResource("46_nwjo5")
+
 [node name="Gun" parent="." instance=ExtResource("31_wauq5")]
+animation = &"M1911"
 
 [node name="Hitbox" type="Area2D" parent="."]
 

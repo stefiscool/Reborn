@@ -10,7 +10,15 @@ func _ready():
 		"The Troubleshooter",
 		"P90",
 		"FN FAL",
-		"AK-47"
+		"AK-47",
+		"ARC-20",
+		"M2000",
+		"S-TAR",
+		"Headhunter DMR",
+		"Photon SMG",
+		"A-57",
+		"Laser SMG",
+		"XR-50"
 	]
 	var random_index = randi() % items.size()
 	random_item = items[random_index]

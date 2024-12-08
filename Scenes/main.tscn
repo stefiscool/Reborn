@@ -132,9 +132,6 @@ theme_override_font_sizes/font_size = 60
 text = "Choose your class
 "
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(598, 321)
-
 [node name="Stats" type="ColorRect" parent="."]
 offset_left = 1327.0
 offset_top = 483.0

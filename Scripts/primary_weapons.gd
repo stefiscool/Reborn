@@ -18,6 +18,22 @@ func _process(_delta):
 		$ScrollContainer/ColorRect/VBoxContainer/Button5.visible = true
 	if "The Troubleshooter" in Global.inventory:
 		$ScrollContainer/ColorRect/VBoxContainer/Button6.visible = true
+	if "ARC-20" in Global.inventory:
+		$ScrollContainer/ColorRect/VBoxContainer/Button7.visible = true
+	if "M2000" in Global.inventory:
+		$ScrollContainer/ColorRect/VBoxContainer/Button8.visible = true
+	if "S-TAR" in Global.inventory:
+		$ScrollContainer/ColorRect/VBoxContainer/Button9.visible = true
+	if "Headhunter DMR" in Global.inventory:
+		$ScrollContainer/ColorRect/VBoxContainer/Button10.visible = true
+	if "Photon SMG" in Global.inventory:
+		$ScrollContainer/ColorRect/VBoxContainer/Button11.visible = true
+	if "A-57" in Global.inventory:
+		$ScrollContainer/ColorRect/VBoxContainer/Button12.visible = true
+	if "Laser SMG" in Global.inventory:
+		$ScrollContainer/ColorRect/VBoxContainer/Button13.visible = true
+	if "XR-50" in Global.inventory:
+		$ScrollContainer/ColorRect/VBoxContainer/Button14.visible = true
 
 
 
@@ -45,3 +61,27 @@ func _on_button_5_pressed():
 
 func _on_button_6_pressed():
 	Global.weapon = "The Troubleshooter"
+
+func _on_button_7_pressed():
+	Global.weapon = "ARC-20"
+
+func _on_button_8_pressed():
+	Global.weapon = "M2000"
+
+func _on_button_9_pressed():
+	Global.weapon = "S-TAR"
+
+func _on_button_10_pressed():
+	Global.weapon = "Headhunter DMR"
+
+func _on_button_11_pressed():
+	Global.weapon = "Photon SMG"
+
+func _on_button_12_pressed():
+	Global.weapon = "A-57"
+
+func _on_button_13_pressed():
+	Global.weapon = "Laser SMG"
+
+func _on_button_14_pressed():
+	Global.weapon = "XR-50"

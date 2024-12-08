@@ -1,13 +1,35 @@
-[gd_scene load_steps=15 format=3 uid="uid://bs7xvi2jradfk"]
+[gd_scene load_steps=38 format=3 uid="uid://bs7xvi2jradfk"]
 
 [ext_resource type="Texture2D" uid="uid://dbpf6nff6jq72" path="res://Assets/Weapons/PrimaryWeapons.png" id="1_7r0dy"]
+[ext_resource type="Texture2D" uid="uid://nvvnab1l53n1" path="res://Assets/Weapons/PrimaryWeaponsUncommon (2).png" id="1_h6fe7"]
 [ext_resource type="Texture2D" uid="uid://c5dkfacjoqgsw" path="res://Assets/Weapons/SecondaryWeapons.png" id="2_ebbl0"]
 [ext_resource type="Texture2D" uid="uid://dn2mdip5n4k0l" path="res://Assets/Weapons/PrimaryWeaponsUncommon.png" id="3_umcud"]
 [ext_resource type="Script" path="res://Scripts/Gun.gd" id="4_ppbis"]
+[ext_resource type="Texture2D" uid="uid://bgpl6jjfg34bw" path="res://Assets/Weapons/SecondaryWeapons (1).png" id="5_fct7j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rcne"]
+atlas = ExtResource("1_h6fe7")
+region = Rect2(158, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttu1b"]
+atlas = ExtResource("3_umcud")
+region = Rect2(158, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp2p6"]
+atlas = ExtResource("1_h6fe7")
+region = Rect2(0, 158, 79, 79)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ft5eh"]
 atlas = ExtResource("1_7r0dy")
 region = Rect2(0, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpr2k"]
+atlas = ExtResource("3_umcud")
+region = Rect2(0, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umk1o"]
+atlas = ExtResource("1_h6fe7")
+region = Rect2(158, 158, 79, 79)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egnwv"]
 atlas = ExtResource("2_ebbl0")
@@ -25,30 +47,134 @@ region = Rect2(79, 0, 79, 79)
 atlas = ExtResource("2_ebbl0")
 region = Rect2(79, 0, 79, 79)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_w32pt"]
+atlas = ExtResource("3_umcud")
+region = Rect2(0, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c36b0"]
+atlas = ExtResource("5_fct7j")
+region = Rect2(79, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhe8e"]
+atlas = ExtResource("3_umcud")
+region = Rect2(0, 158, 79, 79)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ajh6"]
 atlas = ExtResource("2_ebbl0")
 region = Rect2(0, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3dtw"]
+atlas = ExtResource("3_umcud")
+region = Rect2(79, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6sne"]
+atlas = ExtResource("5_fct7j")
+region = Rect2(0, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2ixn"]
+atlas = ExtResource("5_fct7j")
+region = Rect2(0, 79, 79, 79)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f3jgf"]
 atlas = ExtResource("1_7r0dy")
 region = Rect2(0, 158, 79, 79)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_v24bl"]
+atlas = ExtResource("3_umcud")
+region = Rect2(79, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnhyt"]
+atlas = ExtResource("1_h6fe7")
+region = Rect2(79, 158, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5py2p"]
+atlas = ExtResource("3_umcud")
+region = Rect2(158, 0, 79, 79)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yuajw"]
 atlas = ExtResource("1_7r0dy")
 region = Rect2(0, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg6iq"]
+atlas = ExtResource("1_h6fe7")
+region = Rect2(158, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecapd"]
+atlas = ExtResource("5_fct7j")
+region = Rect2(79, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i48kb"]
+atlas = ExtResource("1_h6fe7")
+region = Rect2(79, 79, 79, 79)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5snpi"]
 atlas = ExtResource("3_umcud")
 region = Rect2(79, 158, 79, 79)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_llc6t"]
+atlas = ExtResource("1_h6fe7")
+region = Rect2(0, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ongwd"]
+atlas = ExtResource("1_h6fe7")
+region = Rect2(79, 0, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go7bv"]
+atlas = ExtResource("1_h6fe7")
+region = Rect2(0, 79, 79, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prgm2"]
+atlas = ExtResource("3_umcud")
+region = Rect2(158, 158, 79, 79)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_w2ve2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rcne")
+}],
+"loop": true,
+"name": &"A-10 Shotgun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttu1b")
+}],
+"loop": true,
+"name": &"A-57",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp2p6")
+}],
+"loop": true,
+"name": &"A-70 Shotgun",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ft5eh")
 }],
 "loop": true,
 "name": &"AK-47",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpr2k")
+}],
+"loop": true,
+"name": &"ARC-20",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umk1o")
+}],
+"loop": true,
+"name": &"AT-10 Antitank Rifle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -85,10 +211,58 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_w32pt")
+}],
+"loop": true,
+"name": &"Headhunter DMR",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c36b0")
+}],
+"loop": true,
+"name": &"Laser Pistol",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhe8e")
+}],
+"loop": true,
+"name": &"Laser SMG",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1ajh6")
 }],
 "loop": true,
 "name": &"M1911",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3dtw")
+}],
+"loop": true,
+"name": &"M2000",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6sne")
+}],
+"loop": true,
+"name": &"P-10 Pistol",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2ixn")
+}],
+"loop": true,
+"name": &"P-20 Supressed Pistol",
 "speed": 5.0
 }, {
 "frames": [{
@@ -101,10 +275,58 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_v24bl")
+}],
+"loop": true,
+"name": &"Photon SMG",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnhyt")
+}],
+"loop": true,
+"name": &"RPG-30",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5py2p")
+}],
+"loop": true,
+"name": &"S-TAR",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yuajw")
 }],
 "loop": true,
 "name": &"SCAR",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg6iq")
+}],
+"loop": true,
+"name": &"Shock Cannon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecapd")
+}],
+"loop": true,
+"name": &"Shock Pistol",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i48kb")
+}],
+"loop": true,
+"name": &"Supercharged Crossbow",
 "speed": 5.0
 }, {
 "frames": [{
@@ -114,13 +336,46 @@ animations = [{
 "loop": true,
 "name": &"The Troubleshooter",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llc6t")
+}],
+"loop": true,
+"name": &"Trench Shotgun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ongwd")
+}],
+"loop": true,
+"name": &"Void Supercannon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go7bv")
+}],
+"loop": true,
+"name": &"White Feather Sniper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prgm2")
+}],
+"loop": true,
+"name": &"XR-50",
+"speed": 5.0
 }]
 
 [node name="Gun" type="AnimatedSprite2D"]
+z_index = 1000
 texture_filter = 1
 position = Vector2(2, -1)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_w2ve2")
-animation = &"FN FAL"
+animation = &"Supercharged Crossbow"
 script = ExtResource("4_ppbis")

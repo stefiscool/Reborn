@@ -772,6 +772,54 @@ layout_mode = 2
 theme = ExtResource("1_kly3i")
 text = "The Troubleshooter"
 
+[node name="Button7" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_kly3i")
+text = "ARC-20"
+
+[node name="Button8" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_kly3i")
+text = "M2000"
+
+[node name="Button9" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_kly3i")
+text = "S-TAR"
+
+[node name="Button10" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_kly3i")
+text = "Headhunter DMR"
+
+[node name="Button11" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_kly3i")
+text = "Photon SMG"
+
+[node name="Button12" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_kly3i")
+text = "A-57"
+
+[node name="Button13" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_kly3i")
+text = "Laser SMG"
+
+[node name="Button14" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_kly3i")
+text = "XR-50"
+
 [node name="Label" type="Label" parent="."]
 offset_left = 242.0
 offset_top = 19.0
@@ -805,9 +853,10 @@ animation = &"idle"
 script = ExtResource("10_fhahr")
 
 [node name="Gun" parent="PlayerAnim" instance=ExtResource("11_sevtu")]
-position = Vector2(0.23479, -2.1452)
+position = Vector2(-1.32866, -0.784793)
 rotation = 0.0056051
-scale = Vector2(0.886746, 0.889302)
+scale = Vector2(1.12921, 0.985745)
+animation = &"S-TAR"
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 16.0
@@ -854,6 +903,14 @@ text = "Armor
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button12" to="." method="_on_button_12_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button13" to="." method="_on_button_13_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button14" to="." method="_on_button_14_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="InventoryButtons/PrimaryButton" to="InventoryButtons" method="_on_primary_button_pressed"]
 [connection signal="pressed" from="InventoryButtons/SecondaryButton" to="InventoryButtons" method="_on_secondary_button_pressed"]
