@@ -805,7 +805,7 @@ text = "RPG-30"
 visible = false
 layout_mode = 2
 theme = ExtResource("2_m0iwp")
-text = "AT-10 Anti"
+text = "AT-10 Antitank Rifle"
 
 [node name="Button13" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 visible = false

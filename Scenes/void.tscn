@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbqippxf0074m"]
+
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_7pl6w"]
+[ext_resource type="Texture2D" uid="uid://yk1d0k0r64i6" path="res://Assets/Effects/blackhole.png" id="2_fupig"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5o3i"]
+radius = 17.0
+
+[node name="Void" type="RigidBody2D"]
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_7pl6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c5o3i")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-5, 9.53674e-07)
+scale = Vector2(2.30303, 3)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(3, -5, -43.8553, 0.666666, 3, 5, 6, 4, 7, 3, 8, 0, 7, -3, 6, -4)
+
+[node name="Blackhole" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_fupig")
+hframes = 2
+vframes = 2
+frame = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

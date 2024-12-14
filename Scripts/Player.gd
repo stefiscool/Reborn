@@ -60,9 +60,8 @@ func _ready():
 		gunfire = $Audio/Gunfire
 		bullet = preload("res://Scenes/bullet.tscn")
 	elif Global.element == "Kinetic(Sh)":
-		gunfire = $Audio/Gunshots/Shotgun
-	elif Global.element == "Kinetic(SeSh)":
 		gunfire = $Audio/Gunshots/SemAutoShot
+		bullet = preload("res://Scenes/shell.tscn")
 	elif Global.element == "Kinetic(Su)":
 		gunfire = $Audio/Gunshots/Silenced
 		bullet = preload("res://Scenes/bullet.tscn")
@@ -77,23 +76,31 @@ func _ready():
 		bullet = preload("res://Scenes/photon.tscn")
 	elif Global.element == "Void":
 		gunfire = $Audio/Gunshots/Void
+		bullet = preload("res://Scenes/void.tscn")
 	elif Global.element == "Explosive":
 		gunfire = $Audio/Gunshots/RPG
+		secondbullet = preload("res://Scenes/rocket.tscn")
 	
 	if Global.secondelement == "Laser":
 		secondgunfire = $Audio/Gunshots/Laser
+		secondbullet = preload("res://Scenes/laser.tscn")
 	elif Global.secondelement == "Kinetic(AT)":
 		secondgunfire = $Audio/Gunshots/AT
+		secondbullet = preload("res://Scenes/bullet.tscn")
 	elif Global.secondelement == "Kinetic":
 		secondgunfire = $Audio/SecondGunfire
+		secondbullet = preload("res://Scenes/bullet.tscn")
 	elif Global.secondelement == "Kinetic(Sh)":
 		secondgunfire = $Audio/Gunshots/Shotgun
-	elif Global.secondelement == "Kinetic(SeSh)":
-		secondgunfire = $Audio/Gunshots/SemAutoShot
+		if Global.secondweapon == "A-70 Shotgun":
+			secondgunfire = $Audio/Gunshots/SemAutoShot
+		secondbullet = preload("res://Scenes/shell.tscn")
 	elif Global.secondelement == "Kinetic(Su)":
 		secondgunfire = $Audio/Gunshots/Silenced
+		secondbullet = preload("res://Scenes/bullet.tscn")
 	elif Global.secondelement == "Kinetic(Sn)":
 		secondgunfire = $Audio/Gunshots/Sniper
+		secondbullet = preload("res://Scenes/bullet.tscn")
 	elif Global.secondelement == "Shock":
 		secondgunfire = $Audio/Gunshots/Shock
 		secondbullet = preload("res://Scenes/shock.tscn")
@@ -102,8 +109,10 @@ func _ready():
 		secondbullet = preload("res://Scenes/photon.tscn")
 	elif Global.secondelement == "Void":
 		secondgunfire = $Audio/Gunshots/Void
+		secondbullet = preload("res://Scenes/void.tscn")
 	elif Global.secondelement == "Explosive":
 		secondgunfire = $Audio/Gunshots/RPG
+		secondbullet = preload("res://Scenes/rocket.tscn")
 		
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
@@ -202,7 +211,8 @@ func _physics_process(delta):
 			reload.play()
 			reloading = true
 			
-	if Global.secondary == true:	
+	if Global.secondary == true and Global.secondelement != "Kinetic(Sh)":
+		
 		if Input.is_action_just_pressed("fire") and can_fire and Global.secondammo > 0 and reloading == false and Global.meleeing == false and Global.indialogue == false and Global.nearperson == false and paused == false:
 			var bullet_instance = secondbullet.instantiate()
 			secondgunfire.play()
@@ -221,7 +231,35 @@ func _physics_process(delta):
 			$Reload.start()
 			reload.play()
 			reloading = true
+			
+	elif Global.secondary == true and Global.secondelement == "Kinetic(Sh)":
+
+		if Input.is_action_just_pressed("fire") and can_fire and Global.secondammo >= 1 and reloading == false and Global.meleeing == false and Global.indialogue == false and Global.nearperson == false and paused == false:
+			for i in range(-1, 4):  # Loop to create 3 bullets with different angles
+				var bullet_instance = secondbullet.instantiate()
+				secondgunfire.play()
+				# Offset bullet positions slightly to avoid collision
+				var offset = Vector2(0, i * 5).rotated(global_rotation)  # Adjust '10' for spacing
+				bullet_instance.position = $BulletPoint.get_global_position() + offset 
+				bullet_instance.rotation_degrees = rotation_degrees + (i * 5)  # Spread angle
+				bullet_instance.apply_impulse(Vector2(Global.secondbulletvelocity, 0).rotated(global_rotation + deg_to_rad(i * 5)))
+				get_tree().get_root().add_child(bullet_instance)
+			Global.secondammo -= 1  # Deduct ammo for 3 bullets
+			can_fire = false
+			$Firerate.start()
+		elif Input.is_action_pressed("fire") and can_fire and Global.secondammo < 1:
+			click.play()
+			
+		if Input.is_action_pressed("reload") and Global.secondmags > 0:
+			$Reload.start()
+			reload.play()
+			reloading = true
+			
+	
+			
+	
 		
+	
 	if Global.health <= 0:
 		get_tree().change_scene_to_file("res://Scenes/gameover.tscn")
 		

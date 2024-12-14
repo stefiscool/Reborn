@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnyltrflx5b76"]
+
+[ext_resource type="Script" path="res://Scripts/rocket.gd" id="1_e043o"]
+[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="2_ia7fr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5o3i"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lixxu"]
+radius = 17.0
+
+[node name="Rocket" type="RigidBody2D"]
+gravity_scale = 0.0
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_e043o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, 0)
+shape = SubResource("CircleShape2D_c5o3i")
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(-2, 0)
+scale = Vector2(0.421053, 0.409091)
+polygon = PackedVector2Array(-32, -11, -26, -4, -26, 2, -34, 11, -22, 5, 34, 5, 42, 0, 36, -4, -20, -5)
+
+[node name="Polygon2D" type="Polygon2D" parent="Polygon2D2"]
+position = Vector2(-41, -0.999998)
+scale = Vector2(1.92844, 1.8)
+color = Color(0.65834, 0.65834, 0.65834, 1)
+polygon = PackedVector2Array(3, -5, -43.8553, 0.666666, 3, 5, 6, 4, 7, 3, 8, 0, 7, -3, 6, -4)
+
+[node name="boom" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ia7fr")
+volume_db = 1.0
+pitch_scale = 8.0
+
+[node name="BlastRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastRadius"]
+shape = SubResource("CircleShape2D_lixxu")
+
+[node name="Polygon2D" type="Polygon2D" parent="BlastRadius"]
+visible = false
+position = Vector2(-0.156261, 0.810693)
+scale = Vector2(0.904016, 0.843621)
+color = Color(1, 0.32549, 0, 1)
+polygon = PackedVector2Array(-8, -11, -10.8889, -3.17647, -10.8889, 3.78049, -5.55556, 9.11464, 1.55555, 10.8927, 8.46913, 7.7811, 11.2346, 1.55793, 8.46913, -10.8884, 0, -14)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="boom" to="." method="_on_boom_finished"]
+[connection signal="body_entered" from="BlastRadius" to="." method="_on_blast_radius_body_entered"]
