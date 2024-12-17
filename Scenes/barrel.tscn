@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://07hugfna5n3f"]
+
+[ext_resource type="Script" path="res://Scripts/car.gd" id="1_lui6s"]
+[ext_resource type="Texture2D" uid="uid://c8rv70tyq55r2" path="res://Assets/barrel.png" id="2_7jgmc"]
+[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="3_wshn0"]
+[ext_resource type="AudioStream" uid="uid://ojv8i2tdpd0p" path="res://Audio/metal-impact-247482.mp3" id="4_yumml"]
+[ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/flamecharge.mp3" id="5_ibuf2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tjrup"]
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gre87"]
+radius = 19.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubi3r"]
+radius = 17.0
+
+[node name="Barrel" type="StaticBody2D"]
+script = ExtResource("1_lui6s")
+hp = 110
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tjrup")
+
+[node name="Barrel" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7jgmc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_gre87")
+
+[node name="boom" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wshn0")
+volume_db = 1.0
+pitch_scale = 9.0
+
+[node name="BlastRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastRadius"]
+shape = SubResource("CircleShape2D_ubi3r")
+
+[node name="Polygon2D" type="Polygon2D" parent="BlastRadius"]
+visible = false
+position = Vector2(-0.742203, 1.55966)
+scale = Vector2(1.40122, 1.32569)
+color = Color(1, 0.4, 0, 1)
+polygon = PackedVector2Array(-8, -11, -10.8889, -3.17647, -10.8889, 3.78049, -5.55556, 9.11464, 1.55555, 10.8927, 8.46913, 7.7811, 11.2346, 1.55793, 8.46913, -10.8884, 0, -14)
+
+[node name="Smoke" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(-1, 0)
+amount = 40
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 29.24
+gravity = Vector2(40, 0)
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+color = Color(0.374139, 0.374139, 0.374139, 1)
+
+[node name="Fire" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(-1, 0)
+scale = Vector2(1.5, 1.5)
+amount = 40
+lifetime = 1.5
+emission_shape = 1
+emission_sphere_radius = 16.21
+gravity = Vector2(40, 0)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(1, 1, 0, 1)
+
+[node name="Fire2" type="CPUParticles2D" parent="Fire"]
+amount = 30
+emission_shape = 1
+emission_sphere_radius = 10.74
+gravity = Vector2(40, 0)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(1, 0.392157, 0.00784314, 1)
+
+[node name="Fire3" type="CPUParticles2D" parent="Fire/Fire2"]
+amount = 10
+emission_shape = 1
+emission_sphere_radius = 7.18
+gravity = Vector2(40, 0)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(1, 0, 0.00784314, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_yumml")
+volume_db = 14.033
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ibuf2")
+volume_db = 14.033
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="boom" to="." method="_on_boom_finished"]
+[connection signal="body_entered" from="BlastRadius" to="." method="_on_blast_radius_body_entered"]

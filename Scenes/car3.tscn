@@ -1,0 +1,191 @@
+[gd_scene load_steps=20 format=3 uid="uid://c5qnp0bvy8men"]
+
+[ext_resource type="Script" path="res://Scripts/car.gd" id="1_5emc2"]
+[ext_resource type="Texture2D" uid="uid://osbfdfb3bgrg" path="res://Assets/electrocar.png" id="2_atrro"]
+[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="3_jugdx"]
+[ext_resource type="AudioStream" uid="uid://ojv8i2tdpd0p" path="res://Audio/metal-impact-247482.mp3" id="4_2als8"]
+[ext_resource type="Texture2D" uid="uid://ba67x7f1jxqbr" path="res://Assets/Effects/Tesla.png" id="4_8yub7"]
+[ext_resource type="AudioStream" uid="uid://8xeex6wi005q" path="res://Audio/Gunfire/electric-impact-37128.mp3" id="6_j0875"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blj7d"]
+atlas = ExtResource("2_atrro")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_071wv"]
+atlas = ExtResource("2_atrro")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuqbd"]
+atlas = ExtResource("2_atrro")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oq4yo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blj7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_071wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuqbd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdn22"]
+size = Vector2(232, 102)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubi3r"]
+radius = 17.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne8k8"]
+atlas = ExtResource("4_8yub7")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvqeu"]
+atlas = ExtResource("4_8yub7")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qwqu"]
+atlas = ExtResource("4_8yub7")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31ste"]
+atlas = ExtResource("4_8yub7")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i40hb"]
+atlas = ExtResource("4_8yub7")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh6jq"]
+atlas = ExtResource("4_8yub7")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jih4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ne8k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvqeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qwqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31ste")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i40hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh6jq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Car" type="StaticBody2D"]
+script = ExtResource("1_5emc2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6.43749, 1)
+scale = Vector2(1.88184, 1.59375)
+sprite_frames = SubResource("SpriteFrames_oq4yo")
+autoplay = "default"
+frame_progress = 0.169167
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-114, -44, -79, -54, -36, -57, 24, -59, 67, -56, 106, -43, 109, 25, 79, 35, 30, 39, -38, 40, -78, 35, -114, 24)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, -9)
+shape = SubResource("RectangleShape2D_rdn22")
+
+[node name="boom" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_jugdx")
+volume_db = 1.0
+pitch_scale = 9.0
+
+[node name="BlastRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastRadius"]
+shape = SubResource("CircleShape2D_ubi3r")
+
+[node name="Polygon2D" type="Polygon2D" parent="BlastRadius"]
+visible = false
+position = Vector2(-3.37505, 6.16441)
+scale = Vector2(4.48392, 4.28952)
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(0.529681, -5.16711, -1.6113, -4.36412, -3.03863, -1.95514, -2.59259, 0.194798, -1.70051, 1.36043, 0.529682, 2.29293, 2.53685, 1.82668, 3.65195, 0.66105, 4.32101, -0.737707, 4.32101, -2.36959, 3.65195, -3.53522, 2.67067, -4.36412)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BlastRadius/Polygon2D"]
+position = Vector2(0.752701, -1.43709)
+scale = Vector2(0.0592395, 0.0582816)
+sprite_frames = SubResource("SpriteFrames_jih4y")
+autoplay = "default"
+frame_progress = 0.226537
+
+[node name="Smoke" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(-84, -17)
+amount = 40
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 29.24
+gravity = Vector2(40, 0)
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+color = Color(1, 1, 0, 1)
+
+[node name="Fire" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(-84, -17)
+scale = Vector2(1.5, 1.5)
+amount = 40
+lifetime = 1.5
+emission_shape = 1
+emission_sphere_radius = 16.21
+gravity = Vector2(40, 0)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(0.898039, 1, 0, 1)
+
+[node name="Fire2" type="CPUParticles2D" parent="Fire"]
+amount = 30
+emission_shape = 1
+emission_sphere_radius = 10.74
+gravity = Vector2(40, 0)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(1, 1, 0.00784314, 1)
+
+[node name="Fire3" type="CPUParticles2D" parent="Fire/Fire2"]
+amount = 10
+emission_shape = 1
+emission_sphere_radius = 7.18
+gravity = Vector2(40, 0)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(1, 1, 0.00784314, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2als8")
+volume_db = 14.033
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_j0875")
+volume_db = 14.033
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="boom" to="." method="_on_boom_finished"]
+[connection signal="body_entered" from="BlastRadius" to="." method="_on_blast_radius_body_entered"]

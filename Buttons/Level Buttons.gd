@@ -1,7 +1,7 @@
 extends Node2D
 var missions = {
 	2: { "name": "Sahara Desert", "desc": "The vast, arid expanse of the Sahara is teeming with bandit strongholds and ancient ruins. The bandits hid a stolen weapons cache here. Your mission is to infiltrate the bandit camp and recover the cache that could shift the balance of power." },
-	3: { "name": "London", "desc": "Once a hub of innovation, this sprawling city is now a neon-lit battleground controlled by rival bandit factions. Navigate the chaos to retrieve vital intel hidden in the city's central tower." },
+	3: { "name": "London", "desc": "Once a hub of innovation, this sprawling city is now a neon-lit battleground controlled by the bandit invaders. Navigate the chaos to retrieve vital intel hidden in the city's central building. But be careful, a bandit juggernaut guards the building." },
 	4: { "name": "Antartica", "desc": "The frozen tundra hides more than ice. A notorious bandit king has set up a fortress here, guarding valuable energy cores. Survive the harsh environment and bring him to justice." },
 	5: { "name": "Amazon Rainforest", "desc": "The overgrown remnants of Earth's most famous rainforest now serve as a haven for bandits. Unearth their hidden base and shut down their illegal bioweapon operations." },
 	6: { "name": "Tokyo", "desc": "The once-thriving megacity is now a shadow of its former self, ruled by a cyber-enhanced warlord. Break through his defenses and dismantle his drone army." },
@@ -49,7 +49,7 @@ func _on_start_button_pressed():
 	if Global.mission == 2:
 		get_tree().change_scene_to_file("res://Scenes/Levels/deserttown.tscn")
 	if Global.mission == 3:
-		pass
+		get_tree().change_scene_to_file("res://Scenes/Levels/london.tscn")
 
 
 func _on_changeloadout_pressed():

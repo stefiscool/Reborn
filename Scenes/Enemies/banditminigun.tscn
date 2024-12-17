@@ -197,7 +197,7 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_s3ao2")
 speed = 8000
-hp = 150
+hp = 200
 xp = 25
 twoweapons = true
 
@@ -227,7 +227,7 @@ script = ExtResource("3_f87gs")
 [node name="EnemyBullet" type="Area2D" parent="RayCast2D"]
 position = Vector2(0, -1)
 script = ExtResource("4_nlyjr")
-damage = 5
+damage = 7
 
 [node name="Gunshot" type="AudioStreamPlayer2D" parent="RayCast2D/EnemyBullet"]
 rotation = 1.5708
@@ -265,7 +265,8 @@ pitch_scale = 1.38
 
 [node name="EnemyBullet2" type="Area2D" parent="RayCast2D"]
 script = ExtResource("4_nlyjr")
-damage = 5
+speed = 6000
+damage = 7
 
 [node name="Gunshot" type="AudioStreamPlayer2D" parent="RayCast2D/EnemyBullet2"]
 rotation = 1.5708

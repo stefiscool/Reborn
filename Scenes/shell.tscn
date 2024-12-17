@@ -5,7 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5o3i"]
 radius = 2.0
 
-[node name="Shell" type="RigidBody2D"]
+[node name="Shell" type="RigidBody2D" groups=["bullet"]]
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
@@ -15,7 +15,7 @@ script = ExtResource("1_dwubv")
 shape = SubResource("CircleShape2D_c5o3i")
 
 [node name="ColorRect2" type="ColorRect" parent="CollisionShape2D"]
-offset_left = -4.0
+offset_left = -10.0
 offset_top = -1.0
 offset_right = 2.0
 color = Color(1, 1, 0, 1)

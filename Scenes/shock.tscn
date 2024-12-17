@@ -5,7 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5o3i"]
 radius = 5.0
 
-[node name="Shock" type="RigidBody2D"]
+[node name="Shock" type="RigidBody2D" groups=["bullet"]]
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
