@@ -1,20 +1,7 @@
 extends Node
 
 var autosave = true
-var inventory = [
-	# Primary Weapons
-	"ARC-20", "M2000", "S-TAR", "Headhunter DMR", "Photon SMG", "A-57", "Laser SMG", "XR-50",
-	"P90", "AK-47", "FN FAL", "SCAR", "G36", "The Troubleshooter",
-
-	# Secondary Weapons
-	"M1911", "Glock 18", "Deagle", "Trench Shotgun", "Void Supercannon", "A-10 Shotgun",
-	"White Feather Sniper", "Supercharged Crossbow", "Shock Cannon", "A-70 Shotgun",
-	"RPG-30", "AT-10 Antitank Rifle", "P-10 Pistol", "Laser Pistol",
-	"P-20 Supressed Pistol", "Shock Pistol",
-
-	# Armors
-	"Tactical Vest", "Mercenary Armor", "Infantry Armor", "Navy Armor", "Cyber Armor", "Arctic Soldier Armor"
-]
+var inventory = ["SCAR", "M1911", "Tactical Vest"]
 var Class = "Noble"
 var level = 1
 var xp = 0
@@ -73,6 +60,7 @@ var indialogue = false
 var nearperson = false
 var beattutorial = false
 var deflecting = false
+var frozen = false
 
 var slide = 0
 

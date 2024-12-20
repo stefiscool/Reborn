@@ -1070,7 +1070,7 @@ radius = 11.0454
 radius = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3pda"]
-size = Vector2(35, 8)
+size = Vector2(33.5, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ca4x7"]
 radius = 13.0
@@ -1359,6 +1359,7 @@ position = Vector2(6, 0)
 script = ExtResource("21_eey8p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHitbox"]
+position = Vector2(0.75, 7.8831e-06)
 rotation = 1.05108e-05
 shape = SubResource("RectangleShape2D_j3pda")
 
@@ -1384,6 +1385,14 @@ shape = SubResource("CircleShape2D_ca4x7")
 process_mode = 3
 visible = false
 
+[node name="FreezeTimer" type="Timer" parent="."]
+
+[node name="Ice" type="Polygon2D" parent="."]
+visible = false
+modulate = Color(0.746345, 0.831222, 1, 1)
+color = Color(0.935511, 0.957332, 0.999999, 0.698039)
+polygon = PackedVector2Array(-2, -19, -23, -6, -15, 12, -5, 22, 15, 12, 19, 0, 15, -12)
+
 [connection signal="body_entered" from="Skills/Super Slash" to="Skills/Super Slash" method="_on_body_entered"]
 [connection signal="body_entered" from="Skills/Thousand Cuts" to="Skills/Thousand Cuts" method="_on_body_entered"]
 [connection signal="body_entered" from="Skills/ElectroDash" to="Skills/ElectroDash" method="_on_body_entered"]
@@ -1402,3 +1411,4 @@ visible = false
 [connection signal="body_entered" from="MeleeHitbox" to="MeleeHitbox" method="_on_body_entered"]
 [connection signal="timeout" from="ShieldCool" to="." method="_on_shield_cool_timeout"]
 [connection signal="timeout" from="ShieldCool/ShieldRegen" to="." method="_on_shield_regen_timeout"]
+[connection signal="timeout" from="FreezeTimer" to="." method="_on_freeze_timer_timeout"]

@@ -8,6 +8,7 @@ var can_fire = true
 var dead = false
 @export var speed = 3000
 @export var damage = 15
+@export var frost = false
 
 func _process(delta):
 	if vision == true and can_fire == true and dead == false:
@@ -27,6 +28,8 @@ func _on_body_entered(body):
 			else:
 				Global.shields -= int(damage/(Global.defense))
 				Global.damaged = true
+			if frost == true:
+				Global.frozen = true
 		else:
 			deflect.play()
 		position.x = 0

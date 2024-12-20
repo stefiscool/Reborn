@@ -12,7 +12,7 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_g7wci"]
 radius = 6.0
 
-[node name="SeedGrenade" type="RigidBody2D"]
+[node name="SeedGrenade" type="RigidBody2D" groups=["bullet"]]
 mass = 100.0
 gravity_scale = 0.0
 inertia = 500.0
