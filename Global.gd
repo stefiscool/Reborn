@@ -60,6 +60,7 @@ var indialogue = false
 var nearperson = false
 var beattutorial = false
 var deflecting = false
+var frozen = false
 
 var slide = 0
 

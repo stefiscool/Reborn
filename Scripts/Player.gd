@@ -33,6 +33,7 @@ var meleeing_playing = false
 var shields_full_played = false  
 var shields_broken_played = false  
 var voidvision = false
+var hasfrozen = false
 
 var can_skill1 = true
 var can_skill2 = true
@@ -40,7 +41,7 @@ var can_skill3 = true
 var can_skill4 = true
 
 func player_movement(input, delta):
-	if Global.indialogue == false:
+	if Global.indialogue == false and Global.frozen == false:
 		if input: velocity = velocity.move_toward(input * speed , delta * accel)
 		else: velocity = velocity.move_toward(Vector2(0,0), delta * fric)
 
@@ -119,6 +120,15 @@ func _process(delta):
 		pauseMenu()
 	if paused == false:
 		Engine.time_scale = 1
+		
+	if Global.frozen == true and hasfrozen == false:
+		hasfrozen = true
+		$FreezeTimer.start()
+	
+	if Global.frozen == true:
+		$Ice.visible = true
+	else:
+		$Ice.visible = false
 		
 func _physics_process(delta):
 	
@@ -516,4 +526,10 @@ func _on_shield_regen_timeout():
 	if Global.shields < Global.maxshields and Global.damaged == false:
 		Global.shields += Global.shieldregen
 		$ShieldCool/ShieldRegen.start()
+	
+
+
+func _on_freeze_timer_timeout():
+	Global.frozen = false
+	hasfrozen = true
 	
