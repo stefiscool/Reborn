@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqabj2oydo1ec"]
+
+[ext_resource type="PackedScene" uid="uid://cjypwkc5cje34" path="res://Scenes/player.tscn" id="1_pff8y"]
+[ext_resource type="Texture2D" uid="uid://wf88lsn6u6fy" path="res://Assets/Screenshot (13).png" id="1_w8ihb"]
+[ext_resource type="PackedScene" uid="uid://b53o8d1lkvnyg" path="res://Scenes/ui.tscn" id="3_7kg8i"]
+[ext_resource type="PackedScene" uid="uid://b5svn4ckkcyjg" path="res://Scenes/Enemies/enemybase.tscn" id="4_h2khw"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_up12b"]
+vertices = PackedVector2Array(389, -68.2031, 389, 377, 318.07, 209.461, 316.93, 93.9766, -80.8906, 377, 162.594, 255.25, 1.45313, 227.5, -76.0938, -68.7266, -6.4375, 84.2813, 112.188, 54.8828, 165.172, -63.2969, 130.203, 38.7813, 167.117, -72.8203, 254.758, 71.2734, 245.789, 75, 234.102, 61.6406, 185.406, 54.5234, 142.727, 45.9766, 155.188, 76.4766, 139.039, 63.9219)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 1, 4, 5), PackedInt32Array(6, 5, 4), PackedInt32Array(6, 4, 7, 8), PackedInt32Array(9, 8, 7, 10, 11), PackedInt32Array(12, 0, 3, 13, 10), PackedInt32Array(10, 13, 14, 15), PackedInt32Array(11, 10, 15, 16, 17), PackedInt32Array(17, 16, 18, 19)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-87, -79, -86, -78, -91, 387, 399, 387, 399, -78, 159, -83, 128, 68, 155, 89, 188, 65, 229, 71, 243, 87, 255, 82, 307, 101, 308, 202, 162, 245, 11, 219, 4, 92, 117, 64, 268, -71, -88, -79, -85, -77)])
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_60b1c"]
+
+[node name="Room1" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(359, 288)
+navigation_polygon = SubResource("NavigationPolygon_up12b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(278, 217, 277, 669, 744, 673, 756, 217, 830, 139, 831, 725, 199, 737, 197, 132, 827, 131, 753, 213, 754, 216)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(371, 395, 385, 422, 411, 415, 433, 419, 431, 463, 379, 460, 369, 477, 378, 493, 433, 509, 461, 520, 575, 520, 596, 504, 627, 502, 660, 488, 655, 462, 598, 460, 583, 444, 595, 419, 649, 421, 663, 406, 654, 387, 562, 357, 532, 364, 520, 381, 487, 359, 448, 365, 432, 380, 418, 372, 407, 373)
+
+[node name="Screenshot(13)" type="Sprite2D" parent="."]
+position = Vector2(513, 437)
+scale = Vector2(0.318476, 0.307049)
+texture = ExtResource("1_w8ihb")
+
+[node name="Player" parent="." instance=ExtResource("1_pff8y")]
+position = Vector2(509, 296)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Player"]
+stream = SubResource("AudioStreamMP3_60b1c")
+volume_db = -15.0
+autoplay = true
+
+[node name="UI" parent="." instance=ExtResource("3_7kg8i")]
+
+[node name="EnemyBase" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_h2khw")]
+position = Vector2(534, 570)
+player = NodePath("../Player")
+
+[node name="RayCast2D" parent="EnemyBase" index="5" node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(531, 444)
+
+[editable path="EnemyBase"]
