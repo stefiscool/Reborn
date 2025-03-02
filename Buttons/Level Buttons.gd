@@ -50,6 +50,8 @@ func _on_start_button_pressed():
 		get_tree().change_scene_to_file("res://Scenes/Levels/deserttown.tscn")
 	if Global.mission == 3:
 		get_tree().change_scene_to_file("res://Scenes/Levels/london.tscn")
+	if Global.mission == 4:
+		get_tree().change_scene_to_file("res://Scenes/Levels/antartica.tscn")
 
 
 func _on_changeloadout_pressed():
