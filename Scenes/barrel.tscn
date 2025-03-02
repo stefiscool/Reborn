@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/flamecharge.mp3" id="5_ibuf2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tjrup"]
-radius = 16.0312
+radius = 21.095
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gre87"]
 radius = 19.0

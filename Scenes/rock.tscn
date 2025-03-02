@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://tdd4flasl3th"]
+
+[ext_resource type="Texture2D" uid="uid://cvo3gvqpyj8pg" path="res://Assets/rock.png" id="1_uq72v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mmvml"]
+radius = 29.0172
+
+[node name="Rock" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -2)
+shape = SubResource("CircleShape2D_mmvml")
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(3, -2)
+texture = ExtResource("1_uq72v")

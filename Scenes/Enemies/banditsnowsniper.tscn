@@ -212,7 +212,7 @@ script = ExtResource("3_bd8xj")
 [node name="EnemyBullet" type="Area2D" parent="RayCast2D"]
 script = ExtResource("4_eqnfv")
 speed = 3500
-damage = 30
+damage = 60
 
 [node name="Gunshot" type="AudioStreamPlayer2D" parent="RayCast2D/EnemyBullet"]
 rotation = 1.5708

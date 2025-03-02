@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://duy1owh7mwxmo"]
+
+[ext_resource type="Texture2D" uid="uid://b0xn2v4qxwp2b" path="res://Assets/crystalrock.png" id="1_qmukv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mmvml"]
+radius = 29.0172
+
+[node name="CrystalRock" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -2)
+shape = SubResource("CircleShape2D_mmvml")
+
+[node name="Crystalrock" type="Sprite2D" parent="."]
+position = Vector2(3, -2)
+texture = ExtResource("1_qmukv")

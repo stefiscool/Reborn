@@ -1,14 +1,15 @@
-[gd_scene load_steps=25 format=4 uid="uid://bpxwop4uvxf2"]
+[gd_scene load_steps=26 format=4 uid="uid://bpxwop4uvxf2"]
 
 [ext_resource type="Texture2D" uid="uid://c8v7vrbwsrjml" path="res://Assets/TheBountyHunterTiles.png" id="1_6qdgl"]
 [ext_resource type="PackedScene" uid="uid://o804mppf2e1y" path="res://Scenes/Enemies/banditlaserpistol.tscn" id="2_7kft8"]
 [ext_resource type="PackedScene" uid="uid://c8hqf0nank0xr" path="res://Scenes/car.tscn" id="2_c3klm"]
+[ext_resource type="PackedScene" uid="uid://cc6h2k3peoi15" path="res://Scenes/magazine.tscn" id="2_ncv28"]
+[ext_resource type="PackedScene" uid="uid://d100l8flk2xi" path="res://Scenes/medkit.tscn" id="3_xvimt"]
 [ext_resource type="PackedScene" uid="uid://d3a1p4mffduua" path="res://Scenes/Enemies/bandit2pistol.tscn" id="4_2jvbi"]
 [ext_resource type="PackedScene" uid="uid://df7jie7l233sm" path="res://Scenes/Enemies/bandit2SMG.tscn" id="6_o1waa"]
 [ext_resource type="PackedScene" uid="uid://c8ygltfhvf5m6" path="res://Scenes/Enemies/banditlaserSMG.tscn" id="6_pebak"]
 [ext_resource type="PackedScene" uid="uid://bhjwoph518ng" path="res://Scenes/Enemies/banditminigun.tscn" id="8_26m3v"]
 [ext_resource type="PackedScene" uid="uid://bib7wcx1vndnm" path="res://Scenes/Enemies/banditsword.tscn" id="8_gl5a2"]
-[ext_resource type="PackedScene" uid="uid://b6l138mbyo7me" path="res://Scenes/Enemies/banditcryopistol.tscn" id="9_dclkh"]
 [ext_resource type="PackedScene" uid="uid://bxlo6suf2ex5y" path="res://Scenes/Enemies/banditpistol.tscn" id="9_y6xbl"]
 [ext_resource type="PackedScene" uid="uid://cjypwkc5cje34" path="res://Scenes/player.tscn" id="10_6v5y3"]
 [ext_resource type="PackedScene" uid="uid://b0kdpjsw55i0s" path="res://Scenes/car2.tscn" id="10_7y7wr"]
@@ -2513,9 +2514,28 @@ tile_set = SubResource("TileSet_4snvg")
 
 [node name="Items" type="Node2D" parent="."]
 
+[node name="Magazine" parent="Items" instance=ExtResource("2_ncv28")]
+position = Vector2(253, -1487)
+
+[node name="Magazine2" parent="Items" instance=ExtResource("2_ncv28")]
+position = Vector2(1269, -1498)
+
+[node name="Magazine3" parent="Items" instance=ExtResource("2_ncv28")]
+position = Vector2(612, -2131)
+
+[node name="Magazine4" parent="Items" instance=ExtResource("2_ncv28")]
+position = Vector2(1404, -2855)
+
+[node name="Medkit" parent="Items" instance=ExtResource("3_xvimt")]
+position = Vector2(1103, -2040)
+
+[node name="Medkit2" parent="Items" instance=ExtResource("3_xvimt")]
+position = Vector2(24, -3541)
+
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="Enemies" type="Node2D" parent="."]
+visible = false
 
 [node name="BanditLaserPistol" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_7kft8")]
 position = Vector2(-93, -1216)
@@ -2790,13 +2810,6 @@ player = NodePath("../../Player")
 [node name="RayCast2D" parent="Enemies/BanditMinigun" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../../Player")
 
-[node name="BanditCryoPistol" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_dclkh")]
-position = Vector2(-578, -323)
-player = NodePath("../../Player")
-
-[node name="RayCast2D" parent="Enemies/BanditCryoPistol" index="5" node_paths=PackedStringArray("player")]
-player = NodePath("../../../Player")
-
 [node name="Props" type="Node2D" parent="."]
 
 [node name="Car" parent="Props" instance=ExtResource("2_c3klm")]
@@ -2901,4 +2914,3 @@ texture = ExtResource("15_g3dnw")
 [editable path="Enemies/Bandit2SMG2"]
 [editable path="Enemies/Bandit2SMG3"]
 [editable path="Enemies/BanditMinigun"]
-[editable path="Enemies/BanditCryoPistol"]
