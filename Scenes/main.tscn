@@ -2,11 +2,11 @@
 
 [ext_resource type="FontFile" uid="uid://debggn5x54r8m" path="res://Assets/ObliviousFont.ttf" id="1_i7rb3"]
 [ext_resource type="AudioStream" uid="uid://cc2dhksa4aqcw" path="res://Audio/Music/RebornMainTheme.mp3" id="1_xhtuc"]
-[ext_resource type="Script" path="res://Scripts/PlayButton.gd" id="2_77j50"]
+[ext_resource type="Script" uid="uid://wwcv821kjmcg" path="res://Scripts/PlayButton.gd" id="2_77j50"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="2_hln3e"]
 [ext_resource type="Texture2D" uid="uid://fuj7u8d60a80" path="res://Assets/Genesis_Disciplines.png" id="5_24i5k"]
-[ext_resource type="Script" path="res://Buttons/LoadGameButton.gd" id="5_mpped"]
-[ext_resource type="Script" path="res://Buttons/ClassButtons.gd" id="6_s5o7k"]
+[ext_resource type="Script" uid="uid://bvojxgey0c038" path="res://Buttons/LoadGameButton.gd" id="5_mpped"]
+[ext_resource type="Script" uid="uid://da1vryswr4gp7" path="res://Buttons/ClassButtons.gd" id="6_s5o7k"]
 
 [node name="Main" type="Node2D"]
 

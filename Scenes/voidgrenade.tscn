@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dm7f7lba2s1s2"]
 
-[ext_resource type="Script" path="res://Scripts/voidgrenade.gd" id="1_2twll"]
+[ext_resource type="Script" uid="uid://y6iti7tel5lc" path="res://Scripts/voidgrenade.gd" id="1_2twll"]
 [ext_resource type="AudioStream" uid="uid://ce1i10b8rqfpu" path="res://Audio/timebombbeep-93074-[AudioTrimmer.com].mp3" id="2_083dt"]
 [ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="3_mosbh"]
 [ext_resource type="Texture2D" uid="uid://dyiw1kh2hxbd4" path="res://Assets/Specials.png" id="4_0wydk"]

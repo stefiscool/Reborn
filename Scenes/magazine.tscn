@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://cc6h2k3peoi15"]
 
-[ext_resource type="Script" path="res://Scripts/Magazine.gd" id="1_a50uc"]
+[ext_resource type="Script" uid="uid://bjxktyfp2fnja" path="res://Scripts/Magazine.gd" id="1_a50uc"]
 [ext_resource type="AudioStream" uid="uid://3r16fys4k201" path="res://Audio/load-gun-sound-effect-5-11003.mp3" id="2_uehco"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="4_7s1i4"]
 [ext_resource type="Texture2D" uid="uid://bg05gdm5k47bt" path="res://Assets/Mags.png" id="4_levyt"]

@@ -39,7 +39,7 @@ func _ready():
 	Global.damaged = false
 	Global.mags = 3
 	Global.secondmags = 2
-
+	print(str(Global.inventory))
 
 
 func _on_timer_timeout():

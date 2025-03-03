@@ -14,14 +14,13 @@ config/name="Reborn"
 run/main_scene="res://Scenes/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="SaveSystem"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 run/max_fps=1000
 config/icon="res://Assets/icon.svg"
 
 [autoload]
 
 Global="*res://Global.gd"
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 WeaponStats="*res://WeaponStats.gd"
 
 [debug]
@@ -38,10 +37,6 @@ general/balloon_path="res://Dialouge/balloon.tscn"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 

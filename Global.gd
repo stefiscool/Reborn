@@ -3,9 +3,9 @@ extends Node
 var autosave = true
 var inventory = ["SCAR", "M1911", "Tactical Vest"]
 var Class = "Noble"
-var level = 1
-var xp = 0
-var xpneeded = 20
+var level: int = 1
+var xp: int = 0
+var xpneeded: int = 20
 var weapon = "SCAR"
 var secondweapon = "M1911"
 var armor = "Tactical Vest"

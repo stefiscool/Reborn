@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://clj481ylnqg6c"]
 
-[ext_resource type="Script" path="res://mission_objective.gd" id="1_mm2n1"]
+[ext_resource type="Script" uid="uid://c17yh1eom538a" path="res://mission_objective.gd" id="1_mm2n1"]
 [ext_resource type="AudioStream" uid="uid://bl16c0grymhgk" path="res://Audio/elevator-dingwav-14913.mp3" id="2_7mull"]
 
 [node name="MissionObjective" type="Area2D"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=104 format=3 uid="uid://c0sa2ptht80n7"]
 
-[ext_resource type="Script" path="res://Scripts/secondaryweapons.gd" id="1_fjjxo"]
+[ext_resource type="Script" uid="uid://edenu1jtvb07" path="res://Scripts/secondaryweapons.gd" id="1_fjjxo"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="2_m0iwp"]
 [ext_resource type="Texture2D" uid="uid://di0gsmi4150ob" path="res://Assets/Noble.png" id="3_7wxy6"]
 [ext_resource type="Texture2D" uid="uid://dqwvfg5aleqp5" path="res://Assets/Assasin.png" id="4_x3lj8"]
@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://ou4wgdult8lm" path="res://Assets/NobleSwod.png" id="7_kebvg"]
 [ext_resource type="Texture2D" uid="uid://cgrj1fj60u3ou" path="res://Assets/AssasinMelee.png" id="8_fs6f8"]
 [ext_resource type="Texture2D" uid="uid://b8wyv62pajw8v" path="res://Assets/ScholarMelee.png" id="9_0wp2n"]
-[ext_resource type="Script" path="res://Scripts/PlayerAnim.gd" id="10_du0d6"]
+[ext_resource type="Script" uid="uid://bi04ue61jbf1g" path="res://Scripts/PlayerAnim.gd" id="10_du0d6"]
 [ext_resource type="PackedScene" uid="uid://bs7xvi2jradfk" path="res://Scenes/gun.tscn" id="11_i6gv5"]
-[ext_resource type="Script" path="res://Buttons/InventoryButtons.gd" id="14_a3ive"]
+[ext_resource type="Script" uid="uid://boa4xcn582mb" path="res://Buttons/InventoryButtons.gd" id="14_a3ive"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxxkj"]
 atlas = ExtResource("3_7wxy6")
