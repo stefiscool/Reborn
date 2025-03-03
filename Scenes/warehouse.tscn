@@ -862,13 +862,47 @@ layer_0/tile_data = PackedInt32Array(-3014731, 196608, 9, -2949195, 196608, 9, -
 [node name="Medkit" parent="Items" instance=ExtResource("2_8nith")]
 position = Vector2(39, 1771)
 
+[node name="Medkit2" parent="Items" instance=ExtResource("2_8nith")]
+position = Vector2(115, 2359)
+
+[node name="Medkit3" parent="Items" instance=ExtResource("2_8nith")]
+position = Vector2(-336, 1054)
+
+[node name="Medkit4" parent="Items" instance=ExtResource("2_8nith")]
+position = Vector2(396, 854)
+
+[node name="Medkit5" parent="Items" instance=ExtResource("2_8nith")]
+position = Vector2(-1192, 1621)
+
+[node name="Medkit6" parent="Items" instance=ExtResource("2_8nith")]
+position = Vector2(-681, 401)
+
+[node name="Medkit7" parent="Items" instance=ExtResource("2_8nith")]
+position = Vector2(-879, -450)
+
 [node name="Magazine" parent="Items" instance=ExtResource("3_dgfbh")]
 position = Vector2(-784, 1777)
-primary = false
+
+[node name="Magazine5" parent="Items" instance=ExtResource("3_dgfbh")]
+position = Vector2(-1167, 2175)
+
+[node name="Magazine6" parent="Items" instance=ExtResource("3_dgfbh")]
+position = Vector2(-140, 1656)
+
+[node name="Magazine7" parent="Items" instance=ExtResource("3_dgfbh")]
+position = Vector2(396, 2502)
+
+[node name="Magazine8" parent="Items" instance=ExtResource("3_dgfbh")]
+position = Vector2(-1175, 683)
+
+[node name="Magazine9" parent="Items" instance=ExtResource("3_dgfbh")]
+position = Vector2(516, 204)
+
+[node name="Magazine11" parent="Items" instance=ExtResource("3_dgfbh")]
+position = Vector2(469, 626)
 
 [node name="Magazine3" parent="Items" instance=ExtResource("3_dgfbh")]
 position = Vector2(64, 2071)
-primary = false
 
 [node name="Magazine4" parent="Items" instance=ExtResource("3_dgfbh")]
 position = Vector2(150, 1023)

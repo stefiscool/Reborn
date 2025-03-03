@@ -2517,7 +2517,6 @@ tile_set = SubResource("TileSet_4snvg")
 
 [node name="Magazine" parent="Items" instance=ExtResource("2_iqmp1")]
 position = Vector2(1255, 214)
-primary = false
 
 [node name="Magazine2" parent="Items" instance=ExtResource("2_iqmp1")]
 position = Vector2(1762, -686)
@@ -2527,7 +2526,6 @@ position = Vector2(1828, 111)
 
 [node name="Magazine4" parent="Items" instance=ExtResource("2_iqmp1")]
 position = Vector2(1011, -195)
-primary = false
 
 [node name="Magazine5" parent="Items" instance=ExtResource("2_iqmp1")]
 position = Vector2(2612, 314)
@@ -2537,11 +2535,9 @@ position = Vector2(472, -256)
 
 [node name="Medkit2" parent="Items" instance=ExtResource("3_utsr1")]
 position = Vector2(2417, -860)
-health = 100
 
 [node name="Medkit3" parent="Items" instance=ExtResource("3_utsr1")]
 position = Vector2(847, -1368)
-health = 80
 
 [node name="Props" type="Node2D" parent="."]
 position = Vector2(-33, -210)

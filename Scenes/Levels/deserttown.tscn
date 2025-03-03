@@ -2513,20 +2513,47 @@ tile_set = SubResource("TileSet_4snvg")
 [node name="Medkit" parent="Items" instance=ExtResource("2_mych1")]
 position = Vector2(-64, 405)
 
+[node name="Medkit3" parent="Items" instance=ExtResource("2_mych1")]
+position = Vector2(-91, 65)
+
+[node name="Medkit4" parent="Items" instance=ExtResource("2_mych1")]
+position = Vector2(1009, -383)
+
+[node name="Medkit5" parent="Items" instance=ExtResource("2_mych1")]
+position = Vector2(155, -328)
+
+[node name="Medkit6" parent="Items" instance=ExtResource("2_mych1")]
+position = Vector2(858, 711)
+
+[node name="Medkit7" parent="Items" instance=ExtResource("2_mych1")]
+position = Vector2(754, 295)
+
 [node name="Medkit2" parent="Items" instance=ExtResource("2_mych1")]
 position = Vector2(957, 870)
-health = 75
 
 [node name="Magazine" parent="Items" instance=ExtResource("3_22x7r")]
 position = Vector2(580, -268)
-primary = false
 
 [node name="Magazine2" parent="Items" instance=ExtResource("3_22x7r")]
 position = Vector2(967, 719)
 
+[node name="Magazine5" parent="Items" instance=ExtResource("3_22x7r")]
+position = Vector2(383, 29)
+
+[node name="Magazine6" parent="Items" instance=ExtResource("3_22x7r")]
+position = Vector2(391, 699)
+
+[node name="Magazine7" parent="Items" instance=ExtResource("3_22x7r")]
+position = Vector2(246, 60)
+
+[node name="Magazine8" parent="Items" instance=ExtResource("3_22x7r")]
+position = Vector2(854, -109)
+
+[node name="Magazine9" parent="Items" instance=ExtResource("3_22x7r")]
+position = Vector2(1140, 298)
+
 [node name="Magazine3" parent="Items" instance=ExtResource("3_22x7r")]
 position = Vector2(651, 56)
-primary = false
 
 [node name="Magazine4" parent="Items" instance=ExtResource("3_22x7r")]
 position = Vector2(1116, -341)

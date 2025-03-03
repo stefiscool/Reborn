@@ -352,7 +352,6 @@ func _physics_process(delta):
 			can_skill3 = false
 			$SkillCooldowns/SkillCooldown3.start()
 		if Input.is_action_just_pressed("skill4") and can_skill4:
-			Global.health = Global.maxhealth
 			Global.shields = Global.maxshields
 			can_skill4 = false
 			$SkillCooldowns/SkillCooldown4.start()

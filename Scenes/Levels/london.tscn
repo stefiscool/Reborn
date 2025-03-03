@@ -2519,22 +2519,18 @@ position = Vector2(253, -1487)
 
 [node name="Magazine2" parent="Items" instance=ExtResource("2_ncv28")]
 position = Vector2(1269, -1498)
-primary = false
 
 [node name="Magazine3" parent="Items" instance=ExtResource("2_ncv28")]
 position = Vector2(612, -2131)
-primary = false
 
 [node name="Magazine4" parent="Items" instance=ExtResource("2_ncv28")]
 position = Vector2(1404, -2855)
 
 [node name="Medkit" parent="Items" instance=ExtResource("3_xvimt")]
 position = Vector2(1103, -2040)
-health = 75
 
 [node name="Medkit2" parent="Items" instance=ExtResource("3_xvimt")]
 position = Vector2(24, -3541)
-health = 150
 
 [node name="Doors" type="Node2D" parent="."]
 
