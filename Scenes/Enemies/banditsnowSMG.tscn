@@ -215,7 +215,7 @@ damage = 7
 [node name="Gunshot" type="AudioStreamPlayer2D" parent="RayCast2D/EnemyBullet"]
 rotation = 1.5708
 stream = ExtResource("5_tehmq")
-volume_db = -4.012
+volume_db = -12.0
 pitch_scale = 3.45
 
 [node name="Hit" type="AudioStreamPlayer2D" parent="RayCast2D/EnemyBullet"]

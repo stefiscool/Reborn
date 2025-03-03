@@ -863,10 +863,18 @@ layer_0/tile_data = PackedInt32Array(-3014731, 196608, 9, -2949195, 196608, 9, -
 position = Vector2(39, 1771)
 
 [node name="Magazine" parent="Items" instance=ExtResource("3_dgfbh")]
-position = Vector2(-785, 1775)
+position = Vector2(-784, 1777)
+primary = false
+
+[node name="Magazine3" parent="Items" instance=ExtResource("3_dgfbh")]
+position = Vector2(64, 2071)
+primary = false
+
+[node name="Magazine4" parent="Items" instance=ExtResource("3_dgfbh")]
+position = Vector2(150, 1023)
 
 [node name="Magazine2" parent="Items" instance=ExtResource("3_dgfbh")]
-position = Vector2(-48, 2057)
+position = Vector2(-376, 2304)
 
 [node name="Doors" type="Node2D" parent="."]
 

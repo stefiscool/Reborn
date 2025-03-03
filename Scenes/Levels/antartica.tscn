@@ -2504,7 +2504,7 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_gfrkt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06aqb"]
-size = Vector2(76.5, 90)
+size = Vector2(24, 32)
 
 [node name="Antartica" type="Node2D"]
 
@@ -2517,6 +2517,7 @@ tile_set = SubResource("TileSet_4snvg")
 
 [node name="Magazine" parent="Items" instance=ExtResource("2_iqmp1")]
 position = Vector2(1255, 214)
+primary = false
 
 [node name="Magazine2" parent="Items" instance=ExtResource("2_iqmp1")]
 position = Vector2(1762, -686)
@@ -2526,6 +2527,7 @@ position = Vector2(1828, 111)
 
 [node name="Magazine4" parent="Items" instance=ExtResource("2_iqmp1")]
 position = Vector2(1011, -195)
+primary = false
 
 [node name="Magazine5" parent="Items" instance=ExtResource("2_iqmp1")]
 position = Vector2(2612, 314)
@@ -2535,9 +2537,11 @@ position = Vector2(472, -256)
 
 [node name="Medkit2" parent="Items" instance=ExtResource("3_utsr1")]
 position = Vector2(2417, -860)
+health = 100
 
 [node name="Medkit3" parent="Items" instance=ExtResource("3_utsr1")]
 position = Vector2(847, -1368)
+health = 80
 
 [node name="Props" type="Node2D" parent="."]
 position = Vector2(-33, -210)
@@ -2760,13 +2764,6 @@ player = NodePath("../../Player")
 [node name="RayCast2D" parent="Enemies/BanditSnowSMG9" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../../Player")
 
-[node name="BanditCryoPistol" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_g55kw")]
-position = Vector2(1095, -163)
-player = NodePath("../../Player")
-
-[node name="RayCast2D" parent="Enemies/BanditCryoPistol" index="5" node_paths=PackedStringArray("player")]
-player = NodePath("../../../Player")
-
 [node name="BanditCryoPistol2" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_g55kw")]
 position = Vector2(964, 418)
 player = NodePath("../../Player")
@@ -2901,7 +2898,7 @@ player = NodePath("../../Player")
 player = NodePath("../../../Player")
 
 [node name="BanditSnowSniper3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("10_qbl8r")]
-position = Vector2(1676, -273)
+position = Vector2(1691, -280)
 player = NodePath("../../Player")
 
 [node name="RayCast2D" parent="Enemies/BanditSnowSniper3" index="5" node_paths=PackedStringArray("player")]
@@ -3110,16 +3107,18 @@ shape = SubResource("RectangleShape2D_06aqb")
 
 [node name="Energycore" type="Sprite2D" parent="MissionObjective"]
 position = Vector2(3074, 380)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("21_rrp5u")
 
 [node name="MissionObjective2" parent="." instance=ExtResource("15_7nshc")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MissionObjective2"]
-position = Vector2(3161, -1037)
+position = Vector2(3157, -1033)
 shape = SubResource("RectangleShape2D_06aqb")
 
 [node name="Energycore2" type="Sprite2D" parent="MissionObjective2"]
 position = Vector2(3158, -1032)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("21_rrp5u")
 
 [node name="MissionObjective3" parent="." instance=ExtResource("15_7nshc")]
@@ -3130,9 +3129,11 @@ shape = SubResource("RectangleShape2D_06aqb")
 
 [node name="Energycore3" type="Sprite2D" parent="MissionObjective3"]
 position = Vector2(633, -1197)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("21_rrp5u")
 
 [node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.545098)
 offset_left = -1589.0
 offset_top = -3166.0
 offset_right = 5778.0
@@ -3147,7 +3148,6 @@ offset_bottom = 2069.0
 [editable path="Enemies/BanditSnowSMG7"]
 [editable path="Enemies/BanditSnowSMG8"]
 [editable path="Enemies/BanditSnowSMG9"]
-[editable path="Enemies/BanditCryoPistol"]
 [editable path="Enemies/BanditCryoPistol2"]
 [editable path="Enemies/BanditCryoPistol3"]
 [editable path="Enemies/BanditCryoPistol4"]

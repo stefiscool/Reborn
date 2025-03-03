@@ -1,12 +1,135 @@
-[gd_scene load_steps=6 format=3 uid="uid://d100l8flk2xi"]
+[gd_scene load_steps=17 format=3 uid="uid://d100l8flk2xi"]
 
 [ext_resource type="Script" path="res://Scripts/medkit.gd" id="1_fp2ga"]
 [ext_resource type="AudioStream" uid="uid://1876j146fae4" path="res://Audio/zipper-43841.mp3" id="2_eh1i2"]
-[ext_resource type="Texture2D" uid="uid://cpu2pupb5nds0" path="res://Assets/Medkit.png" id="3_1obx2"]
+[ext_resource type="Texture2D" uid="uid://i3qor5ibr78s" path="res://Assets/Heals.png" id="4_40pkm"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="4_otha4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2l7co"]
 size = Vector2(19, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igpjn"]
+atlas = ExtResource("4_40pkm")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3ww1"]
+atlas = ExtResource("4_40pkm")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00box"]
+atlas = ExtResource("4_40pkm")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66xoh"]
+atlas = ExtResource("4_40pkm")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frwdu"]
+atlas = ExtResource("4_40pkm")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhnoi"]
+atlas = ExtResource("4_40pkm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t08oo"]
+atlas = ExtResource("4_40pkm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rb5d"]
+atlas = ExtResource("4_40pkm")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6108h"]
+atlas = ExtResource("4_40pkm")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ggkn"]
+atlas = ExtResource("4_40pkm")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rhu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igpjn")
+}],
+"loop": true,
+"name": &"100",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3ww1")
+}],
+"loop": true,
+"name": &"120",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00box")
+}],
+"loop": true,
+"name": &"150",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66xoh")
+}],
+"loop": true,
+"name": &"20",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frwdu")
+}],
+"loop": true,
+"name": &"200",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhnoi")
+}],
+"loop": true,
+"name": &"40",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t08oo")
+}],
+"loop": true,
+"name": &"50",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rb5d")
+}],
+"loop": true,
+"name": &"60",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6108h")
+}],
+"loop": true,
+"name": &"75",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ggkn")
+}],
+"loop": true,
+"name": &"80",
+"speed": 5.0
+}]
 
 [node name="Medkit" type="Area2D"]
 script = ExtResource("1_fp2ga")
@@ -23,11 +146,6 @@ pitch_scale = 1.49
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="Med" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("3_1obx2")
-
 [node name="Label" type="Label" parent="."]
 visible = false
 offset_left = -49.0
@@ -38,6 +156,10 @@ theme = ExtResource("4_otha4")
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 15
 text = "+ 50 Health"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5rhu5")
+animation = &"40"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

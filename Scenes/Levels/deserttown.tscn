@@ -2515,15 +2515,18 @@ position = Vector2(-64, 405)
 
 [node name="Medkit2" parent="Items" instance=ExtResource("2_mych1")]
 position = Vector2(957, 870)
+health = 75
 
 [node name="Magazine" parent="Items" instance=ExtResource("3_22x7r")]
 position = Vector2(580, -268)
+primary = false
 
 [node name="Magazine2" parent="Items" instance=ExtResource("3_22x7r")]
 position = Vector2(967, 719)
 
 [node name="Magazine3" parent="Items" instance=ExtResource("3_22x7r")]
 position = Vector2(651, 56)
+primary = false
 
 [node name="Magazine4" parent="Items" instance=ExtResource("3_22x7r")]
 position = Vector2(1116, -341)

@@ -3,7 +3,7 @@ extends Node
 func _process(_delta):
 	if not Global.flamecharged:
 		var weapons = {
-			"P90": {"rateoffire": 0.06, "damage": 30, "maxammo": 50, "bulletvelocity": 1800, "element": "Kinetic", "zoom": 1.9, "description": "A compact submachine gun from WW3 with a high rate of fire and a large magazine. Ideal for close-quarters combat."},
+			"P90": {"rateoffire": 0.06, "damage": 30, "maxammo": 50, "bulletvelocity": 1800, "element": "Kinetic(Su)", "zoom": 1.9, "description": "A compact submachine gun from WW3 with a high rate of fire and a large magazine. Ideal for close-quarters combat."},
 			"AK-47": {"rateoffire": 0.1, "damage": 42, "maxammo": 30, "bulletvelocity": 1590, "element": "Kinetic", "zoom": 1.8, "description": "A powerful and reliable assault rifle used by bandits and rebels. Effective in mid to long-range engagements."},
 			"FN FAL": {"rateoffire": 0.12, "damage": 45, "maxammo": 20, "bulletvelocity": 1700, "element": "Kinetic", "zoom": 1.7, "description": "A slow firing battle rifle from WW3 with high damage per shot. Perfect for those who prefer precision over spray-and-pray."},
 			"SCAR": {"rateoffire": 0.08, "damage": 40, "maxammo": 30, "bulletvelocity": 1600, "element": "Kinetic", "zoom": 1.8, "description": "A old but trusty assualt rifle from the third world war. It provides reliable performance in various combat scenarios."},
@@ -27,7 +27,7 @@ func _process(_delta):
 			"Void Supercannon": {"rateoffire": 1.2, "damage": 120, "maxammo": 6, "bulletvelocity": 2000, "element": "Void", "zoom": 1.5, "description": "A heavy, high-powered weapon with a massive damage output. Suitable for long-range destruction."},
 			"A-10 Shotgun": {"rateoffire": 0.7, "damage": 40, "maxammo": 8, "bulletvelocity": 1200, "element": "Kinetic(Sh)", "zoom": 1.9, "description": "A powerful shotgun used by the republic, designed for clearing out groups of enemies."},
 			"White Feather Sniper": {"rateoffire": 1, "damage": 100, "maxammo": 8, "bulletvelocity": 2500, "element": "Kinetic(Sn)", "zoom": 0.9, "description": "A high-precision sniper rifle, perfect for taking out enemies at long range with devastating shots."},
-			"Supercharged Crossbow": {"rateoffire": 0.8, "damage": 70, "maxammo": 1, "bulletvelocity": 1800, "element": "Shock", "zoom": 1.5, "description": "A bandit crossbow with electrically charged bolts that can paralyze enemies. Ideal for medium-range engagements."},
+			"Supercharged Crossbow": {"rateoffire": 0.8, "damage": 570, "maxammo": 1, "bulletvelocity": 1800, "element": "Shock", "zoom": 1.5, "description": "A bandit crossbow with electrically charged bolts that can paralyze enemies. Ideal for medium-range engagements."},
 			"Shock Cannon": {"rateoffire": 1, "damage": 80, "maxammo": 6, "bulletvelocity": 1000, "element": "Shock", "zoom": 2.0, "description": "A cannon that fires high-voltage projectiles, causing electric shock damage."},
 			"A-70 Shotgun": {"rateoffire": 0.1, "damage": 35, "maxammo": 12, "bulletvelocity": 1350, "element": "Kinetic(Sh)", "zoom": 1.8, "description": "A semi-automatic shotgun designed for close-range combat, dealing massive damage in a short burst."},
 			"RPG-30": {"rateoffire": 1.2, "damage": 500, "maxammo": 1, "bulletvelocity": 1250, "element": "Explosive", "zoom": 1.2, "description": "A powerful anti-tank rocket-propelled grenade launcher with high damage, designed to penetrate heavily armored vehicles."},
