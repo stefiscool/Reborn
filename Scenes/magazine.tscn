@@ -1,18 +1,276 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc6h2k3peoi15"]
+[gd_scene load_steps=23 format=3 uid="uid://cc6h2k3peoi15"]
 
 [ext_resource type="Script" path="res://Scripts/Magazine.gd" id="1_a50uc"]
 [ext_resource type="AudioStream" uid="uid://3r16fys4k201" path="res://Audio/load-gun-sound-effect-5-11003.mp3" id="2_uehco"]
-[ext_resource type="Texture2D" uid="uid://8oagr6daw6ud" path="res://Assets/Mag.png" id="3_i741j"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="4_7s1i4"]
+[ext_resource type="Texture2D" uid="uid://bg05gdm5k47bt" path="res://Assets/Mags.png" id="4_levyt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6mve"]
-size = Vector2(5, 16)
+size = Vector2(21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpwgj"]
+atlas = ExtResource("4_levyt")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl1tw"]
+atlas = ExtResource("4_levyt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86hbw"]
+atlas = ExtResource("4_levyt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu4rp"]
+atlas = ExtResource("4_levyt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvbfk"]
+atlas = ExtResource("4_levyt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_titgr"]
+atlas = ExtResource("4_levyt")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxggm"]
+atlas = ExtResource("4_levyt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8eaw"]
+atlas = ExtResource("4_levyt")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtn0u"]
+atlas = ExtResource("4_levyt")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgsq6"]
+atlas = ExtResource("4_levyt")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hek10"]
+atlas = ExtResource("4_levyt")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqfd3"]
+atlas = ExtResource("4_levyt")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_krgre"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpwgj")
+}],
+"loop": true,
+"name": &"Explosive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl1tw")
+}],
+"loop": true,
+"name": &"Kinetic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86hbw")
+}],
+"loop": true,
+"name": &"Kinetic(AT)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu4rp")
+}],
+"loop": true,
+"name": &"Kinetic(MG)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvbfk")
+}],
+"loop": true,
+"name": &"Kinetic(SeSh)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_titgr")
+}],
+"loop": true,
+"name": &"Kinetic(Sh)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxggm")
+}],
+"loop": true,
+"name": &"Kinetic(Sn)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8eaw")
+}],
+"loop": true,
+"name": &"Kinetic(Su)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtn0u")
+}],
+"loop": true,
+"name": &"Laser",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgsq6")
+}],
+"loop": true,
+"name": &"Photon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hek10")
+}],
+"loop": true,
+"name": &"Shock",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqfd3")
+}],
+"loop": true,
+"name": &"Void",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r03i"]
+atlas = ExtResource("4_levyt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c84yi"]
+atlas = ExtResource("4_levyt")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0we7"]
+atlas = ExtResource("4_levyt")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_leh0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpwgj")
+}],
+"loop": true,
+"name": &"Explosive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r03i")
+}],
+"loop": true,
+"name": &"Kinetic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86hbw")
+}],
+"loop": true,
+"name": &"Kinetic(AT)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu4rp")
+}],
+"loop": true,
+"name": &"Kinetic(MG)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvbfk")
+}],
+"loop": true,
+"name": &"Kinetic(SeSh)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_titgr")
+}],
+"loop": true,
+"name": &"Kinetic(Sh)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c84yi")
+}],
+"loop": true,
+"name": &"Kinetic(Sn)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0we7")
+}],
+"loop": true,
+"name": &"Kinetic(Su)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtn0u")
+}],
+"loop": true,
+"name": &"Laser",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgsq6")
+}],
+"loop": true,
+"name": &"Photon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hek10")
+}],
+"loop": true,
+"name": &"Shock",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqfd3")
+}],
+"loop": true,
+"name": &"Void",
+"speed": 5.0
+}]
 
 [node name="Magazine" type="Area2D"]
 script = ExtResource("1_a50uc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 1)
+position = Vector2(-1.5, -1.5)
 shape = SubResource("RectangleShape2D_h6mve")
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
@@ -20,11 +278,6 @@ stream = ExtResource("2_uehco")
 volume_db = 7.711
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="Mag" type="Sprite2D" parent="."]
-position = Vector2(2, 1)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("3_i741j")
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -35,6 +288,15 @@ offset_bottom = 13.0
 theme = ExtResource("4_7s1i4")
 theme_override_font_sizes/font_size = 15
 text = "+ 1 Primary Mag"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_krgre")
+animation = &"Kinetic"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_leh0s")
+animation = &"Kinetic"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

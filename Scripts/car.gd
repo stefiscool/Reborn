@@ -23,8 +23,8 @@ func _process(delta):
 		$Smoke.visible = false
 		$Fire.visible = false
 		$BlastRadius/Polygon2D.visible = true
-		$BlastRadius.scale.x += 60 * delta
-		$BlastRadius.scale.y += 60 * delta
+		$BlastRadius.scale.x += 40 * delta
+		$BlastRadius.scale.y += 40 * delta
 
 
 func _on_boom_finished():

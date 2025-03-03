@@ -215,13 +215,11 @@ damage = 7
 [node name="Gunshot" type="AudioStreamPlayer2D" parent="RayCast2D/EnemyBullet"]
 rotation = 1.5708
 stream = ExtResource("5_tehmq")
-volume_db = -13.261
-pitch_scale = 1.67
+volume_db = -12.0
+pitch_scale = 3.45
 
 [node name="Hit" type="AudioStreamPlayer2D" parent="RayCast2D/EnemyBullet"]
 stream = ExtResource("2_wlpa6")
-volume_db = 0.627
-pitch_scale = 0.8
 
 [node name="Deflect" type="AudioStreamPlayer2D" parent="RayCast2D/EnemyBullet"]
 stream = ExtResource("6_3ufpm")
@@ -237,7 +235,7 @@ scale = Vector2(1.00593, 1.00182)
 shape = SubResource("CircleShape2D_p83or")
 
 [node name="Firerate" type="Timer" parent="RayCast2D/EnemyBullet"]
-wait_time = 0.06
+wait_time = 0.1
 
 [node name="ColorRect" type="ColorRect" parent="RayCast2D/EnemyBullet"]
 offset_left = 10.0

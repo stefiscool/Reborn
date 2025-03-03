@@ -66,13 +66,13 @@ func _on_backtolevels_pressed():
 
 func _on_button_3_pressed():
 	Global.mission = 3
-	Global.maxmissionobjectives = 3
+	Global.maxmissionobjectives = 1
 	$Camera2D.position.x = 1328
 
 
 func _on_button_4_pressed():
 	Global.mission = 4
-	Global.maxmissionobjectives = 1
+	Global.maxmissionobjectives = 3
 	$Camera2D.position.x = 1328
 
 
