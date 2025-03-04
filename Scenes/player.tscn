@@ -1084,7 +1084,7 @@ script = ExtResource("1_cxcq2")
 
 [node name="Super Slash" type="Area2D" parent="Skills"]
 script = ExtResource("2_ka7xj")
-damage = 150
+damage = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skills/Super Slash"]
 shape = SubResource("CircleShape2D_j5oxb")
@@ -1098,7 +1098,7 @@ frame_progress = 1.0
 
 [node name="Thousand Cuts" type="Area2D" parent="Skills"]
 script = ExtResource("2_ka7xj")
-damage = 350
+damage = 250
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skills/Thousand Cuts"]
 shape = SubResource("CircleShape2D_j5oxb")

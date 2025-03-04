@@ -4,7 +4,7 @@ func _ready():
 	Global.flamecharged = false
 func _process(_delta):
 	$Label.text = "Equipped: " + Global.weapon
-	$Label2.text = "Firerate: " + str(int((1 / Global.rateoffire) * 60)) + " RPM" + "\nZoom: " + str(3.0 - Global.zoom) +"x" + "\nDamage: " + str(Global.damage) +"\nCapacity: " + str(Global.maxammo) +"\nBullet Velocity: " + str(Global.bulletvelocity) + " f/s" +"\nElement: " + str(Global.element) +"\n\n" + Global.description 
+	$Label2.text = "Firerate: " + str(int((1 / Global.rateoffire) * 60)) + " RPM" + "\nZoom: " + str(3.0 - Global.zoom) +"x" + "\nDamage: " + str(Global.damage) +"\nCapacity: " + str(Global.maxammo) +"\nBullet Velocity: " + str(Global.bulletvelocity) + " f/s"  + str(Global.element) +"\n\n" + Global.description 
 	
 	if "P90" in Global.inventory:
 		$ScrollContainer/ColorRect/VBoxContainer/Button.visible = true
