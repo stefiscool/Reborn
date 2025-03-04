@@ -2523,11 +2523,41 @@ position = Vector2(1269, -1498)
 [node name="Magazine3" parent="Items" instance=ExtResource("2_ncv28")]
 position = Vector2(612, -2131)
 
+[node name="Magazine5" parent="Items" instance=ExtResource("2_ncv28")]
+position = Vector2(1383, -1546)
+
+[node name="Magazine6" parent="Items" instance=ExtResource("2_ncv28")]
+position = Vector2(1312, -2183)
+
+[node name="Magazine7" parent="Items" instance=ExtResource("2_ncv28")]
+position = Vector2(-114, -2049)
+
+[node name="Magazine8" parent="Items" instance=ExtResource("2_ncv28")]
+position = Vector2(-85, -2570)
+
+[node name="Magazine9" parent="Items" instance=ExtResource("2_ncv28")]
+position = Vector2(150, -1215)
+
+[node name="Magazine10" parent="Items" instance=ExtResource("2_ncv28")]
+position = Vector2(658, -2823)
+
 [node name="Magazine4" parent="Items" instance=ExtResource("2_ncv28")]
 position = Vector2(1404, -2855)
 
 [node name="Medkit" parent="Items" instance=ExtResource("3_xvimt")]
 position = Vector2(1103, -2040)
+
+[node name="Medkit3" parent="Items" instance=ExtResource("3_xvimt")]
+position = Vector2(-34, -1518)
+
+[node name="Medkit4" parent="Items" instance=ExtResource("3_xvimt")]
+position = Vector2(478, -2468)
+
+[node name="Medkit5" parent="Items" instance=ExtResource("3_xvimt")]
+position = Vector2(-409, -3137)
+
+[node name="Medkit6" parent="Items" instance=ExtResource("3_xvimt")]
+position = Vector2(-342, -2765)
 
 [node name="Medkit2" parent="Items" instance=ExtResource("3_xvimt")]
 position = Vector2(24, -3541)
