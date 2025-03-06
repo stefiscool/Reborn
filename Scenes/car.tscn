@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://c8hqf0nank0xr"]
 
-[ext_resource type="Texture2D" uid="uid://cmwqnp2bh858n" path="res://Assets/car.png" id="1_l0nay"]
+[ext_resource type="Texture2D" uid="uid://cmwqnp2bh858n" path="res://Assets/Vechicles/car.png" id="1_l0nay"]
 [ext_resource type="Script" path="res://Scripts/car.gd" id="1_t8ma4"]
-[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="3_0f348"]
-[ext_resource type="AudioStream" uid="uid://ojv8i2tdpd0p" path="res://Audio/metal-impact-247482.mp3" id="4_c805k"]
-[ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/flamecharge.mp3" id="5_1lflo"]
+[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/Attacks/hq-explosion-6288.mp3" id="3_0f348"]
+[ext_resource type="AudioStream" uid="uid://ojv8i2tdpd0p" path="res://Audio/Misc/metal-impact-247482.mp3" id="4_c805k"]
+[ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/Attacks/flamecharge.mp3" id="5_1lflo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d6hdr"]
 atlas = ExtResource("1_l0nay")

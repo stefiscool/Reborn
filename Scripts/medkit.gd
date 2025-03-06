@@ -36,7 +36,7 @@ func get_weighted_random_value() -> int:
 
 
 func _on_body_entered(body):
-	if body.is_in_group("Player") and Global.health < 100 and picked == false:
+	if body.is_in_group("Player") and Global.health < Global.maxhealth and picked == false:
 		zip.play()
 		picked = true
 		$Timer.start()

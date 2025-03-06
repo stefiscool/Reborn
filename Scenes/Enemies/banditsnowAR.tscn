@@ -1,16 +1,16 @@
 [gd_scene load_steps=38 format=3 uid="uid://dyag81rtlamey"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyStats.gd" id="1_ucj01"]
-[ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/male_hurt7-48124.mp3" id="2_a6vq4"]
+[ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/Misc/male_hurt7-48124.mp3" id="2_a6vq4"]
 [ext_resource type="Script" path="res://Scripts/enemyaim.gd" id="3_i21es"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyBullet.gd" id="4_pwe8e"]
-[ext_resource type="AudioStream" uid="uid://dn3jy3omvh7ui" path="res://Audio/9mm-pistol-shoot-short-reverb-7152.mp3" id="5_c0l6p"]
-[ext_resource type="AudioStream" uid="uid://cwynqdypgmpoc" path="res://Audio/sword-clash-241729.mp3" id="6_1hwtq"]
+[ext_resource type="AudioStream" uid="uid://dn3jy3omvh7ui" path="res://Audio/Gunfire/9mm-pistol-shoot-short-reverb-7152.mp3" id="5_c0l6p"]
+[ext_resource type="AudioStream" uid="uid://cwynqdypgmpoc" path="res://Audio/Attacks/sword-clash-241729.mp3" id="6_1hwtq"]
 [ext_resource type="Script" path="res://Scripts/VisionLine.gd" id="7_042ej"]
 [ext_resource type="Texture2D" uid="uid://spo00g3wpoxp" path="res://Assets/Effects/HoverParticles.png" id="8_hai4y"]
 [ext_resource type="Texture2D" uid="uid://dfnygqwrxkw8a" path="res://Assets/Enemies/banditsnowAR.png" id="9_7k8e7"]
-[ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/cut.mp3" id="10_r364p"]
-[ext_resource type="AudioStream" uid="uid://chcxpvaououh5" path="res://Audio/punch.mp3" id="11_xphgp"]
+[ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/Attacks/cut.mp3" id="10_r364p"]
+[ext_resource type="AudioStream" uid="uid://chcxpvaououh5" path="res://Audio/Attacks/punch.mp3" id="11_xphgp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y21y5"]
 size = Vector2(715.969, 375.125)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://don64iobea8au"]
 
 [ext_resource type="Script" path="res://Scripts/Door.gd" id="1_b2o3k"]
-[ext_resource type="Texture2D" uid="uid://b181psttede3o" path="res://Assets/Door (1).png" id="2_sfd38"]
-[ext_resource type="AudioStream" uid="uid://0vt74of3ruc6" path="res://Audio/wood-smash-1-170410.mp3" id="3_5jxji"]
+[ext_resource type="Texture2D" uid="uid://b181psttede3o" path="res://Assets/Props/Door (1).png" id="2_sfd38"]
+[ext_resource type="AudioStream" uid="uid://0vt74of3ruc6" path="res://Audio/Misc/wood-smash-1-170410.mp3" id="3_5jxji"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_whnai"]
 atlas = ExtResource("2_sfd38")

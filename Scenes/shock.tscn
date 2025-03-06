@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://csqwaxce5n042"]
 
-[ext_resource type="Script" path="res://Scenes/shock.gd" id="1_f133m"]
+[ext_resource type="Script" path="res://Scripts/shock.gd" id="1_f133m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5o3i"]
 radius = 5.0

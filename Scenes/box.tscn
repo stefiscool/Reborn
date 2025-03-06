@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6ieimkmpv6ox"]
 
-[ext_resource type="Texture2D" uid="uid://dlps22lmrmapv" path="res://Assets/crystalbox.png" id="1_0xye1"]
+[ext_resource type="Texture2D" uid="uid://dlps22lmrmapv" path="res://Assets/Props/crystalbox.png" id="1_0xye1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sir8b"]
 size = Vector2(57, 56)

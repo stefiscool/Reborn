@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdvxya3rhb22y"]
+
+[ext_resource type="Script" path="res://Scripts/hole.gd" id="1_qi4ey"]
+[ext_resource type="Texture2D" uid="uid://dqyphdr74v17n" path="res://Assets/Props/Hole.png" id="2_8ppmf"]
+[ext_resource type="AudioStream" uid="uid://blede6qh82m2i" path="res://Audio/Misc/man-scream-7-276686_out.mp3" id="3_jgs2d"]
+
+[node name="Hole" type="Area2D"]
+script = ExtResource("1_qi4ey")
+
+[node name="Hole" type="Sprite2D" parent="."]
+position = Vector2(-3, 2)
+texture = ExtResource("2_8ppmf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.675623, -0.946046)
+scale = Vector2(0.929752, 0.892094)
+polygon = PackedVector2Array(-2.5, -21.3587, -25.0867, -37.0521, -35.8422, -53.8665, -46, -58, -56, -56, -61, -39, -63, -26, -47.6733, -19.1168, -33.6911, -4.54431, -29.3889, 6.66527, -13.2556, 7.78623, 7, 26, 13.6333, 33.5683, 19, 54, 43, 59, 52, 57, 58, 42, 50.2022, 24.6006, 41.5978, 21.2377, 28.6911, 7.78623, 14.7089, -4.54431)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_jgs2d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

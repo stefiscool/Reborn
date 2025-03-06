@@ -1,16 +1,16 @@
 [gd_scene load_steps=34 format=3 uid="uid://b6l138mbyo7me"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyStats.gd" id="1_elgul"]
-[ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/male_hurt7-48124.mp3" id="2_hwr82"]
+[ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/Misc/male_hurt7-48124.mp3" id="2_hwr82"]
 [ext_resource type="Script" path="res://Scripts/enemyaim.gd" id="3_633yh"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyBullet.gd" id="4_bpvon"]
 [ext_resource type="AudioStream" uid="uid://8xeex6wi005q" path="res://Audio/Gunfire/electric-impact-37128.mp3" id="5_3pop6"]
-[ext_resource type="AudioStream" uid="uid://cwynqdypgmpoc" path="res://Audio/sword-clash-241729.mp3" id="6_63ro3"]
+[ext_resource type="AudioStream" uid="uid://cwynqdypgmpoc" path="res://Audio/Attacks/sword-clash-241729.mp3" id="6_63ro3"]
 [ext_resource type="Script" path="res://Scripts/VisionLine.gd" id="7_fyh16"]
 [ext_resource type="Texture2D" uid="uid://spo00g3wpoxp" path="res://Assets/Effects/HoverParticles.png" id="8_hpw5s"]
 [ext_resource type="Texture2D" uid="uid://b2krclw0lqbd3" path="res://Assets/Enemies/banditcryopistol.png" id="10_d5gp6"]
-[ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/cut.mp3" id="10_n5x2y"]
-[ext_resource type="AudioStream" uid="uid://chcxpvaououh5" path="res://Audio/punch.mp3" id="11_o1ljc"]
+[ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/Attacks/cut.mp3" id="10_n5x2y"]
+[ext_resource type="AudioStream" uid="uid://chcxpvaououh5" path="res://Audio/Attacks/punch.mp3" id="11_o1ljc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y21y5"]
 size = Vector2(715.969, 375.125)

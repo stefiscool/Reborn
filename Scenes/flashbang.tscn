@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://e8pfa1axkahc"]
 
 [ext_resource type="Script" path="res://Scripts/flashbang.gd" id="1_7o5lu"]
-[ext_resource type="AudioStream" uid="uid://ce1i10b8rqfpu" path="res://Audio/timebombbeep-93074-[AudioTrimmer.com].mp3" id="2_y0alm"]
-[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="3_vumlu"]
+[ext_resource type="AudioStream" uid="uid://ce1i10b8rqfpu" path="res://Audio/Misc/timebombbeep-93074-[AudioTrimmer.com].mp3" id="2_y0alm"]
+[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/Attacks/hq-explosion-6288.mp3" id="3_vumlu"]
 [ext_resource type="Texture2D" uid="uid://34pie53x6e1a" path="res://Assets/Effects/electrodash.png" id="4_eb7vc"]
-[ext_resource type="Texture2D" uid="uid://dyiw1kh2hxbd4" path="res://Assets/Specials.png" id="4_xyu7f"]
+[ext_resource type="Texture2D" uid="uid://dyiw1kh2hxbd4" path="res://Assets/Effects/Specials.png" id="4_xyu7f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hoa0u"]
 radius = 0.0

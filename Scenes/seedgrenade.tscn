@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8efvgip0lv86"]
 
 [ext_resource type="Script" path="res://Scripts/seedgrenade.gd" id="1_trur0"]
-[ext_resource type="AudioStream" uid="uid://ce1i10b8rqfpu" path="res://Audio/timebombbeep-93074-[AudioTrimmer.com].mp3" id="2_fv4vc"]
-[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="3_wxuhd"]
-[ext_resource type="Texture2D" uid="uid://dyiw1kh2hxbd4" path="res://Assets/Specials.png" id="4_e8tam"]
+[ext_resource type="AudioStream" uid="uid://ce1i10b8rqfpu" path="res://Audio/Misc/timebombbeep-93074-[AudioTrimmer.com].mp3" id="2_fv4vc"]
+[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/Attacks/hq-explosion-6288.mp3" id="3_wxuhd"]
+[ext_resource type="Texture2D" uid="uid://dyiw1kh2hxbd4" path="res://Assets/Effects/Specials.png" id="4_e8tam"]
 [ext_resource type="Texture2D" uid="uid://c173b73esb0dw" path="res://Assets/Effects/SeedGrenade.png" id="4_iqgn4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hoa0u"]

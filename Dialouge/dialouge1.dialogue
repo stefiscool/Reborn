@@ -1,13 +1,180 @@
-~ start
+~ start  
 
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
+Phenix: [[Hi|Hello|Howdy]], this is the Reborn HQ.  
+Phenix: The Reborn are a faction of warriors who use us Ark Drones to raise themselves from the dead.  
+Phenix: When a human is raised, they gain elemental powers. You seem to have some great powers.  
+Phenix: You were a soldier from World War 3. You probably died in the nuclear apocalypse. Your will to live must be intense if you died so long ago.  
+Phenix: Since you are one of us now, you need a code name. How about Paladin?  
+- Sure!  
+	Phenix: Alright, great. You are now the Paladin.  
+- Nah.  
+	Phenix: Sorry, I cant think of a better name.  
+
+=> END  
+
+~ reborn_guard  
+
+Reborn Guard: [[Halt.|State your business.|You're entering Reborn territory.]]  
+Reborn Guard: If you’re here for trouble, turn back. If you’re here to fight for us, pick up a rifle.  
+- I need supplies.  
+	Reborn Guard: There are plenty of shops in this base.  
+- I want to join the fight.  
+	Reborn Guard: Then prove yourself by doing some missions. We don’t take in just anyone.  
+
+=> END  
+
+~ quartermaster  
+
+Quartermaster Rook: [[You need gear?|Looking for weapons?|Don’t waste my time.]]  
+Quartermaster Rook: I’ve got what you need, but nothing is free.  
+- What do you have?  
+	Quartermaster Rook: Guns, armor, energy shields… whatever keeps you breathing. Most of my stuff is standard issue republic weaponry.
+- Can I get a discount?  
+	Quartermaster Rook: No. All prices are final.  
+
+=> END  
+
+~ reborn_soldier  
+
+Reborn Soldier: [[Hey, newcomer.|First time here?|You look fresh out of the grave.]]  
+Reborn Soldier: The fight never stops. We die, we rise, we fight again. That’s the way of the Reborn.  
+- What’s the mission?  
+	Reborn Soldier: Keep the bandits off our people and take back what’s ours. Simple.  
+- Ever been scared to die?  
+	Reborn Soldier: Death’s just a pit stop. You get used to it.  
+
+=> END  
+
+~ citizen_mechanic  
+
+Citizen Mechanic: [[Need a tune-up?|Got some cash?|If it moves, I can fix it.]]  
+Citizen Mechanic: The Reborn may fight, but I keep their ships running. That’s what matters.  
+- Do you have any ships?  
+	Citizen Mechanic: Heck yeah I have ships! Just remember, good tech ain’t cheap.  
+- Are you an alien?
+	Citizen Mechanic: Yes, I am a Tzorian, from the planet Tzora. My species is known for its great intelligence and technology. Our body also glows.
+- What do you know about the bandits?  
+	Citizen Mechanic: They scavenge, they steal, they kill. They don’t build. That’s why they’ll never win.  
+
+=> END  
+
+~ merchant_scrapper  
+
+Scrapper Merchant: [[Looking to trade?|Got money?|Nothing’s free.]]  
+Scrapper Merchant: Scrap for weapons, weapons for survival. That’s how it works here.  
+- What’s for sale?  
+	Scrapper Merchant: Whatever I could pry from wrecks and dead hands. I can also make custom weapons from scrap parts. 
+- Heard any news?  
+	Scrapper Merchant: The bandits have taken over an Ark Crystal mine in Antarctica. Means more work for the Reborn.  
+- Found anything good while scavenging?  
+	Scrapper Merchant: [[A few cell guns, a busted rifle, some ancient datapad with a dead battery.|I found a powerful flamethrower from a bandit. It looks badly made, I would not put fuel in it.|I found a heavy minigun from a bandit juggernaut.]]
+- Ever run into bandits?  
+	Scrapper Merchant: All the time. I keep my head low and my photon gun ready.  
+
+=> END  
+
+~ citizen_survivor  
+
+Survivor: [[You one of the Reborn?|Here to help?|Are you with them?]]  
+Survivor: The bandits took everything. The only reason I'm still breathing is because the Reborn pushed them back.  
+- What happened?  
+	Survivor: They raided our town in the Sahara Desert. Took supplies, took people… some fought back, but it didn’t end well.  
+- Where did they go?  
+	Survivor: North, toward the old city ruins of London and the other European cities. They’ll be back, they always come back.  
+
+=> END  
 
 
-=> END
+
+~ citizen_doctor  
+
+Field Doctor: [[You injured?|Need medical supplies?|Try not to bleed out here.]]  
+Field Doctor: Keeping the Reborn patched up is a full-time job. Lucky for them, I don’t mind the work.  
+- How do you treat the Reborn?  
+	Field Doctor: Their Ark Drones handle the big stuff, I deal with the rest.  
+- Can an Ark Drone fail to resurrect someone?  
+	Field Doctor: If the drone no longer has power, or if someone loses their will to live, then they cannot be resurrected. Such is the fate of many Reborn.  
+- How do the Ark Drones work?  
+	Field Doctor: Ark Drones use Ark Energy, which has the power to rekindle life itself. You would not understand all the scientific stuff.  
+
+=> END  
+
+~ citizen_historian  
+
+Historian: [[You care about the past?|Looking for answers?|History still matters, you know.]]  
+Historian: The Republic abandoned Earth, but that doesn’t mean we should forget what came before.  
+- What do you know about the Reborn?  
+	Historian: They were an experiment, a secret project created by ancient scientists during World War 3. The scientists were all nuked in the war, but their ark drones survived, and they kept the Reborn alive.  
+- What about the bandits?  
+	Historian: Most of them are descendants of those left behind. The Republic made them dependent on them, and when they left, they no longer had a purpose.  
+
+=> END  
+
+~ citizen_child  
+
+Child: [[You’re a Reborn?|You don’t look dead.|Are you a robot?]]  
+Child: They say you come back when you die. Can you teach me how to do that?  
+- It’s not that simple.  
+	Child: But you get up after dying, right? I wanna do that too.  
+- Stay safe, kid.  
+	Child: I will! If the bandits come, I’ll hide real good.  
+
+=> END  
+
+~ reborn_squire_1  
+
+Reborn Squire: [[Hey, you’re the new one, right?|Fresh out of the grave?|You really came back from World War 3?]]  
+Reborn Squire: I just started my training. Still getting used to dying and coming back.  
+- How’s training going?  
+	Reborn Squire: It’s rough. They expect us to fight like we’ve been doing it for years. But I guess that’s what it means to be Reborn.  
+- Ever been in real combat?  
+	Reborn Squire: Not yet. I’ve fought in drills, but I hear bandits don’t play fair.  
+- What happens if you mess up?  
+	Reborn Squire: You die. Then you get back up and try again. That’s just how it is.  
+
+=> END  
+
+~ reborn_squire_2  
+
+Reborn Squire: [[You looking for a sparring partner?|Need help with your gear?|Got any advice for a newbie?]]  
+Reborn Squire: I want to prove myself, but I’ve died more in training than I want to admit.  
+- What’s the hardest part of training?  
+	Reborn Squire: The pain. Dying still hurts, even if you come back.  
+- Do the Ark Drones ever fail?  
+	Reborn Squire: Not usually, but I heard about a Reborn who didn’t wake up once. No one knows why.  
+- Why did you join the Reborn?  
+	Reborn Squire: I didn’t have a choice. I died, and when I came back, they told me I was one of them now.  
+
+=> END  
+
+~ reborn_knight  
+
+Reborn Knight: [[You carry yourself like a warrior.|Another new recruit?|Are you ready to fight for the Reborn?]]  
+Reborn Knight: The bandits outnumber us, but they don’t have what we do. We don’t stay dead.  
+- What’s your rank?  
+	Reborn Knight: I am a Knight of the Reborn. I lead squads into battle and ensure no one is left behind… at least, no one who can still rise.  
+- What’s your opinion on the bandits?  
+	Reborn Knight: They fight like scavengers, but don’t underestimate them. They’ve survived longer than most of us have been alive.  
+- What happens if an Ark Drone stops working?  
+	Reborn Knight: Then you die for real. That’s why we protect them at all costs.  
+=> END  
+
+~ cyborg_merchant  
+
+Cyborg Merchant: [[You looking for something special?|Need something powerful?|I don’t sell junk.]]  
+Cyborg Merchant: The name’s Vexus. I deal in rare weapons, alien armor, and exotic tech you won’t find anywhere else.  
+
+- What kind of weapons do you sell?  
+	Vexus: Advanced alien stuff. Plasma casters, graviton blades, kinetic disruptors. Things that make a real difference in a fight.  
+- What about armor?  
+	Vexus: Reinforced alien exo-suits, energy shielding, adaptive plating. You want to stay alive longer? You buy from me.  
+- Where do you get your stock?  
+	Vexus: Salvage, trade, black market… and sometimes, I make them myself. These cybernetics aren’t just for show.  
+- You’re a cyborg?  
+	Vexus: More machine than human at this point. Flesh is weak. Metal doesn’t break so easily.  
+- Ever fought against the bandits?  
+	Vexus: Once. I lost an arm and half my face. Now, I sell weapons to make sure others don’t end up like me.  
+- Got anything illegal?  
+	Vexus: Everything’s illegal somewhere. Good thing no one enforces the law anymore in this time of war.   
+
+=> END  
