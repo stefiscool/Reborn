@@ -6,9 +6,10 @@ func _on_body_entered(body):
 		Global.missionobjectives += 1
 		$AudioStreamPlayer2D.play()
 		visible = false
-		$Timer.start()
-		
-
-
-func _on_timer_timeout() -> void:
-	queue_free()
+		queue_free()
+		#$Timer.start()
+		#
+#
+#
+#func _on_timer_timeout() -> void:
+	#queue_free()

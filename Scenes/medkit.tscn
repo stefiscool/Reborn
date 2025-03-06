@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://d100l8flk2xi"]
 
 [ext_resource type="Script" path="res://Scripts/medkit.gd" id="1_fp2ga"]
-[ext_resource type="AudioStream" uid="uid://1876j146fae4" path="res://Audio/zipper-43841.mp3" id="2_eh1i2"]
-[ext_resource type="Texture2D" uid="uid://i3qor5ibr78s" path="res://Assets/Heals.png" id="4_40pkm"]
+[ext_resource type="AudioStream" uid="uid://1876j146fae4" path="res://Audio/Misc/zipper-43841.mp3" id="2_eh1i2"]
+[ext_resource type="Texture2D" uid="uid://i3qor5ibr78s" path="res://Assets/Props/Heals.png" id="4_40pkm"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="4_otha4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2l7co"]

@@ -1,16 +1,16 @@
 [gd_scene load_steps=49 format=3 uid="uid://b5qekbmvbcdcf"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyStats.gd" id="1_rdpyp"]
-[ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/male_hurt7-48124.mp3" id="2_bhtwp"]
+[ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/Misc/male_hurt7-48124.mp3" id="2_bhtwp"]
 [ext_resource type="Script" path="res://Scripts/enemyaim.gd" id="3_33cvs"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyBullet.gd" id="4_sldl4"]
-[ext_resource type="AudioStream" uid="uid://c7p4o1cmllkvy" path="res://Audio/9mm-pistol-shot-6349.mp3" id="5_oai8l"]
+[ext_resource type="AudioStream" uid="uid://c7p4o1cmllkvy" path="res://Audio/Gunfire/9mm-pistol-shot-6349.mp3" id="5_oai8l"]
 [ext_resource type="Script" path="res://Scripts/VisionLine.gd" id="6_6s3bo"]
 [ext_resource type="Texture2D" uid="uid://spo00g3wpoxp" path="res://Assets/Effects/HoverParticles.png" id="7_xa3l5"]
 [ext_resource type="Texture2D" uid="uid://0o47h0hwdw7u" path="res://Assets/Enemies/banditaxe.png" id="8_wpk2a"]
 [ext_resource type="Texture2D" uid="uid://dpnlkirameh1s" path="res://Assets/Enemies/banditaxemelee.png" id="9_c22hn"]
-[ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/cut.mp3" id="10_2kbfc"]
-[ext_resource type="AudioStream" uid="uid://chcxpvaououh5" path="res://Audio/punch.mp3" id="11_q8qdn"]
+[ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/Attacks/cut.mp3" id="10_2kbfc"]
+[ext_resource type="AudioStream" uid="uid://chcxpvaououh5" path="res://Audio/Attacks/punch.mp3" id="11_q8qdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y21y5"]
 size = Vector2(715.969, 375.125)

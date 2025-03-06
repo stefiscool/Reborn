@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://07hugfna5n3f"]
 
 [ext_resource type="Script" path="res://Scripts/car.gd" id="1_lui6s"]
-[ext_resource type="Texture2D" uid="uid://c8rv70tyq55r2" path="res://Assets/barrel.png" id="2_7jgmc"]
-[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="3_wshn0"]
-[ext_resource type="AudioStream" uid="uid://ojv8i2tdpd0p" path="res://Audio/metal-impact-247482.mp3" id="4_yumml"]
-[ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/flamecharge.mp3" id="5_ibuf2"]
+[ext_resource type="Texture2D" uid="uid://c8rv70tyq55r2" path="res://Assets/Props/barrel.png" id="2_7jgmc"]
+[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/Attacks/hq-explosion-6288.mp3" id="3_wshn0"]
+[ext_resource type="AudioStream" uid="uid://ojv8i2tdpd0p" path="res://Audio/Misc/metal-impact-247482.mp3" id="4_yumml"]
+[ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/Attacks/flamecharge.mp3" id="5_ibuf2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tjrup"]
 radius = 21.095

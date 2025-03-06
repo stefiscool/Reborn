@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=4 uid="uid://bc5smsp6sk4p2"]
 
-[ext_resource type="Texture2D" uid="uid://c8v7vrbwsrjml" path="res://Assets/TheBountyHunterTiles.png" id="1_kdltp"]
+[ext_resource type="Texture2D" uid="uid://c8v7vrbwsrjml" path="res://Assets/Tilesets/TheBountyHunterTiles.png" id="1_kdltp"]
 [ext_resource type="PackedScene" uid="uid://cc6h2k3peoi15" path="res://Scenes/magazine.tscn" id="2_iqmp1"]
 [ext_resource type="PackedScene" uid="uid://d100l8flk2xi" path="res://Scenes/medkit.tscn" id="3_utsr1"]
 [ext_resource type="PackedScene" uid="uid://bjq3ntdgcf0ss" path="res://Scenes/chair.tscn" id="4_ogr3o"]
@@ -16,12 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://bmlvyxi0vybtg" path="res://Scenes/Enemies/banditsnowsniper.tscn" id="10_qbl8r"]
 [ext_resource type="PackedScene" uid="uid://cjypwkc5cje34" path="res://Scenes/player.tscn" id="11_4t5pu"]
 [ext_resource type="PackedScene" uid="uid://c3iiuy2extvbi" path="res://Scenes/Enemies/banditicepick.tscn" id="11_wuuqw"]
-[ext_resource type="AudioStream" uid="uid://dnqusbwr1u0j3" path="res://Audio/video-game-tank-metal-220562.mp3" id="12_jg1iw"]
+[ext_resource type="AudioStream" uid="uid://dnqusbwr1u0j3" path="res://Audio/Music/video-game-tank-metal-220562.mp3" id="12_jg1iw"]
 [ext_resource type="PackedScene" uid="uid://00c16uelbl55" path="res://Scenes/Enemies/banditsnowshovel.tscn" id="12_p4tc7"]
 [ext_resource type="PackedScene" uid="uid://b53o8d1lkvnyg" path="res://Scenes/ui.tscn" id="13_00way"]
 [ext_resource type="PackedScene" uid="uid://dvss3fpvkxuyj" path="res://Scenes/spaceship.tscn" id="14_7cd4a"]
 [ext_resource type="PackedScene" uid="uid://clj481ylnqg6c" path="res://Scenes/mission_objective.tscn" id="15_7nshc"]
-[ext_resource type="Texture2D" uid="uid://t3v0cvncjqm1" path="res://Assets/energycore.png" id="21_rrp5u"]
+[ext_resource type="Texture2D" uid="uid://t3v0cvncjqm1" path="res://Assets/Props/energycore.png" id="21_rrp5u"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fknlc"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)

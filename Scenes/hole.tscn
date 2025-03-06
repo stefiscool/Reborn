@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdvxya3rhb22y"]
 
 [ext_resource type="Script" path="res://Scripts/hole.gd" id="1_qi4ey"]
-[ext_resource type="Texture2D" uid="uid://dqyphdr74v17n" path="res://Assets/Hole.png" id="2_8ppmf"]
-[ext_resource type="AudioStream" uid="uid://blede6qh82m2i" path="res://Audio/man-scream-7-276686_out.mp3" id="3_jgs2d"]
+[ext_resource type="Texture2D" uid="uid://dqyphdr74v17n" path="res://Assets/Props/Hole.png" id="2_8ppmf"]
+[ext_resource type="AudioStream" uid="uid://blede6qh82m2i" path="res://Audio/Misc/man-scream-7-276686_out.mp3" id="3_jgs2d"]
 
 [node name="Hole" type="Area2D"]
 script = ExtResource("1_qi4ey")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://c5qnp0bvy8men"]
 
 [ext_resource type="Script" path="res://Scripts/car.gd" id="1_5emc2"]
-[ext_resource type="Texture2D" uid="uid://osbfdfb3bgrg" path="res://Assets/electrocar.png" id="2_atrro"]
-[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="3_jugdx"]
-[ext_resource type="AudioStream" uid="uid://ojv8i2tdpd0p" path="res://Audio/metal-impact-247482.mp3" id="4_2als8"]
+[ext_resource type="Texture2D" uid="uid://osbfdfb3bgrg" path="res://Assets/Vechicles/electrocar.png" id="2_atrro"]
+[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/Attacks/hq-explosion-6288.mp3" id="3_jugdx"]
+[ext_resource type="AudioStream" uid="uid://ojv8i2tdpd0p" path="res://Audio/Misc/metal-impact-247482.mp3" id="4_2als8"]
 [ext_resource type="Texture2D" uid="uid://ba67x7f1jxqbr" path="res://Assets/Effects/Tesla.png" id="4_8yub7"]
 [ext_resource type="AudioStream" uid="uid://8xeex6wi005q" path="res://Audio/Gunfire/electric-impact-37128.mp3" id="6_j0875"]
 

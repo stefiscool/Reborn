@@ -1,16 +1,16 @@
 [gd_scene load_steps=39 format=3 uid="uid://c8ygltfhvf5m6"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyStats.gd" id="1_nfgep"]
-[ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/male_hurt7-48124.mp3" id="2_4xtf2"]
+[ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/Misc/male_hurt7-48124.mp3" id="2_4xtf2"]
 [ext_resource type="Script" path="res://Scripts/enemyaim.gd" id="3_nt8c8"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyBullet.gd" id="4_om07y"]
-[ext_resource type="AudioStream" uid="uid://cy36mh2qcehf2" path="res://Audio/laser-gun-81720 (1).mp3" id="5_fb2dy"]
+[ext_resource type="AudioStream" uid="uid://cy36mh2qcehf2" path="res://Audio/Gunfire/laser-gun-81720 (1).mp3" id="5_fb2dy"]
 [ext_resource type="Script" path="res://Scripts/VisionLine.gd" id="6_1jk6h"]
-[ext_resource type="AudioStream" uid="uid://cwynqdypgmpoc" path="res://Audio/sword-clash-241729.mp3" id="7_8hard"]
+[ext_resource type="AudioStream" uid="uid://cwynqdypgmpoc" path="res://Audio/Attacks/sword-clash-241729.mp3" id="7_8hard"]
 [ext_resource type="Texture2D" uid="uid://spo00g3wpoxp" path="res://Assets/Effects/HoverParticles.png" id="7_me1ch"]
 [ext_resource type="Texture2D" uid="uid://cugux82f2irng" path="res://Assets/Enemies/banditlaserSMG.png" id="8_276sb"]
-[ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/cut.mp3" id="9_5sq83"]
-[ext_resource type="AudioStream" uid="uid://chcxpvaououh5" path="res://Audio/punch.mp3" id="10_x162s"]
+[ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/Attacks/cut.mp3" id="9_5sq83"]
+[ext_resource type="AudioStream" uid="uid://chcxpvaououh5" path="res://Audio/Attacks/punch.mp3" id="10_x162s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y21y5"]
 size = Vector2(715.969, 375.125)

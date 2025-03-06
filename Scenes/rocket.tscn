@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dnyltrflx5b76"]
 
 [ext_resource type="Script" path="res://Scripts/rocket.gd" id="1_e043o"]
-[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/hq-explosion-6288.mp3" id="2_ia7fr"]
+[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/Attacks/hq-explosion-6288.mp3" id="2_ia7fr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5o3i"]
 radius = 3.0

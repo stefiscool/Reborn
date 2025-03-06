@@ -1,16 +1,16 @@
 [gd_scene load_steps=46 format=3 uid="uid://c3iiuy2extvbi"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyStats.gd" id="1_2jqa3"]
-[ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/male_hurt7-48124.mp3" id="2_44kwf"]
+[ext_resource type="AudioStream" uid="uid://c71jkj6qpoi7y" path="res://Audio/Misc/male_hurt7-48124.mp3" id="2_44kwf"]
 [ext_resource type="Script" path="res://Scripts/enemyaim.gd" id="3_i7qhn"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NormalEnemyBullet.gd" id="4_1gia7"]
-[ext_resource type="AudioStream" uid="uid://c7p4o1cmllkvy" path="res://Audio/9mm-pistol-shot-6349.mp3" id="5_eyl82"]
+[ext_resource type="AudioStream" uid="uid://c7p4o1cmllkvy" path="res://Audio/Gunfire/9mm-pistol-shot-6349.mp3" id="5_eyl82"]
 [ext_resource type="Script" path="res://Scripts/VisionLine.gd" id="6_om1h2"]
 [ext_resource type="Texture2D" uid="uid://spo00g3wpoxp" path="res://Assets/Effects/HoverParticles.png" id="7_qx506"]
 [ext_resource type="Texture2D" uid="uid://01xx4vek1amh" path="res://Assets/Enemies/banditsnowpick.png" id="8_r0mwh"]
 [ext_resource type="Texture2D" uid="uid://bmajctnocvhxf" path="res://Assets/Enemies/banditsnowpickmelee.png" id="9_0vele"]
-[ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/cut.mp3" id="10_2kw0m"]
-[ext_resource type="AudioStream" uid="uid://chcxpvaououh5" path="res://Audio/punch.mp3" id="11_8ceqh"]
+[ext_resource type="AudioStream" uid="uid://cx8hgyhxyqju6" path="res://Audio/Attacks/cut.mp3" id="10_2kw0m"]
+[ext_resource type="AudioStream" uid="uid://chcxpvaououh5" path="res://Audio/Attacks/punch.mp3" id="11_8ceqh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y21y5"]
 size = Vector2(715.969, 375.125)
