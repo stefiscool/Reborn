@@ -7,9 +7,3 @@ func _on_body_entered(body):
 		$AudioStreamPlayer2D.play()
 		visible = false
 		queue_free()
-		#$Timer.start()
-		#
-#
-#
-#func _on_timer_timeout() -> void:
-	#queue_free()

@@ -2638,7 +2638,7 @@ position = Vector2(1866, 11)
 position = Vector2(2935, -322)
 
 [node name="Barrel9" parent="Props" instance=ExtResource("6_v66je")]
-position = Vector2(3062, 331)
+position = Vector2(2935, 332)
 
 [node name="Barrel2" parent="Props" instance=ExtResource("6_v66je")]
 position = Vector2(1733, -314)
@@ -2682,7 +2682,7 @@ rotation = 2.42103
 position = Vector2(2028, -674)
 
 [node name="Rock8" parent="Props" instance=ExtResource("7_tk55x")]
-position = Vector2(1848, -1245)
+position = Vector2(1799, -1233)
 rotation = 4.61232
 
 [node name="CrystalRock" parent="Props" instance=ExtResource("8_cprbe")]
@@ -2735,8 +2735,8 @@ position = Vector2(458, -798)
 rotation = 0.34047
 
 [node name="Hole3" parent="Props" instance=ExtResource("10_04xb5")]
-position = Vector2(1807, -1072)
-rotation = -5.00042
+position = Vector2(2099, -862)
+rotation = -5.84293
 
 [node name="Hole4" parent="Props" instance=ExtResource("10_04xb5")]
 position = Vector2(1558, -794)
@@ -2832,13 +2832,6 @@ player = NodePath("../../Player")
 [node name="RayCast2D" parent="Enemies/BanditCryoPistol4" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../../Player")
 
-[node name="BanditCryoPistol5" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_g55kw")]
-position = Vector2(2374, -661)
-player = NodePath("../../Player")
-
-[node name="RayCast2D" parent="Enemies/BanditCryoPistol5" index="5" node_paths=PackedStringArray("player")]
-player = NodePath("../../../Player")
-
 [node name="BanditCryoPistol6" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_g55kw")]
 position = Vector2(1482, -819)
 player = NodePath("../../Player")
@@ -2886,13 +2879,6 @@ position = Vector2(1275, -1045)
 player = NodePath("../../Player")
 
 [node name="RayCast2D" parent="Enemies/BanditCryoPistol13" index="5" node_paths=PackedStringArray("player")]
-player = NodePath("../../../Player")
-
-[node name="BanditCryoPistol14" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_g55kw")]
-position = Vector2(1497, -604)
-player = NodePath("../../Player")
-
-[node name="RayCast2D" parent="Enemies/BanditCryoPistol14" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../../Player")
 
 [node name="BanditCryoPistol11" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_g55kw")]
@@ -3222,7 +3208,6 @@ offset_bottom = 2058.0
 [editable path="Enemies/BanditCryoPistol2"]
 [editable path="Enemies/BanditCryoPistol3"]
 [editable path="Enemies/BanditCryoPistol4"]
-[editable path="Enemies/BanditCryoPistol5"]
 [editable path="Enemies/BanditCryoPistol6"]
 [editable path="Enemies/BanditCryoPistol7"]
 [editable path="Enemies/BanditCryoPistol8"]
@@ -3230,7 +3215,6 @@ offset_bottom = 2058.0
 [editable path="Enemies/BanditCryoPistol10"]
 [editable path="Enemies/BanditCryoPistol12"]
 [editable path="Enemies/BanditCryoPistol13"]
-[editable path="Enemies/BanditCryoPistol14"]
 [editable path="Enemies/BanditCryoPistol11"]
 [editable path="Enemies/BanditSnowAR"]
 [editable path="Enemies/BanditSnowAR3"]

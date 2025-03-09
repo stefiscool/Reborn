@@ -191,13 +191,14 @@ radius = 14.0
 size = Vector2(9, 63)
 
 [node name="BanditMinigun" type="CharacterBody2D" groups=["Enemy"]]
+scale = Vector2(1.2, 1.2)
 collision_layer = 33
 collision_mask = 35
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_s3ao2")
-speed = 8000
-hp = 200
+speed = 7000
+hp = 400
 xp = 25
 twoweapons = true
 

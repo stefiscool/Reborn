@@ -5,6 +5,7 @@ var inventory = ["SCAR", "M1911", "Tactical Vest"]
 var Class = "Noble"
 var level = 1
 var xp = 0
+var levelupplayed = false
 var xpneeded = 20
 var weapon = "SCAR"
 var secondweapon = "M1911"
@@ -112,5 +113,6 @@ func _process(_delta):
 	
 	if xp >= xpneeded:
 		level += 1
+		levelupplayed = true
 		xp -= xpneeded
 		xpneeded = 20 * pow(level, 2)

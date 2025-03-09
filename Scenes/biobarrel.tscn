@@ -1,0 +1,119 @@
+[gd_scene load_steps=11 format=3 uid="uid://5yfx7bqi5uvs"]
+
+[ext_resource type="Texture2D" uid="uid://dfixcvqqtqdmd" path="res://Assets/Props/biobarrel.png" id="1_7tpq8"]
+[ext_resource type="Script" path="res://Scripts/biobarrel.tres.gd" id="1_xvm6i"]
+[ext_resource type="AudioStream" uid="uid://d38oh77d4jwav" path="res://Audio/Attacks/hq-explosion-6288.mp3" id="3_kqre2"]
+[ext_resource type="AudioStream" uid="uid://ojv8i2tdpd0p" path="res://Audio/Misc/metal-impact-247482.mp3" id="4_123il"]
+[ext_resource type="AudioStream" uid="uid://dk3xcb0ry3j7j" path="res://Audio/Attacks/flamecharge.mp3" id="5_in57b"]
+[ext_resource type="AudioStream" uid="uid://d1dyc37akeaw6" path="res://Audio/Misc/hissing-sound-41717.mp3" id="5_kybje"]
+[ext_resource type="AudioStream" uid="uid://d2nvyoah1svhj" path="res://Audio/Misc/coughing-sound-effect-type-11-294172.mp3" id="7_rtudr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tjrup"]
+radius = 21.095
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gre87"]
+radius = 19.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5cvym"]
+radius = 17.0
+
+[node name="Biobarrel" type="StaticBody2D"]
+script = ExtResource("1_xvm6i")
+hp = 100
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tjrup")
+
+[node name="Barrel" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7tpq8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_gre87")
+
+[node name="boom" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kqre2")
+volume_db = 1.0
+pitch_scale = 9.0
+
+[node name="BlastRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastRadius"]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_5cvym")
+
+[node name="Polygon2D" type="Polygon2D" parent="BlastRadius"]
+visible = false
+position = Vector2(-0.742203, 1.55966)
+scale = Vector2(1.40122, 1.32569)
+color = Color(0.4, 1, 0.4, 1)
+polygon = PackedVector2Array(-8, -11, -10.8889, -3.17647, -10.8889, 3.78049, -5.55556, 9.11464, 1.55555, 10.8927, 8.46913, 7.7811, 11.2346, 1.55793, 8.46913, -10.8884, 0, -14)
+
+[node name="Smoke" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(-1, 0)
+amount = 40
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 29.24
+gravity = Vector2(40, 0)
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+color = Color(0.4, 1, 0.4, 1)
+
+[node name="Fire" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(-1, 0)
+scale = Vector2(1.5, 1.5)
+amount = 40
+lifetime = 1.5
+emission_shape = 1
+emission_sphere_radius = 16.21
+gravity = Vector2(40, 0)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(0.4, 1, 0.4, 1)
+
+[node name="Fire2" type="CPUParticles2D" parent="Fire"]
+amount = 30
+emission_shape = 1
+emission_sphere_radius = 10.74
+gravity = Vector2(40, 0)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(0.4, 1, 0.4, 1)
+
+[node name="Fire3" type="CPUParticles2D" parent="Fire/Fire2"]
+amount = 10
+emission_shape = 1
+emission_sphere_radius = 7.18
+gravity = Vector2(40, 0)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(0.4, 1, 0.4, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_123il")
+volume_db = 14.033
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_kybje")
+volume_db = -4.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_in57b")
+volume_db = 14.033
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_rtudr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="boom" to="." method="_on_boom_finished"]
+[connection signal="body_entered" from="BlastRadius" to="." method="_on_blast_radius_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

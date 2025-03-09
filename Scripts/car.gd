@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @export var hp = 450
 var boomplayed = false
+var fireplayed = false
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("bullet"):
@@ -14,7 +15,9 @@ func _process(delta):
 	if hp <= 100:
 		$Smoke.visible = true
 	if hp <= 50:
-		$AudioStreamPlayer2D2.play()
+		if fireplayed == false:
+			$AudioStreamPlayer2D2.play()
+			fireplayed = true
 		$Fire.visible = true
 	if hp <= 0:
 		if boomplayed == false:

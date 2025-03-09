@@ -35,6 +35,7 @@ var shields_broken_played = false
 var voidvision = false
 var hasfrozen = false
 
+
 var can_skill1 = true
 var can_skill2 = true
 var can_skill3 = true
@@ -129,6 +130,8 @@ func _process(delta):
 		$Ice.visible = true
 	else:
 		$Ice.visible = false
+		
+	
 		
 func _physics_process(delta):
 	

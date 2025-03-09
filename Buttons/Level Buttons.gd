@@ -3,7 +3,7 @@ var missions = {
 	2: { "name": "Sahara Desert", "desc": "The vast, arid expanse of the Sahara is teeming with bandit strongholds and ancient ruins. The bandits hid a stolen weapons cache here. Your mission is to infiltrate the bandit camp and recover the cache that could shift the balance of power." },
 	3: { "name": "London", "desc": "Once a hub of innovation, this sprawling city is now a neon-lit battleground controlled by the bandit invaders. Navigate the chaos to retrieve vital intel hidden in the city's central building. But be careful, a bandit juggernaut guards the building." },
 	4: { "name": "Antartica", "desc": "The frozen tundra hides more than ice. The bandits have overrun an ark crystal mining station, guarding valuable energy cores that power our ark drones. Survive the harsh environment and bring the bandits to justice. Also, watch out for the enemy snipers." },
-	5: { "name": "Amazon Rainforest", "desc": "The overgrown remnants of Earth's most famous rainforest now serve as a haven for bandits. Unearth their hidden base and shut down their illegal bioweapon operations." },
+	5: { "name": "Amazon Rainforest", "desc": "The overgrown remnants of Earth's most famous rainforest now serve as a haven for bandits. Unearth their hidden base and blow up their bioweapon operations with some C4." },
 	6: { "name": "Tokyo", "desc": "The once-thriving megacity is now a shadow of its former self, ruled by a cyber-enhanced warlord. Break through his defenses and dismantle his drone army." },
 	7: { "name": "Mojave Desert", "desc": "Dust storms and desolation make the Mojave desert a perfect hideout for smugglers. Disrupt their operations and rescue captive scientists forced to work on advanced weaponry." },
 	8: { "name": "Mediterranean Isles", "desc": "Idyllic islands turned lawless, these havens are rife with pirate-like bandits. Investigate rumors of a secret underwater lab and recover its experimental prototype." },
@@ -52,6 +52,8 @@ func _on_start_button_pressed():
 		get_tree().change_scene_to_file("res://Scenes/Levels/london.tscn")
 	if Global.mission == 4:
 		get_tree().change_scene_to_file("res://Scenes/Levels/antartica.tscn")
+	if Global.mission == 5:
+		get_tree().change_scene_to_file("res://Scenes/Levels/amazon.tscn")
 
 
 func _on_changeloadout_pressed():
