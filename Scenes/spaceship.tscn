@@ -145,14 +145,12 @@ autoplay = "default"
 z_index = 1000
 position = Vector2(6.00111, 7.27933)
 rotation = 0.0244627
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_rhsy0")
 animation = &"Bandit Heavy Attacker"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="CollisionShape2D"]
 position = Vector2(0.860979, -1.12181)
 rotation = -1.70165
-scale = Vector2(1, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionShape2D/StaticBody2D"]
 polygon = PackedVector2Array(-86, -33, -98, 19, -9, 29, 109, 24, -6, -18)
