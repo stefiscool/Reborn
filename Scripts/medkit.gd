@@ -40,7 +40,7 @@ func _on_body_entered(body):
 		zip.play()
 		picked = true
 		$Timer.start()
-		Global.health += health
+		Global.health += ((health-20) + (Global.Medicine * 10))
 		$AnimatedSprite2D.visible = false
 		$Label.visible = true
 

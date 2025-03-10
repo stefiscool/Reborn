@@ -7,7 +7,4 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("Enemy") and Global.meleeing == true:
-		if Global.Class == "Noble" or Global.Class == "Assassin":
-			body.hp -= 50 + (Global.level * 10)
-		else:
-			body.hp -= 30 + (Global.level * 10)
+		body.hp -= 30 + (Global.Melee * 10)

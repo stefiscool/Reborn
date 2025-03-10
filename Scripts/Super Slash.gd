@@ -4,4 +4,4 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body.is_in_group("Enemy"):
-		body.hp -= damage + (Global.level * 10)
+		body.hp -= damage + (Global.Melee * 10)

@@ -1309,6 +1309,7 @@ stream = ExtResource("46_hne1a")
 volume_db = -10.0
 
 [node name="Gun" parent="." instance=ExtResource("31_wauq5")]
+z_index = 900
 animation = &"M1911"
 
 [node name="Hitbox" type="Area2D" parent="."]

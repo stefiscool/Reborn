@@ -1,8 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvss3fpvkxuyj"]
+[gd_scene load_steps=20 format=3 uid="uid://dvss3fpvkxuyj"]
 
 [ext_resource type="Script" path="res://Scripts/Spaceship.gd" id="1_kspc4"]
 [ext_resource type="Texture2D" uid="uid://spo00g3wpoxp" path="res://Assets/Effects/HoverParticles.png" id="2_jwfru"]
+[ext_resource type="Texture2D" uid="uid://dptr3bnooyl3h" path="res://Assets/Vechicles/AssaultFighter.png" id="3_d2ljf"]
 [ext_resource type="Texture2D" uid="uid://cl1c0pvshqyls" path="res://Assets/Vechicles/Starfighter.png" id="3_ojc8e"]
+[ext_resource type="Texture2D" uid="uid://dnbmmdjpib03o" path="res://Assets/Vechicles/BanditAttacker.png" id="4_goxia"]
+[ext_resource type="Texture2D" uid="uid://cnrumoefitlow" path="res://Assets/Vechicles/BanditFighter.png" id="5_f3xdn"]
+[ext_resource type="Texture2D" uid="uid://casgaonfoarwy" path="res://Assets/Vechicles/BanditHeavyAttacker.png" id="6_ogkqx"]
+[ext_resource type="Texture2D" uid="uid://c6yc2t1i26sqj" path="res://Assets/Vechicles/FighterBomber.png" id="7_nj1dt"]
+[ext_resource type="Texture2D" uid="uid://drqy5put76l5l" path="res://Assets/Vechicles/Interceptor.png" id="8_adk78"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhep"]
 size = Vector2(103, 240.5)
@@ -43,6 +49,77 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhvbw"]
+atlas = ExtResource("3_d2ljf")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe6aw"]
+atlas = ExtResource("6_ogkqx")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s757h"]
+atlas = ExtResource("8_adk78")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhsy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhvbw")
+}],
+"loop": true,
+"name": &"Assault Fighter",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_goxia")
+}],
+"loop": true,
+"name": &"Bandit Attacker",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_f3xdn")
+}],
+"loop": true,
+"name": &"Bandit Fighter",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe6aw")
+}],
+"loop": true,
+"name": &"Bandit Heavy Attacker",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_nj1dt")
+}],
+"loop": true,
+"name": &"Fighter-Bomber",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s757h")
+}],
+"loop": true,
+"name": &"Interceptor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ojc8e")
+}],
+"loop": true,
+"name": &"Starfighter",
+"speed": 5.0
+}]
+
 [node name="Spaceship" type="Area2D"]
 position = Vector2(-5, 8)
 script = ExtResource("1_kspc4")
@@ -50,7 +127,6 @@ script = ExtResource("1_kspc4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.999878, -0.999992)
 rotation = 1.70165
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jyhep")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
@@ -65,15 +141,20 @@ rotation = 1.56942
 sprite_frames = SubResource("SpriteFrames_hjbvw")
 autoplay = "default"
 
-[node name="Starfighter" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(-0.5, 3.75)
-texture = ExtResource("3_ojc8e")
+[node name="Ship" type="AnimatedSprite2D" parent="CollisionShape2D"]
+z_index = 1000
+position = Vector2(6.00111, 7.27933)
+rotation = 0.0244627
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_rhsy0")
+animation = &"Bandit Heavy Attacker"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="CollisionShape2D"]
 position = Vector2(0.860979, -1.12181)
 rotation = -1.70165
+scale = Vector2(1, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionShape2D/StaticBody2D"]
-polygon = PackedVector2Array(-110, -75, -126, 43, -117, 50, -95, 48, -121, 105, -19, 38, 123, 14, -2, -41, -89, -140, -79, -73, -101, -82)
+polygon = PackedVector2Array(-86, -33, -98, 19, -9, 29, 109, 24, -6, -18)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

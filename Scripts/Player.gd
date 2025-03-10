@@ -356,7 +356,7 @@ func _physics_process(delta):
 			$SkillCooldowns/SkillCooldown3.start()
 		if Input.is_action_just_pressed("skill4") and can_skill4:
 			Global.shields = Global.maxshields
-			Global.health += 10 + (Global.level * 5)
+			Global.health += 10 + (Global.Medicine * 5)
 			can_skill4 = false
 			$SkillCooldowns/SkillCooldown4.start()
 			$Audio/SuperSlash.play()

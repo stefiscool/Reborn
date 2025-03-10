@@ -12,3 +12,6 @@ func _on_menu_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+func _process(_delta: float) -> void:
+	$SkillpointsLabel.text = "Skill Points: "+ str(Global.skillpoints)

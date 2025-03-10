@@ -65,6 +65,26 @@ var frozen = false
 
 var slide = 0
 
+var shipname = "Starfighter"
+var shiphealth = 1000
+var shipweapon = "Laser"
+var shipweapondamage = 100
+var shipspecial = "Ion Bomb"
+var shipspecialdamage = 2000
+
+var skillpoints = 0
+var Ballistics = 1
+var Energy = 1
+var Explosives = 1
+var Melee = 1
+var Engineering = 1
+var Medicine = 1
+var Computing = 1
+var Piloting = 1
+var Barter = 1
+var Luck = 1
+var Speech = 1
+
 var missionobjectives = 0
 var maxmissionobjectives = 1
 var mission = 1
@@ -113,6 +133,7 @@ func _process(_delta):
 	
 	if xp >= xpneeded:
 		level += 1
+		skillpoints += 1
 		levelupplayed = true
 		xp -= xpneeded
 		xpneeded = 20 * pow(level, 2)

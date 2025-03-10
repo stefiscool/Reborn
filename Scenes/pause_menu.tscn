@@ -1,22 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://iqancc5aa0r7"]
+[gd_scene load_steps=4 format=3 uid="uid://iqancc5aa0r7"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_30vxl"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="1_s21qj"]
+[ext_resource type="Script" path="res://Buttons/skill_button.gd" id="3_lk6ix"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource("1_30vxl")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -183.0
-offset_top = -104.0
-offset_right = 183.0
-offset_bottom = 104.0
-grow_horizontal = 2
+offset_left = 105.0
+offset_top = -111.0
+offset_right = 555.0
+offset_bottom = 112.0
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -43,6 +41,103 @@ theme_override_font_sizes/font_size = 40
 text = "Quit Game
 "
 
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -525.0
+offset_top = -172.0
+offset_bottom = 188.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="SkillButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+script = ExtResource("3_lk6ix")
+
+[node name="SkillButton2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+script = ExtResource("3_lk6ix")
+skillname = "Energy"
+
+[node name="SkillButton3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+script = ExtResource("3_lk6ix")
+skillname = "Explosives"
+
+[node name="SkillButton4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+script = ExtResource("3_lk6ix")
+skillname = "Melee"
+
+[node name="SkillButton5" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+script = ExtResource("3_lk6ix")
+skillname = "Engineering"
+
+[node name="SkillButton6" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+script = ExtResource("3_lk6ix")
+skillname = "Medicine"
+
+[node name="SkillButton7" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+script = ExtResource("3_lk6ix")
+skillname = "Computing"
+
+[node name="SkillButton8" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+script = ExtResource("3_lk6ix")
+skillname = "Piloting"
+
+[node name="SkillButton9" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+script = ExtResource("3_lk6ix")
+skillname = "Barter"
+
+[node name="SkillButton10" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+script = ExtResource("3_lk6ix")
+skillname = "Luck"
+
+[node name="SkillButton11" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s21qj")
+script = ExtResource("3_lk6ix")
+skillname = "Speech"
+
+[node name="SkillpointsLabel" type="Label" parent="."]
+offset_left = 732.0
+offset_top = 109.0
+offset_right = 995.0
+offset_bottom = 145.0
+theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 30
+text = "Skill Points:"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ResumeGame" to="." method="_on_resume_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/SkillButton" to="VBoxContainer/SkillButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/SkillButton2" to="VBoxContainer/SkillButton2" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/SkillButton3" to="VBoxContainer/SkillButton3" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/SkillButton4" to="VBoxContainer/SkillButton4" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/SkillButton5" to="VBoxContainer/SkillButton5" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/SkillButton6" to="VBoxContainer/SkillButton6" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/SkillButton7" to="VBoxContainer/SkillButton7" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/SkillButton8" to="VBoxContainer/SkillButton8" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/SkillButton9" to="VBoxContainer/SkillButton9" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/SkillButton10" to="VBoxContainer/SkillButton10" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/SkillButton11" to="VBoxContainer/SkillButton11" method="_on_pressed"]

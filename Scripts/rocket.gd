@@ -35,9 +35,9 @@ func _on_boom_finished():
 func _on_blast_radius_body_entered(body):
 	if body.is_in_group("Enemy"):
 		if Global.secondary == false:
-			body.hp -= Global.damage
+			body.hp -= (Global.damage + (Global.Explosives*10))
 			body.vision = true
 		if Global.secondary == true:
-			body.hp -= Global.seconddamage
+			body.hp -= (Global.seconddamage + (Global.Explosives*10))
 			body.vision = true
 			
