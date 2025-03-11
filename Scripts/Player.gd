@@ -412,7 +412,6 @@ func _physics_process(delta):
 			$"Skills/Force Push".scale.y = 30
 			$"Skills/Force Push/StaticBody2D/CollisionShape2D".scale.x = 2
 			$"Skills/Force Push/StaticBody2D/CollisionShape2D".scale.y = 2
-			
 			Global.meleeing = true
 			can_skill2 = false
 			$SkillCooldowns/SkillCooldown2.start()
@@ -431,7 +430,8 @@ func _physics_process(delta):
 			$"Skills/Force Push".scale.y = 150
 			can_skill4 = false
 			$SkillCooldowns/SkillCooldown4.start()
-		
+	
+
 func pauseMenu():
 	if paused:
 		pause_menu.hide()

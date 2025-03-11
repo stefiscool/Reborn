@@ -4,7 +4,7 @@ var picked = false
 var primary: int
 
 func _ready() -> void:
-	primary = randi() % 3
+	primary = get_primary()
 	if primary == 0:
 		queue_free()
 	if primary == 2:
@@ -15,6 +15,18 @@ func _ready() -> void:
 		$AnimatedSprite2D2.queue_free()
 		$AnimatedSprite2D.play(Global.element)
 
+func get_primary() -> int:
+	var luck = clamp(Global.Luck, 0, 10)
+	
+	if luck >= 10:
+		return 1 + randi() % 2
+	else:
+		var skip_zero_chance = luck / 10.0
+		
+		if randf() < skip_zero_chance:
+			return 1 + randi() % 2
+		else:
+			return randi() % 3
 
 func _on_body_entered(body):
 	if body.is_in_group("Player") and picked == false:

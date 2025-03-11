@@ -16,9 +16,9 @@ func _process(_delta):
 	}
 	
 	if Global.missionobjectives >= Global.maxmissionobjectives and Global.mission > 1:
-		text = "Return to the ship"
+		text = "Mission: Return to the ship"
 	elif Global.mission in mission_texts:
 		if "%s" in mission_texts[Global.mission]:
-			text = mission_texts[Global.mission] % [Global.missionobjectives, Global.maxmissionobjectives]
+			text = "Mission: " + mission_texts[Global.mission] % [Global.missionobjectives, Global.maxmissionobjectives]
 		else:
-			text = mission_texts[Global.mission]
+			text = "Mission: " + mission_texts[Global.mission]

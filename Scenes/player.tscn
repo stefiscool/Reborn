@@ -1,4 +1,4 @@
-[gd_scene load_steps=194 format=3 uid="uid://cjypwkc5cje34"]
+[gd_scene load_steps=196 format=3 uid="uid://cjypwkc5cje34"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_cxcq2"]
 [ext_resource type="Script" path="res://Scripts/Super Slash.gd" id="2_ka7xj"]
@@ -53,6 +53,8 @@
 [ext_resource type="AudioStream" uid="uid://dbc2ppco03fh2" path="res://Audio/Gunfire/sniper-rifle-firing-shot-1-39789 (1).mp3" id="45_x5j1l"]
 [ext_resource type="AudioStream" uid="uid://dtk4jijo5tny3" path="res://Audio/Music/heavymetalriff1-92083.mp3" id="46_hne1a"]
 [ext_resource type="AudioStream" uid="uid://cp1mslqrk5d7v" path="res://Audio/Gunfire/voidexplosion-36210.mp3" id="46_nwjo5"]
+[ext_resource type="AudioStream" uid="uid://cg57s6i0aer27" path="res://Audio/Misc/cancel-36118.mp3" id="47_fbdcg"]
+[ext_resource type="AudioStream" uid="uid://dk4a5fuep0weq" path="res://Audio/Misc/ready.mp3" id="48_dn8v0"]
 [ext_resource type="Script" path="res://Scripts/level_up_timer.gd" id="54_4b181"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5oxb"]
@@ -1251,10 +1253,11 @@ stream = ExtResource("20_rx6ps")
 
 [node name="ShieldCharge" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("20_ayeyf")
+volume_db = -10.0
 
 [node name="ShieldsFull" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("21_sglvs")
-volume_db = -6.0
+volume_db = -10.0
 
 [node name="Thunder" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("29_c33vq")
@@ -1307,6 +1310,12 @@ stream = ExtResource("46_nwjo5")
 [node name="levelup" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("46_hne1a")
 volume_db = -10.0
+
+[node name="cancel" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("47_fbdcg")
+
+[node name="ready" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("48_dn8v0")
 
 [node name="Gun" parent="." instance=ExtResource("31_wauq5")]
 z_index = 900

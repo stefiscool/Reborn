@@ -24,7 +24,19 @@ func load_game():
 		Global.xpneeded = node_data["xpneeded"]
 		Global.inventory = node_data["inventory"]
 		Global.autosave = node_data["autosave"]
-
+		Global.skillpoints = node_data["skillpoints"]
+		Global.Ballistics = node_data["Ballistics"]
+		Global.Energy = node_data["Energy"]
+		Global.Explosives = node_data["Explosives"]
+		Global.Melee = node_data["Melee"]
+		Global.Engineering = node_data["Engineering"]
+		Global.Medicine = node_data["Medicine"]
+		Global.Computing = node_data["Computing"]
+		Global.Piloting = node_data["Piloting"]
+		Global.Barter = node_data["Barter"]
+		Global.Luck = node_data["Luck"]
+		Global.Speech = node_data["Speech"]
+		Global.shipname = node_data["shipname"]
 
 
 func _on_timer_timeout():

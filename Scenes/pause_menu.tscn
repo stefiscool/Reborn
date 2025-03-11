@@ -8,13 +8,16 @@
 script = ExtResource("1_30vxl")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 105.0
-offset_top = -111.0
-offset_right = 555.0
-offset_bottom = 112.0
+offset_left = -225.0
+offset_top = -111.5
+offset_right = 225.0
+offset_bottom = 111.5
+grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -47,84 +50,102 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -525.0
-offset_top = -172.0
-offset_bottom = 188.0
+offset_left = -354.0
+offset_top = -134.0
+offset_right = -52.0
+offset_bottom = 226.0
 grow_horizontal = 0
 grow_vertical = 2
 
 [node name="SkillButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 15
 script = ExtResource("3_lk6ix")
 
 [node name="SkillButton2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 15
 script = ExtResource("3_lk6ix")
 skillname = "Energy"
 
 [node name="SkillButton3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 15
 script = ExtResource("3_lk6ix")
 skillname = "Explosives"
 
 [node name="SkillButton4" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 15
 script = ExtResource("3_lk6ix")
 skillname = "Melee"
 
 [node name="SkillButton5" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 15
 script = ExtResource("3_lk6ix")
 skillname = "Engineering"
 
 [node name="SkillButton6" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 15
 script = ExtResource("3_lk6ix")
 skillname = "Medicine"
 
 [node name="SkillButton7" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 15
 script = ExtResource("3_lk6ix")
 skillname = "Computing"
 
 [node name="SkillButton8" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 15
 script = ExtResource("3_lk6ix")
 skillname = "Piloting"
 
 [node name="SkillButton9" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 15
 script = ExtResource("3_lk6ix")
 skillname = "Barter"
 
 [node name="SkillButton10" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 15
 script = ExtResource("3_lk6ix")
 skillname = "Luck"
 
 [node name="SkillButton11" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_s21qj")
+theme_override_font_sizes/font_size = 15
 script = ExtResource("3_lk6ix")
 skillname = "Speech"
 
+[node name="Panel" type="Panel" parent="."]
+offset_left = 940.0
+offset_top = 155.0
+offset_right = 1135.0
+offset_bottom = 185.0
+
 [node name="SkillpointsLabel" type="Label" parent="."]
-offset_left = 732.0
-offset_top = 109.0
-offset_right = 995.0
-offset_bottom = 145.0
+offset_left = 944.0
+offset_top = 158.0
+offset_right = 1108.0
+offset_bottom = 179.0
 theme = ExtResource("1_s21qj")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 text = "Skill Points:"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ResumeGame" to="." method="_on_resume_game_pressed"]

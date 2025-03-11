@@ -67,10 +67,12 @@ var slide = 0
 
 var shipname = "Starfighter"
 var shiphealth = 1000
+var shipspeed = 5000
 var shipweapon = "Laser"
 var shipweapondamage = 100
 var shipspecial = "Ion Bomb"
 var shipspecialdamage = 2000
+var shipspecialcooldown = 20
 
 var skillpoints = 0
 var Ballistics = 1
