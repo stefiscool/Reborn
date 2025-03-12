@@ -138,4 +138,4 @@ locale/translations_pot_files=PackedStringArray("res://Dialouge/dialouge1.dialog
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
-environment/defaults/default_clear_color=Color(0.0475577, 0.0475576, 0.0475576, 1)
+environment/defaults/default_clear_color=Color(0.381704, 0.381703, 0.381703, 1)

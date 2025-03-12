@@ -62,7 +62,7 @@ func _on_body_entered(body):
 		picked = true
 		$Timer.start()
 		Global.health += ((health-20) + (Global.Medicine * 10))
-		$Label.text = str(((health-20) + (Global.Medicine * 10))) + "+ Health"
+		$Label.text = "+" + str(((health-20) + (Global.Medicine * 10))) + " Health"
 		$AnimatedSprite2D.visible = false
 		$Label.visible = true
 

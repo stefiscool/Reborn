@@ -2,15 +2,28 @@ extends Node2D
 	
 func save():
 	var save_dict = {
-	"class" : Global.Class,
-	"level" : Global.level,
-	"weapon" : Global.weapon,
-	"secondweapon" : Global.secondweapon, 
-	"armor" : Global.armor,
-	"xp" : Global.xp,
-	"xpneeded" : Global.xpneeded,
-	"inventory" : Global.inventory,
-	"autosave" : Global.autosave
+		"class": Global.Class,
+		"level": Global.level,
+		"weapon": Global.weapon,
+		"secondweapon": Global.secondweapon,
+		"armor": Global.armor,
+		"xp": Global.xp,
+		"xpneeded": Global.xpneeded,
+		"inventory": Global.inventory,
+		"autosave": Global.autosave,
+		"skillpoints": Global.skillpoints,
+		"Ballistics": Global.Ballistics,
+		"Energy": Global.Energy,
+		"Explosives": Global.Explosives,
+		"Melee": Global.Melee,
+		"Engineering": Global.Engineering,
+		"Medicine": Global.Medicine,
+		"Computing": Global.Computing,
+		"Piloting": Global.Piloting,
+		"Barter": Global.Barter,
+		"Luck": Global.Luck,
+		"Speech": Global.Speech,
+		"shipname": Global.shipname
 	}
 	return save_dict
 	

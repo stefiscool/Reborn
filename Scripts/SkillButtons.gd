@@ -24,11 +24,11 @@ func _ready() -> void:
 		
 func _process(_delta):
 	
-	$Skill1.text = str(Global.skill1) + " (Space) "
+	$Skill1.text = " " + str(Global.skill1) + " (Space) "
 	$Skill1/ColorRect2.scale.x = (10.0 - float(Global.skill1cool))/10.0
-	$Skill2.text = str(Global.skill2) + " (Shift) "
+	$Skill2.text = " " + str(Global.skill2) + " (Shift) "
 	$Skill2/ColorRect3.scale.x = (15.0 - float(Global.skill2cool))/15.0
-	$Skill3.text = str(Global.skill3) + " (Alt) "
+	$Skill3.text = " " + str(Global.skill3) + " (Alt) "
 	$Skill3/ColorRect4.scale.x = (30.0 - float(Global.skill3cool))/30.0
-	$Skill4.text = str(Global.skill4) + " (Ctrl) "
+	$Skill4.text = " " + str(Global.skill4) + " (Ctrl) "
 	$Skill4/ColorRect5.scale.x = (60.0 - float(Global.skill4cool))/60.0

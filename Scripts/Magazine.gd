@@ -14,6 +14,7 @@ func _ready() -> void:
 	if primary == 1:
 		$AnimatedSprite2D2.queue_free()
 		$AnimatedSprite2D.play(Global.element)
+	
 
 func get_primary() -> int:
 	var luck = clamp(Global.Luck, 0, 10)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://cc6h2k3peoi15"]
+[gd_scene load_steps=24 format=3 uid="uid://cc6h2k3peoi15"]
 
 [ext_resource type="Script" path="res://Scripts/Magazine.gd" id="1_a50uc"]
 [ext_resource type="AudioStream" uid="uid://3r16fys4k201" path="res://Audio/Misc/load-gun-sound-effect-5-11003.mp3" id="2_uehco"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="4_7s1i4"]
 [ext_resource type="Texture2D" uid="uid://bg05gdm5k47bt" path="res://Assets/Props/Mags.png" id="4_levyt"]
+[ext_resource type="PackedScene" uid="uid://djpmmn2jxiqy6" path="res://Scenes/lockbox.tscn" id="5_384re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6mve"]
 size = Vector2(21, 23)
@@ -286,6 +287,8 @@ offset_top = -10.0
 offset_right = 70.0
 offset_bottom = 13.0
 theme = ExtResource("4_7s1i4")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
 text = "+ 1 Primary Mag"
 
@@ -297,6 +300,8 @@ animation = &"Kinetic"
 scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_leh0s")
 animation = &"Kinetic"
+
+[node name="Lockbox" parent="." instance=ExtResource("5_384re")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
