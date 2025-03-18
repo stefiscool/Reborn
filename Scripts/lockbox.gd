@@ -9,8 +9,10 @@ func _ready() -> void:
 	var skillnumber = randi() % 2
 	if skillnumber == 0:
 		skill = "Engineering"
+		$AnimatedSprite2D.play("Engineering")
 	elif skillnumber == 1:
 		skill = "Computing"
+		$AnimatedSprite2D.play("Computing")
 	level = get_random_value()
 	if level == 0:
 		queue_free()

@@ -89,7 +89,7 @@ var Speech = 1
 
 var missionobjectives = 0
 var maxmissionobjectives = 1
-var mission = 1
+var mission = 0
 var missiondesc = ""
 var missionname = ""
 
