@@ -1,0 +1,153 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3lh3des3354n"]
+
+[ext_resource type="Script" path="res://Scripts/ships.gd" id="1_eagut"]
+[ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="2_r6ih3"]
+[ext_resource type="Script" path="res://Buttons/shipbutton.gd" id="3_mei8u"]
+[ext_resource type="PackedScene" uid="uid://dh3q6tqisvdwl" path="res://Scenes/shipsprite.tscn" id="4_wwhuj"]
+[ext_resource type="Script" path="res://Buttons/InventoryButtons.gd" id="6_71ffj"]
+
+[node name="Ships" type="Node2D"]
+script = ExtResource("1_eagut")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = 97.0
+offset_right = 551.0
+offset_bottom = 604.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer"]
+custom_minimum_size = Vector2(500, 2000)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/ColorRect"]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 2000.0
+
+[node name="Shipbutton" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r6ih3")
+script = ExtResource("3_mei8u")
+
+[node name="Shipbutton2" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r6ih3")
+script = ExtResource("3_mei8u")
+shipname = "Bandit Attacker"
+
+[node name="Shipbutton3" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r6ih3")
+script = ExtResource("3_mei8u")
+shipname = "Bandit Fighter"
+
+[node name="Shipbutton4" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r6ih3")
+script = ExtResource("3_mei8u")
+shipname = "Bandit Heavy Attacker"
+
+[node name="Shipbutton5" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r6ih3")
+script = ExtResource("3_mei8u")
+shipname = "Fighter-Bomber"
+
+[node name="Shipbutton6" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r6ih3")
+script = ExtResource("3_mei8u")
+shipname = "Interceptor"
+
+[node name="Shipbutton7" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r6ih3")
+script = ExtResource("3_mei8u")
+shipname = "Assault Fighter"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 242.0
+offset_top = 19.0
+offset_right = 905.0
+offset_bottom = 70.0
+theme = ExtResource("2_r6ih3")
+theme_override_font_sizes/font_size = 40
+text = "Current Ship:"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 588.0
+offset_top = 314.0
+offset_right = 1108.0
+offset_bottom = 459.0
+theme = ExtResource("2_r6ih3")
+theme_override_font_sizes/font_size = 20
+text = "Firerate:
+Damage:
+Capacity:
+Bullet Velocity:
+Element:"
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 13.0
+offset_right = 159.0
+offset_bottom = 67.0
+theme = ExtResource("2_r6ih3")
+text = "Go Back
+"
+
+[node name="InventoryButtons" type="Node2D" parent="."]
+script = ExtResource("6_71ffj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryButtons"]
+offset_left = 984.0
+offset_top = 5.0
+offset_right = 1147.0
+offset_bottom = 141.0
+
+[node name="PrimaryButton" type="Button" parent="InventoryButtons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r6ih3")
+text = "Primary
+"
+
+[node name="SecondaryButton" type="Button" parent="InventoryButtons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r6ih3")
+text = "Secondary
+"
+
+[node name="Armor Button" type="Button" parent="InventoryButtons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r6ih3")
+text = "Armor
+"
+
+[node name="Ship Button" type="Button" parent="InventoryButtons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r6ih3")
+text = "Ship"
+
+[node name="Ship" parent="." instance=ExtResource("4_wwhuj")]
+position = Vector2(745, 199)
+rotation = 1.5708
+scale = Vector2(0.8, 0.8)
+
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Shipbutton" to="ScrollContainer/ColorRect/VBoxContainer/Shipbutton" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Shipbutton2" to="ScrollContainer/ColorRect/VBoxContainer/Shipbutton2" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Shipbutton3" to="ScrollContainer/ColorRect/VBoxContainer/Shipbutton3" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Shipbutton4" to="ScrollContainer/ColorRect/VBoxContainer/Shipbutton4" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Shipbutton5" to="ScrollContainer/ColorRect/VBoxContainer/Shipbutton5" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Shipbutton6" to="ScrollContainer/ColorRect/VBoxContainer/Shipbutton6" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Shipbutton7" to="ScrollContainer/ColorRect/VBoxContainer/Shipbutton7" method="_on_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="InventoryButtons/VBoxContainer/PrimaryButton" to="InventoryButtons" method="_on_primary_button_pressed"]
+[connection signal="pressed" from="InventoryButtons/VBoxContainer/SecondaryButton" to="InventoryButtons" method="_on_secondary_button_pressed"]
+[connection signal="pressed" from="InventoryButtons/VBoxContainer/Armor Button" to="InventoryButtons" method="_on_armor_button_pressed"]
+[connection signal="pressed" from="InventoryButtons/VBoxContainer/Ship Button" to="InventoryButtons" method="_on_ship_button_pressed"]

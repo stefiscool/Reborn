@@ -10,3 +10,7 @@ func _on_secondary_button_pressed():
 
 func _on_armor_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/armor.tscn")
+
+
+func _on_ship_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/ships.tscn")

@@ -1,7 +1,7 @@
 extends Node
 
 var autosave = true
-var inventory = ["SCAR", "M1911", "Tactical Vest"]
+var inventory = ["SCAR", "M1911", "Tactical Vest", "Starfighter"]
 var Class = "Noble"
 var level = 1
 var xp = 0
@@ -73,6 +73,7 @@ var shipweapondamage = 100
 var shipspecial = "Ion Bomb"
 var shipspecialdamage = 2000
 var shipspecialcooldown = 20
+var shipdescription = ""
 
 var skillpoints = 0
 var Ballistics = 1

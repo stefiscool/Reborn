@@ -880,32 +880,34 @@ text = "Go Back
 [node name="InventoryButtons" type="Node2D" parent="."]
 script = ExtResource("14_a3ive")
 
-[node name="PrimaryButton" type="Button" parent="InventoryButtons"]
-offset_left = 1016.0
-offset_top = 21.0
-offset_right = 1151.0
-offset_bottom = 59.0
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryButtons"]
+offset_left = 984.0
+offset_top = 5.0
+offset_right = 1147.0
+offset_bottom = 141.0
+
+[node name="PrimaryButton" type="Button" parent="InventoryButtons/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("2_m0iwp")
 text = "Primary
 "
 
-[node name="SecondaryButton" type="Button" parent="InventoryButtons"]
-offset_left = 1017.0
-offset_top = 53.0
-offset_right = 1151.0
-offset_bottom = 90.0
+[node name="SecondaryButton" type="Button" parent="InventoryButtons/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("2_m0iwp")
 text = "Secondary
 "
 
-[node name="Armor Button" type="Button" parent="InventoryButtons"]
-offset_left = 1018.0
-offset_top = 86.0
-offset_right = 1153.0
-offset_bottom = 123.0
+[node name="Armor Button" type="Button" parent="InventoryButtons/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("2_m0iwp")
 text = "Armor
 "
+
+[node name="Ship Button" type="Button" parent="InventoryButtons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_m0iwp")
+text = "Ship"
 
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
@@ -924,6 +926,7 @@ text = "Armor
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button15" to="." method="_on_button_15_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button16" to="." method="_on_button_16_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="InventoryButtons/PrimaryButton" to="InventoryButtons" method="_on_primary_button_pressed"]
-[connection signal="pressed" from="InventoryButtons/SecondaryButton" to="InventoryButtons" method="_on_secondary_button_pressed"]
-[connection signal="pressed" from="InventoryButtons/Armor Button" to="InventoryButtons" method="_on_armor_button_pressed"]
+[connection signal="pressed" from="InventoryButtons/VBoxContainer/PrimaryButton" to="InventoryButtons" method="_on_primary_button_pressed"]
+[connection signal="pressed" from="InventoryButtons/VBoxContainer/SecondaryButton" to="InventoryButtons" method="_on_secondary_button_pressed"]
+[connection signal="pressed" from="InventoryButtons/VBoxContainer/Armor Button" to="InventoryButtons" method="_on_armor_button_pressed"]
+[connection signal="pressed" from="InventoryButtons/VBoxContainer/Ship Button" to="InventoryButtons" method="_on_ship_button_pressed"]

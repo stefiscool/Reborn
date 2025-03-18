@@ -39,22 +39,31 @@ func _process(_delta):
 }
 
 		var armors = {
-	"Tactical Vest": {"speed": 225, "defaultdefense": 1, "maxhealth": 100, "maxshields": 100, "shieldcooldown": 8, "shieldregen": 2, "armordescription": "Standard-issue body armor providing balanced protection and mobility. Suitable for frontline soldiers."},
-	"Mercenary Armor": {"speed": 220, "defaultdefense": 1, "maxhealth": 115, "maxshields": 85, "shieldcooldown": 8, "shieldregen": 1, "armordescription": "A robust armor set designed for mercenaries, offering extra health at the cost of reduced shield regeneration."},
-	"Infantry Armor": {"speed": 215, "defaultdefense": 1.1, "maxhealth": 130, "maxshields": 100, "shieldcooldown": 10, "shieldregen": 1, "armordescription": "Heavy republic armor with enhanced health for extended frontline engagements, balanced by a slower shield regen."},
-	"Navy Armor": {"speed": 210, "defaultdefense": 1, "maxhealth": 110, "maxshields": 130, "shieldcooldown": 6, "shieldregen": 3, "armordescription": "A specialized republic armor set with enhanced shields and quicker shield regeneration. Ideal for defensive operations."},
-	"Cyber Armor": {"speed": 205, "defaultdefense": 1, "maxhealth": 90, "maxshields": 140, "shieldcooldown": 6, "shieldregen": 3, "armordescription": "Advanced armor with superior shield capacity and regeneration, offset by reduced health and speed."},
-	"Bandit Light Armor": {"speed": 235, "defaultdefense": 1.1, "maxhealth": 70, "maxshields": 50, "shieldcooldown": 8, "shieldregen": 2, "armordescription": "Lightweight armor favored by bandits for quick getaways. Offers minimal protection."},
-	"Bandit Medium Armor": {"speed": 220, "defaultdefense": 1.15, "maxhealth": 80, "maxshields": 50, "shieldcooldown": 9, "shieldregen": 1, "armordescription": "A balanced armor used by bandits, providing decent mobility and moderate protection."},
-	"Bandit Heavy Armor": {"speed": 205, "defaultdefense": 1.2, "maxhealth": 110, "maxshields": 40, "shieldcooldown": 10, "shieldregen": 1, "armordescription": "Bulky armor used by juggernaut bandits. It offers significant protection at the cost of reduced speed."},
-	"Shock Robe": {"speed": 245, "defaultdefense": 1, "maxhealth": 50, "maxshields": 110, "shieldcooldown": 7, "shieldregen": 4, "armordescription": "An electrified robe that enhances speed and shield capabilities, ideal for hit-and-run tactics."},
-	"Void Robe": {"speed": 215, "defaultdefense": 1, "maxhealth": 60, "maxshields": 160, "shieldcooldown": 6, "shieldregen": 5, "armordescription": "A mysterious robe infused with void energy, maximizing shields but sacrificing health."},
-	"Marine Armor": {"speed": 210, "defaultdefense": 1.05, "maxhealth": 120, "maxshields": 110, "shieldcooldown": 8, "shieldregen": 2, "armordescription": "A durable armor for republic marines, providing balanced health and shield capabilities."},
-	"Arctic Soldier Armor": {"speed": 215, "defaultdefense": 1.05, "maxhealth": 110, "maxshields": 115, "shieldcooldown": 9, "shieldregen": 2, "armordescription": "Designed for icy environments, offering balanced protection with resistance to cold climates."},
-	"Reborn Squire Armor": {"speed": 225, "defaultdefense": 1, "maxhealth": 100, "maxshields": 90, "shieldcooldown": 9, "shieldregen": 2, "armordescription": "A lightweight armor for aspiring Reborn Knights, offering decent mobility and basic protection."},
-	"Reborn Knight Armor": {"speed": 205, "defaultdefense": 1.15, "maxhealth": 140, "maxshields": 120, "shieldcooldown": 10, "shieldregen": 1, "armordescription": "Heavy armor for chosen Reborn Knights, prioritizing defense and durability over mobility."}
+			"Tactical Vest": {"speed": 225, "defaultdefense": 1, "maxhealth": 100, "maxshields": 100, "shieldcooldown": 8, "shieldregen": 2, "armordescription": "Standard-issue body armor providing balanced protection and mobility. Suitable for frontline soldiers."},
+			"Mercenary Armor": {"speed": 220, "defaultdefense": 1, "maxhealth": 115, "maxshields": 85, "shieldcooldown": 8, "shieldregen": 1, "armordescription": "A robust armor set designed for mercenaries, offering extra health at the cost of reduced shield regeneration."},
+			"Infantry Armor": {"speed": 215, "defaultdefense": 1.1, "maxhealth": 130, "maxshields": 100, "shieldcooldown": 10, "shieldregen": 1, "armordescription": "Heavy republic armor with enhanced health for extended frontline engagements, balanced by a slower shield regen."},
+			"Navy Armor": {"speed": 210, "defaultdefense": 1, "maxhealth": 110, "maxshields": 130, "shieldcooldown": 6, "shieldregen": 3, "armordescription": "A specialized republic armor set with enhanced shields and quicker shield regeneration. Ideal for defensive operations."},
+			"Cyber Armor": {"speed": 205, "defaultdefense": 1, "maxhealth": 90, "maxshields": 140, "shieldcooldown": 6, "shieldregen": 3, "armordescription": "Advanced armor with superior shield capacity and regeneration, offset by reduced health and speed."},
+			"Bandit Light Armor": {"speed": 235, "defaultdefense": 1.1, "maxhealth": 70, "maxshields": 50, "shieldcooldown": 8, "shieldregen": 2, "armordescription": "Lightweight armor favored by bandits for quick getaways. Offers minimal protection."},
+			"Bandit Medium Armor": {"speed": 220, "defaultdefense": 1.15, "maxhealth": 80, "maxshields": 50, "shieldcooldown": 9, "shieldregen": 1, "armordescription": "A balanced armor used by bandits, providing decent mobility and moderate protection."},
+			"Bandit Heavy Armor": {"speed": 205, "defaultdefense": 1.2, "maxhealth": 110, "maxshields": 40, "shieldcooldown": 10, "shieldregen": 1, "armordescription": "Bulky armor used by juggernaut bandits. It offers significant protection at the cost of reduced speed."},
+			"Shock Robe": {"speed": 245, "defaultdefense": 1, "maxhealth": 50, "maxshields": 110, "shieldcooldown": 7, "shieldregen": 4, "armordescription": "An electrified robe that enhances speed and shield capabilities, ideal for hit-and-run tactics."},
+			"Void Robe": {"speed": 215, "defaultdefense": 1, "maxhealth": 60, "maxshields": 160, "shieldcooldown": 6, "shieldregen": 5, "armordescription": "A mysterious robe infused with void energy, maximizing shields but sacrificing health."},
+			"Marine Armor": {"speed": 210, "defaultdefense": 1.05, "maxhealth": 120, "maxshields": 110, "shieldcooldown": 8, "shieldregen": 2, "armordescription": "A durable armor for republic marines, providing balanced health and shield capabilities."},
+			"Arctic Soldier Armor": {"speed": 215, "defaultdefense": 1.05, "maxhealth": 110, "maxshields": 115, "shieldcooldown": 9, "shieldregen": 2, "armordescription": "Designed for icy environments, offering balanced protection with resistance to cold climates."},
+			"Reborn Squire Armor": {"speed": 225, "defaultdefense": 1, "maxhealth": 100, "maxshields": 90, "shieldcooldown": 9, "shieldregen": 2, "armordescription": "A lightweight armor for aspiring Reborn Knights, offering decent mobility and basic protection."},
+			"Reborn Knight Armor": {"speed": 205, "defaultdefense": 1.15, "maxhealth": 140, "maxshields": 120, "shieldcooldown": 10, "shieldregen": 1, "armordescription": "Heavy armor for chosen Reborn Knights, prioritizing defense and durability over mobility."}
 }
-
+		var spaceships = {
+			"Assault Fighter": {"shipname": "Assault Fighter", "shiphealth": 1200, "shipspeed": 4500, "shipweapon": "Plasma Cannon", "shipweapondamage": 120, "shipspecial": "Missile Barrage", "shipspecialdamage": 1800, "shipspecialcooldown": 25, "shipdescription": "A heavily armored fighter designed for frontline assaults. Equipped with powerful plasma cannons and a devastating missile barrage system."},
+			"Bandit Attacker": {"shipname": "Bandit Attacker", "shiphealth": 800, "shipspeed": 5200, "shipweapon": "Rapid Blaster", "shipweapondamage": 80, "shipspecial": "EMP Pulse", "shipspecialdamage": 1500, "shipspecialcooldown": 15, "shipdescription": "A swift raider vessel favored by space bandits. Features rapid-fire blasters and an EMP pulse system for disabling enemy ships."},
+			"Bandit Fighter": {"shipname": "Bandit Fighter", "shiphealth": 900, "shipspeed": 5000, "shipweapon": "Kinetic Cannon", "shipweapondamage": 90, "shipspecial": "Scrap Bomb", "shipspecialdamage": 1700, "shipspecialcooldown": 18, "shipdescription": "A versatile combat vessel used by bandit squadrons. Balanced speed and firepower with improvised but effective weapons systems."},
+			"Bandit Heavy Attacker": {"shipname": "Bandit Heavy Attacker", "shiphealth": 1500, "shipspeed": 4000, "shipweapon": "Heavy Cannon", "shipweapondamage": 150, "shipspecial": "Shockwave Blast", "shipspecialdamage": 2200, "shipspecialcooldown": 30, "shipdescription": "A reinforced bandit vessel built for heavy assault. Sacrifices speed for superior armor and devastating weapon systems."},
+			"Fighter-Bomber": {"shipname": "Fighter-Bomber", "shiphealth": 1100, "shipspeed": 4800, "shipweapon": "Dual Cannons", "shipweapondamage": 110, "shipspecial": "Thermal Detonator", "shipspecialdamage": 2500, "shipspecialcooldown": 28, "shipdescription": "A versatile republic ship designed for both dogfighting and bombing runs. Features dual cannons and high-yield thermal detonators."},
+			"Interceptor": {"shipname": "Interceptor", "shiphealth": 700, "shipspeed": 6000, "shipweapon": "Precision Laser", "shipweapondamage": 95, "shipspecial": "Afterburner", "shipspecialdamage": 1200, "shipspecialcooldown": 12, "shipdescription": "An extremely fast republic ship designed to intercept enemy vessels. Features precision targeting systems and a powerful afterburner for quick maneuvers."},
+			"Starfighter": {"shipname": "Starfighter", "shiphealth": 1000, "shipspeed": 5000, "shipweapon": "Laser", "shipweapondamage": 100, "shipspecial": "Ion Bomb", "shipspecialdamage": 2000, "shipspecialcooldown": 20, "shipdescription": "A balanced republic fighter craft with reliable laser weaponry and ion bomb capability. The standard vessel for republic space forces."}
+		}
+		
 		if Global.weapon in weapons:
 			for key in weapons[Global.weapon]:
 				Global.set(key, weapons[Global.weapon][key])
@@ -66,3 +75,7 @@ func _process(_delta):
 		if Global.armor in armors:
 			for key in armors[Global.armor]:
 				Global.set(key, armors[Global.armor][key])
+		
+		if Global.shipname in spaceships:
+			for key in spaceships[Global.shipname]:
+				Global.set(key, spaceships[Global.shipname][key])

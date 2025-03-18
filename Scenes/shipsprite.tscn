@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://dh3q6tqisvdwl"]
+
+[ext_resource type="Texture2D" uid="uid://dptr3bnooyl3h" path="res://Assets/Vechicles/AssaultFighter.png" id="1_gaocd"]
+[ext_resource type="Texture2D" uid="uid://dnbmmdjpib03o" path="res://Assets/Vechicles/BanditAttacker.png" id="2_u6wol"]
+[ext_resource type="Texture2D" uid="uid://cnrumoefitlow" path="res://Assets/Vechicles/BanditFighter.png" id="3_upmxh"]
+[ext_resource type="Texture2D" uid="uid://casgaonfoarwy" path="res://Assets/Vechicles/BanditHeavyAttacker.png" id="4_a3c5c"]
+[ext_resource type="Texture2D" uid="uid://c6yc2t1i26sqj" path="res://Assets/Vechicles/FighterBomber.png" id="5_ijelk"]
+[ext_resource type="Texture2D" uid="uid://drqy5put76l5l" path="res://Assets/Vechicles/Interceptor.png" id="6_unx2y"]
+[ext_resource type="Texture2D" uid="uid://cl1c0pvshqyls" path="res://Assets/Vechicles/Starfighter.png" id="7_ia4v7"]
+[ext_resource type="Script" path="res://Scripts/ship.gd" id="8_2no1q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhvbw"]
+atlas = ExtResource("1_gaocd")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe6aw"]
+atlas = ExtResource("4_a3c5c")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s757h"]
+atlas = ExtResource("6_unx2y")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhsy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhvbw")
+}],
+"loop": true,
+"name": &"Assault Fighter",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u6wol")
+}],
+"loop": true,
+"name": &"Bandit Attacker",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_upmxh")
+}],
+"loop": true,
+"name": &"Bandit Fighter",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe6aw")
+}],
+"loop": true,
+"name": &"Bandit Heavy Attacker",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ijelk")
+}],
+"loop": true,
+"name": &"Fighter-Bomber",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s757h")
+}],
+"loop": true,
+"name": &"Interceptor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ia4v7")
+}],
+"loop": true,
+"name": &"Starfighter",
+"speed": 5.0
+}]
+
+[node name="Ship" type="AnimatedSprite2D"]
+z_index = 1000
+position = Vector2(6.00111, 7.27933)
+rotation = 0.0244627
+sprite_frames = SubResource("SpriteFrames_rhsy0")
+animation = &"Starfighter"
+script = ExtResource("8_2no1q")

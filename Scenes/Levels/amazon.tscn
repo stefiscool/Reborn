@@ -2529,7 +2529,7 @@ tile_set = SubResource("TileSet_4snvg")
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Medkit" parent="Items" instance=ExtResource("2_gu2u1")]
-position = Vector2(82, 544)
+position = Vector2(85, 541)
 
 [node name="Medkit2" parent="Items" instance=ExtResource("2_gu2u1")]
 position = Vector2(1299, 494)
@@ -2541,7 +2541,7 @@ position = Vector2(659, 989)
 position = Vector2(1638, 899)
 
 [node name="Medkit14" parent="Items" instance=ExtResource("2_gu2u1")]
-position = Vector2(799, -516)
+position = Vector2(772, -546)
 
 [node name="Medkit5" parent="Items" instance=ExtResource("2_gu2u1")]
 position = Vector2(1787, 134)
@@ -2574,25 +2574,25 @@ position = Vector2(4460, 457)
 position = Vector2(715, 656)
 
 [node name="Magazine2" parent="Items" instance=ExtResource("3_qkwxl")]
-position = Vector2(1123, -252)
+position = Vector2(831, -546)
 
 [node name="Magazine3" parent="Items" instance=ExtResource("3_qkwxl")]
-position = Vector2(1855, -452)
+position = Vector2(1812, -419)
 
 [node name="Magazine4" parent="Items" instance=ExtResource("3_qkwxl")]
-position = Vector2(1887, -455)
+position = Vector2(1944, -465)
 
 [node name="Magazine5" parent="Items" instance=ExtResource("3_qkwxl")]
-position = Vector2(1922, -450)
+position = Vector2(1014, -243)
 
 [node name="Magazine6" parent="Items" instance=ExtResource("3_qkwxl")]
-position = Vector2(1949, -450)
+position = Vector2(1116, -476)
 
 [node name="Magazine7" parent="Items" instance=ExtResource("3_qkwxl")]
 position = Vector2(1725, 904)
 
 [node name="Magazine8" parent="Items" instance=ExtResource("3_qkwxl")]
-position = Vector2(2446, 721)
+position = Vector2(2428, 722)
 
 [node name="Magazine9" parent="Items" instance=ExtResource("3_qkwxl")]
 position = Vector2(2716, 418)
@@ -3151,7 +3151,11 @@ position = Vector2(696, 581)
 rotation = -1.58519
 
 [node name="Sprite2D" parent="Props/Computer desk10" index="0"]
+position = Vector2(88.89, 8.28027)
 texture = ExtResource("14_fhh1g")
+
+[node name="CollisionShape2D" parent="Props/Computer desk10" index="1"]
+position = Vector2(86.9046, 7.2516)
 
 [node name="Hole" parent="Props" instance=ExtResource("10_wlcyw")]
 position = Vector2(4454, -34.9998)

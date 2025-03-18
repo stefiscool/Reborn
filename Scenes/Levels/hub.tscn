@@ -1315,7 +1315,8 @@ vframes = 3
 frame = 4
 
 [node name="Spaceship" parent="." instance=ExtResource("42_pnwbt")]
-position = Vector2(67, -236)
+position = Vector2(74, -251)
+rotation = -0.116449
 
 [node name="Starfighter2" type="Sprite2D" parent="."]
 position = Vector2(736, -2)
@@ -1354,13 +1355,68 @@ text = "SAVE GAME "
 autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="HubAreas"]
-offset_left = -160.0
-offset_top = -109.0
-offset_right = -8.0
-offset_bottom = -40.0
+offset_left = -156.0
+offset_top = -113.0
+offset_right = -4.0
+offset_bottom = -44.0
 theme = ExtResource("4_eq5ea")
 theme_override_font_sizes/font_size = 20
 text = "INVENTORY
+"
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="HubAreas"]
+offset_left = -552.0
+offset_top = 238.0
+offset_right = -432.0
+offset_bottom = 261.0
+theme = ExtResource("4_eq5ea")
+theme_override_font_sizes/font_size = 20
+text = "CRAFTING
+"
+autowrap_mode = 2
+
+[node name="Label9" type="Label" parent="HubAreas"]
+offset_left = -608.0
+offset_top = 455.0
+offset_right = -469.0
+offset_bottom = 478.0
+theme = ExtResource("4_eq5ea")
+theme_override_font_sizes/font_size = 20
+text = "SCRAP SHOP
+"
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="HubAreas"]
+offset_left = -115.0
+offset_top = 740.0
+offset_right = 75.0
+offset_bottom = 761.0
+theme = ExtResource("4_eq5ea")
+theme_override_font_sizes/font_size = 20
+text = "ALIEN TECH SHOP
+"
+autowrap_mode = 2
+
+[node name="Label7" type="Label" parent="HubAreas"]
+offset_left = 536.0
+offset_top = 741.0
+offset_right = 744.0
+offset_bottom = 762.0
+theme = ExtResource("4_eq5ea")
+theme_override_font_sizes/font_size = 20
+text = "HUMAN TECH SHOP
+"
+autowrap_mode = 2
+
+[node name="Label8" type="Label" parent="HubAreas"]
+offset_left = 438.0
+offset_top = -107.0
+offset_right = 646.0
+offset_bottom = -86.0
+theme = ExtResource("4_eq5ea")
+theme_override_font_sizes/font_size = 20
+text = "SPACESHIP SHOP
 "
 autowrap_mode = 2
 
