@@ -12,7 +12,7 @@ var missions = {
 }
 
 func _ready():
-	Global.health = Global.maxhealth
+
 	Global.shields = Global.maxshields
 	Global.meleeing = false
 	Global.defense = Global.defaultdefense

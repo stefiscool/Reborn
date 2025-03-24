@@ -26,7 +26,11 @@ func save():
 		"Barter": Global.Barter,
 		"Luck": Global.Luck,
 		"Speech": Global.Speech,
-		"shipname": Global.shipname
+		"shipname": Global.shipname,
+		"health": Global.health,
+		"credits": Global.credits,
+		"scrap": Global.scrap
+		
 	}
 	return save_dict
 	

@@ -3,7 +3,6 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body.name == "Player" and Global.missionobjectives >= Global.maxmissionobjectives:
-		Global.health = Global.maxhealth
 		Global.shields = Global.maxshields
 		Global.meleeing = false
 		Global.defense = Global.defaultdefense

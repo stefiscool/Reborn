@@ -37,7 +37,9 @@ func load_game():
 		Global.Luck = node_data["Luck"]
 		Global.Speech = node_data["Speech"]
 		Global.shipname = node_data["shipname"]
-
+		Global.health = node_data["health"]
+		Global.credits = node_data["credits"]
+		Global.scrap = node_data["scrap"]
 
 func _on_timer_timeout():
 	get_tree().change_scene_to_file("res://Scenes/Levels/hub.tscn")

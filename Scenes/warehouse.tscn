@@ -1148,7 +1148,7 @@ position = Vector2(825, -165)
 script = ExtResource("6_0ca5h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spaceship"]
-position = Vector2(4.5, -4.75)
+position = Vector2(-14, 53)
 shape = SubResource("RectangleShape2D_jyhep")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Spaceship"]

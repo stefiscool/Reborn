@@ -10,6 +10,8 @@ var xpneeded = 20
 var weapon = "SCAR"
 var secondweapon = "M1911"
 var armor = "Tactical Vest"
+var credits = 0
+var scrap = 0
 
 var skill1 = "Grenade"
 var skill2 = "Super Slash"
