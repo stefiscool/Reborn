@@ -171,13 +171,14 @@ func _physics_process(delta):
 			
 	look_at(get_global_mouse_position())
 	
-	
+
 	if Input.is_action_just_pressed("primary") and Global.secondary == true and reloading == false:
 		Global.secondary = false
 		switch.play()
 	if Input.is_action_just_pressed("secondary") and Global.secondary == false and reloading == false:
 		Global.secondary = true
 		switch.play()
+		
 	if Input.is_action_pressed("melee") and paused == false:
 		Global.meleeing = true
 		$Gun.visible = false
