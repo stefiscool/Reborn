@@ -171,6 +171,9 @@ func _physics_process(delta):
 			
 	look_at(get_global_mouse_position())
 	
+	if Input.is_action_just_pressed("scroll") and reloading == false:
+		Global.secondary = !Global.secondary 
+		switch.play() 
 
 	if Input.is_action_just_pressed("primary") and Global.secondary == true and reloading == false:
 		Global.secondary = false
