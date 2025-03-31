@@ -111,7 +111,7 @@ func _process(_delta):
 
 	if arkarmor:
 		defense = 4
-	else:
+	else: 
 		defense = defaultdefense
 		
 	if Class == "Noble":
