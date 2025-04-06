@@ -112,13 +112,6 @@ theme_override_font_sizes/font_size = 15
 script = ExtResource("3_lk6ix")
 skillname = "Piloting"
 
-[node name="SkillButton9" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_s21qj")
-theme_override_font_sizes/font_size = 15
-script = ExtResource("3_lk6ix")
-skillname = "Barter"
-
 [node name="SkillButton10" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_s21qj")
@@ -159,6 +152,5 @@ text = "Skill Points:"
 [connection signal="pressed" from="VBoxContainer/SkillButton6" to="VBoxContainer/SkillButton6" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/SkillButton7" to="VBoxContainer/SkillButton7" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/SkillButton8" to="VBoxContainer/SkillButton8" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/SkillButton9" to="VBoxContainer/SkillButton9" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/SkillButton10" to="VBoxContainer/SkillButton10" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/SkillButton11" to="VBoxContainer/SkillButton11" method="_on_pressed"]

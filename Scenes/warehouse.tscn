@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cqabj2oydo1ec"]
+[gd_scene load_steps=42 format=3 uid="uid://cqabj2oydo1ec"]
 
 [ext_resource type="Texture2D" uid="uid://b2ywlpegudor4" path="res://Assets/Tilesets/OperationShadowFallTiles (1) (1) (3).png" id="1_421kv"]
 [ext_resource type="PackedScene" uid="uid://d100l8flk2xi" path="res://Scenes/medkit.tscn" id="2_8nith"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://df7jie7l233sm" path="res://Scenes/Enemies/bandit2SMG.tscn" id="9_lcagx"]
 [ext_resource type="Resource" uid="uid://beghximo0aund" path="res://Dialouge/Phenix1.dialogue" id="9_n5wsh"]
 [ext_resource type="PackedScene" uid="uid://b53o8d1lkvnyg" path="res://Scenes/ui.tscn" id="9_ns0im"]
-[ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="10_k72v6"]
 [ext_resource type="Texture2D" uid="uid://cl1c0pvshqyls" path="res://Assets/Vechicles/Starfighter.png" id="12_6bmdo"]
 [ext_resource type="AudioStream" uid="uid://c0r65qh3hkj0p" path="res://Audio/Attacks/thunder.mp3" id="12_m5gf3"]
 [ext_resource type="Texture2D" uid="uid://bp74f4nuvx3qj" path="res://Assets/NPCs/Phenix.png" id="12_xidua"]
@@ -1190,16 +1189,6 @@ dialogue_start = "~ this_is_a_node_title"
 position = Vector2(31.9999, -20.0001)
 shape = SubResource("CircleShape2D_xnfov")
 
-[node name="Label" type="Label" parent="NPCs/Phenix1"]
-offset_left = 45.6905
-offset_top = 60.6864
-offset_right = 142.69
-offset_bottom = 83.6864
-rotation = -3.13724
-theme = ExtResource("10_k72v6")
-text = "(E) Talk
-"
-
 [node name="StaticBody2D" type="StaticBody2D" parent="NPCs/Phenix1"]
 position = Vector2(-3.12328e-05, 2.26796e-05)
 
@@ -1249,16 +1238,6 @@ dialogue_start = "~ this_is_a_node_title"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Phenix2/Actionable"]
 position = Vector2(31.1543, -19.8964)
 shape = SubResource("CircleShape2D_xnfov")
-
-[node name="Label" type="Label" parent="NPCs/Phenix2"]
-offset_left = 45.6905
-offset_top = 60.6864
-offset_right = 142.69
-offset_bottom = 83.6864
-rotation = -3.13724
-theme = ExtResource("10_k72v6")
-text = "(E) Talk
-"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="NPCs/Phenix2"]
 position = Vector2(-45.9832, -150.42)
@@ -1310,16 +1289,6 @@ dialogue_start = "~ this_is_a_node_title"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Phenix3/Actionable"]
 position = Vector2(31.9999, -20.0002)
 shape = SubResource("CircleShape2D_xnfov")
-
-[node name="Label" type="Label" parent="NPCs/Phenix3"]
-offset_left = 45.6905
-offset_top = 60.6864
-offset_right = 142.69
-offset_bottom = 83.6864
-rotation = -3.13724
-theme = ExtResource("10_k72v6")
-text = "(E) Talk
-"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="NPCs/Phenix3"]
 position = Vector2(-45.9832, -150.42)
