@@ -61,8 +61,6 @@ text = "
 script = ExtResource("3_pe7sw")
 itemName = "P90"
 base_cost = 100
-healing = null
-hphealed = null
 
 [node name="Button2" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2

@@ -14,14 +14,16 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if (!Global.shopitems.has(itemName) or Global.inventory.has(itemName)) and healing == false:
-		queue_free()
-	if !Global.shopitems.has(itemName) and healing == true:
-		queue_free()
+		visible = false
+	elif !Global.shopitems.has(itemName) and healing == true:
+		visible = false
+	else:
+		visible = true
 	text = itemName + " " + str(cost) + " credits" 
 
 func update_cost() -> void:
 	# Apply luck discount - at luck 10, price will be 25% of original
-	var luck = clamp(Global.Luck, 0, 10)
+	var luck = clamp(Global.Speech, 0, 10)
 	var discount_factor = 1.0 - (luck * 0.075)  # 7.5% discount per luck point
 	
 	# Calculate new cost, ensure it's at least 1 credit
@@ -31,7 +33,6 @@ func _on_pressed() -> void:
 	if !Global.inventory.has(itemName) and Global.credits >= cost and healing == false:
 		Global.inventory.append(itemName)
 		Global.credits = Global.credits - cost
-		text = "Item Bought ( ͡° ͜ʖ ͡°)"
 		$"../../../../AudioStreamPlayer2D".play()
 	elif Global.credits >= cost and healing == true and (Global.health < Global.maxhealth):
 		Global.health += hphealed
