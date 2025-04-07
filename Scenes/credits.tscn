@@ -1,0 +1,170 @@
+[gd_scene load_steps=18 format=3 uid="uid://dy83j6gu7fw0d"]
+
+[ext_resource type="AudioStream" uid="uid://cwynx7v1irfov" path="res://Audio/Misc/cash-register-kaching-sound-effect-125042.mp3" id="1_kco6l"]
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_x1oeh"]
+[ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="3_au1ep"]
+[ext_resource type="Texture2D" uid="uid://c1u7mmvapgndk" path="res://Assets/Props/republicCredits (2) (1).png" id="4_tew2f"]
+[ext_resource type="PackedScene" uid="uid://djpmmn2jxiqy6" path="res://Scenes/lockbox.tscn" id="5_x16ax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2l7co"]
+size = Vector2(19, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e461"]
+atlas = ExtResource("4_tew2f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt8in"]
+atlas = ExtResource("4_tew2f")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3egwh"]
+atlas = ExtResource("4_tew2f")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la0jh"]
+atlas = ExtResource("4_tew2f")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkok6"]
+atlas = ExtResource("4_tew2f")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6rom"]
+atlas = ExtResource("4_tew2f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3vvn"]
+atlas = ExtResource("4_tew2f")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eox1v"]
+atlas = ExtResource("4_tew2f")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbrl0"]
+atlas = ExtResource("4_tew2f")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f8s7"]
+atlas = ExtResource("4_tew2f")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rhu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e461")
+}],
+"loop": true,
+"name": &"10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt8in")
+}],
+"loop": true,
+"name": &"100",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3egwh")
+}],
+"loop": true,
+"name": &"1000",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la0jh")
+}],
+"loop": true,
+"name": &"10000",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkok6")
+}],
+"loop": true,
+"name": &"100000",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6rom")
+}],
+"loop": true,
+"name": &"20",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3vvn")
+}],
+"loop": true,
+"name": &"50",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eox1v")
+}],
+"loop": true,
+"name": &"500",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbrl0")
+}],
+"loop": true,
+"name": &"5000",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f8s7")
+}],
+"loop": true,
+"name": &"50000",
+"speed": 5.0
+}]
+
+[node name="Credits" type="Area2D"]
+script = ExtResource("1_x1oeh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_2l7co")
+
+[node name="Zip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_kco6l")
+volume_db = 10.289
+pitch_scale = 1.5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -49.0
+offset_top = -9.0
+offset_right = 53.0
+offset_bottom = 14.0
+theme = ExtResource("3_au1ep")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "+ 50 Health"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5rhu5")
+animation = &"10"
+
+[node name="Lockbox" parent="." instance=ExtResource("5_x16ax")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
