@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cqabj2oydo1ec"]
+[gd_scene load_steps=43 format=3 uid="uid://cqabj2oydo1ec"]
 
 [ext_resource type="Texture2D" uid="uid://b2ywlpegudor4" path="res://Assets/Tilesets/OperationShadowFallTiles (1) (1) (3).png" id="1_421kv"]
 [ext_resource type="PackedScene" uid="uid://d100l8flk2xi" path="res://Scenes/medkit.tscn" id="2_8nith"]
@@ -22,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://dn57xdegn1n8y" path="res://Dialouge/Phenix2.dialogue" id="13_edjdh"]
 [ext_resource type="Resource" uid="uid://d4c6p4033vslt" path="res://Dialouge/Phenix3.dialogue" id="16_pxwy2"]
 [ext_resource type="Texture2D" uid="uid://spo00g3wpoxp" path="res://Assets/Effects/HoverParticles.png" id="18_xudwm"]
+[ext_resource type="PackedScene" uid="uid://dy83j6gu7fw0d" path="res://Scenes/credits.tscn" id="23_nlboe"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wqrvg"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -908,6 +909,51 @@ position = Vector2(150, 1023)
 
 [node name="Magazine2" parent="Items" instance=ExtResource("3_dgfbh")]
 position = Vector2(-376, 2304)
+
+[node name="Credits" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(-310, 442)
+
+[node name="Credits2" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(-331, 753)
+
+[node name="Credits3" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(-1163, 1161)
+
+[node name="Credits4" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(-1192, 1887)
+
+[node name="Credits5" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(-810, 2532)
+
+[node name="Credits6" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(301, 2530)
+
+[node name="Credits7" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(-201, 1807)
+
+[node name="Credits8" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(390, 1210)
+
+[node name="Credits9" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(-40, 952)
+
+[node name="Credits10" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(-825, -82)
+
+[node name="Credits11" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(-830, 405)
+
+[node name="Credits12" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(-1189, -820)
+
+[node name="Credits13" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(-1189, -752)
+
+[node name="Credits14" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(-1109, -820)
+
+[node name="Credits15" parent="Items" instance=ExtResource("23_nlboe")]
+position = Vector2(968, -740)
 
 [node name="Doors" type="Node2D" parent="."]
 

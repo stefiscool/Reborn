@@ -23,20 +23,25 @@ func get_weighted_random_value() -> int:
 	# Modified weights that will be affected by luck
 	var modified_weights = base_weights.duplicate()
 	
-	# Apply a dramatic luck effect
-	# At Luck = 0, the first item (0 value) has its normal weight
-	# At Luck = 10, the first item (0 value) has 0 weight
+	# Apply a more dramatic luck effect
 	var luck = clamp(Global.Luck, 0, 10)
 	
-	# Reduce the weight of the 0 value based on luck
-	var zero_reduction_factor = 1.0 - (luck / 10.0)
-	modified_weights[0] = int(base_weights[0] * zero_reduction_factor)
+	# Reduce the weight of lower values based on luck
+	for i in range(5):  # First 5 values (0, 20, 40, 50, 60)
+		var reduction_factor = 1.0 - (luck / 10.0) * 0.9  # Up to 90% reduction
+		modified_weights[i] = int(base_weights[i] * reduction_factor)
 	
-	# Optionally, increase weights of better rewards as luck increases
-	for i in range(1, modified_weights.size()):
+	# Dramatically increase weights of higher rewards as luck increases
+	for i in range(5, modified_weights.size()):  # Higher value items
 		var position_factor = float(i) / float(modified_weights.size() - 1)
-		var boost_factor = 1.0 + (luck / 10.0) * position_factor * 2.0
+		# Exponential scaling for high-end values
+		var boost_factor = pow(1.5, luck/2.5) * position_factor
 		modified_weights[i] = int(base_weights[i] * boost_factor)
+	
+	# Extra boost specifically for the highest values (150, 200) when luck is high
+	if luck >= 8:
+		modified_weights[9] *= 2  # 150 value
+		modified_weights[10] *= 3  # 200 value
 	
 	# Calculate total weight after modifications
 	var total_weight = 0

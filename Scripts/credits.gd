@@ -17,26 +17,34 @@ func _ready():
 func get_weighted_random_value() -> int:
 	var values = [0, 10, 20, 50, 100, 500, 1000, 5000, 10000, 50000, 100000]
 	
-	# Base weights
-	var base_weights = [20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 1]
+	# Extremely skewed base weights
+	# At luck = 1, 100000 will have ~0.01% chance
+	var base_weights = [1000, 600, 350, 200, 100, 50, 25, 10, 3, 1, 0.1]
 	
 	# Modified weights that will be affected by luck
 	var modified_weights = base_weights.duplicate()
 	
 	# Apply a dramatic luck effect
-	# At Luck = 0, the first item (0 value) has its normal weight
-	# At Luck = 10, the first item (0 value) has 0 weight
 	var luck = clamp(Global.Luck, 0, 10)
 	
-	# Reduce the weight of the 0 value based on luck
-	var zero_reduction_factor = 1.0 - (luck / 10.0)
-	modified_weights[0] = int(base_weights[0] * zero_reduction_factor)
+	# Reduce the weight of the lower values based on luck
+	for i in range(4):  # First 4 values (0, 10, 20, 50)
+		var reduction_factor = 1.0 - (luck / 10.0) * 0.9  # Up to 90% reduction
+		modified_weights[i] = base_weights[i] * reduction_factor
 	
-	# Optionally, increase weights of better rewards as luck increases
-	for i in range(1, modified_weights.size()):
+	# Dramatically increase weights of higher rewards as luck increases
+	for i in range(4, modified_weights.size()):
 		var position_factor = float(i) / float(modified_weights.size() - 1)
-		var boost_factor = 1.0 + (luck / 10.0) * position_factor * 2.0
-		modified_weights[i] = int(base_weights[i] * boost_factor)
+		# Exponential scaling for high-end values that gets more extreme at the end
+		var boost_factor = pow(2.0, luck/3.0) * pow(position_factor, 2) * luck
+		modified_weights[i] = base_weights[i] * max(1.0, boost_factor)
+	
+	# Extra boost for the highest values when luck is high
+	if luck >= 10:
+		var top_tier_boost = pow(luck, 2) / 5.0
+		modified_weights[8] *= top_tier_boost  # 10000 value
+		modified_weights[9] *= top_tier_boost * 1.5  # 50000 value
+		modified_weights[10] *= top_tier_boost * 2.0  # 100000 value
 	
 	# Calculate total weight after modifications
 	var total_weight = 0

@@ -1909,6 +1909,7 @@ autostart = true
 
 [node name="Shop" parent="Shops" instance=ExtResource("43_ohajp")]
 shopname = "Medic Shop"
+shoplist = ["Potion"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shops/Shop"]
 position = Vector2(-358, -40.1875)

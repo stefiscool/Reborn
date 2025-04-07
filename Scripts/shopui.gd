@@ -8,7 +8,7 @@ extends CanvasLayer
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Label.text = Global.shopname
 	if Global.inshop == false:
 		visible = false
