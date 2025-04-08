@@ -1917,7 +1917,7 @@ shape = SubResource("RectangleShape2D_2fvct")
 
 [node name="Shop2" parent="Shops" instance=ExtResource("43_ohajp")]
 shopname = "Gun Shop"
-shoplist = ["P90"]
+shoplist = ["P90", "The Troubleshooter"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shops/Shop2"]
 position = Vector2(635, 661.625)

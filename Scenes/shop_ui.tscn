@@ -62,6 +62,15 @@ script = ExtResource("3_pe7sw")
 itemName = "P90"
 base_cost = 100
 
+[node name="Button3" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ai4x")
+text = "
+"
+script = ExtResource("3_pe7sw")
+itemName = "The Troubleshooter"
+base_cost = 1000
+
 [node name="Button2" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_5ai4x")
@@ -94,6 +103,7 @@ stream = ExtResource("5_l1is0")
 volume_db = 3.76
 
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button" to="ScrollContainer/ColorRect/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button3" to="ScrollContainer/ColorRect/VBoxContainer/Button3" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button2" to="ScrollContainer/ColorRect/VBoxContainer/Button2" method="_on_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
