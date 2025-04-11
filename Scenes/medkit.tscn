@@ -162,7 +162,7 @@ text = "+ 50 Health"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5rhu5")
-animation = &"120"
+animation = &"75"
 
 [node name="Lockbox" parent="." instance=ExtResource("5_ly2oc")]
 

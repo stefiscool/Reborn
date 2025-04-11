@@ -1909,7 +1909,7 @@ autostart = true
 
 [node name="Shop" parent="Shops" instance=ExtResource("43_ohajp")]
 shopname = "Medic Shop"
-shoplist = ["Potion"]
+shoplist = ["Potion", "Pill", "Pillbox", "Bandages", "Stimulant", "Dressing", "Medkit", "Military Medkit", "Spec Ops Medkit"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shops/Shop"]
 position = Vector2(-361, -38)
@@ -1917,10 +1917,18 @@ shape = SubResource("RectangleShape2D_2fvct")
 
 [node name="Shop2" parent="Shops" instance=ExtResource("43_ohajp")]
 shopname = "Gun Shop"
-shoplist = ["P90", "The Troubleshooter"]
+shoplist = ["P90", "The Troubleshooter", "AK-47", "G36", "M2000", "A-57", "ARC-20", "FN FAL", "Deagle", "P-10 Pistol", "Glock 18", "Trench Shotgun", "A-10 Shotgun", "P-20 Supressed Pistol", &"Mercenary Armor", "Infantry Armor", "Navy Armor", "Reborn Squire Armor", "Marine Armor"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shops/Shop2"]
 position = Vector2(635, 661.625)
+shape = SubResource("RectangleShape2D_0sch2")
+
+[node name="Shop3" parent="Shops" instance=ExtResource("43_ohajp")]
+shopname = "Alien Tech Shop"
+shoplist = ["Photon SMG", "Laser SMG", "Void Supercannon", "Shock Cannon", "Laser Pistol", "Shock Pistol", "Shock Robe", "Void Robe"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shops/Shop3"]
+position = Vector2(-36, 660)
 shape = SubResource("RectangleShape2D_0sch2")
 
 [node name="ShopUI" parent="." instance=ExtResource("44_q65e2")]

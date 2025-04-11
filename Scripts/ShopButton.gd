@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 		visible = false
 	else:
 		visible = true
-	text = itemName + " " + str(cost) + " credits" 
+	text = itemName + " " + str(cost) + " $R" 
 
 func update_cost() -> void:
 	# Apply luck discount - at luck 10, price will be 25% of original
