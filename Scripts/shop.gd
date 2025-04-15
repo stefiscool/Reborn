@@ -13,6 +13,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		Global.shopitems = shoplist
 		Global.shopname = shopname
-		print("Shop items: ", str(Global.shopitems))
 		Global.inshop = true
 		Global.indialogue = true

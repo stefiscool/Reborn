@@ -25,7 +25,7 @@ var can_fire = true
 var speed = Global.speed
 var zoom = Global.zoom
 var secondzoom = Global.secondzoom
-var accel = 10500
+var accel = 10000
 var fric = 10000
 var reloading = false
 var overcharged = false
@@ -131,7 +131,7 @@ func _process(delta):
 	else:
 		$Ice.visible = false
 		
-	
+
 		
 func _physics_process(delta):
 	

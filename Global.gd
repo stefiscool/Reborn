@@ -85,13 +85,13 @@ var Ballistics = 1
 var Energy = 1
 var Explosives = 1
 var Melee = 1
-var Engineering = 1
-var Medicine = 1
+var Engineering = 10
+var Medicine = 10
 var Computing = 1
 var Piloting = 1
 var Barter = 1
 var Luck = 1
-var Speech = 1
+var Speech = 10
 
 var maxprimarymags = 3
 var maxsecondarymags = 2
