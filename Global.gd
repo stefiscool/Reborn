@@ -93,6 +93,10 @@ var Barter = 1
 var Luck = 1
 var Speech = 1
 
+var maxprimarymags = 3
+var maxsecondarymags = 2
+var maxscrap = 30.0
+
 var missionobjectives = 0
 var maxmissionobjectives = 1
 var mission = 0
@@ -107,6 +111,13 @@ func _process(_delta):
 	if shields < 0:
 		shields = 0
 		
+	if mags > maxprimarymags:
+		mags = maxprimarymags
+	if secondmags > maxsecondarymags:
+		secondmags = maxsecondarymags
+	if scrap > maxscrap:
+		scrap = maxscrap
+	
 	if flamecharged == true:
 		damage = (100 + (level * 10))
 		seconddamage = (100 + (level * 10))

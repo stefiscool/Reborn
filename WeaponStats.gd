@@ -33,8 +33,8 @@ func _process(_delta):
 			"RPG-30": {"rateoffire": 1.2, "damage": 250, "maxammo": 1, "bulletvelocity": 1250, "element": "Explosive", "zoom": 1.2, "description": "A powerful anti-tank rocket-propelled grenade launcher with high damage, designed to penetrate heavily armored vehicles."},
 			"AT-10 Antitank Rifle": {"rateoffire": 1, "damage": 250, "maxammo": 4, "bulletvelocity": 2800, "element": "Kinetic(AT)", "zoom": 1.1, "description": "A powerful antitank rifle capable of piercing heavy armor. Effective against vehicles and heavily armored enemies."},
 			"P-10 Pistol": {"rateoffire": 0.05, "damage": 45, "maxammo": 12, "bulletvelocity": 1600, "element": "Kinetic", "zoom": 2.0, "description": "A reliable and compact pistol with moderate damage and accuracy, ideal for backup."},
-			"Laser Pistol": {"rateoffire": 0.15, "damage": 55, "maxammo": 10, "bulletvelocity": 2200, "element": "Laser", "zoom": 1.8, "description": "A futuristic pistol that fires high-energy laser bolts. Excellent for high-accuracy, medium-range engagements."},
-			"P-20 Supressed Pistol": {"rateoffire": 0.25, "damage": 50, "maxammo": 15, "bulletvelocity": 1700, "element": "Kinetic(Su)", "zoom": 2.0, "description": "A silenced pistol for stealthy operations. Ideal for eliminating enemies quietly in close combat."},
+			"Laser Pistol": {"rateoffire": 0.15, "damage": 45, "maxammo": 10, "bulletvelocity": 2800, "element": "Laser", "zoom": 1.8, "description": "A futuristic pistol that fires high-energy laser bolts. Excellent for high-accuracy, medium-range engagements."},
+			"P-20 Supressed Pistol": {"rateoffire": 0.25, "damage": 40, "maxammo": 15, "bulletvelocity": 1200, "element": "Kinetic(Su)", "zoom": 2.0, "description": "A silenced pistol for stealthy operations. Ideal for eliminating enemies quietly in close combat."},
 			"Shock Pistol": {"rateoffire": 0.3, "damage": 30, "maxammo": 8, "bulletvelocity": 1800, "element": "Shock", "zoom": 2.0, "description": "A high-voltage pistol capable of stunning enemies. Does small electric damage."}
 }
 

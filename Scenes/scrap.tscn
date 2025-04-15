@@ -1,0 +1,194 @@
+[gd_scene load_steps=20 format=3 uid="uid://cycnx4datk1mu"]
+
+[ext_resource type="Script" path="res://Scripts/scrap.gd" id="1_3vsqx"]
+[ext_resource type="AudioStream" uid="uid://cigoqafdb2cg8" path="res://Audio/Misc/metal-moving-81780.mp3" id="2_nt3es"]
+[ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="3_6vy8p"]
+[ext_resource type="Texture2D" uid="uid://bpdjqd3site62" path="res://Assets/Props/scrap.png" id="4_7aora"]
+[ext_resource type="PackedScene" uid="uid://djpmmn2jxiqy6" path="res://Scenes/lockbox.tscn" id="5_wedw8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2l7co"]
+size = Vector2(19, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkk5p"]
+atlas = ExtResource("4_7aora")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prm0s"]
+atlas = ExtResource("4_7aora")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs5kl"]
+atlas = ExtResource("4_7aora")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8lco"]
+atlas = ExtResource("4_7aora")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq4ry"]
+atlas = ExtResource("4_7aora")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57eit"]
+atlas = ExtResource("4_7aora")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyvd0"]
+atlas = ExtResource("4_7aora")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upnwl"]
+atlas = ExtResource("4_7aora")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umehf"]
+atlas = ExtResource("4_7aora")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxlr"]
+atlas = ExtResource("4_7aora")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqrfl"]
+atlas = ExtResource("4_7aora")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08ank"]
+atlas = ExtResource("4_7aora")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rhu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkk5p")
+}],
+"loop": true,
+"name": &"Arcchip Matrix",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prm0s")
+}],
+"loop": true,
+"name": &"Cryosteel Fragment",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs5kl")
+}],
+"loop": true,
+"name": &"Fluxed Wiring",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8lco")
+}],
+"loop": true,
+"name": &"Gravcoil Fragment",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq4ry")
+}],
+"loop": true,
+"name": &"Hexplate Scraps",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57eit")
+}],
+"loop": true,
+"name": &"Ionshard",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyvd0")
+}],
+"loop": true,
+"name": &"Neurogel Fiber",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upnwl")
+}],
+"loop": true,
+"name": &"Obsidium Core",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umehf")
+}],
+"loop": true,
+"name": &"Plascore Panel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxlr")
+}],
+"loop": true,
+"name": &"Radiant Slag",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqrfl")
+}],
+"loop": true,
+"name": &"Rusted Servo Limb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08ank")
+}],
+"loop": true,
+"name": &"Thermoptic Mesh",
+"speed": 5.0
+}]
+
+[node name="Scrap" type="Area2D"]
+script = ExtResource("1_3vsqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_2l7co")
+
+[node name="Zip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_nt3es")
+volume_db = 10.289
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -49.0
+offset_top = -9.0
+offset_right = 53.0
+offset_bottom = 14.0
+theme = ExtResource("3_6vy8p")
+theme_override_colors/font_color = Color(0.832558, 0.901552, 0.872826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "+ 50 Health"
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5rhu5")
+animation = &"Thermoptic Mesh"
+
+[node name="Lockbox" parent="." instance=ExtResource("5_wedw8")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

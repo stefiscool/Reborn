@@ -31,18 +31,22 @@ func get_primary() -> int:
 
 func _on_body_entered(body):
 	if body.is_in_group("Player") and picked == false:
-		if primary == 2:
+		if primary == 2 and (Global.secondmags < Global.maxsecondarymags):
+			print("e")
 			Global.secondmags += 1
 			$AnimatedSprite2D2.visible = false
-		if primary == 1:
+			sfx.play()
+			picked = true
+			$Timer.start()
+			$Label.visible = true
+		if primary == 1 and (Global.mags < Global.maxprimarymags):
+			print("e")
 			Global.mags += 1
 			$AnimatedSprite2D.visible = false
-		sfx.play()
-		picked = true
-		$Timer.start()
-		
-		
-		$Label.visible = true
+			sfx.play()
+			picked = true
+			$Timer.start()
+			$Label.visible = true
 
 
 func _on_timer_timeout():
