@@ -1924,10 +1924,18 @@ shape = SubResource("RectangleShape2D_2fvct")
 
 [node name="Shop4" parent="Shops" instance=ExtResource("43_ohajp")]
 shopname = "Crafting Table"
-shoplist = ["Scrap Gun"]
+shoplist = ["RPG-30", "AT-10 Antitank Rifle", "A-70 Shotgun", "XR-50", "Headhunter DMR", "S-TAR", "Supercharged Crossbow"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shops/Shop4"]
 position = Vector2(-267, 314)
+shape = SubResource("RectangleShape2D_2fvct")
+
+[node name="Shop6" parent="Shops" instance=ExtResource("43_ohajp")]
+shopname = "Spaceship Shop"
+shoplist = ["Interceptor", "Assault Fighter", "Bandit Attacker", "Bandit Fighter", "Bandit Heavy Attacker", "Fighter-Bomber"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shops/Shop6"]
+position = Vector2(473, 23)
 shape = SubResource("RectangleShape2D_2fvct")
 
 [node name="Shop5" parent="Shops" instance=ExtResource("43_ohajp")]

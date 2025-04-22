@@ -1,10 +1,12 @@
-[gd_scene load_steps=28 format=4 uid="uid://bc5smsp6sk4p2"]
+[gd_scene load_steps=30 format=4 uid="uid://bc5smsp6sk4p2"]
 
 [ext_resource type="Texture2D" uid="uid://c8v7vrbwsrjml" path="res://Assets/Tilesets/TheBountyHunterTiles.png" id="1_kdltp"]
 [ext_resource type="PackedScene" uid="uid://cc6h2k3peoi15" path="res://Scenes/magazine.tscn" id="2_iqmp1"]
 [ext_resource type="PackedScene" uid="uid://d100l8flk2xi" path="res://Scenes/medkit.tscn" id="3_utsr1"]
+[ext_resource type="PackedScene" uid="uid://cycnx4datk1mu" path="res://Scenes/scrap.tscn" id="4_aomwm"]
 [ext_resource type="PackedScene" uid="uid://bjq3ntdgcf0ss" path="res://Scenes/chair.tscn" id="4_ogr3o"]
 [ext_resource type="PackedScene" uid="uid://cq7yjaj103lue" path="res://Scenes/computer_desk.tscn" id="5_nx0rn"]
+[ext_resource type="PackedScene" uid="uid://dy83j6gu7fw0d" path="res://Scenes/credits.tscn" id="5_rhx8d"]
 [ext_resource type="PackedScene" uid="uid://07hugfna5n3f" path="res://Scenes/barrel.tscn" id="6_v66je"]
 [ext_resource type="PackedScene" uid="uid://tdd4flasl3th" path="res://Scenes/rock.tscn" id="7_tk55x"]
 [ext_resource type="PackedScene" uid="uid://bq62uoiq3w5q5" path="res://Scenes/Enemies/banditsnowSMG.tscn" id="7_u8g5x"]
@@ -2569,6 +2571,60 @@ position = Vector2(-151, 338)
 
 [node name="Medkit9" parent="Items" instance=ExtResource("3_utsr1")]
 position = Vector2(968, 158)
+
+[node name="Scrap" parent="Items" instance=ExtResource("4_aomwm")]
+position = Vector2(578, -350)
+
+[node name="Scrap2" parent="Items" instance=ExtResource("4_aomwm")]
+position = Vector2(1447, 411)
+
+[node name="Scrap3" parent="Items" instance=ExtResource("4_aomwm")]
+position = Vector2(-73, 224)
+
+[node name="Scrap4" parent="Items" instance=ExtResource("4_aomwm")]
+position = Vector2(1825, 191)
+
+[node name="Scrap5" parent="Items" instance=ExtResource("4_aomwm")]
+position = Vector2(2383, -265)
+
+[node name="Scrap6" parent="Items" instance=ExtResource("4_aomwm")]
+position = Vector2(2454, -267)
+
+[node name="Credits" parent="Items" instance=ExtResource("5_rhx8d")]
+position = Vector2(1175, -245)
+
+[node name="Credits2" parent="Items" instance=ExtResource("5_rhx8d")]
+position = Vector2(3132, 318)
+
+[node name="Credits3" parent="Items" instance=ExtResource("5_rhx8d")]
+position = Vector2(3145, 371)
+
+[node name="Credits4" parent="Items" instance=ExtResource("5_rhx8d")]
+position = Vector2(2272, 98)
+
+[node name="Credits5" parent="Items" instance=ExtResource("5_rhx8d")]
+position = Vector2(1237, -622)
+
+[node name="Credits6" parent="Items" instance=ExtResource("5_rhx8d")]
+position = Vector2(1163, -762)
+
+[node name="Credits7" parent="Items" instance=ExtResource("5_rhx8d")]
+position = Vector2(1059, -685)
+
+[node name="Credits8" parent="Items" instance=ExtResource("5_rhx8d")]
+position = Vector2(1391, -1085)
+
+[node name="Credits9" parent="Items" instance=ExtResource("5_rhx8d")]
+position = Vector2(1457, -1166)
+
+[node name="Credits11" parent="Items" instance=ExtResource("5_rhx8d")]
+position = Vector2(2902, -1047)
+
+[node name="Credits10" parent="Items" instance=ExtResource("5_rhx8d")]
+position = Vector2(1557, -1198)
+
+[node name="Scrap7" parent="Items" instance=ExtResource("4_aomwm")]
+position = Vector2(2525, -263)
 
 [node name="Props" type="Node2D" parent="."]
 position = Vector2(-33, -210)

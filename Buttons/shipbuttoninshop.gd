@@ -1,0 +1,43 @@
+extends Button
+
+@export var itemName = ""
+@export var base_cost = 0  # Original cost value
+@export var requirement = 0
+
+
+var cost = 0  # Actual cost after luck adjustment
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	# Calculate adjusted cost when the button is created
+	update_cost()
+	
+
+func _process(_delta: float) -> void:
+
+	if !Global.shopitems.has(itemName):
+		visible = false
+	elif Global.inventory.has(itemName):
+		visible = false
+	else:
+		visible = true
+	text = itemName + " (" + str(cost) + " $R) ("  + str(requirement) + " Piloting)"
+	
+	
+	
+		
+func update_cost() -> void:
+	# Apply luck discount - at luck 10, price will be 25% of original
+	var luck = clamp(Global.Speech, 0, 10)
+	var discount_factor = 1.0 - (luck * 0.075)  # 7.5% discount per luck point
+	
+	# Calculate new cost, ensure it's at least 1 credit
+	cost = max(1, int(base_cost * discount_factor))
+
+func _on_pressed() -> void:
+
+	if Global.credits >= cost and Global.Piloting>= requirement:
+		Global.inventory.append(itemName)
+		Global.credits = Global.credits - cost
+		$"../../../../AudioStreamPlayer2D".play()
+	

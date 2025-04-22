@@ -10,13 +10,13 @@ var xpneeded = 20
 var weapon = "SCAR"
 var secondweapon = "M1911"
 var armor = "Tactical Vest"
-var credits = 1000
+var credits = 0
 var scrap = 0.0
 
 var skill1 = "Grenade"
 var skill2 = "Super Slash"
 var skill3 = "Flame Charge"
-var skill4 = "Estus Flask"
+var skill4 = "Thousand Cuts"
 
 var meleeing = false
 
@@ -75,6 +75,7 @@ var shiphealth = 1000
 var shipspeed = 5000
 var shipweapon = "Laser"
 var shipweapondamage = 100
+var shipfirerate = 0.03
 var shipspecial = "Ion Bomb"
 var shipspecialdamage = 2000
 var shipspecialcooldown = 20
@@ -85,13 +86,13 @@ var Ballistics = 1
 var Energy = 1
 var Explosives = 1
 var Melee = 1
-var Engineering = 10
-var Medicine = 10
+var Engineering = 1
+var Medicine = 1
 var Computing = 1
 var Piloting = 1
 var Barter = 1
 var Luck = 1
-var Speech = 10
+var Speech = 1
 
 var maxprimarymags = 3
 var maxsecondarymags = 2

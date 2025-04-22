@@ -30,41 +30,48 @@ offset_right = 500.0
 offset_bottom = 2000.0
 
 [node name="Shipbutton" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_r6ih3")
 script = ExtResource("3_mei8u")
 
 [node name="Shipbutton2" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_r6ih3")
 script = ExtResource("3_mei8u")
 shipname = "Bandit Attacker"
 
 [node name="Shipbutton3" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_r6ih3")
 script = ExtResource("3_mei8u")
 shipname = "Bandit Fighter"
 
 [node name="Shipbutton4" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_r6ih3")
 script = ExtResource("3_mei8u")
 shipname = "Bandit Heavy Attacker"
 
 [node name="Shipbutton5" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_r6ih3")
 script = ExtResource("3_mei8u")
 shipname = "Fighter-Bomber"
 
 [node name="Shipbutton6" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_r6ih3")
 script = ExtResource("3_mei8u")
 shipname = "Interceptor"
 
 [node name="Shipbutton7" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_r6ih3")
 script = ExtResource("3_mei8u")

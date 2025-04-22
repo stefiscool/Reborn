@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bpxwop4uvxf2"]
+[gd_scene load_steps=28 format=4 uid="uid://bpxwop4uvxf2"]
 
 [ext_resource type="Texture2D" uid="uid://c8v7vrbwsrjml" path="res://Assets/Tilesets/TheBountyHunterTiles.png" id="1_6qdgl"]
 [ext_resource type="PackedScene" uid="uid://o804mppf2e1y" path="res://Scenes/Enemies/banditlaserpistol.tscn" id="2_7kft8"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cc6h2k3peoi15" path="res://Scenes/magazine.tscn" id="2_ncv28"]
 [ext_resource type="PackedScene" uid="uid://d100l8flk2xi" path="res://Scenes/medkit.tscn" id="3_xvimt"]
 [ext_resource type="PackedScene" uid="uid://d3a1p4mffduua" path="res://Scenes/Enemies/bandit2pistol.tscn" id="4_2jvbi"]
+[ext_resource type="PackedScene" uid="uid://dy83j6gu7fw0d" path="res://Scenes/credits.tscn" id="4_a84qo"]
+[ext_resource type="PackedScene" uid="uid://cycnx4datk1mu" path="res://Scenes/scrap.tscn" id="5_o02lj"]
 [ext_resource type="PackedScene" uid="uid://df7jie7l233sm" path="res://Scenes/Enemies/bandit2SMG.tscn" id="6_o1waa"]
 [ext_resource type="PackedScene" uid="uid://c8ygltfhvf5m6" path="res://Scenes/Enemies/banditlaserSMG.tscn" id="6_pebak"]
 [ext_resource type="PackedScene" uid="uid://bhjwoph518ng" path="res://Scenes/Enemies/banditminigun.tscn" id="8_26m3v"]
@@ -2554,13 +2556,76 @@ position = Vector2(-34, -1518)
 position = Vector2(478, -2468)
 
 [node name="Medkit5" parent="Items" instance=ExtResource("3_xvimt")]
-position = Vector2(-409, -3137)
+position = Vector2(-464, -3161)
 
 [node name="Medkit6" parent="Items" instance=ExtResource("3_xvimt")]
 position = Vector2(-342, -2765)
 
 [node name="Medkit2" parent="Items" instance=ExtResource("3_xvimt")]
 position = Vector2(24, -3541)
+
+[node name="Credits" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(-136, -583)
+
+[node name="Credits2" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(-28, -996)
+
+[node name="Credits3" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(20, -1129)
+
+[node name="Credits4" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(-548, -927)
+
+[node name="Credits5" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(-631, -1725)
+
+[node name="Credits6" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(-622, -1978)
+
+[node name="Credits7" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(672, -1653)
+
+[node name="Credits8" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(300, -2221)
+
+[node name="Credits9" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(396, -2015)
+
+[node name="Credits10" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(1018, -2549)
+
+[node name="Credits11" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(584, -1491)
+
+[node name="Credits12" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(137, -3170)
+
+[node name="Credits13" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(28, -3139)
+
+[node name="Credits14" parent="Items" instance=ExtResource("4_a84qo")]
+position = Vector2(-96, -3636)
+
+[node name="Scrap" parent="Items" instance=ExtResource("5_o02lj")]
+position = Vector2(118, -733)
+
+[node name="Scrap2" parent="Items" instance=ExtResource("5_o02lj")]
+position = Vector2(298, -1212)
+
+[node name="Scrap3" parent="Items" instance=ExtResource("5_o02lj")]
+position = Vector2(397, -1924)
+
+[node name="Scrap4" parent="Items" instance=ExtResource("5_o02lj")]
+position = Vector2(1420, -2327)
+
+[node name="Scrap5" parent="Items" instance=ExtResource("5_o02lj")]
+position = Vector2(860, -2710)
+
+[node name="Scrap6" parent="Items" instance=ExtResource("5_o02lj")]
+position = Vector2(641, -1922)
+
+[node name="Scrap7" parent="Items" instance=ExtResource("5_o02lj")]
+position = Vector2(1421, -2633)
 
 [node name="Doors" type="Node2D" parent="."]
 

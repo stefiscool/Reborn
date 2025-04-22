@@ -1,11 +1,13 @@
-[gd_scene load_steps=37 format=4 uid="uid://vecnyb8pp7wp"]
+[gd_scene load_steps=39 format=4 uid="uid://vecnyb8pp7wp"]
 
 [ext_resource type="Texture2D" uid="uid://c8v7vrbwsrjml" path="res://Assets/Tilesets/TheBountyHunterTiles.png" id="1_02hkj"]
 [ext_resource type="PackedScene" uid="uid://d100l8flk2xi" path="res://Scenes/medkit.tscn" id="2_gu2u1"]
 [ext_resource type="PackedScene" uid="uid://cc6h2k3peoi15" path="res://Scenes/magazine.tscn" id="3_qkwxl"]
 [ext_resource type="PackedScene" uid="uid://g2ir42vk1nve" path="res://Scenes/boatdoor.tscn" id="4_0x00b"]
 [ext_resource type="PackedScene" uid="uid://dumkr5oc1mdw8" path="res://Scenes/bush.tscn" id="4_3jcjv"]
+[ext_resource type="PackedScene" uid="uid://cycnx4datk1mu" path="res://Scenes/scrap.tscn" id="4_w4s0i"]
 [ext_resource type="PackedScene" uid="uid://crb5kn7wb2mtq" path="res://Scenes/tree.tscn" id="5_ej8if"]
+[ext_resource type="PackedScene" uid="uid://dy83j6gu7fw0d" path="res://Scenes/credits.tscn" id="5_p8ixr"]
 [ext_resource type="PackedScene" uid="uid://don64iobea8au" path="res://Scenes/door.tscn" id="5_yfwsr"]
 [ext_resource type="PackedScene" uid="uid://tdd4flasl3th" path="res://Scenes/rock.tscn" id="7_1wock"]
 [ext_resource type="PackedScene" uid="uid://cq7yjaj103lue" path="res://Scenes/computer_desk.tscn" id="9_x04ip"]
@@ -2623,6 +2625,96 @@ position = Vector2(5242, -44)
 
 [node name="Magazine11" parent="Items" instance=ExtResource("3_qkwxl")]
 position = Vector2(2907, 844)
+
+[node name="Scrap" parent="Items" instance=ExtResource("4_w4s0i")]
+position = Vector2(1125, -241)
+
+[node name="Scrap3" parent="Items" instance=ExtResource("4_w4s0i")]
+position = Vector2(995, 213)
+
+[node name="Scrap4" parent="Items" instance=ExtResource("4_w4s0i")]
+position = Vector2(1435, 470)
+
+[node name="Scrap5" parent="Items" instance=ExtResource("4_w4s0i")]
+position = Vector2(63, 844)
+
+[node name="Scrap6" parent="Items" instance=ExtResource("4_w4s0i")]
+position = Vector2(353, 989)
+
+[node name="Scrap7" parent="Items" instance=ExtResource("4_w4s0i")]
+position = Vector2(1814, 917)
+
+[node name="Scrap8" parent="Items" instance=ExtResource("4_w4s0i")]
+position = Vector2(4223, 170)
+
+[node name="Scrap9" parent="Items" instance=ExtResource("4_w4s0i")]
+position = Vector2(2761, 275)
+
+[node name="Scrap10" parent="Items" instance=ExtResource("4_w4s0i")]
+position = Vector2(5186, -225)
+
+[node name="Scrap11" parent="Items" instance=ExtResource("4_w4s0i")]
+position = Vector2(5255, -228)
+
+[node name="Scrap12" parent="Items" instance=ExtResource("4_w4s0i")]
+position = Vector2(5122, -13)
+
+[node name="Scrap2" parent="Items" instance=ExtResource("4_w4s0i")]
+position = Vector2(914, -13)
+
+[node name="Credits" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(-48, -523)
+
+[node name="Credits2" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(141, -583)
+
+[node name="Credits3" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(-231, -592)
+
+[node name="Credits4" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(-249, 586)
+
+[node name="Credits5" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(-204, 868)
+
+[node name="Credits6" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(1135, 994)
+
+[node name="Credits7" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(1387, 218)
+
+[node name="Credits8" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(1360, -348)
+
+[node name="Credits9" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(1711, 380)
+
+[node name="Credits10" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(2253, 173)
+
+[node name="Credits11" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(2807, -357)
+
+[node name="Credits12" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(2355, -585)
+
+[node name="Credits13" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(2205, 1000)
+
+[node name="Credits14" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(4991, 3)
+
+[node name="Credits15" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(4989, 57)
+
+[node name="Credits16" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(4287, -401)
+
+[node name="Credits17" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(4285, -347)
+
+[node name="Credits18" parent="Items" instance=ExtResource("5_p8ixr")]
+position = Vector2(3120, -71)
 
 [node name="Doors" type="Node2D" parent="."]
 position = Vector2(4223, -21)

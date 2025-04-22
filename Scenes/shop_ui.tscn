@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3iby7t18vny0"]
+[gd_scene load_steps=10 format=3 uid="uid://b3iby7t18vny0"]
 
 [ext_resource type="Script" path="res://Scripts/shopui.gd" id="1_fk8p3"]
 [ext_resource type="Theme" uid="uid://cqcye1csd01b6" path="res://Assets/theme.tres" id="2_q2h83"]
@@ -6,8 +6,13 @@
 [ext_resource type="FontFile" uid="uid://debggn5x54r8m" path="res://Assets/ObliviousFont.ttf" id="4_unx0n"]
 [ext_resource type="Script" path="res://Scripts/MiscShopButtons.gd" id="5_k42cq"]
 [ext_resource type="AudioStream" uid="uid://cwynx7v1irfov" path="res://Audio/Misc/cash-register-kaching-sound-effect-125042.mp3" id="5_l1is0"]
+[ext_resource type="Script" path="res://Buttons/shipbuttoninshop.gd" id="6_nie40"]
 
 [sub_resource type="Theme" id="Theme_r63lr"]
+default_font = ExtResource("4_unx0n")
+default_font_size = 20
+
+[sub_resource type="Theme" id="Theme_pikpw"]
 default_font = ExtResource("4_unx0n")
 default_font_size = 20
 
@@ -39,28 +44,32 @@ text = "Shop Name
 horizontal_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 319.0
-offset_top = 156.0
-offset_right = -333.0
-offset_bottom = -201.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -175.0
+offset_right = 295.0
+offset_bottom = 133.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="ScrollContainer"]
-custom_minimum_size = Vector2(500, 2000)
+custom_minimum_size = Vector2(570, 2000)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/ColorRect"]
 layout_mode = 0
-offset_right = 500.0
+offset_top = -4.0
+offset_right = 565.0
 offset_bottom = 2000.0
 
 [node name="Button" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 script = ExtResource("3_pe7sw")
 itemName = "P90"
 base_cost = 700
@@ -68,6 +77,7 @@ base_cost = 700
 [node name="Button3" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -77,6 +87,7 @@ base_cost = 900
 [node name="Button4" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -86,6 +97,7 @@ base_cost = 900
 [node name="Button6" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -95,6 +107,7 @@ base_cost = 820
 [node name="Button7" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -104,6 +117,7 @@ base_cost = 1150
 [node name="Button8" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -113,6 +127,7 @@ base_cost = 860
 [node name="Button9" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -122,6 +137,7 @@ base_cost = 870
 [node name="Button10" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -131,6 +147,7 @@ base_cost = 750
 [node name="Button11" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -140,6 +157,7 @@ base_cost = 700
 [node name="Button5" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -149,6 +167,7 @@ base_cost = 850
 [node name="Button12" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -158,6 +177,7 @@ base_cost = 800
 [node name="Button13" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -167,6 +187,7 @@ base_cost = 850
 [node name="Button14" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -176,6 +197,7 @@ base_cost = 600
 [node name="Button15" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -185,6 +207,7 @@ base_cost = 700
 [node name="Button16" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -194,6 +217,7 @@ base_cost = 780
 [node name="Button17" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -203,6 +227,7 @@ base_cost = 950
 [node name="Button18" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -212,6 +237,7 @@ base_cost = 920
 [node name="Button19" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -221,6 +247,7 @@ base_cost = 970
 [node name="Button20" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -230,6 +257,7 @@ base_cost = 970
 [node name="Button21" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -239,6 +267,7 @@ base_cost = 970
 [node name="Button37" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -248,6 +277,7 @@ base_cost = 1300
 [node name="Button22" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -257,6 +287,7 @@ base_cost = 900
 [node name="Button23" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -266,6 +297,7 @@ base_cost = 1200
 [node name="Button24" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -275,6 +307,7 @@ base_cost = 600
 [node name="Button25" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -284,6 +317,7 @@ base_cost = 800
 [node name="Button26" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -293,6 +327,7 @@ base_cost = 1300
 [node name="Button27" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -302,6 +337,7 @@ base_cost = 1600
 [node name="Button2" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -313,6 +349,7 @@ hphealed = 20
 [node name="Button28" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -324,6 +361,7 @@ hphealed = 40
 [node name="Button29" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -335,6 +373,7 @@ hphealed = 50
 [node name="Button30" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -346,6 +385,7 @@ hphealed = 60
 [node name="Button31" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -357,6 +397,7 @@ hphealed = 75
 [node name="Button32" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -368,6 +409,7 @@ hphealed = 80
 [node name="Button33" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -379,6 +421,7 @@ hphealed = 100
 [node name="Button34" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -390,6 +433,7 @@ hphealed = 120
 [node name="Button35" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -401,6 +445,7 @@ hphealed = 150
 [node name="Button36" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
@@ -412,18 +457,137 @@ hphealed = 200
 [node name="Button38" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("3_pe7sw")
-itemName = "Scrap Gun"
-base_cost = 12
+itemName = "Supercharged Crossbow"
+base_cost = 18
 crafted = true
 skill = "Engineering"
 skilllevel = 2
 
+[node name="Button47" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("3_pe7sw")
+itemName = "Headhunter DMR"
+base_cost = 20
+crafted = true
+skill = "Engineering"
+skilllevel = 3
+
+[node name="Button48" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("3_pe7sw")
+itemName = "S-TAR"
+base_cost = 12
+crafted = true
+skill = "Engineering"
+skilllevel = 3
+
+[node name="Button50" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("3_pe7sw")
+itemName = "XR-50"
+base_cost = 25
+crafted = true
+skill = "Engineering"
+skilllevel = 4
+
+[node name="Button52" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("3_pe7sw")
+itemName = "A-70 Shotgun"
+base_cost = 23
+crafted = true
+skill = "Engineering"
+skilllevel = 3
+
+[node name="Button53" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("3_pe7sw")
+itemName = "AT-10 Antitank Rifle"
+base_cost = 30
+crafted = true
+skill = "Engineering"
+skilllevel = 4
+
+[node name="Button54" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("3_pe7sw")
+itemName = "RPG-30"
+base_cost = 35
+crafted = true
+skill = "Engineering"
+skilllevel = 5
+
+[node name="Button55" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("3_pe7sw")
+itemName = "Bandit Light Armor"
+base_cost = 26
+crafted = true
+skill = "Engineering"
+skilllevel = 3
+
+[node name="Button56" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("3_pe7sw")
+itemName = "Bandit Medium Armor"
+base_cost = 30
+crafted = true
+skill = "Engineering"
+skilllevel = 4
+
+[node name="Button57" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_q2h83")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("3_pe7sw")
+itemName = "Bandit Heav Armor"
+base_cost = 35
+crafted = true
+skill = "Engineering"
+skilllevel = 5
+
 [node name="Button39" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_r63lr")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("5_k42cq")
@@ -433,6 +597,7 @@ base_cost = 1000
 [node name="Button40" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_r63lr")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("5_k42cq")
@@ -442,6 +607,7 @@ base_cost = 1000
 [node name="Button41" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_r63lr")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("5_k42cq")
@@ -451,6 +617,7 @@ base_cost = 5000
 [node name="Button42" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_r63lr")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("5_k42cq")
@@ -462,6 +629,7 @@ scrap = 1
 [node name="Button43" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_r63lr")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("5_k42cq")
@@ -473,6 +641,7 @@ scrap = 5
 [node name="Button44" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_r63lr")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("5_k42cq")
@@ -484,6 +653,7 @@ scrap = 10
 [node name="Button45" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_r63lr")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("5_k42cq")
@@ -495,6 +665,7 @@ scrap = 20
 [node name="Button46" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_r63lr")
+theme_override_font_sizes/font_size = 16
 text = "
 "
 script = ExtResource("5_k42cq")
@@ -502,6 +673,72 @@ itemName = "+50 Scrap"
 base_cost = 1000
 isScrap = true
 scrap = 50
+
+[node name="Button49" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pikpw")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("6_nie40")
+itemName = "Assault Fighter"
+base_cost = 18000
+requirement = 3
+
+[node name="Button51" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pikpw")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("6_nie40")
+itemName = "Bandit Attacker"
+base_cost = 9500
+requirement = 2
+
+[node name="Button58" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pikpw")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("6_nie40")
+itemName = "Bandit Fighter"
+base_cost = 11000
+requirement = 3
+
+[node name="Button59" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pikpw")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("6_nie40")
+itemName = "Bandit Heavy Attacker"
+base_cost = 19000
+requirement = 4
+
+[node name="Button60" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pikpw")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("6_nie40")
+itemName = "Fighter-Bomber"
+base_cost = 19000
+requirement = 4
+
+[node name="Button61" type="Button" parent="ScrollContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pikpw")
+theme_override_font_sizes/font_size = 16
+text = "
+"
+script = ExtResource("6_nie40")
+itemName = "Interceptor"
+base_cost = 8500
+requirement = 2
 
 [node name="Button" type="Button" parent="."]
 offset_left = 490.0
@@ -561,6 +798,15 @@ volume_db = 3.76
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button35" to="ScrollContainer/ColorRect/VBoxContainer/Button35" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button36" to="ScrollContainer/ColorRect/VBoxContainer/Button36" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button38" to="ScrollContainer/ColorRect/VBoxContainer/Button38" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button47" to="ScrollContainer/ColorRect/VBoxContainer/Button47" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button48" to="ScrollContainer/ColorRect/VBoxContainer/Button48" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button50" to="ScrollContainer/ColorRect/VBoxContainer/Button50" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button52" to="ScrollContainer/ColorRect/VBoxContainer/Button52" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button53" to="ScrollContainer/ColorRect/VBoxContainer/Button53" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button54" to="ScrollContainer/ColorRect/VBoxContainer/Button54" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button55" to="ScrollContainer/ColorRect/VBoxContainer/Button55" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button56" to="ScrollContainer/ColorRect/VBoxContainer/Button56" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button57" to="ScrollContainer/ColorRect/VBoxContainer/Button57" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button39" to="ScrollContainer/ColorRect/VBoxContainer/Button39" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button40" to="ScrollContainer/ColorRect/VBoxContainer/Button40" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button41" to="ScrollContainer/ColorRect/VBoxContainer/Button41" method="_on_pressed"]
@@ -569,5 +815,11 @@ volume_db = 3.76
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button44" to="ScrollContainer/ColorRect/VBoxContainer/Button44" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button45" to="ScrollContainer/ColorRect/VBoxContainer/Button45" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button46" to="ScrollContainer/ColorRect/VBoxContainer/Button46" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button49" to="ScrollContainer/ColorRect/VBoxContainer/Button49" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button51" to="ScrollContainer/ColorRect/VBoxContainer/Button51" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button58" to="ScrollContainer/ColorRect/VBoxContainer/Button58" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button59" to="ScrollContainer/ColorRect/VBoxContainer/Button59" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button60" to="ScrollContainer/ColorRect/VBoxContainer/Button60" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/ColorRect/VBoxContainer/Button61" to="ScrollContainer/ColorRect/VBoxContainer/Button61" method="_on_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

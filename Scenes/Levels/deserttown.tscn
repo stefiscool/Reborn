@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bmrr0t4r2aq55"]
+[gd_scene load_steps=24 format=4 uid="uid://bmrr0t4r2aq55"]
 
 [ext_resource type="Texture2D" uid="uid://c8v7vrbwsrjml" path="res://Assets/Tilesets/TheBountyHunterTiles.png" id="1_a1tg0"]
 [ext_resource type="PackedScene" uid="uid://d100l8flk2xi" path="res://Scenes/medkit.tscn" id="2_mych1"]
@@ -7,10 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://df7jie7l233sm" path="res://Scenes/Enemies/bandit2SMG.tscn" id="3_0cvg2"]
 [ext_resource type="PackedScene" uid="uid://cc6h2k3peoi15" path="res://Scenes/magazine.tscn" id="3_22x7r"]
 [ext_resource type="AudioStream" uid="uid://dnqusbwr1u0j3" path="res://Audio/Music/video-game-tank-metal-220562.mp3" id="3_efnhv"]
+[ext_resource type="PackedScene" uid="uid://dy83j6gu7fw0d" path="res://Scenes/credits.tscn" id="4_1licv"]
 [ext_resource type="PackedScene" uid="uid://don64iobea8au" path="res://Scenes/door.tscn" id="4_tcqsi"]
 [ext_resource type="PackedScene" uid="uid://jnunkxn4orsw" path="res://Scenes/Enemies/banditAR.tscn" id="4_wi7j4"]
 [ext_resource type="PackedScene" uid="uid://b53o8d1lkvnyg" path="res://Scenes/ui.tscn" id="4_yms4r"]
 [ext_resource type="PackedScene" uid="uid://bib7wcx1vndnm" path="res://Scenes/Enemies/banditsword.tscn" id="5_geo2g"]
+[ext_resource type="PackedScene" uid="uid://cycnx4datk1mu" path="res://Scenes/scrap.tscn" id="5_q5e05"]
 [ext_resource type="PackedScene" uid="uid://bxlo6suf2ex5y" path="res://Scenes/Enemies/banditpistol.tscn" id="6_no0nb"]
 [ext_resource type="PackedScene" uid="uid://dvss3fpvkxuyj" path="res://Scenes/spaceship.tscn" id="10_hyb6l"]
 [ext_resource type="PackedScene" uid="uid://07hugfna5n3f" path="res://Scenes/barrel.tscn" id="10_m56b2"]
@@ -2556,7 +2558,49 @@ position = Vector2(1140, 298)
 position = Vector2(651, 56)
 
 [node name="Magazine4" parent="Items" instance=ExtResource("3_22x7r")]
-position = Vector2(1116, -341)
+position = Vector2(1139, -346)
+
+[node name="Credits" parent="Items" instance=ExtResource("4_1licv")]
+position = Vector2(-81, 168)
+
+[node name="Credits2" parent="Items" instance=ExtResource("4_1licv")]
+position = Vector2(1137, 133)
+
+[node name="Credits9" parent="Items" instance=ExtResource("4_1licv")]
+position = Vector2(990, 238)
+
+[node name="Credits3" parent="Items" instance=ExtResource("4_1licv")]
+position = Vector2(177, 283)
+
+[node name="Credits4" parent="Items" instance=ExtResource("4_1licv")]
+position = Vector2(771, -270)
+
+[node name="Credits5" parent="Items" instance=ExtResource("4_1licv")]
+position = Vector2(774, 621)
+
+[node name="Credits6" parent="Items" instance=ExtResource("4_1licv")]
+position = Vector2(567, 877)
+
+[node name="Credits7" parent="Items" instance=ExtResource("4_1licv")]
+position = Vector2(1651, 859)
+
+[node name="Credits8" parent="Items" instance=ExtResource("4_1licv")]
+position = Vector2(1965, 1072)
+
+[node name="Scrap" parent="Items" instance=ExtResource("5_q5e05")]
+position = Vector2(334, -148)
+
+[node name="Scrap2" parent="Items" instance=ExtResource("5_q5e05")]
+position = Vector2(425, -232)
+
+[node name="Scrap3" parent="Items" instance=ExtResource("5_q5e05")]
+position = Vector2(698, 457)
+
+[node name="Scrap4" parent="Items" instance=ExtResource("5_q5e05")]
+position = Vector2(444, 27)
+
+[node name="Scrap5" parent="Items" instance=ExtResource("5_q5e05")]
+position = Vector2(1088, -107)
 
 [node name="Doors" type="Node2D" parent="."]
 
