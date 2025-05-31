@@ -10,7 +10,7 @@ var xpneeded = 20
 var weapon = "SCAR"
 var secondweapon = "M1911"
 var armor = "Tactical Vest"
-var credits = 0
+var credits = 1000000
 var scrap = 0.0
 
 var skill1 = "Grenade"
@@ -89,7 +89,7 @@ var Melee = 1
 var Engineering = 1
 var Medicine = 1
 var Computing = 1
-var Piloting = 1
+var Piloting = 10
 var Barter = 1
 var Luck = 1
 var Speech = 1

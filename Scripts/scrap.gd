@@ -76,7 +76,11 @@ func _on_body_entered(body):
 		$Label.text = itemname + " +" + str(weight) + " lbs Scrap"
 		$AnimatedSprite2D.visible = false
 		$Label.visible = true
-
+	elif body.is_in_group("Player") and picked == false and Global.scrap >= Global.maxscrap:
+		$Label.visible = true
+		$Label.text = "You cannot carry any more scrap"
+		await get_tree().create_timer(1).timeout 
+		$Label.visible = false
 
 func _on_timer_timeout():
 	queue_free()

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://yk1d0k0r64i6" path="res://Assets/Effects/blackhole.png" id="2_fupig"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5o3i"]
-radius = 17.0
+radius = 5.09902
 
 [node name="Void" type="RigidBody2D" groups=["bullet"]]
 gravity_scale = 0.0

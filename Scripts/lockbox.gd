@@ -26,6 +26,7 @@ func _ready() -> void:
 		queue_free()
 		
 	$Label.text = "Need "+ str(level) + " " + skill + " to open"
+	
 		
 func get_random_value() -> int:
 	# Use Global.level as max value
@@ -49,3 +50,5 @@ func _on_skill_check_body_entered(body: Node2D) -> void:
 			queue_free()
 		else:
 			$Label.visible = true
+			await get_tree().create_timer(1).timeout 
+			$Label.visible = false

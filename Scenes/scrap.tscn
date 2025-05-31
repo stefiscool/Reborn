@@ -168,7 +168,12 @@ stream = ExtResource("2_nt3es")
 volume_db = 10.289
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5rhu5")
+animation = &"Thermoptic Mesh"
+
+[node name="Lockbox" parent="." instance=ExtResource("5_wedw8")]
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -183,12 +188,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
 text = "+ 50 Health"
 horizontal_alignment = 1
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_5rhu5")
-animation = &"Thermoptic Mesh"
-
-[node name="Lockbox" parent="." instance=ExtResource("5_wedw8")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

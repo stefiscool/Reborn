@@ -70,7 +70,11 @@ func _on_body_entered(body):
 		$Label.text = "+" + str(((health-20) + (Global.Medicine * 10))) + " Health"
 		$AnimatedSprite2D.visible = false
 		$Label.visible = true
-
+	elif body.is_in_group("Player") and Global.health >= Global.maxhealth and picked == false:
+		$Label.visible = true
+		$Label.text = "You do not need healing"
+		await get_tree().create_timer(1).timeout 
+		$Label.visible = false
 
 func _on_timer_timeout():
 	queue_free()

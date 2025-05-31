@@ -280,6 +280,17 @@ volume_db = 7.711
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_krgre")
+animation = &"Kinetic"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_leh0s")
+animation = &"Kinetic"
+
+[node name="Lockbox" parent="." instance=ExtResource("5_384re")]
+
 [node name="Label" type="Label" parent="."]
 visible = false
 offset_left = -65.0
@@ -291,17 +302,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
 text = "+ 1 Primary Mag"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_krgre")
-animation = &"Kinetic"
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.9, 0.9)
-sprite_frames = SubResource("SpriteFrames_leh0s")
-animation = &"Kinetic"
-
-[node name="Lockbox" parent="." instance=ExtResource("5_384re")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

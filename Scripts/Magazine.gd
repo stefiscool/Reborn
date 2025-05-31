@@ -31,22 +31,33 @@ func get_primary() -> int:
 
 func _on_body_entered(body):
 	if body.is_in_group("Player") and picked == false:
+		
 		if primary == 2 and (Global.secondmags < Global.maxsecondarymags):
-			print("e")
+			$Label.text = "+1 Secondary Mag"
 			Global.secondmags += 1
 			$AnimatedSprite2D2.visible = false
 			sfx.play()
 			picked = true
 			$Timer.start()
 			$Label.visible = true
+		elif primary == 2 and (Global.secondmags >= Global.maxsecondarymags):
+			$Label.visible = true
+			$Label.text = "You can't carry any more secondary mags"
+			await get_tree().create_timer(1).timeout 
+			$Label.visible = false
 		if primary == 1 and (Global.mags < Global.maxprimarymags):
-			print("e")
+			$Label.text = "+1 Primary Mag"
 			Global.mags += 1
 			$AnimatedSprite2D.visible = false
 			sfx.play()
 			picked = true
 			$Timer.start()
 			$Label.visible = true
+		elif primary == 1 and (Global.mags >= Global.maxprimarymags):
+			$Label.visible = true
+			$Label.text = "You can't carry any more primary mags"
+			await get_tree().create_timer(1).timeout 
+			$Label.visible = false
 
 
 func _on_timer_timeout():

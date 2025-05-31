@@ -145,7 +145,6 @@ volume_db = 10.289
 pitch_scale = 1.5
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
 
 [node name="Label" type="Label" parent="."]
 visible = false
