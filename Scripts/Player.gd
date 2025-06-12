@@ -35,7 +35,6 @@ var shields_broken_played = false
 var voidvision = false
 var hasfrozen = false
 
-
 var can_skill1 = true
 var can_skill2 = true
 var can_skill3 = true
@@ -45,6 +44,8 @@ func player_movement(input, delta):
 	if Global.indialogue == false and Global.frozen == false:
 		if input: velocity = velocity.move_toward(input * speed , delta * accel)
 		else: velocity = velocity.move_toward(Vector2(0,0), delta * fric)
+	elif Global.indialogue == true:
+		velocity = Vector2(0,0)
 
 func _ready():
 	Global.ammo = Global.maxammo
