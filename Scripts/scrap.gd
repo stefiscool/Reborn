@@ -17,17 +17,17 @@ class ScrapItem:
 # List of scrap items
 var scrap_items = [
 	ScrapItem.new("Neurogel Fiber", 0.5),
-	ScrapItem.new("Plascore Panel", 12.0),
+	ScrapItem.new("Plascore Panel", 2.0),
 	ScrapItem.new("Ionshard", 0.2),
-	ScrapItem.new("Rusted Servo Limb", 18.3),
-	ScrapItem.new("Cryosteel Fragment", 9.6),
-	ScrapItem.new("Obsidium Core", 25.0),
+	ScrapItem.new("Rusted Servo Limb", 4.3),
+	ScrapItem.new("Cryosteel Fragment", 3.6),
+	ScrapItem.new("Obsidium Core", 5.0),
 	ScrapItem.new("Hexplate Scraps", 5.2),
 	ScrapItem.new("Arcchip Matrix", 0.1),
 	ScrapItem.new("Thermoptic Mesh", 3.7),
-	ScrapItem.new("Gravcoil Fragment", 7.4),
+	ScrapItem.new("Gravcoil Fragment", 1.4),
 	ScrapItem.new("Fluxed Wiring", 2.0),
-	ScrapItem.new("Radiant Slag", 14.8)
+	ScrapItem.new("Radiant Slag", 4.8)
 ]
 
 # Adjust this to control spawn chance (between 0.0 and 1.0)

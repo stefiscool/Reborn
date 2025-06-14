@@ -4,6 +4,10 @@ Phenix: [[Hi|Hello|Howdy]], this is the Reborn HQ.
 Phenix: The Reborn are a faction of warriors who use us Ark Drones to raise themselves from the dead.  
 Phenix: When a human is raised, they gain elemental powers. You seem to have some great powers.  
 Phenix: You were a soldier from World War 3. You probably died in the nuclear apocalypse. Your will to live must be intense if you died so long ago.  
+- World War 3?
+	Phenix: A long time ago, 
+- I died?
+- These powers are cool!
 Phenix: Since you are one of us now, you need a code name. How about Paladin?  
 - Sure!  
 	Phenix: Alright, great. You are now the Paladin.  
@@ -12,10 +16,21 @@ Phenix: Since you are one of us now, you need a code name. How about Paladin?
 
 => END  
 
-~ reborn_guard  
+~ reborn_guard
 
-Reborn Guard: [[Halt.|State your business.|You're entering Reborn territory.]]  
-Reborn Guard: If you’re here for trouble, turn back. If you’re here to fight for us, pick up a rifle.  
+Reborn Guard: Halt. State your Buisness!
+- I dont remember anything...
+Reborn Guard: I see that the ark drones have picked up a new soldier. How are your elemental powers holding up? 
+- I feel like I can destroy everything!
+	Reborn Guard: Be careful, elemental powers can get crazy if left unchecked. 
+- What kind of powers do you have?
+	Reborn Guard: I have the power of electricity. I was pretty shocked when I first got these powers! Haha... Get it?
+	- Shut up 
+		The guard crosses his arms and looks away from you in embarrassment
+	- *Stay Silent*
+		Reborn Guard: Ha..
+	- Hahahahahahahahahahahahahaha
+
 - I need supplies.  
 	Reborn Guard: There are plenty of shops in this base.  
 - I want to join the fight.  
@@ -63,11 +78,11 @@ Citizen Mechanic: The Reborn may fight, but I keep their ships running. That’s
 Scrapper Merchant: [[Looking to trade?|Got money?|Nothing’s free.]]  
 Scrapper Merchant: Scrap for weapons, weapons for survival. That’s how it works here.  
 - What’s for sale?  
-	Scrapper Merchant: Whatever I could pry from wrecks and dead hands. I can also make custom weapons from scrap parts. 
+	Scrapper Merchant: Whatever I could pry from wrecks and dead hands. If you are good at engineering, you can make new weapons at the bench over there.
 - Heard any news?  
 	Scrapper Merchant: The bandits have taken over an Ark Crystal mine in Antarctica. Means more work for the Reborn.  
 - Found anything good while scavenging?  
-	Scrapper Merchant: [[A few cell guns, a busted rifle, some ancient datapad with a dead battery.|I found a powerful flamethrower from a bandit. It looks badly made, I would not put fuel in it.|I found a heavy minigun from a bandit juggernaut.]]
+	Scrapper Merchant: [[A few Obsidium cores, a busted archchip, some ancient datapad with a dead battery.|I found some hexplate armor scraps. They probably belonged to a republic mech.|I found a car engine from a bandit vehicle. How did those idiots make this thing?]]
 - Ever run into bandits?  
 	Scrapper Merchant: All the time. I keep my head low and my photon gun ready.  
 
@@ -104,7 +119,13 @@ Field Doctor: Keeping the Reborn patched up is a full-time job. Lucky for them, 
 Historian: [[You care about the past?|Looking for answers?|History still matters, you know.]]  
 Historian: The Republic abandoned Earth, but that doesn’t mean we should forget what came before.  
 - What do you know about the Reborn?  
-	Historian: They were an experiment, a secret project created by ancient scientists during World War 3. The scientists were all nuked in the war, but their ark drones survived, and they kept the Reborn alive.  
+	Historian: They were an experiment, a secret project created by ancient scientists during World War 3. The scientists were all nuked in the war, but their ark drones survived, and they kept the Reborn alive by reviving powerful soldiers. I think you might be one of those soldiers.
+	- I do not remember fighting in a war!
+		Historian: I see.. It looks like most of your memory has rotted away. I do not know what that means, but it cannot be good. 
+	- I guess I am really powerful!
+		Historian: You must be powerful if the ark drone chose you. Just be careful, the Ark drones can revive you, but you are not invincible. You just rely on their energy whenever you die. If they get destroyed or run out of ark energy, its over. 
+	- Why would an ark drone revive me? I am not that powerful. 
+		Historian: The ark drones only chose the best of the best soldiers. Do not underestimate your power level. 
 - What about the bandits?  
 	Historian: Most of them are descendants of those left behind. The Republic made them dependent on them, and when they left, they no longer had a purpose.  
 
@@ -116,6 +137,12 @@ Child: [[You’re a Reborn?|You don’t look dead.|Are you a robot?]]
 Child: They say you come back when you die. Can you teach me how to do that?  
 - It’s not that simple.  
 	Child: But you get up after dying, right? I wanna do that too.  
+- The ark drones revive me when I die
+	Child: I never understood how those things work!
+	Child: Do you know how?
+	- No.
+	- Yes. They are powered by Ark crystals.
+		Child: Ohhhhhhhhhhhhhhhhhhhhhhhhhhhh!!!
 - Stay safe, kid.  
 	Child: I will! If the bandits come, I’ll hide real good.  
 
@@ -129,6 +156,7 @@ Reborn Squire: I just started my training. Still getting used to dying and comin
 	Reborn Squire: It’s rough. They expect us to fight like we’ve been doing it for years. But I guess that’s what it means to be Reborn.  
 - Ever been in real combat?  
 	Reborn Squire: Not yet. I’ve fought in drills, but I hear bandits don’t play fair.  
+	Reborn Squire: But that does not mean I am weak! I have the higest score of all the squires in the simulation battles!
 - What happens if you mess up?  
 	Reborn Squire: You die. Then you get back up and try again. That’s just how it is.  
 
@@ -149,10 +177,12 @@ Reborn Squire: I want to prove myself, but I’ve died more in training than I w
 
 ~ reborn_knight  
 
+The Reborn Warrior shoots his AK, hitting all of the targets on the range.
 Reborn Knight: [[You carry yourself like a warrior.|Another new recruit?|Are you ready to fight for the Reborn?]]  
 Reborn Knight: The bandits outnumber us, but they don’t have what we do. We don’t stay dead.  
 - What’s your rank?  
-	Reborn Knight: I am a Knight of the Reborn. I lead squads into battle and ensure no one is left behind… at least, no one who can still rise.  
+	Reborn Knight: I am a Knight of the Reborn. I lead squads into battle and ensure no one is left behind… at least, no one who can still rise. 
+	Reborn Knight: Us knights are also given better armor. I survived getting lit up by a bandit LMG while wearing this! 
 - What’s your opinion on the bandits?  
 	Reborn Knight: They fight like scavengers, but don’t underestimate them. They’ve survived longer than most of us have been alive.  
 - What happens if an Ark Drone stops working?  
@@ -165,9 +195,9 @@ Cyborg Merchant: [[You looking for something special?|Need something powerful?|I
 Cyborg Merchant: The name’s Vexus. I deal in rare weapons, alien armor, and exotic tech you won’t find anywhere else.  
 
 - What kind of weapons do you sell?  
-	Vexus: Advanced alien stuff. Plasma casters, graviton blades, kinetic disruptors. Things that make a real difference in a fight.  
+	Vexus: Advanced alien stuff. Photon SMGs, Void Supercannons, Shock Cannons. Things that make a real difference in a fight.  
 - What about armor?  
-	Vexus: Reinforced alien exo-suits, energy shielding, adaptive plating. You want to stay alive longer? You buy from me.  
+	Vexus: I have energy coats that provide exellent regeneration and shielding. Just remember, if the shield breaks, there is not much physical protection. 
 - Where do you get your stock?  
 	Vexus: Salvage, trade, black market… and sometimes, I make them myself. These cybernetics aren’t just for show.  
 - You’re a cyborg?  

@@ -1424,14 +1424,13 @@ text = "ALIEN TECH SHOP
 autowrap_mode = 2
 
 [node name="Label7" type="Label" parent="HubAreas"]
-offset_left = 536.0
+offset_left = 469.0
 offset_top = 741.0
 offset_right = 744.0
 offset_bottom = 762.0
 theme = ExtResource("4_eq5ea")
 theme_override_font_sizes/font_size = 20
-text = "HUMAN TECH SHOP
-"
+text = "MILITARY SURPLUS SHOP"
 autowrap_mode = 2
 
 [node name="Label8" type="Label" parent="HubAreas"]

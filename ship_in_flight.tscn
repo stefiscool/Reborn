@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2krx2ydgwqdm"]
+
+[ext_resource type="Script" path="res://ship_in_flight.gd" id="1_6mbag"]
+[ext_resource type="PackedScene" uid="uid://dh3q6tqisvdwl" path="res://Scenes/shipsprite.tscn" id="2_xw475"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enfbw"]
+radius = 51.0098
+
+[node name="ShipInFlight" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_6mbag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_enfbw")
+
+[node name="Ship" parent="." instance=ExtResource("2_xw475")]
+position = Vector2(1, -35)
+rotation = 0.0
+
+[node name="Gunfire" type="AudioStreamPlayer2D" parent="."]
+
+[node name="BulletPoint" type="Node2D" parent="."]
+position = Vector2(0, -150)
+
+[node name="Firerate" type="Timer" parent="."]
+
+[connection signal="timeout" from="Firerate" to="." method="_on_firerate_timeout"]
