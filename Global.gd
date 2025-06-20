@@ -70,7 +70,7 @@ var frozen = false
 
 var slide = 0
 
-var shipname = "Starfighter"
+var shipname = "Interceptor"
 var shiphealth = 500
 var shipcurrenthealth = shiphealth
 var shipspeed = 5000

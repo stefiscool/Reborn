@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgr4qw6xvpd5n"]
+
+[ext_resource type="Script" path="res://Scripts/enemy_bomb.gd" id="1_e2ifn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1m1nr"]
+
+[node name="EnemyBomb" type="Node2D"]
+script = ExtResource("1_e2ifn")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_1m1nr")
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D/CollisionShape2D"]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-1, -10, -8, -7, -10, 1, -8, 8, 0, 10, 7, 8, 10, 1, 8, -7)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(12, 0)
+shape = SubResource("RectangleShape2D_1m1nr")
+
+[node name="Polygon2D2" type="Polygon2D" parent="Area2D/CollisionShape2D2"]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-1, -10, -8, -7, -10, 1, -8, 8, 0, 10, 7, 8, 10, 1, 8, -7)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -13)
+shape = SubResource("RectangleShape2D_1m1nr")
+
+[node name="Polygon2D3" type="Polygon2D" parent="Area2D/CollisionShape2D3"]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-1, -10, -8, -7, -10, 1, -8, 8, 0, 10, 7, 8, 10, 1, 8, -7)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-13, 0)
+shape = SubResource("RectangleShape2D_1m1nr")
+
+[node name="Polygon2D2" type="Polygon2D" parent="Area2D/CollisionShape2D4"]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-1, -10, -8, -7, -10, 1, -8, 8, 0, 10, 7, 8, 10, 1, 8, -7)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

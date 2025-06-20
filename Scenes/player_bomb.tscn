@@ -1,0 +1,141 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnxtn4c3rl44m"]
+
+[ext_resource type="Script" path="res://Scripts/player_bomb.tres.gd" id="1_qlhyf"]
+[ext_resource type="Texture2D" uid="uid://ba67x7f1jxqbr" path="res://Assets/Effects/Tesla.png" id="2_b3xcb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1m1nr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_draxe"]
+size = Vector2(4, 19)
+
+[node name="PlayerBomb" type="Node2D"]
+script = ExtResource("1_qlhyf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_1m1nr")
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D/CollisionShape2D"]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-1, -10, -8, -7, -10, 1, -8, 8, 0, 10, 7, 8, 10, 1, 8, -7)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(12, 0)
+shape = SubResource("RectangleShape2D_1m1nr")
+
+[node name="Polygon2D2" type="Polygon2D" parent="Area2D/CollisionShape2D2"]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-1, -10, -8, -7, -10, 1, -8, 8, 0, 10, 7, 8, 10, 1, 8, -7)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -13)
+shape = SubResource("RectangleShape2D_1m1nr")
+
+[node name="Polygon2D3" type="Polygon2D" parent="Area2D/CollisionShape2D3"]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-1, -10, -8, -7, -10, 1, -8, 8, 0, 10, 7, 8, 10, 1, 8, -7)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-13, 0)
+shape = SubResource("RectangleShape2D_1m1nr")
+
+[node name="Polygon2D2" type="Polygon2D" parent="Area2D/CollisionShape2D4"]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-1, -10, -8, -7, -10, 1, -8, 8, 0, 10, 7, 8, 10, 1, 8, -7)
+
+[node name="NapalmBomb" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NapalmBomb"]
+polygon = PackedVector2Array(0, -10, -8, -8, -10, 0, -8, 6, 0, 10, 7, 7, 11, 1, 7, -8)
+
+[node name="Polygon2D" type="Polygon2D" parent="NapalmBomb"]
+color = Color(1, 0.27451, 0, 1)
+polygon = PackedVector2Array(-8, -8, -10, 0, -8, 6, 0, 10, 7, 7, 11, 1, 7, -8, 0, -10)
+
+[node name="Ion Bomb" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ion Bomb"]
+polygon = PackedVector2Array(0, -10, -8, -8, -10, 0, -8, 6, 0, 10, 7, 7, 11, 1, 7, -8)
+
+[node name="Polygon2D" type="Polygon2D" parent="Ion Bomb"]
+color = Color(0.612902, 0.740408, 1, 1)
+polygon = PackedVector2Array(-8, -8, -10, 0, -8, 6, 0, 10, 7, 7, 11, 1, 7, -8, 0, -10)
+
+[node name="EMP Pulse" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EMP Pulse"]
+polygon = PackedVector2Array(0, -10, -8, -8, -10, 0, -8, 6, 0, 10, 7, 7, 11, 1, 7, -8)
+
+[node name="Tesla" type="Sprite2D" parent="EMP Pulse"]
+position = Vector2(1.19209e-07, 9.53674e-07)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_b3xcb")
+hframes = 2
+vframes = 3
+
+[node name="Shockwave" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shockwave"]
+polygon = PackedVector2Array(0, -10, -8, -8, -10, 0, -8, 6, 0, 10, 7, 7, 11, 1, 7, -8)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Shockwave"]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-8, -8, -10, 0, -8, 6, 0, 10, 7, 7, 11, 1, 7, -8, 0, -10)
+
+[node name="Tesla" type="Sprite2D" parent="Shockwave"]
+position = Vector2(1.19209e-07, 9.53674e-07)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_b3xcb")
+hframes = 2
+vframes = 3
+
+[node name="Missile Barrage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Missile Barrage"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_draxe")
+
+[node name="Polygon2D2" type="Polygon2D" parent="Missile Barrage"]
+position = Vector2(0, -2)
+color = Color(0.981066, 0.946886, 0.97047, 1)
+polygon = PackedVector2Array(-2, -8, -2, 8, -4, 10, -4, 14, 0, 11, 4, 14, 4, 10, 2, 7.73292, 2, -8, 0, -10)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Missile Barrage"]
+position = Vector2(-18, -0.5)
+shape = SubResource("RectangleShape2D_draxe")
+
+[node name="Polygon2D3" type="Polygon2D" parent="Missile Barrage"]
+position = Vector2(-18, -2)
+color = Color(0.981066, 0.946886, 0.97047, 1)
+polygon = PackedVector2Array(-2, -8, -2, 8, -4, 10, -4, 14, 0, 11, 4, 14, 4, 10, 2, 7.73292, 2, -8, 0, -10)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Missile Barrage"]
+position = Vector2(18, -0.5)
+shape = SubResource("RectangleShape2D_draxe")
+
+[node name="Polygon2D4" type="Polygon2D" parent="Missile Barrage"]
+position = Vector2(18, -2)
+color = Color(0.981066, 0.946886, 0.97047, 1)
+polygon = PackedVector2Array(-2, -8, -2, 8, -4, 10, -4, 14, 0, 11, 4, 14, 4, 10, 2, 7.73292, 2, -8, 0, -10)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Missile Barrage"]
+position = Vector2(-39, -0.5)
+shape = SubResource("RectangleShape2D_draxe")
+
+[node name="Polygon2D5" type="Polygon2D" parent="Missile Barrage"]
+position = Vector2(-39, -2)
+color = Color(0.981066, 0.946886, 0.97047, 1)
+polygon = PackedVector2Array(-2, -8, -2, 8, -4, 10, -4, 14, 0, 11, 4, 14, 4, 10, 2, 7.73292, 2, -8, 0, -10)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Missile Barrage"]
+position = Vector2(37, -0.5)
+shape = SubResource("RectangleShape2D_draxe")
+
+[node name="Polygon2D6" type="Polygon2D" parent="Missile Barrage"]
+position = Vector2(37, -2)
+color = Color(0.981066, 0.946886, 0.97047, 1)
+polygon = PackedVector2Array(-2, -8, -2, 8, -4, 10, -4, 14, 0, 11, 4, 14, 4, 10, 2, 7.73292, 2, -8, 0, -10)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

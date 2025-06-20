@@ -29,4 +29,5 @@ func _on_body_entered(body: Node2D) -> void:
 		queue_free()
 		
 	if body.is_in_group("Player"):
-		Global.shipcurrenthealth -= randi_range(30,100)
+		Global.shipcurrenthealth -= randi_range(10,60)
+		queue_free()

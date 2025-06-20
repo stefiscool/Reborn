@@ -8,7 +8,7 @@
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_b63se")
 speed = 200
-hp = 150
+hp = 120
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-83.3333, -60, -93.3333, -3.33333, -40, 103.333, 0, 123.333, 43.3333, 100, 96.6667, -3.33333, 83.3333, -60, 3.33333, -36.6667)
