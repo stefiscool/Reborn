@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemy = preload("res://Scenes/enemy_ship.tscn")
+var enemy = preload("res://Scenes/Enemies/enemy_ship.tscn")
 var spawn_timer = 0.0
 var next_spawn_time = 0.0
 
@@ -9,7 +9,13 @@ const SPAWN_TIME_MIN = 1.0
 const SPAWN_TIME_MAX = 3.0
 
 func _ready() -> void:
-	# Set initial random spawn time
+	var i = randi_range(0,2)
+	if i == 0:
+		enemy = preload("res://Scenes/Enemies/enemy_ship.tscn")
+	if i == 1:
+		enemy = preload("res://Scenes/Enemies/enemybomber.tscn")
+	if i == 2:
+		enemy = preload("res://Scenes/Enemies/enemyheavybomber.tscn")
 	next_spawn_time = randf_range(SPAWN_TIME_MIN, SPAWN_TIME_MAX)
 
 func _process(delta: float) -> void:

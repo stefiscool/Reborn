@@ -2,7 +2,7 @@ extends Area2D
 
 
 @export var shipweapon = "Kinetic Cannons"
-@export var damage = 100
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.y += 1000 * delta
@@ -29,4 +29,4 @@ func _on_body_entered(body: Node2D) -> void:
 		queue_free()
 		
 	if body.is_in_group("Player"):
-		Global.shipcurrenthealth -= damage
+		Global.shipcurrenthealth -= randi_range(30,100)

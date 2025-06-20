@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmewusmvlowva"]
+
+[ext_resource type="Script" path="res://Scripts/enemy_ship.gd" id="1_rax3q"]
+[ext_resource type="Texture2D" uid="uid://cnrumoefitlow" path="res://Assets/Vechicles/BanditFighter.png" id="2_87e4w"]
+[ext_resource type="Script" path="res://Scripts/bullet_point.gd" id="3_6orq4"]
+
+[node name="EnemyShip" type="CharacterBody2D" groups=["Enemy"]]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_rax3q")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-110, -70, 0, 123.333, 106.667, -70, 3.33333, -36.6667)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("2_87e4w")
+
+[node name="Detector" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detector"]
+polygon = PackedVector2Array(-106.667, -56.6667, -13.3333, 126.667, 16.6667, 126.667, 113.333, -56.6667, 6.66667, -33.3333)
+
+[node name="BulletPoint" type="Node2D" parent="."]
+position = Vector2(0, 146.667)
+script = ExtResource("3_6orq4")
+
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg2c6vv4d5jr8"]
+[gd_scene load_steps=5 format=3 uid="uid://cg2c6vv4d5jr8"]
 
 [ext_resource type="PackedScene" uid="uid://b2krx2ydgwqdm" path="res://Scenes/ship_in_flight.tscn" id="1_5kdbr"]
 [ext_resource type="Script" path="res://Scripts/spawn_point.gd" id="1_yderv"]
+[ext_resource type="PackedScene" uid="uid://crhusgcpkvylf" path="res://Scenes/ship_ui.tscn" id="3_q8xja"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gm3wt"]
 
@@ -10,40 +11,36 @@
 [node name="SpawnPoints" type="Node2D" parent="."]
 
 [node name="SpawnPoint" type="Node2D" parent="SpawnPoints"]
-position = Vector2(114, 66)
+position = Vector2(169, -82)
 script = ExtResource("1_yderv")
 
 [node name="SpawnPoint2" type="Node2D" parent="SpawnPoints"]
-position = Vector2(308, 53)
+position = Vector2(295, -129)
 script = ExtResource("1_yderv")
 
 [node name="SpawnPoint3" type="Node2D" parent="SpawnPoints"]
-position = Vector2(470, 54)
+position = Vector2(462, -111)
 script = ExtResource("1_yderv")
 
 [node name="SpawnPoint4" type="Node2D" parent="SpawnPoints"]
-position = Vector2(779, 53)
+position = Vector2(803, -135)
 script = ExtResource("1_yderv")
 
 [node name="SpawnPoint5" type="Node2D" parent="SpawnPoints"]
-position = Vector2(646, 45)
+position = Vector2(629, -112)
 script = ExtResource("1_yderv")
 
 [node name="SpawnPoint6" type="Node2D" parent="SpawnPoints"]
-position = Vector2(981, 48)
+position = Vector2(964, -113)
 script = ExtResource("1_yderv")
 
 [node name="ShipInFlight" parent="." instance=ExtResource("1_5kdbr")]
-position = Vector2(568, 603)
+position = Vector2(567, 502)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Border"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-4, 648)
-shape = SubResource("WorldBoundaryShape2D_gm3wt")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_gm3wt")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
@@ -53,4 +50,18 @@ shape = SubResource("WorldBoundaryShape2D_gm3wt")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1150, 0)
 rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_gm3wt")
+
+[node name="Ship UI" parent="." instance=ExtResource("3_q8xja")]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-4, 580)
+shape = SubResource("WorldBoundaryShape2D_gm3wt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_gm3wt")
